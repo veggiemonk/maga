@@ -22,6 +22,7 @@
       "babel-loader": "github:systemjs/plugin-babel@master",
       "babel-plugin-mjsx": "npm:babel-plugin-mjsx@^1.0.3",
       "css": "npm:jspm-loader-css-modules@^1.0.1-beta1",
+      "fetch": "npm:whatwg-fetch@^0.10.1",
       "mithril": "npm:mithril@^0.2.0"
     },
     "devDependencies": {

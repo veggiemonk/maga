@@ -26,6 +26,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.29",
     "core-js": "npm:core-js@1.2.5",
     "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
+    "fetch": "npm:whatwg-fetch@0.10.1",
     "mithril": "npm:mithril@0.2.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
