@@ -1,0 +1,44 @@
+{
+  "name": "maga",
+  "version": "0.0.1",
+  "description": "transfer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/veggiemonk/maga.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/veggiemonk/maga/issues"
+  },
+  "homepage": "https://github.com/veggiemonk/maga#readme",
+  "jspm": {
+    "dependencies": {
+      "babel-loader": "github:systemjs/plugin-babel@master",
+      "babel-plugin-mjsx": "npm:babel-plugin-mjsx@^1.0.3",
+      "css": "npm:jspm-loader-css-modules@^1.0.1-beta1",
+      "mithril": "npm:mithril@^0.2.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    },
+    "overrides": {
+      "github:systemjs/plugin-babel@master": {
+        "dependencies": {
+          "babel": "npm:babel-core@^5.8.26",
+          "babel-runtime": "npm:babel-runtime@^5.8.26"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "jspm": "^0.16.14"
+  }
+}
