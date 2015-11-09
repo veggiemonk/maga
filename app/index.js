@@ -11,7 +11,8 @@ import {
 } from './settings.js'
 import { inc, dec, stackLoader, loaderDisplay } from './utils.js'
 
-
+//HOT RELOADING
+export let __hotReload = true
 // test if creds are there and if they are OK
 // forward to login if it is NOT OK
 
@@ -55,7 +56,6 @@ export default {
             c.files( sanitize( FileList ) )
             c.category( CategoryList )
           } ).then( () => {
-          console.log( new Date().getMilliseconds() )
           dec( stackLoader )
           m.endComputation();
           //m.redraw();

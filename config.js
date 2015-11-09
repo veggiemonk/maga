@@ -24,10 +24,16 @@ System.config({
     "babel-loader": "github:systemjs/plugin-babel@master",
     "babel-plugin-mjsx": "npm:babel-plugin-mjsx@1.0.3",
     "babel-runtime": "npm:babel-runtime@5.8.29",
+    "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@0.3.0",
     "core-js": "npm:core-js@1.2.5",
     "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
     "fetch": "npm:whatwg-fetch@0.10.1",
     "mithril": "npm:mithril@0.2.0",
+    "github:capaj/jspm-hot-reloader@0.3.0": {
+      "lodash.clonedeep": "npm:lodash.clonedeep@3.0.2",
+      "socket.io-client": "github:socketio/socket.io-client@1.3.7",
+      "weakee": "npm:weakee@0.9.1"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -105,6 +111,30 @@ System.config({
       "path": "npm:path@0.12.7",
       "toposort": "npm:toposort@0.2.12"
     },
+    "npm:lodash._baseassign@3.2.0": {
+      "lodash._basecopy": "npm:lodash._basecopy@3.0.1",
+      "lodash.keys": "npm:lodash.keys@3.1.2"
+    },
+    "npm:lodash._baseclone@3.3.0": {
+      "lodash._arraycopy": "npm:lodash._arraycopy@3.0.0",
+      "lodash._arrayeach": "npm:lodash._arrayeach@3.0.0",
+      "lodash._baseassign": "npm:lodash._baseassign@3.2.0",
+      "lodash._basefor": "npm:lodash._basefor@3.0.2",
+      "lodash.isarray": "npm:lodash.isarray@3.0.4",
+      "lodash.keys": "npm:lodash.keys@3.1.2"
+    },
+    "npm:lodash._basefor@3.0.2": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:lodash.clonedeep@3.0.2": {
+      "lodash._baseclone": "npm:lodash._baseclone@3.3.0",
+      "lodash._bindcallback": "npm:lodash._bindcallback@3.0.1"
+    },
+    "npm:lodash.keys@3.1.2": {
+      "lodash._getnative": "npm:lodash._getnative@3.9.1",
+      "lodash.isarguments": "npm:lodash.isarguments@3.0.4",
+      "lodash.isarray": "npm:lodash.isarray@3.0.4"
+    },
     "npm:lodash@3.10.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -157,6 +187,11 @@ System.config({
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:weakee@0.9.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     }
   }

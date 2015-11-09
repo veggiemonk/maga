@@ -10,7 +10,21 @@
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <script>
-        System.import('index.js');
+        //System.trace = true;
+        var readyForMainLoad;
+        var debug = sessionStorage['DEBUG'] && sessionStorage['DEBUG'] == 'true' || localStorage['DEBUG'] && localStorage['DEBUG'] == 'true';
+        if (location.origin.match(/localhost/) && debug) {
+          System.trace = true;
+          readyForMainLoad = System.import('capaj/jspm-hot-reloader').then(function(HotReloader) {
+            hr = new HotReloader.default('http://localhost:3000')  // chokidar-socket-emitter port
+          });
+        }
+        Promise.resolve(readyForMainLoad).then(() => {
+          System.import('index.js').then(function () {
+            console.log('ran at ', new Date());
+          })
+        })
+        //System.import('index.js');
     </script>
     <!--<link rel="stylesheet" type="text/css" href="/styles.css" />-->
 </head>
