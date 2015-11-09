@@ -1,3 +1,5 @@
+import { Map } from 'immutable'
+
 //TODO: make it dynamic
 export const lang = 'fr';
 
@@ -14,157 +16,139 @@ export const i18n = {
   }
 }
 
-export const columnConfig = [
-  {
-    id: 'index',
-    index: 0,
+const columnConfig = [
+  ['index', {
+    index:   0,
     visible: false,
-  }, {
-    id: 'checkbox',
-    name: '<input type="checkbox" disabled aria-disabled="true" name="notification" value="value">',
-    content: '<input type="checkbox" />',
-    index: 1,
+  }], ['checkbox', {
+    name:     '<input type="checkbox" disabled aria-disabled="true" name="notification" value="value">',
+    content:  '<input type="checkbox" />',
+    index:    1,
     dataType: false,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'notDownloaded',
-    index: 2,
-    name: 'DL',
+    cssClass: ['defaultView']
+  }], ['notDownloaded', {
+    index:    2,
+    name:     'DL',
     dataType: typeof true,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'downloadCount',
-    name: '<i class="fa fa-download"></i>',
-    index: 3,
+    cssClass: ['defaultView']
+  }], ['downloadCount', {
+    name:     '<i class="fa fa-download"></i>',
+    index:    3,
     dataType: typeof true,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'date',
-    name: 'date',
-    index: 4,
+    cssClass: ['defaultView']
+  }], ['date', {
+    name:     'date',
+    index:    4,
     dataType: typeof '',
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'fileId',
-    name: 'fileId',
+    cssClass: ['defaultView']
+  }], ['fileId', {
+    name:     'fileId',
     dataType: typeof 0,
-    index: 5,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'fileName',
-    name: 'filename',
+    index:    5,
+    cssClass: ['defaultView']
+  }], ['fileName', {
+    name:     'filename',
     dataType: typeof '',
-    index: 6,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'uploadUserName',
-    name: 'uploader',
+    index:    6,
+    cssClass: ['defaultView']
+  }], ['uploadUserName', {
+    name:     'uploader',
     dataType: typeof '',
-    index: 7,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'label',
-    name: 'Label',
+    index:    7,
+    cssClass: ['defaultView']
+  }], ['label', {
+    name:     'Label',
     dataType: typeof '',
-    index: 8,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'referenceDocument',
-    name: 'RefDoc',
+    index:    8,
+    cssClass: ['defaultView']
+  }], ['referenceDocument', {
+    name:     'RefDoc',
     dataType: typeof '',
-    index: 9,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'size',
-    name: 'Size',
+    index:    9,
+    cssClass: ['defaultView']
+  }], ['size', {
+    name:     'Size',
     dataType: typeof '',
-    index: 10,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'extension',
-    name: 'Type',
+    index:    10,
+    cssClass: ['defaultView']
+  }], ['extension', {
+    name:     'Type',
     dataType: typeof '',
-    index: 11,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'path',
-    name: 'Path',
+    index:    11,
+    cssClass: ['defaultView']
+  }], ['path', {
+    name:     'Path',
     dataType: typeof '',
-    index: 12,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'referenceClient',
-    name: 'RefClient',
+    index:    12,
+    cssClass: ['defaultView']
+  }], ['referenceClient', {
+    name:     'RefClient',
     dataType: typeof '',
-    index: 13,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'counter',
-    name: 'Counter',
+    index:    13,
+    cssClass: ['defaultView']
+  }], ['counter', {
+    name:     'Counter',
     dataType: typeof '',
-    index: 14,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'referenceGroupS',
-    name: 'RefGS',
+    index:    14,
+    cssClass: ['defaultView']
+  }], ['referenceGroupS', {
+    name:     'RefGS',
     dataType: typeof '',
-    index: 15,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'uploadStamp',
-    name: 'uploadStamp',
+    index:    15,
+    cssClass: ['defaultView']
+  }], ['uploadStamp', {
+    name:     'uploadStamp',
     dataType: typeof '',
-    index: 16,
-    cssClass: [ 'defaultView' ]
-  }, {
-    id: 'uploaderComment',
-    name: 'uploaderComment',
+    index:    16,
+    cssClass: ['defaultView']
+  }], ['uploaderComment', {
+    name:     'uploaderComment',
     dataType: typeof '',
-    index: 17,
-    cssClass: [ 'defaultView', 'comment' ]
-  }, {
-    id: 'remove',
-    name: 'remove',
-    index: 18,
-    cssClass: [ 'defaultView' ]
-  }
+    index:    17,
+    cssClass: ['defaultView', 'comment']
+  }], ['remove', {
+    name:     'remove',
+    index:    18,
+    cssClass: ['defaultView']
+  }]
 ]
 
-/***********
- *
- * Constants
- */
-export const urlServer = 'http://localhost:8019';
-export const fetchURL = urlServer + '/file/list';
-export const fetchFile = '/test/fileList.json';
+const defaults      = {
+  col:         {
+    index:      0, // number to appear
+    sorted:     false,
+    sortable:   true,
+    searchable: true,
+    visible:    true,
+    order:      false,
+    name:       'Column',
+    dataType:   typeof 'data',
+    tdWidth:    '50px'
+  },
+  index:       'index', //column that contains the index of the table
+  rowDisplay:  10,
+  page:        1,
+  startPageAt: 0,
+  searchTerms: ''
+};
+
+const df = Map(defaults.col)
+
+export const colConfig = Map(columnConfig);
+
+export const urlServer     = 'http://localhost:8019';
+export const fetchURL      = urlServer + '/file/list';
+export const fetchFile     = '/test/fileList.json';
 export const fetchCategory = '/test/category.json';
-export const headers = method => {
+export const headers       = method => {
   return {
     credentials: 'same-origin',
-    method: method,
-    headers: {
-      'Accept': 'application/json',
+    method:      method,
+    headers:     {
+      'Accept':       'application/json',
       'Content-Type': 'application/json',
-      'Credentials': 'GroupsFTP username=F00000001 password=P@$$w0rd'
+      'Credentials':  'GroupsFTP username=F00000001 password=P@$$w0rd'
     }
   }
 
-};
-export const defaults = {
-  col: {
-    index: 0, // number to appear
-    sorted: false,
-    sortable: true,
-    searchable: true,
-    visible: true,
-    order: false,
-    name: 'Column',
-    dataType: typeof 'data',
-    tdWidth: '50px'
-  },
-  index: 'index', //column that contains the index of the table
-  rowDisplay: 10,
-  page: 1,
-  startPageAt: 0,
-  searchTerms: ''
 };

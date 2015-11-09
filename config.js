@@ -28,7 +28,9 @@ System.config({
     "core-js": "npm:core-js@1.2.5",
     "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
     "fetch": "npm:whatwg-fetch@0.10.1",
+    "immutable": "npm:immutable@3.7.5",
     "mithril": "npm:mithril@0.2.0",
+    "postcss-safe-parser": "npm:postcss-safe-parser@1.0.1",
     "github:capaj/jspm-hot-reloader@0.3.0": {
       "lodash.clonedeep": "npm:lodash.clonedeep@3.0.2",
       "socket.io-client": "github:socketio/socket.io-client@1.3.7",
@@ -162,7 +164,19 @@ System.config({
       "icss-replace-symbols": "npm:icss-replace-symbols@1.0.2",
       "postcss": "npm:postcss@5.0.10"
     },
+    "npm:postcss-safe-parser@1.0.1": {
+      "postcss": "npm:postcss@5.0.11"
+    },
     "npm:postcss@5.0.10": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "js-base64": "npm:js-base64@2.1.9",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "source-map": "npm:source-map@0.5.3",
+      "supports-color": "npm:supports-color@3.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:postcss@5.0.11": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "js-base64": "npm:js-base64@2.1.9",
       "path": "github:jspm/nodelibs-path@0.1.0",

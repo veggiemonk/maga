@@ -1,77 +1,69 @@
 import m from 'mithril'
 import 'fetch';
+import { Map } from 'immutable'
+
 import Header from './header.js'
 import Menu from './menu.js'
 import Table from './table.js'
+
 import {
-  columnConfig,
+  colConfig,
   fetchFile,
   fetchCategory,
   headers
 } from './settings.js'
+
 import { inc, dec, stackLoader, loaderDisplay } from './utils.js'
 
-//HOT RELOADING
-export let __hotReload = true
-// test if creds are there and if they are OK
-// forward to login if it is NOT OK
+import styles from './index.css!'
 
 const sanitize = dataArray => {
   return dataArray.map( obj => {
     Object.keys( obj ).map( key => {
       // if (key == 'date') tmp[key] = moment(obj[key]);
-      if ( key == 'fileId' ) obj[ key ] = Number( obj[ key ] );
+      if ( key == 'fileId' ) obj[key] = Number( obj[key] );
     } );
     return obj;
   } )
 };
 
-
-let model = {
-
+//MODEL
+let App = {
+  fetchFileList:     () => fetch( fetchFile, headers( 'GET' ) ).then( res => res.json() ),
+  fetchCategoryList: () => fetch( fetchCategory, headers( 'GET' ) ).then( res => res.json() )
 }
-
-
-// fetch data
-const fetchFileList = () => fetch( fetchFile, headers( 'GET' ) ).then( res => res.json() )
-
-const fetchCategoryList = () => fetch( fetchCategory, headers( 'GET' ) ).then( res => res.json() )
-
-
 
 //TODO: merge user config with default config
 //TODO: use immutable.js for configuration --> undo/redo
 
 export default {
   controller: () => {
-    var c ={
-      files: m.prop( [] ),
+    var c = {
+      files:    m.prop( [] ),
       category: m.prop( [] ),
-      init: () => {
+      init:     () => {
         inc( stackLoader )
         m.startComputation();
-        Promise.all( [ fetchFileList(), fetchCategoryList() ] )
-          .then( ( [FileList, CategoryList] ) => {
-            //console.log( [ FileList, CategoryList ] );
+        Promise.all( [App.fetchFileList(), App.fetchCategoryList()] )
+          .then( ([FileList, CategoryList]) => {
             c.files( sanitize( FileList ) )
             c.category( CategoryList )
-          } ).then( () => {
-          dec( stackLoader )
-          m.endComputation();
-          //m.redraw();
-          //m.render(document, Table)
-        });
+          } )
+          .then( () => {
+            dec( stackLoader )
+            m.endComputation()
+          } );
       }
     }
     c.init();
 
     return c;
   },
-  view: ctrl => {
+  view:       ctrl => {
     return (
       <div>
-        <div class="loading" style={ loaderDisplay() }>
-          <div class="pulse-loader"></div>
+        <div class={ styles.loading } style={ loaderDisplay() }>
+          <div class="{ /*styles.pulse-loader*/ }"></div>
         </div>
         <Header />
         <Menu category={ctrl.category}/>
@@ -79,10 +71,7 @@ export default {
         <p>
           <a href="/login" config={ m.route }>LOGIN</a>
         </p>
-        <Table
-          columnConfig={columnConfig}
-          files={ctrl.files}
-        >
+        <Table colConfig={colConfig} files={ctrl.files}>
         </Table>
       </div>
     )

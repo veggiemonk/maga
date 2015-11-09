@@ -2,7 +2,8 @@ var Table = {};
 
 Table.controller = function controller (attrs, children) {
   var c = {
-    files: attrs.files
+    files: attrs.files,
+    colConfig: attrs.colConfig
   }
   return c;
 }
@@ -15,10 +16,8 @@ Table.view = function view (ctrl, attrs, children) {
         { ctrl.files().map( file =>
           <tr>
             <td>{file.path}</td>
-            <td>{file.id}</td>
           </tr>
         ) }
-
       </table>
     </div>
   )

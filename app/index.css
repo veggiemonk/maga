@@ -1,0 +1,93 @@
+/* LOADER */
+
+/* $loader-color: #4bbcce;*/
+
+/* Absolute Center CSS Spinner */
+.loading {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: visible;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* Transparent Overlay */
+
+.loading:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(75, 188, 206, 0.3);
+}
+
+.pulse-loader:not(:required) {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    -moz-animation: pulse-loader 0.7s linear infinite alternate;
+    -webkit-animation: pulse-loader 0.7s linear infinite alternate;
+    animation: pulse-loader 0.7s linear infinite alternate;
+    border: 2px solid #4bbcce;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    text-indent: 50px;
+}
+
+@-moz-keyframes pulse-loader {
+    0% {
+        -moz-box-shadow: #4bbcce 0 0 0px 20px;
+        box-shadow: #4bbcce 0 0 0px 20px;
+    }
+    40% {
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    100% {
+        -moz-box-shadow: #4bbcce 0 0 0px 25px inset;
+        box-shadow: #4bbcce 0 0 0px 25px inset;
+    }
+}
+
+@-webkit-keyframes pulse-loader {
+    0% {
+        -webkit-box-shadow: #4bbcce 0 0 0px 20px;
+        box-shadow: #4bbcce 0 0 0px 20px;
+    }
+    40% {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    100% {
+        -webkit-box-shadow: #4bbcce 0 0 0px 25px inset;
+        box-shadow: #4bbcce 0 0 0px 25px inset;
+    }
+}
+
+@keyframes pulse-loader {
+    0% {
+        -moz-box-shadow: #4bbcce 0 0 0px 20px;
+        -webkit-box-shadow: #4bbcce 0 0 0px 20px;
+        box-shadow: #4bbcce 0 0 0px 20px;
+    }
+    40% {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    100% {
+        -moz-box-shadow: #4bbcce 0 0 0px 25px inset;
+        -webkit-box-shadow: #4bbcce 0 0 0px 25px inset;
+        box-shadow: #4bbcce 0 0 0px 25px inset;
+    }
+}
