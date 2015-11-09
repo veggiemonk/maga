@@ -26,6 +26,9 @@ const sanitize = dataArray => {
 };
 
 
+let model = {
+
+}
 
 
 // fetch data
@@ -45,9 +48,9 @@ export default {
       category: m.prop( [] ),
       init: () => {
         inc( stackLoader )
+        m.startComputation();
         Promise.all( [ fetchFileList(), fetchCategoryList() ] )
           .then( ( [FileList, CategoryList] ) => {
-            m.startComputation();
             //console.log( [ FileList, CategoryList ] );
             c.files( sanitize( FileList ) )
             c.category( CategoryList )

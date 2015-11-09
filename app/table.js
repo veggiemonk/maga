@@ -5,9 +5,10 @@ Table.controller = function controller( attrs, children ) {
     files: attrs.files
   }
   console.log( new Date().getMilliseconds() )
+  console.log( c.files() )
+
   return c;
 }
-
 
 Table.view = function view( ctrl, attrs, children ) {
   return (
@@ -15,10 +16,10 @@ Table.view = function view( ctrl, attrs, children ) {
       <h2>Table</h2>
       <table>
         { ctrl.files().map( file => {
-          <tr>
+          return (<tr>
             <td>{file.path}</td>
             <td>{file.id}</td>
-          </tr>
+          </tr>)
         } ) }
 
       </table>
