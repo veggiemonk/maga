@@ -6,7 +6,8 @@ let cache = 3600
 if (process.env.NODE_ENV === 'production') {
   console.log('running in production mode(with caching)-make sure you have "Disable cache (while DevTools is open)" checked in the browser to see the changes while developing')
 } else {
-  cache = -1
+  cache = -1;
+  console.log("DON\'T FORGET TO ADD: sessionStorage.DEBUG = true IN THE BROWSER CONSOLE TO USE HOT MODULE RELOADING");
 }
 const server = httpServer.createServer({
   root: './',
