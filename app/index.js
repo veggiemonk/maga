@@ -64,7 +64,7 @@ export default {
     return (
       <div>
         <div class={ styles.loading } style={ loaderDisplay() }>
-          <div class="{ /*styles.pulse-loader*/ }"></div>
+          <div class={ styles.pulseloader }></div>
         </div>
         <Header />
         <Menu category={ctrl.category}/>

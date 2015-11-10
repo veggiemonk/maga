@@ -5,30 +5,29 @@ let Table = {};
 Table.controller = function controller (attrs, children) {
   let c = {
     files:     attrs.files,
-    colConfig: attrs.colConfig
+    colConfig: attrs.colConfig,
+    listHeaders: cc => Array.from( cc.keys() )
   }
-  //console.log( c.colConfig )
   return c;
 }
 
-Table.view = function view (ctrl, attrs, children) {
+Table.view = function view (c, attrs, children) {
   return (
     <div>
       <h2>Table</h2>
       <table>
         <thead>
-        { Object.keys( ctrl.colConfig.toObject() ).map( col => (
-          <th>{col}</th>
-        ) ) }
+        { c.listHeaders(c.colConfig).map(x => {
+          const tmp = c.colConfig.get(x);
+          return (<th>{ tmp.name ? m.trust(tmp.name) : x }</th>)
+        } ) }
         </thead>
         <tbody>
-        { ctrl.files().sort(o => Number(o.index)).map( file => (
+        { c.files().sort(o => o.index).map( file => (
           <tr>
-            { Object.keys( ctrl.colConfig.toObject() ).map( col => {
-              //console.log(col);
-              const tmp = ctrl.colConfig.get(col);
-              if (tmp.content) return (<td>{m.trust(tmp.content)}</td>)
-              else return (<td>{file[col]}</td>)
+            { c.listHeaders(c.colConfig).map( col => {
+              const tmp = c.colConfig.get(col);
+              return (<td>{ tmp.content ? m.trust(tmp.content) : file[col]}</td>)
             } ) }
           </tr>
         ) ) }

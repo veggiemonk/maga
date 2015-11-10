@@ -107,7 +107,7 @@ const columnConfig = [
     index:    17,
     cssClass: ['defaultView', 'comment']
   }], ['remove', {
-    name:     'remove',
+    name:     'delete',
     index:    18,
     cssClass: ['defaultView']
   }]
@@ -134,7 +134,7 @@ export const defaults = {
 
 const dc = Map( defaults.col );
 
-export const basicConfig = Map( columnConfig ).sortBy(o => o.index).map( x => Object.assign( x, dc.toJS() ) )
+export const basicConfig = Map( columnConfig ).sortBy(o => o.index).map( x => Object.assign( dc.toJS(), x ) )
 
 export const urlServer     = 'http://localhost:8019';
 export const fetchURL      = urlServer + '/file/list';
