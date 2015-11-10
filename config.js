@@ -21,7 +21,7 @@ System.config({
 
   map: {
     "babel": "npm:babel-core@5.8.33",
-    "babel-loader": "github:systemjs/plugin-babel@master",
+    "babel-loader": "github:veggiemonk/plugin-babel@master",
     "babel-plugin-mjsx": "npm:babel-plugin-mjsx@1.0.3",
     "babel-runtime": "npm:babel-runtime@5.8.29",
     "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@0.3.0",
@@ -51,7 +51,7 @@ System.config({
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
     },
-    "github:systemjs/plugin-babel@master": {
+    "github:veggiemonk/plugin-babel@master": {
       "babel": "npm:babel-core@5.8.33",
       "babel-runtime": "npm:babel-runtime@5.8.29"
     },

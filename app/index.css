@@ -1,6 +1,6 @@
 /* LOADER */
 
-/* $loader-color: #4bbcce;*/
+@value loader-color #4bbcce;
 
 /* Absolute Center CSS Spinner */
 .loading {
@@ -29,14 +29,14 @@
     background-color: rgba(75, 188, 206, 0.3);
 }
 
-.pulse-loader:not(:required) {
+.pulseLoader:not(:required) {
     display: inline-block;
     width: 50px;
     height: 50px;
-    -moz-animation: pulse-loader 0.7s linear infinite alternate;
-    -webkit-animation: pulse-loader 0.7s linear infinite alternate;
-    animation: pulse-loader 0.7s linear infinite alternate;
-    border: 2px solid #4bbcce;
+    -moz-animation: pulseLoader 0.7s linear infinite alternate;
+    -webkit-animation: pulseLoader 0.7s linear infinite alternate;
+    animation: pulseLoader 0.7s linear infinite alternate;
+    border: 2px solid loader-color;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -44,41 +44,41 @@
     text-indent: 50px;
 }
 
-@-moz-keyframes pulse-loader {
+@-moz-keyframes pulseLoader {
     0% {
-        -moz-box-shadow: #4bbcce 0 0 0px 20px;
-        box-shadow: #4bbcce 0 0 0px 20px;
+        -moz-box-shadow: loader-color 0 0 0px 20px;
+        box-shadow: loader-color 0 0 0px 20px;
     }
     40% {
         -moz-box-shadow: none;
         box-shadow: none;
     }
     100% {
-        -moz-box-shadow: #4bbcce 0 0 0px 25px inset;
-        box-shadow: #4bbcce 0 0 0px 25px inset;
+        -moz-box-shadow: loader-color 0 0 0px 25px inset;
+        box-shadow: loader-color 0 0 0px 25px inset;
     }
 }
 
-@-webkit-keyframes pulse-loader {
+@-webkit-keyframes pulseLoader {
     0% {
-        -webkit-box-shadow: #4bbcce 0 0 0px 20px;
-        box-shadow: #4bbcce 0 0 0px 20px;
+        -webkit-box-shadow: loader-color 0 0 0px 20px;
+        box-shadow: loader-color 0 0 0px 20px;
     }
     40% {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
     100% {
-        -webkit-box-shadow: #4bbcce 0 0 0px 25px inset;
-        box-shadow: #4bbcce 0 0 0px 25px inset;
+        -webkit-box-shadow: loader-color 0 0 0px 25px inset;
+        box-shadow: loader-color 0 0 0px 25px inset;
     }
 }
 
-@keyframes pulse-loader {
+@keyframes pulseLoader {
     0% {
-        -moz-box-shadow: #4bbcce 0 0 0px 20px;
-        -webkit-box-shadow: #4bbcce 0 0 0px 20px;
-        box-shadow: #4bbcce 0 0 0px 20px;
+        -moz-box-shadow: loader-color 0 0 0px 20px;
+        -webkit-box-shadow: loader-color 0 0 0px 20px;
+        box-shadow: loader-color 0 0 0px 20px;
     }
     40% {
         -moz-box-shadow: none;
@@ -86,8 +86,8 @@
         box-shadow: none;
     }
     100% {
-        -moz-box-shadow: #4bbcce 0 0 0px 25px inset;
-        -webkit-box-shadow: #4bbcce 0 0 0px 25px inset;
-        box-shadow: #4bbcce 0 0 0px 25px inset;
+        -moz-box-shadow: loader-color 0 0 0px 25px inset;
+        -webkit-box-shadow: loader-color 0 0 0px 25px inset;
+        box-shadow: loader-color 0 0 0px 25px inset;
     }
 }

@@ -7,7 +7,7 @@ import Menu from './menu.js'
 import Table from './table.js'
 
 import {
-  colConfig,
+  basicConfig,
   fetchFile,
   fetchCategory,
   headers
@@ -41,6 +41,7 @@ export default {
     var c = {
       files:    m.prop( [] ),
       category: m.prop( [] ),
+      columnConfig: basicConfig,
       init:     () => {
         inc( stackLoader )
         m.startComputation();
@@ -71,7 +72,7 @@ export default {
         <p>
           <a href="/login" config={ m.route }>LOGIN</a>
         </p>
-        <Table colConfig={colConfig} files={ctrl.files}>
+        <Table colConfig={ctrl.columnConfig} files={ctrl.files}>
         </Table>
       </div>
     )

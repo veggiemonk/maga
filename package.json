@@ -35,7 +35,7 @@
       "core-js": "npm:core-js@^1.1.4"
     },
     "overrides": {
-      "github:systemjs/plugin-babel@master": {
+      "github:veggiemonk/plugin-babel@master": {
         "dependencies": {
           "babel": "npm:babel-core@^5.8.26",
           "babel-runtime": "npm:babel-runtime@^5.8.26"

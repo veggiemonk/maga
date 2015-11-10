@@ -113,7 +113,7 @@ const columnConfig = [
   }]
 ]
 
-const defaults      = {
+export const defaults = {
   col:         {
     index:      0, // number to appear
     sorted:     false,
@@ -132,9 +132,9 @@ const defaults      = {
   searchTerms: ''
 };
 
-const df = Map(defaults.col)
+const dc = Map( defaults.col );
 
-export const colConfig = Map(columnConfig);
+export const basicConfig = Map( columnConfig ).sortBy(o => o.index).map( x => Object.assign( x, dc.toJS() ) )
 
 export const urlServer     = 'http://localhost:8019';
 export const fetchURL      = urlServer + '/file/list';
