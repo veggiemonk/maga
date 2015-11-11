@@ -6,9 +6,14 @@ Table.controller = function controller( attrs, children ) {
   let c = {
     files: attrs.files,
     colConfig: attrs.colConfig,
-    //TODO: use immutable map() + toArray()
-    //listHeaders: cc => Array.from( cc.keys() ).map( k => cc.get( k ).visible )
-    listHeaders: cc => cc.filter( k => k.visible ).toArray()
+    listHeaders: cc => cc.filter( k => k.visible ).toArray(),
+    listDataHeaders: (file, cc) => { cc.filter( k => k.visible ).mapKeys( cell => {
+      //console.log(cell);
+      return (
+        cc.get(cell)
+          ? cc.get(cell).visible ? <td>{file.get(cell)}</td> : ''
+          : '')
+    } ).toArray() }
   }
   console.log( c.files())
   return c;
@@ -33,10 +38,7 @@ Table.view = function view( c, attrs, children ) {
         { c.files().sortBy( o => o.index ).map( file => {
           return (
             <tr>
-            {file.map( cell => {
-              //console.log(cell);
-                return (<td>{ cell }</td>)
-              } ).toArray() }
+            {c.listDataHeaders(file, c.colConfig()) }
           </tr>)
         } ).toJS() }
         </tbody>

@@ -17,19 +17,23 @@ import { inc, dec, stackLoader, loaderDisplay } from './utils.js'
 
 import styles from './index.css!'
 
-const sanitize = ( dataArray, colConfig ) => {
-  return dataArray.map( obj => {
+const sanitize = ( files, colConfig, category ) => {
+  return files.map( obj => {
     Object.keys( obj ).map( key => {
       // if (key == 'date') tmp[key] = moment(obj[key]);
       if ( key == 'fileId' ) obj[ key ] = Number( obj[ key ] );
 
+      let getContent = col => {
+        obj[key] = ( ( colConfig.get(col) && colConfig.get(col).content ) || obj[key] )
+      };
       let options = {
         'index': () => {},
-        'checkbox': () => {},
+        'checkbox': () => { getContent('checkbox')},
         'notDownloaded': () => {
-          obj[key]
+          /*obj[key]
             ? obj[key] = '<i style="color:green" class="fa fa-download"></i>'
-            : obj[key] = '<i style="color:red" class="fa fa-download"></i>'
+            : obj[key] = '<i style="color:red" class="fa fa-download"></i>'*/
+          getContent('notDownloaded')
         },
         'downloadCount': () => {},
         'date': () => {},
@@ -47,7 +51,7 @@ const sanitize = ( dataArray, colConfig ) => {
         'referenceGroupS': () => {},
         'uploadStamp': () => {},
         'uploaderComment': () => {},
-        'remove': () => {},
+        'remove': () => {getContent('remove')},
         'default': () => {} //noop
       };
 
@@ -78,7 +82,7 @@ export default {
         m.startComputation();
         Promise.all( [ App.fetchFileList(), App.fetchCategoryList() ] )
           .then( ( [FileList, CategoryList] ) => {
-            c.files( toImmutable( sanitize( FileList, c.columnConfig() ) ) )
+            c.files( toImmutable( sanitize( FileList, c.columnConfig(), CategoryList ) ) )
             c.category( toImmutable( CategoryList ) )
           } )
           .then( () => {
