@@ -19,96 +19,115 @@ export const i18n = {
 const columnConfig = [
   ['index', {
     index:   0,
+    id:      'index',
     visible: false,
   }], ['checkbox', {
-    name:     '<input type="checkbox" disabled aria-disabled="true" name="notification" value="value">',
+    name:     '<input type="checkbox" checked disabled aria-disabled="true" name="notification" value="value">',
     content:  '<input type="checkbox" />',
     index:    1,
+    id:      'checkbox',
     dataType: false,
     cssClass: ['defaultView']
   }], ['notDownloaded', {
     index:    2,
+    id:      'notDownloaded',
     name:     'DL',
     dataType: typeof true,
     cssClass: ['defaultView']
   }], ['downloadCount', {
     name:     '<i class="fa fa-download"></i>',
     index:    3,
+    id:      'downloadCount',
     dataType: typeof true,
     cssClass: ['defaultView']
   }], ['date', {
     name:     'date',
     index:    4,
+    id:      'date',
     dataType: typeof '',
     cssClass: ['defaultView']
   }], ['fileId', {
     name:     'fileId',
-    dataType: typeof 0,
     index:    5,
+    id:      'fileId',
+    dataType: typeof 0,
     cssClass: ['defaultView']
   }], ['fileName', {
     name:     'filename',
-    dataType: typeof '',
     index:    6,
+    id:      'fileName',
+    dataType: typeof '',
     cssClass: ['defaultView']
   }], ['uploadUserName', {
     name:     'uploader',
     dataType: typeof '',
     index:    7,
+    id:      'uploadUserName',
     cssClass: ['defaultView']
   }], ['label', {
     name:     'Label',
     dataType: typeof '',
     index:    8,
+    id:      'label',
     cssClass: ['defaultView']
   }], ['referenceDocument', {
     name:     'RefDoc',
     dataType: typeof '',
     index:    9,
+    id:      'referenceDocument',
     cssClass: ['defaultView']
   }], ['size', {
     name:     'Size',
     dataType: typeof '',
     index:    10,
+    id:      'size',
     cssClass: ['defaultView']
   }], ['extension', {
     name:     'Type',
     dataType: typeof '',
     index:    11,
+    id:      'extension',
     cssClass: ['defaultView']
   }], ['path', {
     name:     'Path',
     dataType: typeof '',
     index:    12,
+    id:      'path',
     cssClass: ['defaultView']
   }], ['referenceClient', {
     name:     'RefClient',
     dataType: typeof '',
     index:    13,
+    id:      'referenceClient',
     cssClass: ['defaultView']
   }], ['counter', {
     name:     'Counter',
     dataType: typeof '',
     index:    14,
+    id:      'counter',
     cssClass: ['defaultView']
   }], ['referenceGroupS', {
     name:     'RefGS',
     dataType: typeof '',
     index:    15,
+    id:      'referenceGroupS',
     cssClass: ['defaultView']
   }], ['uploadStamp', {
     name:     'uploadStamp',
     dataType: typeof '',
     index:    16,
+    id:      'uploadStamp',
     cssClass: ['defaultView']
   }], ['uploaderComment', {
     name:     'uploaderComment',
     dataType: typeof '',
     index:    17,
+    id:      'uploaderComment',
     cssClass: ['defaultView', 'comment']
   }], ['remove', {
     name:     'delete',
     index:    18,
+    id:      'remove',
     cssClass: ['defaultView']
   }]
 ]
