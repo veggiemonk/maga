@@ -32,6 +32,7 @@ const columnConfig = [
     index:    2,
     id:      'notDownloaded',
     name:     'DL',
+    visible: false,
     dataType: typeof true,
     cssClass: ['defaultView']
   }], ['downloadCount', {
@@ -132,7 +133,7 @@ const columnConfig = [
     cssClass: ['defaultView', 'comment']
   }], ['remove', {
     name:     'delete',
-    content:  '<i class="fa fa-ban"></i>',
+    content:  '<i class="fa fa-ban fa-lg text-danger"></i>',
     index:    19,
     id:      'remove',
     cssClass: ['defaultView']

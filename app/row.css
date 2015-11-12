@@ -1,0 +1,40 @@
+
+.textleft {
+    text-align: left;
+}
+
+.textright {
+    text-align: right;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.textjustify {
+    text-align: justify;
+}
+
+.textnowrap {
+    white-space: nowrap;
+}
+
+.textlowercase {
+    text-transform: lowercase;
+}
+
+.textuppercase {
+    text-transform: uppercase;
+}
+
+.textcapitalize {
+    text-transform: capitalize;
+}
+
+.textmuted {
+    color: #777;
+}
+
+.textprimary {
+    color: #337ab7;
+}

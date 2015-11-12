@@ -28,8 +28,11 @@ System.config({
     "core-js": "npm:core-js@1.2.5",
     "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
     "fetch": "npm:whatwg-fetch@0.10.1",
+    "font-awesome": "npm:font-awesome@4.4.0",
     "immutable": "npm:immutable@3.7.5",
+    "lodash": "npm:lodash@3.10.1",
     "mithril": "npm:mithril@0.2.0",
+    "moment": "npm:moment@2.10.6",
     "postcss-safe-parser": "npm:postcss-safe-parser@1.0.1",
     "github:capaj/jspm-hot-reloader@0.3.0": {
       "lodash.clonedeep": "npm:lodash.clonedeep@3.0.2",
@@ -95,6 +98,9 @@ System.config({
     "npm:fastparse@1.1.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:font-awesome@4.4.0": {
+      "css": "github:systemjs/plugin-css@0.1.19"
+    },
     "npm:has-flag@1.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -138,6 +144,9 @@ System.config({
       "lodash.isarray": "npm:lodash.isarray@3.0.4"
     },
     "npm:lodash@3.10.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:moment@2.10.6": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:path-browserify@0.0.0": {
