@@ -5,7 +5,8 @@ var Row = {};
 
 Row.controller = function controller (attrs, children) {
   var c = {
-    file: attrs.file
+    file: attrs.file,
+    download: () => {}
   }
 
   return c;
@@ -15,7 +16,7 @@ Row.controller = function controller (attrs, children) {
 Row.view = function view (c, attrs, children) {
   return (
     <tr>
-      <td class="center iconSelect">{ m.trust( c.file.get( 'checkbox' ) )}</td>
+      <td class="center iconSelect">{ m.trust( c.file.get( 'checkbox' ) ) }</td>
       <td class={styles.textcenter}>
         <a class="dlfile" data-file-id="[[fileId]]" data-filename="[[fileName]]">
           <i class="fa { c.file.get('dlClass') } fa-lg { c.file.get('alreadyDL') }"></i>
@@ -40,7 +41,7 @@ Row.view = function view (c, attrs, children) {
       </td>
       <td>{ c.file.get( 'filename' )}</td>
       <td class={styles.textcenter}>
-        <a class="remove" title="Remove" data-file-id="[[fileId]]">
+        <a class="remove" title="Remove" onclick={ c.download( c.file.get( 'fileId' ) ) }>
           { m.trust( c.file.get( 'remove' ) )}
         </a></td>
     </tr>

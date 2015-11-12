@@ -19,7 +19,7 @@ Table.controller = function controller (attrs, children) {
     },
     sort: () => {} //TODO
   }
-  console.log( c.files() )
+  //console.log( c.files() )
   return c;
 }
 

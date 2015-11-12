@@ -1,142 +1,75 @@
 import { Map } from 'immutable'
+import {i18n, lang} from './i18n.js'
 
-//TODO: make it dynamic
-export const lang = 'fr';
-
-//TODO: extract in another module
-export const i18n = {
-  "column": {
-    "name": {
-      'fileId': {
-        'fr': 'ID',
-        'en': 'ID',
-        'nl': 'ID',
-      }
-    }
-  }
-}
 
 const columnConfig = [
-  ['index', {
-    index:   0,
-    id:      'index',
-    visible: false,
-  }], ['checkbox', {
-    name:     '<input type="checkbox" checked disabled aria-disabled="true" name="notification" value="value">',
-    content:  '<input type="checkbox" />',
-    index:    1,
-    id:      'checkbox',
-    dataType: false,
-    cssClass: ['defaultView']
-  }], ['notDownloaded', {
-    index:    2,
-    id:      'notDownloaded',
-    name:     'DL',
-    visible: false,
-    dataType: typeof true,
-    cssClass: ['defaultView']
-  }], ['downloadCount', {
-    name:     '<i class="fa fa-download"></i>',
-    index:    3,
-    id:      'downloadCount',
-    dataType: typeof true,
-    cssClass: ['defaultView']
-  }], ['date', {
-    name:     'date',
+  ['date', {
     index:    4,
-    id:      'date',
-    dataType: typeof '',
-    cssClass: ['defaultView']
+    id:       'date',
+    name:     'Date',
   }], ['employerNumber', {
-    name:     'Employer',
     index:    5,
-    id:      'employerNumber',
-    dataType: typeof '',
-    cssClass: ['defaultView']
-  }],['fileId', {
-    name:     'fileId',
+    id:       'employerNumber',
+    name:     'Employer',
+  }], ['fileId', {
     index:    6,
-    id:      'fileId',
-    dataType: typeof 0,
-    cssClass: ['defaultView']
+    id:       'fileId',
+    name:     'fileId',
+    visible:  false,
   }], ['fileName', {
-    name:     'filename',
     index:    7,
-    id:      'fileName',
-    dataType: typeof '',
-    cssClass: ['defaultView']
+    id:       'fileName',
+    name:     'Name',
   }], ['uploadUserName', {
-    name:     'uploader',
-    dataType: typeof '',
     index:    8,
-    id:      'uploadUserName',
-    cssClass: ['defaultView']
+    id:       'uploadUserName',
+    name:     'User',
+    visible:  false,
   }], ['label', {
-    name:     'Label',
-    dataType: typeof '',
     index:    9,
-    id:      'label',
-    cssClass: ['defaultView']
+    id:       'label',
+    name:     'Label',
   }], ['referenceDocument', {
-    name:     'RefDoc',
-    dataType: typeof '',
     index:    10,
-    id:      'referenceDocument',
-    cssClass: ['defaultView']
+    id:       'referenceDocument',
+    name:     'No. Doc',
   }], ['size', {
-    name:     'Size',
-    dataType: typeof '',
     index:    11,
-    id:      'size',
-    cssClass: ['defaultView']
+    id:       'size',
+    name:     'Size',
   }], ['extension', {
-    name:     'Type',
-    dataType: typeof '',
     index:    12,
-    id:      'extension',
-    cssClass: ['defaultView']
+    id:       'extension',
+    name:     'Type',
   }], ['path', {
-    name:     'Path',
-    dataType: typeof '',
     index:    13,
-    id:      'path',
-    cssClass: ['defaultView']
+    id:       'path',
+    name:     'Path',
+    visible:  false,
   }], ['referenceClient', {
-    name:     'RefClient',
-    dataType: typeof '',
     index:    14,
-    id:      'referenceClient',
-    cssClass: ['defaultView']
+    id:       'referenceClient',
+    name:     'Ref. Client',
   }], ['counter', {
-    name:     'Counter',
-    dataType: typeof '',
     index:    15,
-    id:      'counter',
-    cssClass: ['defaultView']
+    id:       'counter',
+    name:     'Counter',
+    visible:  false,
   }], ['referenceGroupS', {
-    name:     'RefGS',
-    dataType: typeof '',
     index:    16,
-    id:      'referenceGroupS',
-    cssClass: ['defaultView']
+    id:       'referenceGroupS',
+    name:     'Ref GroupS',
+    visible:  false,
   }], ['uploadStamp', {
-    name:     'uploadStamp',
-    dataType: typeof '',
     index:    17,
-    id:      'uploadStamp',
-    cssClass: ['defaultView']
+    id:       'uploadStamp',
+    name:     'upload Time',
+    visible:  false,
   }], ['uploaderComment', {
-    name:     'uploaderComment',
-    dataType: typeof '',
     index:    18,
-    id:      'uploaderComment',
+    id:       'uploaderComment',
+    name:     'Comments',
     cssClass: ['defaultView', 'comment']
-  }], ['remove', {
-    name:     'delete',
-    content:  '<i class="fa fa-ban fa-lg text-danger"></i>',
-    index:    19,
-    id:      'remove',
-    cssClass: ['defaultView']
   }]
 ]
 
@@ -161,7 +94,7 @@ export const defaults = {
 
 const dc = Map( defaults.col );
 
-export const basicConfig = Map( columnConfig ).sortBy(o => o.index).map( x => Object.assign( dc.toJS(), x ) )
+export const basicConfig = Map( columnConfig ).sortBy( o => o.index ).map( x => Object.assign( dc.toJS(), x ) )
 
 export const urlServer     = 'http://localhost:8019';
 export const fetchURL      = urlServer + '/file/list';

@@ -1,5 +1,18 @@
 import m from 'mithril'
 
+export const compute = (f) => {
+
+  try {
+    inc( stackLoader )
+    m.startComputation();
+    return f();
+  } finally {
+    dec( stackLoader )
+    m.endComputation()
+  }
+}
+
+
 export const stackLoader = m.prop( 0 )
 
 export function isLoading () {
