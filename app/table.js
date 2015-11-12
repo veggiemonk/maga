@@ -1,23 +1,15 @@
 import m from 'mithril'
+import Row from './row'
+import {columnHeader} from './settings'
 
-import Row from './row.js'
 let Table = {};
 
 Table.controller = function controller (attrs, children) {
   let c = {
     files:           attrs.files,
     colConfig:       attrs.colConfig,
-    listHeaders:     cc => cc.filter( k => k.visible ).toArray(),
-    listDataHeaders: (file, cc) => {
-      cc.filter( k => k.visible ).mapKeys( cell => {
-        //console.log(cell);
-        return (
-          cc.get( cell )
-            ? cc.get( cell ).visible ? <td>{file.get( cell )}</td> : ''
-            : '')
-      } ).toArray()
-    },
-    sort: () => {} //TODO
+    /*listHeaders:     cc => cc.filter( k => k.visible ).toArray(),*/
+    sort: k => {alert('SOULD SORT: ' + k)} //TODO
   }
   //console.log( c.files() )
   return c;
@@ -29,16 +21,12 @@ Table.view = function view (c, attrs, children) {
       <h2>Table</h2>
       <table>
         <thead>
-        { c.listHeaders( c.colConfig() ).map( col => {
-          return (<th onclick={ c.sort(col) }>{
-            col.name
-              ? m.trust( col.name )
-              : c.colConfig().flip().get( col )  //get name of the key of the column
-          }</th>)
-        } ) }
+        { columnHeader.filter( x => x.get( 'visible' ))
+          .map(x => <th onclick={() => { c.sort(x.get( 'id' )) } }>{ m.trust(x.get( 'name' )) }</th> ).toJS()
+        }
         </thead>
         <tbody>
-        { c.files()/*.sortBy( o => o.index )*/.map( file => {
+        { c.files().map( file => {
           return <Row file={file} colConfig={c.colConfig()}/>
         } ).toJS() }
         </tbody>

@@ -1,6 +1,5 @@
 import m from 'mithril'
 import 'fetch';
-
 import { Map, fromJS as toImmutable } from 'immutable'
 
 // DATA
@@ -12,12 +11,13 @@ import Header from './header'
 import Menu from './menu'
 import Table from './table'
 
+// Column Configuration
 import { basicConfig } from './settings'
 
-import { inc, dec, stackLoader, compute, loaderDisplay } from './utils'
+import { inc, dec, stackLoader, loaderDisplay } from './utils'
 
 /** STYLES: CSS MODULES **/
-import styles from './index.css!'
+import styles from './css/index.css!'
 
 export default {
   controller: () => {

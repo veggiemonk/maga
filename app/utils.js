@@ -1,5 +1,21 @@
 import m from 'mithril'
 
+
+/**
+ * Make sure Mithril knows we updated something
+ */
+export const invalidate = function () {
+  m.startComputation();
+  m.endComputation();
+};
+
+/***
+ *
+ * @param f function to be executed inside and start/endComputation
+ * @returns f()
+ * @example
+ *
+ */
 export const compute = (f) => {
 
   try {
@@ -12,13 +28,19 @@ export const compute = (f) => {
   }
 }
 
+/**
+ * An easier way to bind an attribute to a getter/setter
+ * @param setter
+ * @param getterName
+ * @example
+ *
+ *   <input oninput={m.bindValueTo(c.prop)} />
+ */
+m.bindValueTo = (setter, getterName) => m.withAttr( getterName || 'value', setter )
+
 
 export const stackLoader = m.prop( 0 )
-
-export function isLoading () {
-  return stackLoader() > 0
-}
-
+export const isLoading = () => stackLoader() > 0
 export const inc    = f => f( f() + 1 );
 export const dec    = f => f( f() - 1 );
 export const toggle = f => f( !f() );
@@ -38,38 +60,57 @@ export let searchInObject = (value, obj) => {
     }
   }
 }
-
-export let labelDocI18n = function (item) {
+/***
+ *
+ * @param item
+ * @returns {*}
+ */
+export let labelDocI18n   = function (item) {
 
   let doc = {
-    fr     : () => item.labelDocFR,
-    nl     : () => item.labelDocNL,
-    de     : () => item.labelDocDE,
+    fr:      () => item.labelDocFR,
+    nl:      () => item.labelDocNL,
+    de:      () => item.labelDocDE,
     default: () => item.labelDocX
   };
   return (doc[lang] || doc['default'])();
 };
 
+/***
+ *
+ * @param item
+ * @returns {*}
+ */
 export let labelCati18n = function (item) {
+
   let cat = {
-    fr     : () => item.labelCategoryFR,
-    nl     : () => item.labelCategoryNL,
-    de     : () => item.labelCategoryDE,
+    fr:      () => item.labelCategoryFR,
+    nl:      () => item.labelCategoryNL,
+    de:      () => item.labelCategoryDE,
     default: () => item.labelCategoryX
   };
   return (cat[lang] || cat['default'])();
 };
 
-export let formatSize = function (value) {
-  var val = parseInt( value );
-  if ( val > 1024 ) { return Math.round( val / 1024 ) + ' KB';}
-  else { return val; }
+/**
+ *
+ * @param size
+ * @returns {*}
+ */
+export let formatSize = function (size) {
+  var val = parseInt( size );
+  return val > 1024 ? Math.round( val / 1024 ) + ' KB' : val
 };
 
-export let formatExtension = function (value) {
+/***
+ *
+ * @param ext
+ * @returns {*}
+ */
+export let formatExtension = function (ext) {
 
-  if ( value || value !== '' ) {
-    let v         = value.toLowerCase()
+  if ( ext || ext !== '' ) {
+    let v         = ext.toLowerCase()
     let extension = {
       pdf:     () => (<span><i class="fa fa-file-pdf-o fa-lg" title="pdf"></i></span>),
       zip:     () => (<span><i class="fa fa-file-archive-o fa-lg" title="zip"></i></span>),

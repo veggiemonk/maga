@@ -1,6 +1,13 @@
-/* LOADER */
 
 @value loader-color #4bbcce;
+
+body {
+    margin: 0;
+    background: aliceblue;
+    display: flex;
+}
+
+/* LOADER */
 
 /* Absolute Center CSS Spinner */
 .loading {
