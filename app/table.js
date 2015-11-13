@@ -6,10 +6,10 @@ let Table = {};
 
 Table.controller = function controller (attrs, children) {
   let c = {
-    files:           attrs.files,
-    colConfig:       attrs.colConfig,
-    /*listHeaders:     cc => cc.filter( k => k.visible ).toArray(),*/
-    sort: k => {alert('SOULD SORT: ' + k)} //TODO
+    files:     attrs.files,
+    colConfig: attrs.colConfig,
+    columnHeader: columnHeader,
+    sort:      k => {alert( 'SOULD SORT: ' + k )} //TODO
   }
   //console.log( c.files() )
   return c;
@@ -21,13 +21,21 @@ Table.view = function view (c, attrs, children) {
       <h2>Table</h2>
       <table>
         <thead>
-        { columnHeader.filter( x => x.get( 'visible' ))
-          .map(x => <th onclick={() => { c.sort(x.get( 'id' )) } }>{ m.trust(x.get( 'name' )) }</th> ).toJS()
+        { c.columnHeader
+          .filter( x => x.get( 'visible' ) )
+          .map( x => <th
+            key={ x.get('id') }
+            onclick={() => { c.sort(x.get( 'id' )) } }>
+            { m.trust( x.get( 'name' ) ) }
+          </th> ).toJS()
         }
         </thead>
         <tbody>
         { c.files().map( file => {
-          return <Row file={file} colConfig={c.colConfig()}/>
+          return <Row
+            key={ file.get('index') }
+            file={file}
+            colConfig={c.colConfig()}/>
         } ).toJS() }
         </tbody>
       </table>
