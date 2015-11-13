@@ -1,0 +1,35 @@
+{
+  "esnext": true,
+
+  "excludeFiles": ["jspm_packages/**"],
+
+  "disallowSemicolons": true,
+  "requireSemicolons": false,
+  "disallowEmptyBlocks": true,
+  "disallowQuotedKeysInObjects": true,
+  "disallowMixedSpacesAndTabs": true,
+  "disallowTrailingWhitespace": true,
+  "disallowSpacesInsideParentheses": false,
+  "disallowSpacesInsideArrayBrackets": false,
+  "disallowSpacesInFunction": false,
+  "disallowSpacesInFunctionExpression": false,
+  "disallowSpacesInFunctionDeclaration": false,
+  "disallowSpacesInNamedFunctionExpression": false,
+  "disallowSpacesInAnonymousFunctionExpression": false,
+  "requireSpacesInAnonymousFunctionExpression": true,
+  "requirePaddingNewLinesBeforeLineComments": false,
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningRoundBrace": true,
+    "beforeOpeningCurlyBrace": true
+  },
+  "requirePaddingNewLinesAfterBlocks" : false,
+  "requireSpaceBeforeBlockStatements": true,
+  "requireParenthesesAroundIIFE": true,
+  "requireSpacesInConditionalExpression": true,
+  "requireTrailingComma": false,
+
+  "validateQuoteMarks": "'",
+  "validateIndentation": 2,
+  "maxErrors": 100,
+  "verbose": true
+}

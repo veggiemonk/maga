@@ -6,7 +6,8 @@
   "scripts": {
     "postinstall": "jspm install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server"
+    "start": "node server",
+    "bundle": "jspm bundle-sfx index.js bundle.js"
   },
   "repository": {
     "type": "git",

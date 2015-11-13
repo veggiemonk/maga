@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <title>Maga</title>
-    <meta name="description" content="maga">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <title>Maga</title>
+  <meta name="description" content="maga">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="jspm_packages/system.js"></script>
-    <script src="config.js"></script>
-    <script>
-        //System.trace = true;
-        var readyForMainLoad;
-        var debug = sessionStorage['DEBUG'] && sessionStorage['DEBUG'] == 'true' || localStorage['DEBUG'] && localStorage['DEBUG'] == 'true';
-        if (location.origin.match(/localhost/) && debug) {
-          System.trace = true;
-          readyForMainLoad = System.import('capaj/jspm-hot-reloader').then(function(HotReloader) {
-            hr = new HotReloader.default('http://localhost:3000')  // chokidar-socket-emitter port
-          });
-        }
-        Promise.resolve(readyForMainLoad).then(() => {
-          System.import('index.js').then(function () {
-            console.log('ran at ', new Date());
-          })
-        })
-        //System.import('index.js');
-    </script>
-    <link rel="stylesheet" type="text/css" href="jspm_packages/npm/font-awesome@4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="jspm_packages/npm/font-awesome@4.4.0/css/font-awesome.min.css"/>
+
+  <script src="jspm_packages/system.js"></script>
+  <script src="config.js"></script>
+  <script>
+    //System.trace = true;
+    var readyForMainLoad;
+    var debug = sessionStorage['DEBUG'] && sessionStorage['DEBUG'] == 'true' || localStorage['DEBUG'] && localStorage['DEBUG'] == 'true';
+    if ( location.origin.match( /localhost/ ) && debug ) {
+      System.trace     = true;
+      readyForMainLoad = System.import( 'capaj/jspm-hot-reloader' ).then( function (HotReloader) {
+        hr = new HotReloader.default( 'http://localhost:3000' )  // chokidar-socket-emitter port
+      } );
+    }
+    Promise.resolve( readyForMainLoad ).then( function () {
+      System.import( 'index.js' ).then( function () {
+        console.log( 'ran at ', new Date() );
+      } )
+    } )
+    //System.import('index.js');
+  </script>
+
 </head>
 <body>
 

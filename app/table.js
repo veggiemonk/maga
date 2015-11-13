@@ -1,24 +1,42 @@
 import m from 'mithril'
 import Row from './row'
-import {columnHeader} from './settings'
+import {columnHeader, visibleColumn} from './settings'
+import h from './history'
+import {invalidate} from './utils'
+import styles from './css/visibleColumn.css!'
 
-let Table = {};
+let Table = {}
 
-Table.controller = function controller (attrs, children) {
+Table.controller = function controller (attrs) {
   let c = {
-    files:     attrs.files,
-    colConfig: attrs.colConfig,
-    columnHeader: columnHeader,
-    sort:      k => {alert( 'SOULD SORT: ' + k )} //TODO
+    files:            attrs.files,
+    columnHeader:     columnHeader,
+    colConfig:        m.prop( visibleColumn ),
+    toggleVisibility: colId => {
+      h.operation( c.colConfig(
+        c.colConfig().set( colId,
+          !c.colConfig().get( colId ) ) ),
+        'Toggle Column Visibility: ' + colId )
+      invalidate()
+    },
+    //TODO
+    sort:             k => { alert( 'SHOULD SORT: ' + k ) },
   }
+
   //console.log( c.files() )
-  return c;
+  return c
 }
 
-Table.view = function view (c, attrs, children) {
+Table.view = function view (c) {
   return (
     <div>
       <h2>Table</h2>
+      <ul>
+        { c.colConfig().map( x =>
+          <li onclick={ () => { c.toggleVisibility( x.get('id') ) } }>
+            { x.get( 'name' ) }
+          </li> ).toJS() }
+      </ul>
       <table>
         <thead>
         { c.columnHeader
@@ -32,10 +50,7 @@ Table.view = function view (c, attrs, children) {
         </thead>
         <tbody>
         { c.files().map( file => {
-          return <Row
-            key={ file.get('index') }
-            file={file}
-            colConfig={c.colConfig()}/>
+          return <Row key={ file.get('index') } file={file}/>
         } ).toJS() }
         </tbody>
       </table>

@@ -1,7 +1,6 @@
 import  { Map, fromJS as toImmutable } from 'immutable'
-import _ from 'lodash'
+import  sortBy from 'lodash/collection/sortBy'
 import {i18n, lang} from './i18n.js'
-
 
 //TODO: Merge all column configuration into one object!!!
 const columnConfig = [
@@ -91,7 +90,7 @@ const permanentColumn = [
     id:      'delete',
     name:    '<i class="fa fa-ban"></i>',
     visible: true,
-  }]
+  }, ]
 const unvisibleColumn = [
   {
     index:   4,
@@ -168,16 +167,15 @@ const unvisibleColumn = [
     id:       'uploaderComment',
     name:     'Comments',
     visible:  true,
-    cssClass: ['defaultView', 'comment']
-  }]
+    cssClass: ['defaultView', 'comment'],
+  }, ]
+export const visibleColumn = toImmutable( unvisibleColumn )
 
-export const columnHeader = toImmutable( _.sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index ) )
+export const columnHeader = toImmutable( sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index ) )
 
-//console.log( 'columnHeader', columnHeader );
-
-export const defaults = {
+const dc = {
   col:         {
-    index:      0, // number to appear
+    /*index:      0,*/ // number to appear
     sorted:     false,
     sortable:   true,
     searchable: true,
@@ -185,32 +183,31 @@ export const defaults = {
     order:      false,
     name:       'Column',
     dataType:   typeof 'data',
-    tdWidth:    '50px'
+    tdWidth:    '50px',
   },
   index:       'index', //column that contains the index of the table
   rowDisplay:  10,
   page:        1,
   startPageAt: 0,
-  searchTerms: ''
-};
+  searchTerms: '',
+}
 
-const dc = Map( defaults.col );
+export const defaults = Map( dc.col )
+//export const basicConfig = Map( columnConfig ).sortBy( o => o.index ).map( x => Object.assign( dc.toJS(), x ) )
 
-export const basicConfig = Map( columnConfig ).sortBy( o => o.index ).map( x => Object.assign( dc.toJS(), x ) )
-
-export const urlServer     = 'http://localhost:8019';
-export const fetchURL      = urlServer + '/file/list';
-export const fetchFile     = '/test/fileList.json';
-export const fetchCategory = '/test/category.json';
+export const urlServer     = 'http://localhost:8019'
+export const fetchURL      = urlServer + '/file/list'
+export const fetchFile     = '/test/fileList.json'
+export const fetchCategory = '/test/category.json'
 export const headers       = method => {
   return {
     credentials: 'same-origin',
     method:      method,
     headers:     {
-      'Accept':       'application/json',
+      Accept:       'application/json',
       'Content-Type': 'application/json',
-      'Credentials':  'GroupsFTP username=F00000001 password=P@$$w0rd'
-    }
+      Credentials:  'GroupsFTP username=F00000001 password=P@$$w0rd',
+    },
   }
 
-};
+}

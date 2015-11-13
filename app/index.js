@@ -1,5 +1,5 @@
 import m from 'mithril'
-import 'fetch';
+import 'fetch'
 import { Map, fromJS as toImmutable } from 'immutable'
 
 // DATA
@@ -12,7 +12,7 @@ import Menu from './menu'
 import Table from './table'
 
 // Column Configuration
-import { basicConfig } from './settings'
+//import { basicConfig } from './settings'
 
 import { inc, dec, stackLoader, loaderDisplay } from './utils'
 
@@ -24,26 +24,29 @@ export default {
     var c = {
       files:        m.prop( [] ),
       category:     m.prop( [] ),
-      columnConfig: m.prop( basicConfig ),
+
+      //columnConfig: m.prop( basicConfig ),
       init:         () => {
         inc( stackLoader )
-        m.startComputation();
-        Promise.all( [ App.fetchFileList(), App.fetchCategoryList() ] )
+        m.startComputation()
+        Promise.all( [App.fetchFileList(), App.fetchCategoryList()] )
           .then( ( [FileList, CategoryList] ) => {
-            c.files( toImmutable( sanitize( FileList, c.columnConfig(), CategoryList ) ) )
+            c.files( toImmutable( sanitize( FileList, CategoryList ) ) )
             c.category( toImmutable( groupMenu( CategoryList, FileList ) ) )
-            //console.log( c.category().toJS() );
+
+            //console.log( c.category().toJS() )
           } )
           .then( () => {
             dec( stackLoader )
             m.endComputation()
-          } );
-      }
+          } )
+      },
     }
-    c.init();
+    c.init()
 
-    return c;
+    return c
   },
+
   view:       ctrl => {
     return (
       <div>
@@ -54,13 +57,13 @@ export default {
         <Menu category={ctrl.category}/>
         <h1>Hello Maga: App</h1>
         <p>
-          <a href="/login" config={ m.route }>LOGIN</a>
+          <a href='/login' config={ m.route }>LOGIN</a>
         </p>
-        { ( ctrl.columnConfig().size > 0 && ctrl.files().size > 0)
-          ? <Table colConfig={ctrl.columnConfig} files={ctrl.files}/>
+        { ( ctrl.files().size > 0)
+          ? <Table files={ctrl.files} />
           : ''
         }
       </div>
     )
-  }
+  },
 }

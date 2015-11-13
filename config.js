@@ -1,3 +1,4 @@
+// jscs:disable
 System.config({
   baseURL: "./",
   defaultJSExtensions: true,
