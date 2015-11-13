@@ -74,7 +74,7 @@ const columnConfig = [
   }]
 ]
 
-const permanentColumn = [
+const permanentColumn      = [
   {
     index:   1,
     id:      'checkbox',
@@ -90,8 +90,8 @@ const permanentColumn = [
     id:      'delete',
     name:    '<i class="fa fa-ban"></i>',
     visible: true,
-  }, ]
-const unvisibleColumn = [
+  },]
+const unvisibleColumn      = [
   {
     index:   4,
     id:      'date',
@@ -168,10 +168,15 @@ const unvisibleColumn = [
     name:     'Comments',
     visible:  true,
     cssClass: ['defaultView', 'comment'],
-  }, ]
+  },]
 export const visibleColumn = toImmutable( unvisibleColumn )
 
-export const columnHeader = toImmutable( sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index ) )
+const tmp                 = toImmutable( sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index ) )
+export const columnHeader = Map( tmp.reduce(
+  (acc, x) => {
+    acc[x.get( 'id' )] = x
+    return acc
+  }, {} ) )
 
 const dc = {
   col:         {
@@ -204,9 +209,9 @@ export const headers       = method => {
     credentials: 'same-origin',
     method:      method,
     headers:     {
-      Accept:       'application/json',
+      Accept:         'application/json',
       'Content-Type': 'application/json',
-      Credentials:  'GroupsFTP username=F00000001 password=P@$$w0rd',
+      Credentials:    'GroupsFTP username=F00000001 password=P@$$w0rd',
     },
   }
 

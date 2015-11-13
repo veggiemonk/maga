@@ -16,7 +16,7 @@ Table.controller = function controller (attrs) {
       h.operation( c.colConfig(
         c.colConfig().set( colId,
           !c.colConfig().get( colId ) ) ),
-        'Toggle Column Visibility: ' + colId )
+        'Toggle Column Visibility: ' + colId + ' NEW VAL = ' + c.colConfig().get( colId ))
       invalidate()
     },
     //TODO
@@ -43,7 +43,7 @@ Table.view = function view (c) {
           .filter( x => x.get( 'visible' ) )
           .map( x => <th
             key={ x.get('id') }
-            onclick={() => { c.sort(x.get( 'id' )) } }>
+            onclick={() => { c.sort(x.get( 'id' )) } } >
             { m.trust( x.get( 'name' ) ) }
           </th> ).toJS()
         }
