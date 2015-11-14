@@ -25,8 +25,8 @@ export default {
     var c = {
       files:    m.prop( [] ),
       category: m.prop( [] ),
-
       columnHeader: m.prop( columnHeader ),
+
       init: () => {
         inc( stackLoader )
         m.startComputation()
@@ -49,19 +49,19 @@ export default {
     return c
   },
 
-  view: ctrl => (
+  view: c => (
     <div>
       <div class={ styles.loading } style={ loaderDisplay() }>
         <div class={ styles.pulseloader }></div>
       </div>
       <Header />
-      <Menu category={ctrl.category}/>
+      <Menu category={c.category}/>
       <h1>Hello Maga: App</h1>
       <p>
         <a href='/login' config={ m.route }>LOGIN</a>
       </p>
-      { ( ctrl.files().size > 0)
-        ? <Table files={ ctrl.files } columnHeader={ ctrl.columnHeader }/>
+      { ( c.files().size > 0)
+        ? <Table files={ c.files } columnHeader={ c.columnHeader }/>
         : ''
       }
     </div>

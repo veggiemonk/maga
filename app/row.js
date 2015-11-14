@@ -2,24 +2,26 @@ import m from 'mithril'
 
 //import { Map, fromJS as toImmutable } from 'immutable'
 
-import {columnHeader} from './settings'
 import styles from './css/row.css!'
 
 let Row = {}
 
-Row.controller = function controller (attrs) {
-  var c = {
-    file:     attrs.file,
-    visible:  columnHeader.filter( x => x.get( 'visible' ) ).map( x => x.get( 'id' ) ).toMap().flip(),
-    download: fileId => { alert( 'DOWNLOAD: ' + fileId ) },
-    remove:   fileId => { alert( 'REMOVE: ' + fileId ) },
+Row.controller = function controller( attrs ) {
+  return {
+    file:         attrs.file,
+    columnHeader: attrs.columnHeader,
+    download:     fileId => {
+      alert( 'DOWNLOAD: ' + fileId )
+    },
+    remove:       fileId => {
+      alert( 'REMOVE: ' + fileId )
+    },
   }
-
-  return c
 }
 
-Row.view = function view (c) {
-  let v = k => c.visible.get( k ) !== undefined
+Row.view = function view( c ) {
+  let a = c.columnHeader().filter( x => x.get( 'visible' ) ).map( x => x.get( 'id' ) ).toMap().flip();
+  let v = k => a.get( k ) /*!== undefined*/
   return (
     <tr>
       <td class='center iconSelect'>{ m.trust( c.file.get( 'checkbox' ) ) }</td>

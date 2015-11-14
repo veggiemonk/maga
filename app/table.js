@@ -58,9 +58,12 @@ Table.view = function view( c ) {
         </thead>
         <tbody>
         {
-          c.files().map( file => {
-            return <Row key={ file.get('index') } file={file}/>
-          } ).toJS()
+          c.files().map( file => (
+            <Row
+              key={ file.get('index') }
+              file={ file }
+              columnHeader={ c.columnHeader }/>
+          ) ).toJS()
         }
         </tbody>
       </table>
