@@ -12,6 +12,11 @@ body {
     display:    flex;
 }
 
+td, th {
+    border: 1px solid #969cff;
+}
+
+
 /* LOADER */
 
 /* Absolute Center CSS Spinner */

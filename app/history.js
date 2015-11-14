@@ -5,14 +5,15 @@ export let historyIndex = 0
 export let history      = []
 export let actions      = ['Initial State']
 
-let initialState = Map([visibleColumn])
+
 
 export const hasUndo   = () => historyIndex !== 0
 export const hasRedo   = () => historyIndex < history.length - 1
 
-export const operation = (state = initialState, action) => {
+export const operation = (state = ['Initial State'], action) => {
 
-  // eliminate the future if it is for the user, not for the dev! <= TODO
+  // eliminate the future
+  // (if it is for the user, not for the dev! <= TODO)
   history = history.slice( 0, historyIndex + 1 )
 
   // create a new version by applying an operation to the head

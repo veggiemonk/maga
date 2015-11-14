@@ -20,8 +20,7 @@ Row.controller = function controller( attrs ) {
 }
 
 Row.view = function view( c ) {
-  let a = c.columnHeader().filter( x => x.get( 'visible' ) ).map( x => x.get( 'id' ) ).toMap().flip();
-  let v = k => a.get( k ) /*!== undefined*/
+  let v = k => c.columnHeader.get( k ) /*!== undefined*/
   return (
     <tr>
       <td class='center iconSelect'>{ m.trust( c.file.get( 'checkbox' ) ) }</td>
@@ -32,7 +31,7 @@ Row.view = function view( c ) {
         </button>
       </td>
       {v( 'date' ) ? <td class={styles.textcenter}>{ c.file.get( 'dateFormatted' )}</td> : ''}
-      {v( 'filename' ) ? <td><a class='dlfileLabel'>{ c.file.get( 'filename' )}</a></td> : '' }
+      {v( 'fileName' ) ? <td><a class='dlfileLabel'>{ c.file.get( 'fileName' )}</a></td> : '' }
       {v( 'uploadUserName' ) ? <td>{ c.file.get( 'uploadUserName' )}</td> : '' }
       {v( 'employerNumber' ) ? <td>{ c.file.get( 'employerNumber' )}</td> : '' }
       {v( 'label' ) ? <td><a class='dlfileLabel'>{ c.file.get( 'label' )}</a></td> : '' }

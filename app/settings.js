@@ -3,181 +3,199 @@ import  sortBy from 'lodash/collection/sortBy'
 import {i18n, lang} from './i18n.js'
 
 //TODO: Merge all column configuration into one object!!!
-const columnConfig = [
-  ['date', {
+/*const columnConfig = [
+  [ 'date', {
     index: 4,
     id:    'date',
     name:  'Date',
-  }], ['employerNumber', {
+  } ], [ 'employerNumber', {
     index: 5,
     id:    'employerNumber',
     name:  'Employer',
-  }], ['fileId', {
+  } ], [ 'fileId', {
     index:   6,
     id:      'fileId',
     name:    'fileId',
     visible: false,
-  }], ['fileName', {
+  } ], [ 'fileName', {
     index: 7,
     id:    'fileName',
     name:  'Name',
-  }], ['uploadUserName', {
+  } ], [ 'uploadUserName', {
     index:   8,
     id:      'uploadUserName',
     name:    'User',
     visible: false,
-  }], ['label', {
+  } ], [ 'label', {
     index: 9,
     id:    'label',
     name:  'Label',
-  }], ['referenceDocument', {
+  } ], [ 'referenceDocument', {
     index: 10,
     id:    'referenceDocument',
     name:  'No. Doc',
-  }], ['size', {
+  } ], [ 'size', {
     index: 11,
     id:    'size',
     name:  'Size',
-  }], ['extension', {
+  } ], [ 'extension', {
     index: 12,
     id:    'extension',
     name:  'Type',
-  }], ['path', {
+  } ], [ 'path', {
     index:   13,
     id:      'path',
     name:    'Path',
     visible: false,
-  }], ['referenceClient', {
+  } ], [ 'referenceClient', {
     index: 14,
     id:    'referenceClient',
     name:  'Ref. Client',
-  }], ['counter', {
+  } ], [ 'counter', {
     index:   15,
     id:      'counter',
     name:    'Counter',
     visible: false,
-  }], ['referenceGroupS', {
+  } ], [ 'referenceGroupS', {
     index:   16,
     id:      'referenceGroupS',
     name:    'Ref GroupS',
     visible: false,
-  }], ['uploadStamp', {
+  } ], [ 'uploadStamp', {
     index:   17,
     id:      'uploadStamp',
     name:    'upload Time',
     visible: false,
-  }], ['uploaderComment', {
+  } ], [ 'uploaderComment', {
     index:    18,
     id:       'uploaderComment',
     name:     'Comments',
-    cssClass: ['defaultView', 'comment']
-  }]
-]
+    cssClass: [ 'defaultView', 'comment' ]
+  } ]
+]*/
 
-const permanentColumn      = [
+const permanentColumn = [
   {
     index:   1,
     id:      'checkbox',
     name:    '<input type="checkbox" />',
     visible: true,
+    toggle:  false,
   }, {
     index:   2,
     id:      'download',
     name:    '<i class="fa fa-download"></i>',
     visible: true,
+    toggle:  false,
   }, {
     index:   20,
     id:      'delete',
     name:    '<i class="fa fa-ban"></i>',
     visible: true,
-  },]
-const unvisibleColumn      = [
+    toggle:  false,
+  }, ]
+const unvisibleColumn = [
   {
     index:   4,
     id:      'date',
     name:    'Date',
     visible: true,
+    toggle:  true,
   }, {
     index:   5,
-    id:      'employerNumber',
-    name:    'Employer',
-    visible: true,
+    id:      'uploadUserName',
+    name:    'User',
+    visible: false,
+    toggle:  true,
   }, {
     index:   6,
     id:      'fileId',
     name:    'fileId',
     visible: false,
+    toggle:  true,
   }, {
     index:   7,
     id:      'fileName',
     name:    'Name',
     visible: false,
+    toggle:  true,
   }, {
     index:   8,
-    id:      'uploadUserName',
-    name:    'User',
-    visible: false,
+    id:      'employerNumber',
+    name:    'Employer',
+    visible: true,
+    toggle:  true,
   }, {
     index:   9,
     id:      'label',
     name:    'Label',
     visible: true,
+    toggle:  true,
   }, {
     index:   10,
     id:      'referenceDocument',
     name:    'No. Doc',
     visible: true,
+    toggle:  true,
   }, {
     index:   11,
     id:      'size',
     name:    'Size',
     visible: true,
+    toggle:  true,
   }, {
     index:   12,
     id:      'extension',
     name:    'Type',
     visible: true,
+    toggle:  true,
   }, {
     index:   13,
     id:      'path',
     name:    'Path',
     visible: false,
+    toggle:  true,
   }, {
     index:   14,
     id:      'referenceClient',
     name:    'Ref. Client',
     visible: true,
+    toggle:  true,
   }, {
     index:   15,
     id:      'counter',
     name:    'Counter',
     visible: false,
+    toggle:  true,
   }, {
     index:   16,
     id:      'referenceGroupS',
     name:    'Ref GroupS',
     visible: false,
+    toggle:  true,
   }, {
     index:   17,
     id:      'uploadStamp',
     name:    'upload Time',
     visible: false,
+    toggle:  true,
   }, {
     index:    18,
     id:       'uploaderComment',
     name:     'Comments',
     visible:  true,
-    cssClass: ['defaultView', 'comment'],
-  },]
+    toggle:  true,
+  }, ]
 
 export const visibleColumn = toImmutable( unvisibleColumn )
 
-export const columnHeader  = toImmutable( sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index ) )
-/*export const columnHeader = Map( tmp.reduce(
-  (acc, x) => {
-    acc[x.get( 'id' )] = x
-    return acc
-  }, {} ) )*/
+export const columnHeader = toImmutable( sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index ) )
+/* Convert array of object to become a map, keys are a prop in the objects.
+export const columnHeader = Map( tmp.reduce(
+ (acc, x) => {
+ acc[x.get( 'id' )] = x
+ return acc
+ }, {} ) )*/
 
 const dc = {
   col:         {
