@@ -169,14 +169,15 @@ const unvisibleColumn      = [
     visible:  true,
     cssClass: ['defaultView', 'comment'],
   },]
+
 export const visibleColumn = toImmutable( unvisibleColumn )
 
-const tmp                 = toImmutable( sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index ) )
-export const columnHeader = Map( tmp.reduce(
+export const columnHeader  = toImmutable( sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index ) )
+/*export const columnHeader = Map( tmp.reduce(
   (acc, x) => {
     acc[x.get( 'id' )] = x
     return acc
-  }, {} ) )
+  }, {} ) )*/
 
 const dc = {
   col:         {

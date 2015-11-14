@@ -1,4 +1,3 @@
-// jscs:disable
 System.config({
   baseURL: "./",
   defaultJSExtensions: true,
@@ -21,12 +20,12 @@ System.config({
   },
 
   map: {
-    "babel": "npm:babel-core@5.8.33",
+    "babel": "npm:babel-core@5.8.34",
     "babel-loader": "github:veggiemonk/plugin-babel@master",
     "babel-plugin-mjsx": "npm:babel-plugin-mjsx@1.0.3",
-    "babel-runtime": "npm:babel-runtime@5.8.29",
-    "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@0.3.0",
-    "core-js": "npm:core-js@1.2.5",
+    "babel-runtime": "npm:babel-runtime@5.8.34",
+    "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@0.4.0",
+    "core-js": "npm:core-js@1.2.6",
     "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
     "fetch": "npm:whatwg-fetch@0.10.1",
     "font-awesome": "npm:font-awesome@4.4.0",
@@ -35,7 +34,7 @@ System.config({
     "mithril": "npm:mithril@0.2.0",
     "moment": "npm:moment@2.10.6",
     "postcss-safe-parser": "npm:postcss-safe-parser@1.0.1",
-    "github:capaj/jspm-hot-reloader@0.3.0": {
+    "github:capaj/jspm-hot-reloader@0.4.0": {
       "lodash.clonedeep": "npm:lodash.clonedeep@3.0.2",
       "socket.io-client": "github:socketio/socket.io-client@1.3.7",
       "weakee": "npm:weakee@0.9.1"
@@ -44,7 +43,7 @@ System.config({
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
-      "buffer": "npm:buffer@3.5.1"
+      "buffer": "npm:buffer@3.5.2"
     },
     "github:jspm/nodelibs-path@0.1.0": {
       "path-browserify": "npm:path-browserify@0.0.0"
@@ -56,8 +55,8 @@ System.config({
       "util": "npm:util@0.10.3"
     },
     "github:veggiemonk/plugin-babel@master": {
-      "babel": "npm:babel-core@5.8.33",
-      "babel-runtime": "npm:babel-runtime@5.8.29"
+      "babel": "npm:babel-core@5.8.34",
+      "babel-runtime": "npm:babel-runtime@5.8.34"
     },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
@@ -65,15 +64,15 @@ System.config({
     "npm:babel-plugin-mjsx@1.0.3": {
       "lodash": "npm:lodash@3.10.1"
     },
-    "npm:babel-runtime@5.8.29": {
+    "npm:babel-runtime@5.8.34": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:buffer@3.5.1": {
+    "npm:buffer@3.5.2": {
       "base64-js": "npm:base64-js@0.0.8",
       "ieee754": "npm:ieee754@1.1.6",
       "is-array": "npm:is-array@1.0.1"
     },
-    "npm:core-js@1.2.5": {
+    "npm:core-js@1.2.6": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -175,18 +174,9 @@ System.config({
       "postcss": "npm:postcss@5.0.10"
     },
     "npm:postcss-safe-parser@1.0.1": {
-      "postcss": "npm:postcss@5.0.11"
+      "postcss": "npm:postcss@5.0.10"
     },
     "npm:postcss@5.0.10": {
-      "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "js-base64": "npm:js-base64@2.1.9",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "source-map": "npm:source-map@0.5.3",
-      "supports-color": "npm:supports-color@3.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
-    },
-    "npm:postcss@5.0.11": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "js-base64": "npm:js-base64@2.1.9",
       "path": "github:jspm/nodelibs-path@0.1.0",
