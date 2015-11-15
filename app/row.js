@@ -7,6 +7,7 @@ import styles from './css/row.css!'
 let Row = {}
 
 Row.controller = function controller( attrs ) {
+  //console.log( attrs.columnHeader() )
   return {
     file:         attrs.file,
     columnHeader: attrs.columnHeader,
@@ -20,12 +21,12 @@ Row.controller = function controller( attrs ) {
 }
 
 Row.view = function view( c ) {
-  let a = c.columnHeader()
+  /*let a = c.columnHeader()
     .filter( x => x.get( 'visible' ) )
     .map( x => x.get( 'id' ) )
     .toMap()
-    .flip()
-  let v = k => a.get( k ) /*!== undefined*/
+    .flip()*/
+  let v = k => c.columnHeader().get( k ).get('visible') /*!== undefined*/
   return (
     <tr>
       <td class='center iconSelect'>{ m.trust( c.file.get( 'checkbox' ) ) }</td>

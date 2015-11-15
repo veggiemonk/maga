@@ -1,106 +1,42 @@
-import  { Map, fromJS as toImmutable } from 'immutable'
-import  sortBy from 'lodash/collection/sortBy'
+import { Map, fromJS as toImmutable } from 'immutable'
+import sortBy from 'lodash/collection/sortBy'
 import {i18n, lang} from './i18n.js'
-
-//TODO: Merge all column configuration into one object!!!
-/*const columnConfig = [
-  [ 'date', {
-    index: 4,
-    id:    'date',
-    name:  'Date',
-  } ], [ 'employerNumber', {
-    index: 5,
-    id:    'employerNumber',
-    name:  'Employer',
-  } ], [ 'fileId', {
-    index:   6,
-    id:      'fileId',
-    name:    'fileId',
-    visible: false,
-  } ], [ 'fileName', {
-    index: 7,
-    id:    'fileName',
-    name:  'Name',
-  } ], [ 'uploadUserName', {
-    index:   8,
-    id:      'uploadUserName',
-    name:    'User',
-    visible: false,
-  } ], [ 'label', {
-    index: 9,
-    id:    'label',
-    name:  'Label',
-  } ], [ 'referenceDocument', {
-    index: 10,
-    id:    'referenceDocument',
-    name:  'No. Doc',
-  } ], [ 'size', {
-    index: 11,
-    id:    'size',
-    name:  'Size',
-  } ], [ 'extension', {
-    index: 12,
-    id:    'extension',
-    name:  'Type',
-  } ], [ 'path', {
-    index:   13,
-    id:      'path',
-    name:    'Path',
-    visible: false,
-  } ], [ 'referenceClient', {
-    index: 14,
-    id:    'referenceClient',
-    name:  'Ref. Client',
-  } ], [ 'counter', {
-    index:   15,
-    id:      'counter',
-    name:    'Counter',
-    visible: false,
-  } ], [ 'referenceGroupS', {
-    index:   16,
-    id:      'referenceGroupS',
-    name:    'Ref GroupS',
-    visible: false,
-  } ], [ 'uploadStamp', {
-    index:   17,
-    id:      'uploadStamp',
-    name:    'upload Time',
-    visible: false,
-  } ], [ 'uploaderComment', {
-    index:    18,
-    id:       'uploaderComment',
-    name:     'Comments',
-    cssClass: [ 'defaultView', 'comment' ]
-  } ]
-]*/
 
 const permanentColumn = [
   {
-    index:   1,
-    id:      'checkbox',
-    name:    '<input type="checkbox" />',
-    visible: true,
-    toggle:  false,
+    index:      1,
+    id:         'checkbox',
+    name:       '<input type="checkbox" />',
+    visible:    true,
+    toggle:     false,
+    sortable:   false,
+    searchable: false,
   }, {
-    index:   2,
-    id:      'download',
-    name:    '<i class="fa fa-download"></i>',
-    visible: true,
-    toggle:  false,
+    index:      2,
+    id:         'download',
+    name:       '<i class="fa fa-download"></i>',
+    visible:    true,
+    toggle:     false,
+    dataType:   'number',
+    searchable: false,
   }, {
-    index:   20,
-    id:      'delete',
-    name:    '<i class="fa fa-ban"></i>',
-    visible: true,
-    toggle:  false,
+    index:      20,
+    id:         'delete',
+    name:       '<i class="fa fa-ban"></i>',
+    visible:    true,
+    toggle:     false,
+    sortable:   false,
+    searchable: false,
   }, ]
+
 const unvisibleColumn = [
   {
-    index:   4,
-    id:      'date',
-    name:    'Date',
-    visible: true,
-    toggle:  true,
+    index:    4,
+    id:       'date',
+    name:     'Date',
+    visible:  true,
+    toggle:   true,
+    dataType: 'date',
   }, {
     index:   5,
     id:      'uploadUserName',
@@ -108,11 +44,12 @@ const unvisibleColumn = [
     visible: false,
     toggle:  true,
   }, {
-    index:   6,
-    id:      'fileId',
-    name:    'fileId',
-    visible: false,
-    toggle:  false,
+    index:    6,
+    id:       'fileId',
+    name:     'fileId',
+    visible:  false,
+    toggle:   false,
+    dataType: 'number',
   }, {
     index:   7,
     id:      'fileName',
@@ -120,11 +57,12 @@ const unvisibleColumn = [
     visible: false,
     toggle:  true,
   }, {
-    index:   8,
-    id:      'employerNumber',
-    name:    'Employer',
-    visible: true,
-    toggle:  true,
+    index:    8,
+    id:       'employerNumber',
+    name:     'Employer',
+    visible:  true,
+    toggle:   true,
+    dataType: 'number',
   }, {
     index:   9,
     id:      'label',
@@ -174,19 +112,21 @@ const unvisibleColumn = [
     visible: false,
     toggle:  true,
   }, {
-    index:   17,
-    id:      'uploadStamp',
-    name:    'upload Time',
-    visible: false,
-    toggle:  true,
+    index:    17,
+    id:       'uploadStamp',
+    name:     'upload Time',
+    visible:  false,
+    toggle:   true,
+    dataType: 'date',
   }, {
-    index:    18,
-    id:       'uploaderComment',
-    name:     'Comments',
-    visible:  true,
+    index:   18,
+    id:      'uploaderComment',
+    name:    'Comments',
+    visible: true,
     toggle:  true,
   }, ]
 
+// defaults config TODO export
 const dc = {
   col:         {
     /*index:      0,*/ // number to appear
@@ -196,7 +136,7 @@ const dc = {
     visible:    true,
     order:      false,
     name:       'Column',
-    dataType:   typeof 'data',
+    dataType:   'string',
     tdWidth:    '50px',
   },
   index:       'index', //column that contains the index of the table
@@ -209,18 +149,15 @@ const dc = {
 const col = Map( dc.col )
 
 //concat arrays into immutable object
-const _columnHeader = sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index )
+const _columnHeader = sortBy( [ ...permanentColumn, ...unvisibleColumn ], x => x.index )
 //merge with default config
-export const columnHeader = toImmutable( _columnHeader.map( x => Object.assign( col.toJS(), x ) ) )
-
-
-/* Convert array of object to become a map, keys are a prop in the objects.
-export const columnHeader = Map( tmp.reduce(
- (acc, x) => {
- acc[x.get( 'id' )] = x
- return acc
- }, {} ) )*/
-
+const __columnHeader = toImmutable( _columnHeader.map( x => Object.assign( col.toJS(), x ) ) )
+// Convert array of object to become a map, keys are a prop in the objects.
+export const columnHeader = Map( __columnHeader.reduce(
+  ( acc, x ) => {
+    acc[ x.get( 'id' ) ] = x
+    return acc
+  }, {} ) )
 
 //export const basicConfig = Map( columnConfig ).sortBy( o => o.index ).map( x => Object.assign( dc.toJS(), x ) )
 

@@ -11,10 +11,9 @@ import { columnHeader } from './settings'
 import Header from './header'
 import Menu   from './menu'
 import Table  from './table'
+import ColumnVisibility  from './columnVisibility'
 
-// Column Configuration
-//import { basicConfig } from './settings'
-
+//utils
 import { inc, dec, stackLoader, loaderDisplay } from './utils'
 
 /** STYLES: CSS MODULES **/
@@ -22,7 +21,7 @@ import styles from './css/index.css!'
 
 export default {
   controller: () => {
-    var c = {
+    let c = {
       files:    m.prop( [] ),
       category: m.prop( [] ),
       columnHeader: m.prop( columnHeader ),
@@ -34,8 +33,6 @@ export default {
           .then( ( [FileList, CategoryList] ) => {
             c.files( toImmutable( sanitize( FileList, CategoryList ) ) )
             c.category( toImmutable( groupMenu( CategoryList, FileList ) ) )
-
-            //console.log( c.category().toJS() )
           } )
           .then( () => {
             dec( stackLoader )
@@ -45,7 +42,7 @@ export default {
     }
 
     c.init()
-
+    //<ColumnVisibility columnHeader={ c.columnHeader } />
     return c
   },
 
@@ -61,7 +58,7 @@ export default {
         <a href='/login' config={ m.route }>LOGIN</a>
       </p>
       { ( c.files().size > 0)
-        ? <Table files={ c.files } columnHeader={ c.columnHeader }/>
+        ? <Table files={ c.files } columnHeader={ c.columnHeader } />
         : ''
       }
     </div>
