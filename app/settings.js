@@ -112,7 +112,7 @@ const unvisibleColumn = [
     id:      'fileId',
     name:    'fileId',
     visible: false,
-    toggle:  true,
+    toggle:  false,
   }, {
     index:   7,
     id:      'fileName',
@@ -187,16 +187,6 @@ const unvisibleColumn = [
     toggle:  true,
   }, ]
 
-export const visibleColumn = toImmutable( unvisibleColumn )
-
-export const columnHeader = toImmutable( sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index ) )
-/* Convert array of object to become a map, keys are a prop in the objects.
-export const columnHeader = Map( tmp.reduce(
- (acc, x) => {
- acc[x.get( 'id' )] = x
- return acc
- }, {} ) )*/
-
 const dc = {
   col:         {
     /*index:      0,*/ // number to appear
@@ -216,7 +206,22 @@ const dc = {
   searchTerms: '',
 }
 
-export const defaults = Map( dc.col )
+const col = Map( dc.col )
+
+//concat arrays into immutable object
+const _columnHeader = sortBy( permanentColumn.concat( unvisibleColumn ), x => x.index )
+//merge with default config
+export const columnHeader = toImmutable( _columnHeader.map( x => Object.assign( col.toJS(), x ) ) )
+
+
+/* Convert array of object to become a map, keys are a prop in the objects.
+export const columnHeader = Map( tmp.reduce(
+ (acc, x) => {
+ acc[x.get( 'id' )] = x
+ return acc
+ }, {} ) )*/
+
+
 //export const basicConfig = Map( columnConfig ).sortBy( o => o.index ).map( x => Object.assign( dc.toJS(), x ) )
 
 export const urlServer     = 'http://localhost:8019'

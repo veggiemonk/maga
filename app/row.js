@@ -20,7 +20,12 @@ Row.controller = function controller( attrs ) {
 }
 
 Row.view = function view( c ) {
-  let v = k => c.columnHeader.get( k ) /*!== undefined*/
+  let a = c.columnHeader()
+    .filter( x => x.get( 'visible' ) )
+    .map( x => x.get( 'id' ) )
+    .toMap()
+    .flip()
+  let v = k => a.get( k ) /*!== undefined*/
   return (
     <tr>
       <td class='center iconSelect'>{ m.trust( c.file.get( 'checkbox' ) ) }</td>

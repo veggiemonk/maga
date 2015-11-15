@@ -5,7 +5,7 @@ import { Map, fromJS as toImmutable } from 'immutable'
 // DATA
 import { App } from './model'
 import { groupMenu, sanitize } from './data'
-import { columnHeader, visibleColumn } from './settings'
+import { columnHeader } from './settings'
 
 // Components
 import Header from './header'

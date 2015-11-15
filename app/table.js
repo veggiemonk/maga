@@ -1,7 +1,7 @@
 import m from 'mithril'
 import Row from './row'
 
-import { invalidate, inc, dec } from './utils'
+import { invalidate, inc, dec, fpush } from './utils'
 
 import styles from './css/visibleColumn.css!'
 
@@ -9,6 +9,7 @@ let Table = {}
 
 Table.controller = function controller( attrs ) {
   let c = {
+    // get the value otherwise `files` doesn't get re-evalutated when other values change
     files:            attrs.files,
     columnHeader:     attrs.columnHeader,
     toggleVisibility: colId => {
@@ -17,47 +18,43 @@ Table.controller = function controller( attrs ) {
           .map( x =>
             x.get( 'id' ) === colId
               ? x.set( 'visible', !x.get( 'visible' ) )
-              : x ) ),
+              : x )
+        ),
         'Toggle Column Visibility: ' + colId )
-      //invalidate()
     },
-    init:             () => { c.history[ c.historyIndex() ] = c.columnHeader() },
+    init:             () => {
+      c.operation( c.columnHeader(), 'Init state' );
+    },
     actions:          [],
-    history:          [],
-    historyIndex:     m.prop( 0 ),
+    history:          m.prop( [] ),
+    indexPresent:     m.prop( -1 ),
     operation:        ( state = [], action ) => {
 
       // eliminate the future
-      c.history = c.history.slice( 0, c.historyIndex() + 1 )
+      c.history( c.history().slice( 0, c.indexPresent() + 1 ) )
 
       // create a new version by applying an operation to the head
-      c.history.push( state )
+      fpush(c.history, c.indexPresent, state)
       c.actions.push( action )
-      inc( c.historyIndex ) // TOFIX mistake by one somewhere !!!! TODO
-      console.log( 'history:', c.history, 'actions:', c.actions, 'index:', c.historyIndex() )
+      // TOFIX mistake by one somewhere !!!! TODO
+      console.log( 'history:', c.history(), 'actions:', c.actions, 'index:', c.indexPresent() )
     },
-    hasUndo:          () => c.historyIndex() > 0,
-    hasRedo:          () => c.historyIndex() < c.history.length - 1,
+    hasUndo:          () => c.indexPresent() > 0,
+    hasRedo:          () => c.indexPresent() < c.history().length - 1,
     undo:             () => {
-      c.hasUndo() ? dec( c.historyIndex ) : 0
-      console.log( '<<< UNDO: ' + c.historyIndex() );
+      c.hasUndo()
+        ? c.columnHeader( c.history()[dec( c.indexPresent )])
+        : undefined
+      console.log( '<<< UNDO: ' + c.indexPresent() );
       //invalidate()
     },
     redo:             () => {
-      c.hasRedo() ? inc( c.historyIndex ) : c.history().length
-      console.log( '>>> REDO: ' + c.historyIndex() );
+      c.hasRedo()
+        ? c.columnHeader( c.history()[inc( c.indexPresent )])
+        : undefined
+      console.log( '>>> REDO: ' + c.indexPresent() );
       //invalidate()
     },
-    //TODO:
-    // c.files() doesn't change so the redraw doesn't change the tbody
-    //
-    getMapColHeader:  () => (
-      c.history[ c.historyIndex() ]
-        .filter( x => x.get( 'visible' ) )
-        .map( x => x.get( 'id' ) )
-        .toMap()
-        .flip()
-    ),
     //TODO
     sort:             k => {
       alert( 'TODO SORT: ' + k )
@@ -76,10 +73,12 @@ Table.view = function view( c ) {
       <h2>Table</h2>
       <ul>
         {
-          c.columnHeader().map( x =>
-            <li onclick={ () => { c.toggleVisibility( x.get('id') ) } }>
-              { m.trust( x.get( 'name' ) ) }
-            </li> ).toJS()
+          c.columnHeader()
+            .filter( x => x.get( 'toggle' ) )
+            .map( x =>
+              <li onclick={ () => { c.toggleVisibility( x.get('id') ) } }>
+                { m.trust( x.get( 'name' ) ) }
+              </li> ).toJS()
         }
       </ul>
       <button disabled={ !c.hasUndo() } onclick={c.undo}>UNDO</button>
@@ -87,7 +86,7 @@ Table.view = function view( c ) {
       <table>
         <thead>
         {
-          c.history[ c.historyIndex() ]
+          c.columnHeader()
             .filter( x => x.get( 'visible' ) /*!== undefined*/ )
             .map( x =>
               <th
@@ -103,7 +102,7 @@ Table.view = function view( c ) {
             <Row
               key={ file.get('index') }
               file={ file }
-              columnHeader={ c.getMapColHeader() }>
+              columnHeader={ c.columnHeader }>
             </Row> ) ).toJS()
         }
         </tbody>

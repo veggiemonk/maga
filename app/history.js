@@ -1,5 +1,4 @@
 import { Map } from 'immutable'
-import { visibleColumn } from './settings'
 
 export let historyIndex = 0
 export let history      = []

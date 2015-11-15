@@ -1,5 +1,18 @@
 import m from 'mithril'
 
+export const stackLoader = m.prop( 0 )
+export const isLoading   = () => stackLoader() > 0
+export const loaderDisplay = () => isLoading() ? 'display: block' : 'display: none'
+export const inc    = f => f( f() + 1 )
+export const dec    = f => f( f() - 1 )
+export const toggle = f => f( !f() )
+export const fpush  = ( array, index, state ) => {
+  let tmp                      = array();
+  tmp[ inc( index ) ] = state
+  return array( tmp )
+}
+
+
 /**
  * Make sure Mithril knows we updated something
  */
@@ -36,12 +49,6 @@ export const compute = ( f ) => {
  *   <input oninput={m.bindValueTo(c.prop)} />
  */
 m.bindValueTo = ( setter, getterName ) => m.withAttr( getterName || 'value', setter )
-
-export const stackLoader = m.prop( 0 )
-export const isLoading   = () => stackLoader() > 0
-export const inc         = f => f( f() + 1 )
-export const dec         = f => f( f() - 1 )
-export const toggle      = f => f( !f() )
 
 /***
  * @param: value (String), obj (Object)
@@ -126,6 +133,3 @@ export let formatExtension = ext => {
   }
 }
 
-export function loaderDisplay() {
-  return isLoading() ? 'display: inline-block' : 'display: none'
-}
