@@ -38,3 +38,11 @@
 .textprimary {
     color: #337ab7;
 }
+
+.textdanger {
+    color: #a94442;
+}
+
+.active {
+    color: #d9edf7;
+}

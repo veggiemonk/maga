@@ -1,17 +1,16 @@
 import m from 'mithril'
 
-export const stackLoader = m.prop( 0 )
-export const isLoading   = () => stackLoader() > 0
+export const stackLoader   = m.prop( 0 )
+export const isLoading     = () => stackLoader() > 0
 export const loaderDisplay = () => isLoading() ? 'display: block' : 'display: none'
-export const inc    = f => f( f() + 1 )
-export const dec    = f => f( f() - 1 )
-export const toggle = f => f( !f() )
-export const fpush  = ( array, index, state ) => {
-  let tmp                      = array();
-  tmp[ inc( index ) ] = state
+export const inc           = f => f( f() + 1 )
+export const dec           = f => f( f() - 1 )
+export const toggle        = f => f( !f() )
+export const fpush         = (array, index, state) => {
+  let tmp           = array()
+  tmp[inc( index )] = state
   return array( tmp )
 }
-
 
 /**
  * Make sure Mithril knows we updated something
@@ -28,7 +27,7 @@ export const invalidate = () => {
  * @example
  *
  */
-export const compute = ( f ) => {
+export const compute = (f) => {
 
   try {
     inc( stackLoader )
@@ -48,20 +47,20 @@ export const compute = ( f ) => {
  *
  *   <input oninput={m.bindValueTo(c.prop)} />
  */
-m.bindValueTo = ( setter, getterName ) => m.withAttr( getterName || 'value', setter )
+m.bindValueTo = (setter, getterName) => m.withAttr( getterName || 'value', setter )
 
 /***
  * @param: value (String), obj (Object)
  * @returns: True if value is contained in at least one of the own prop of obj
  *           False otherwise
  * */
-export let searchInObject = ( value, obj ) => {
+export let searchInObject = (value, obj) => {
   const regex = new RegExp( value, 'i' )
   for ( var prop in obj ) {
     if ( obj.hasOwnProperty( prop )
 
         //&& model.configCol().get( prop ).searchable //TODO !!!
-      && regex.test( obj[ prop ] ) ) {
+      && regex.test( obj[prop] ) ) {
       return true
     }
   }
@@ -79,7 +78,7 @@ export let labelDocI18n   = item => {
     de:      () => item.labelDocDE,
     default: () => item.labelDocX,
   }
-  return (doc[ lang ] || doc[ 'default' ])()
+  return (doc[lang] || doc['default'])()
 }
 
 /***
@@ -95,7 +94,7 @@ export let labelCati18n = item => {
     de:      () => item.labelCategoryDE,
     default: () => item.labelCategoryX,
   }
-  return (cat[ lang ] || cat[ 'default' ])()
+  return (cat[lang] || cat['default'])()
 }
 
 /**
@@ -127,7 +126,7 @@ export let formatExtension = ext => {
       png:     () => (' <span><i class="fa fa-file-picture-o fa-lg" title="image"></i></span>'),
       default: () => (' <span><i class="fa fa-file-o fa-lg"></i></span>'),
     }
-    return (extension[ v ] || extension[ 'default' ])()
+    return (extension[v] || extension['default'])()
   } else {
     return ''
   }
@@ -145,20 +144,20 @@ export let formatExtension = ext => {
  */
 const by = (name, minor) => {
   return (o, p) => {
-    var a, b
-    if (o && p && typeof o === 'object' && typeof p === 'object') {
+    let a, b
+    if ( o && p && typeof o === 'object' && typeof p === 'object' ) {
       a = o[name]
       b = p[name]
-      if (a === b) {
-        return typeof minor === 'function' ? minor(o, p) : 0
+      if ( a === b ) {
+        return typeof minor === 'function' ? minor( o, p ) : 0
       }
-      if (typeof a === typeof b) {
+      if ( typeof a === typeof b ) {
         return a < b ? -1 : 1
       }
       return typeof a < typeof b ? -1 : 1
     } else {
       throw {
-        name: 'Error',
+        name:    'Error',
         message: 'Expected an object when sorting by ' + name
       }
     }

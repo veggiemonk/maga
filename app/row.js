@@ -21,12 +21,7 @@ Row.controller = function controller( attrs ) {
 }
 
 Row.view = function view( c ) {
-  /*let a = c.columnHeader()
-    .filter( x => x.get( 'visible' ) )
-    .map( x => x.get( 'id' ) )
-    .toMap()
-    .flip()*/
-  let v = k => c.columnHeader().get( k ).get('visible') /*!== undefined*/
+  let v = k => c.columnHeader().get( k ).get('visible')
   return (
     <tr>
       <td class='center iconSelect'>{ m.trust( c.file.get( 'checkbox' ) ) }</td>
@@ -48,13 +43,13 @@ Row.view = function view( c ) {
       {v( 'referenceClient' ) ? <td>{ c.file.get( 'referenceClient' ) }</td> : '' }
       {v( 'counter' ) ? <td>{ c.file.get( 'counter' ) }</td> : '' }
       {v( 'referenceGroupS' ) ? <td>{ c.file.get( 'referenceGroupS' ) }</td> : '' }
-      {v( 'uploadStamp' ) ? <td class={styles.textcenter}>{c.file.get( 'uploadStamp' )}</td> : '' }
+      {v( 'uploadStamp' ) ? <td class={styles.textcenter}>{c.file.get( 'uploadStampFormatted' )}</td> : '' }
       {v( 'uploaderComment' ) ?
         <td class='comments' data-toggle='tooltip' data-placement='left' data-container='body' data-html='true'
             title={ c.file.get('uploaderComment') }>{ c.file.get( 'uploaderCommentLimit' ) }
         </td> : ''  }
       <td class={styles.textcenter}>
-        <a class='remove' title='Remove' onclick={() => { c.remove( c.file.get( 'fileId' ) ) } }>
+        <a class={styles.textdanger} title='Remove' onclick={() => { c.remove( c.file.get( 'fileId' ) ) } }>
           { m.trust( c.file.get( 'remove' ) )}
         </a></td>
     </tr>

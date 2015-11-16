@@ -13,7 +13,7 @@ const permanentColumn = [
     searchable: false,
   }, {
     index:      2,
-    id:         'download',
+    id:         'downloadCount',
     name:       '<i class="fa fa-download"></i>',
     visible:    true,
     toggle:     false,
@@ -27,7 +27,7 @@ const permanentColumn = [
     toggle:     false,
     sortable:   false,
     searchable: false,
-  }, ]
+  },]
 
 const unvisibleColumn = [
   {
@@ -124,17 +124,16 @@ const unvisibleColumn = [
     name:    'Comments',
     visible: true,
     toggle:  true,
-  }, ]
+  },]
 
-// defaults config TODO export
-const dc = {
+export const defaults = {
   col:         {
     /*index:      0,*/ // number to appear
     sorted:     false,
     sortable:   true,
     searchable: true,
     visible:    true,
-    order:      false,
+    order:      false, // desc = true
     name:       'Column',
     dataType:   'string',
     tdWidth:    '50px',
@@ -146,16 +145,16 @@ const dc = {
   searchTerms: '',
 }
 
-const col = Map( dc.col )
+const col = Map( defaults.col )
 
-//concat arrays into immutable object
-const _columnHeader = sortBy( [ ...permanentColumn, ...unvisibleColumn ], x => x.index )
+//concat arrays into immutable object (sorted)
+const _columnHeader = sortBy( [...permanentColumn, ...unvisibleColumn], x => x.index )
 //merge with default config
 const __columnHeader = toImmutable( _columnHeader.map( x => Object.assign( col.toJS(), x ) ) )
 // Convert array of object to become a map, keys are a prop in the objects.
 export const columnHeader = Map( __columnHeader.reduce(
-  ( acc, x ) => {
-    acc[ x.get( 'id' ) ] = x
+  (acc, x) => {
+    acc[x.get( 'id' )] = x
     return acc
   }, {} ) )
 

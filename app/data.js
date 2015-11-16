@@ -3,11 +3,11 @@ import moment from 'moment'
 import _ from 'lodash'
 
 export const groupMenu = (category, files) => {
-  let refDocUsed = _.sortBy(_.uniq(_.pluck(files, 'referenceDocument')))
+  let refDocUsed = _.sortBy( _.uniq( _.pluck( files, 'referenceDocument' ) ) )
   return _.groupBy(
     _.filter( category, (obj) => {
-      if (_.contains(refDocUsed, obj.referenceDocument)) { return obj; }
-    }),
+      if ( _.contains( refDocUsed, obj.referenceDocument ) ) { return obj; }
+    } ),
     obj => obj.categoryNumber
   )
 }
@@ -17,9 +17,9 @@ export const sanitize = (files, category) => {
 
   return files.map( row => {
     Object.keys( row ).map( key => {
-      let options    = {
+      let options = {
         index:             () => {},
-        checkbox:          () => { row[key] = <input type='checkbox' />},
+        checkbox:          () => { row[key] = <input type='checkbox'/>},
         notDownloaded:     () => {
           row[key]
             ? row[key] = '<i style="color:green" class="fa fa-download"></i>'
@@ -52,12 +52,12 @@ export const sanitize = (files, category) => {
     } )
 
     //Meta-data
-    row.checkbox         = '<input type="checkbox" />'
-    row.remove           = '<i class="fa fa-ban fa-lg text-danger"></i>'
-    row.alreadyDL        = row.downloadCount > 0 ? 'text-muted' : 'text-primary'
-    const date           = moment( row.uploadStamp, 'MM/DD/YYYY hh:mm:ss a' )
-    row.uploadStamp      = date.format( 'DD/MM/YYYY HH:mm:ss' )
-    row.uploadStampOrder = date.format( 'YYYY/MM/DD HH:mm:ss' )
+    row.checkbox             = '<input type="checkbox" />'
+    row.remove               = '<i class="fa fa-ban fa-lg text-danger"></i>'
+    row.alreadyDL            = row.downloadCount > 0 ? 'text-muted' : 'text-primary'
+    const date               = moment( row.uploadStamp, 'MM/DD/YYYY hh:mm:ss a' )
+    row.uploadStampFormatted = date.format( 'DD/MM/YYYY HH:mm:ss' )
+    row.uploadStamp          = date.format( 'YYYY/MM/DD HH:mm:ss' )
 
     return row
   } )

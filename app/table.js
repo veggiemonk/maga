@@ -1,29 +1,27 @@
 import m from 'mithril'
+import { fromJS as toImmutable } from 'immutable'
 
 import Row from './row'
 
-import { fromJS as toImmutable } from 'immutable'
-
 import { invalidate, inc, dec, fpush } from './utils'
-
+import { defaults } from './settings'
 import styles from './css/visibleColumn.css!'
 
 let Table = {}
 
-Table.controller = function controller( attrs ) {
+Table.controller = function controller (attrs) {
   let c = {
     data:             m.prop( [] ),
     files:            attrs.files,
     columnHeader:     attrs.columnHeader,
     toggleVisibility: colId => {
       c.operation(
-        c.columnHeader( c.columnHeader()
-          .map( x =>
-            x.get( 'id' ) === colId
-              ? x.set( 'visible', !x.get( 'visible' ) )
-              : x )
+        c.columnHeader(
+          c.columnHeader().setIn( [colId, 'visible'],
+            !c.columnHeader().getIn( [colId, 'visible'] ) )
         ),
-        'Toggle Visibility: ' + colId )
+        'Toggle Visibility: ' + colId
+      )
     },
     /**** HISTORY ****/
     //TODO: make it generic!!!
@@ -31,37 +29,57 @@ Table.controller = function controller( attrs ) {
     actions:          [],
     history:          m.prop( [] ),
     indexPresent:     m.prop( -1 ),
-    operation:        ( state = [], action ) => {
-
+    operation:        (state = [], action) => {
       // eliminate the future
       c.history( c.history().slice( 0, c.indexPresent() + 1 ) )
       c.actions = c.actions.slice( 0, c.indexPresent() + 1 )
       // create a new version by applying an operation to the head
       fpush( c.history, c.indexPresent, state )
       c.actions.push( action )
-
-      console.log( 'history:', c.history(), 'actions:', c.actions, 'index:', c.indexPresent() )
+      //console.log( 'history:', c.history(), 'actions:', c.actions, 'index:', c.indexPresent() )
     },
     hasUndo:          () => c.indexPresent() > 0,
     hasRedo:          () => c.indexPresent() < c.history().length - 1,
     undo:             () => {
       c.hasUndo()
-        ? c.columnHeader( c.history()[ dec( c.indexPresent ) ] )
+        ? c.columnHeader( c.history()[dec( c.indexPresent )] )
         : undefined
     },
     redo:             () => {
       c.hasRedo()
-        ? c.columnHeader( c.history()[ inc( c.indexPresent ) ] )
+        ? c.columnHeader( c.history()[inc( c.indexPresent )] )
         : undefined
     },
 
     //
     // SORTING
     //
+    colSort:         m.prop( 'index' ),
+    sort:            colId => {
+      if ( c.columnHeader().getIn( [colId, 'sortable'] ) ) {
+        c.colSort( colId )
+
+        c.updateColSorted( colId )                      // toggle sort
+        //model.startPageAt( defaults.startPageAt );    // reset view
+        //model.page( defaults.page );                  // reset page
+        if ( !c.columnHeader().getIn( [c.colSort(), 'sorted'] ) ) {
+          c.data( c.files().sortBy( x => x.get( 'index' ) ) ) // reset sorting
+        } else {
+          c.data( c.files().sort( c.sorting ) )           // sort and update data
+        }
+      }
+    },
+    sorting:         (a, b) => {
+      const desc = c.columnHeader().getIn( [c.colSort(), 'order'] )
+      const x    = a.get( c.colSort() )
+      const y    = b.get( c.colSort() )
+
+      return desc ? ( y < x ? -1 : 1 ) : ( x < y ? -1 : 1 )
+    },
     updateColSorted: colId => {
       let action = ''
-      let conf = c.columnHeader()
-      let col  = conf.get( colId ).toJS()
+      let conf   = c.columnHeader()
+      let col    = conf.get( colId ).toJS()
       if ( !col.sorted && !col.order ) {
         col.sorted = !col.sorted      ///* toggle sorted */
         action = 'Sorting: ' + colId + ' in ASC order'
@@ -71,52 +89,19 @@ Table.controller = function controller( attrs ) {
       } else if ( col.sorted && col.order ) {
         col.sorted = !col.sorted      ///* toggle both sorted and order */
         col.order = !col.order
-        action = 'Reset Sorting: ' + colId
+        action    = 'Reset Sorting: ' + colId
       } else {
         /* Should not reach here !! */
-        //console.error( 'ERROR: Inconsistent state in updateColSorted. ColId = ' + colId )
         throw new Error( 'ERROR: Inconsistent state in updateColSorted. ColId = ' + colId )
       }
       // reset other columns
-      /*for ( let m of conf ) {
-       if ( m[0] !== key ) {
-       m[1].sorted = defaults.col.sorted;
-       m[1].order  = defaults.col.order;
-       }
-       }*/
+      conf.map( x =>
+        x.get( 'id' ) !== colId
+          ? x = x.withMutations( map => map.set( 'sorted', defaults.col.sorted )
+                                           .set( 'order', defaults.col.order ) )
+          : x )
       // update config
       c.operation( c.columnHeader( conf.set( colId, toImmutable( col ) ) ), action )
-    },
-    colSort:         m.prop( 'index' ),
-    sort:            colId => {
-      if ( c.columnHeader().getIn( [ colId, 'sortable' ] ) ) {
-        c.colSort( colId )
-        // //TODO make it multifield for multi col sorting
-        /*c.colSort() === 'index'
-         ? c.colSort( colId )
-         : c.colSort( c.colSort() + '@' + colId )*/
-        c.updateColSorted( colId )                      // toggle sort
-        //model.startPageAt( defaults.startPageAt );    // reset view
-        //model.page( defaults.page );                  // reset page
-        c.data( c.files().sort( c.sorting ) )           // sort and update data
-      }
-    },
-    sorting:         ( a, b ) => {
-      //console.log('a = ', a, ' b = ', b)
-      const col    = c.colSort()
-      const desc   = c.columnHeader().getIn( [ col, 'order' ] )
-      const isDate = c.columnHeader().getIn( [ col, 'dataType' ] ) === 'date'
-      const x      = a.get( col )
-      const y      = b.get( col )
-
-      const typeCompare = {
-        number:  () => desc ? ( x - y ? -1 : 1 ) : ( y - x ? -1 : 1 ),
-        string:  () => desc ? ( x < y ? -1 : 1 ) : ( y < x ? -1 : 1 ),
-        date:    () => {/* TODO Date --> moment  */
-        },
-        default: () => desc ? ( x < y ? -1 : 1 ) : ( y < x ? -1 : 1 ),
-      }
-      return (typeCompare[ isDate ? 'date' : typeof x ] || typeCompare[ 'default' ])()
     },
     vm:              {
       /***
@@ -146,7 +131,7 @@ Table.controller = function controller( attrs ) {
   return c
 }
 
-Table.view = function view( c ) {
+Table.view = function view (c) {
   return (
     <div>
       <h2>Table</h2>
@@ -178,7 +163,7 @@ Table.view = function view( c ) {
             .map( x =>
               <th
                 key={ x.get('id') }
-                onclick={() => { console.log('colID: ' + x.get( 'id' )); c.sort(x.get( 'id' )) } }>
+                onclick={() => { c.sort(x.get( 'id' )) } }>
                 { m.trust( x.get( 'name' ) ) }
                 { c.vm.cssSortToggle( x.get( 'id' ) ) }
               </th> ).toJS()
