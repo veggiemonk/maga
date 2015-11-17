@@ -3,8 +3,8 @@ import 'fetch'
 import { Map, fromJS as toImmutable } from 'immutable'
 
 // DATA
-import { App } from './model'
-import { groupMenu, sanitize } from './data'
+import Model from './model'
+
 import { columnHeader } from './settings'
 
 // Components
@@ -16,17 +16,17 @@ import ColumnVisibility  from './columnVisibility'
 //utils
 import { inc, dec, stackLoader, loaderDisplay } from './utils'
 
-/** STYLES: CSS MODULES **/
-import styles from './css/index.css!'
-
 export default {
   controller: () => {
+    //TODO: LANGUAGE!!!
+    //TODO: LOGIN and CREDENTIALS
     let c = {
       files:    m.prop( [] ),
       category: m.prop( [] ),
       columnHeader: m.prop( columnHeader ),
+      menuFilter: m.prop({type: 'root'}),
 
-      init: () => {
+      /*init: () => {
         inc( stackLoader )
         m.startComputation()
         Promise.all( [ App.fetchFileList(), App.fetchCategoryList() ] )
@@ -38,27 +38,28 @@ export default {
             dec( stackLoader )
             m.endComputation()
           } )
-      },
+      },*/
     }
 
-    c.init()
+    /*c.init()*/
     //<ColumnVisibility columnHeader={ c.columnHeader } />
     return c
   },
 
   view: c => (
     <div>
-      <div class={ styles.loading } style={ loaderDisplay() }>
-        <div class={ styles.pulseloader }></div>
-      </div>
-      <Header />
-      <Menu category={c.category}/>
-      <h1>Hello Maga: App</h1>
+      <Model files={c.files} category={c.category} />
+      <h1>TRANSFER</h1>
       <p>
         <a href='/login' config={ m.route }>LOGIN</a>
       </p>
+      <Header />
+      <Menu category={c.category}
+            menuFilter={c.menuFilter}/>
       { ( c.files().size > 0)
-        ? <Table files={ c.files } columnHeader={ c.columnHeader } />
+        ? <Table files={ c.files }
+                 columnHeader={ c.columnHeader }
+                 menuFilter={c.menuFilter} />
         : ''
       }
     </div>

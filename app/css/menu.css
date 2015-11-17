@@ -1,0 +1,20 @@
+.menu {
+    list-style-type: none;
+}
+
+.menuCatSpan {
+    display: block;
+    width:   100%;
+}
+
+.menuDocRoot {
+    width: 200px;
+}
+
+.menuRefDoc {
+    list-style-type: none;
+}
+
+.menuDocRefLi, .menuCatLi {
+    border: 1px solid #969cff;
+}

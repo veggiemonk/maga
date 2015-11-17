@@ -54,12 +54,11 @@ m.bindValueTo = (setter, getterName) => m.withAttr( getterName || 'value', sette
  * @returns: True if value is contained in at least one of the own prop of obj
  *           False otherwise
  * */
-export let searchInObject = (value, obj) => {
+export let searchInObject = (value, obj, conf) => {
   const regex = new RegExp( value, 'i' )
   for ( var prop in obj ) {
     if ( obj.hasOwnProperty( prop )
-
-        //&& model.configCol().get( prop ).searchable //TODO !!!
+      && conf.get(prop).get('searchable')
       && regex.test( obj[prop] ) ) {
       return true
     }
@@ -68,9 +67,10 @@ export let searchInObject = (value, obj) => {
 /***
  *
  * @param item
+ * @param lang
  * @returns {*}
  */
-export let labelDocI18n   = item => {
+export let labelDocI18n   = (item, lang) => {
 
   let doc = {
     fr:      () => item.labelDocFR,
@@ -84,9 +84,10 @@ export let labelDocI18n   = item => {
 /***
  *
  * @param item
+ * @param lang
  * @returns {*}
  */
-export let labelCati18n = item => {
+export let labelCati18n = (item, lang) => {
 
   let cat = {
     fr:      () => item.labelCategoryFR,

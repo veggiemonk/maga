@@ -1,10 +1,10 @@
 import m from 'mithril'
-import { fromJS as toImmutable } from 'immutable'
 
 import Row from './row'
 
-import { invalidate, inc, dec, fpush } from './utils'
+import { invalidate, inc, dec, fpush, searchInObject } from './utils'
 import { defaults } from './settings'
+//TODO: move it elsewhere!!!
 import styles from './css/visibleColumn.css!'
 
 let Table = {}
@@ -14,18 +14,11 @@ Table.controller = function controller (attrs) {
     data:             m.prop( [] ),
     files:            attrs.files,
     columnHeader:     attrs.columnHeader,
-    toggleVisibility: colId => {
-      c.operation(
-        c.columnHeader(
-          c.columnHeader().setIn( [colId, 'visible'],
-            !c.columnHeader().getIn( [colId, 'visible'] ) )
-        ),
-        'Toggle Visibility: ' + colId
-      )
-    },
+    menuFilter:       attrs.menuFilter,
     /**** HISTORY ****/
     //TODO: make it generic!!!
-    // * to put into another file ?
+    //TODO: add colSort to history!!!
+    //TODO: to put into history.js file ?
     actions:          [],
     history:          m.prop( [] ),
     indexPresent:     m.prop( -1 ),
@@ -41,20 +34,69 @@ Table.controller = function controller (attrs) {
     hasUndo:          () => c.indexPresent() > 0,
     hasRedo:          () => c.indexPresent() < c.history().length - 1,
     undo:             () => {
-      c.hasUndo()
-        ? c.columnHeader( c.history()[dec( c.indexPresent )] )
-        : undefined
+      if ( c.hasUndo() ) {
+        c.columnHeader( c.history()[dec( c.indexPresent )] )
+        c.checkSorting()
+      }
     },
     redo:             () => {
-      c.hasRedo()
-        ? c.columnHeader( c.history()[inc( c.indexPresent )] )
-        : undefined
+      if ( c.hasRedo() ) {
+        c.columnHeader( c.history()[inc( c.indexPresent )] )
+        c.checkSorting()
+      }
     },
 
+    toggleVisibility: colId => {
+      c.operation(
+        c.columnHeader(
+          c.columnHeader().setIn( [colId, 'visible'],
+            !c.columnHeader().getIn( [colId, 'visible'] ) )
+        ),
+        'Toggle Visibility: ' + colId
+      )
+    },
+    //
+    // FILTER / SEARCH
+    //
+    filter:          value => {
+      if (c.menuFilter().hasOwnProperty('type') ) {
+        //filter
+        let filter = {
+          root: () => { },
+          cat: () => {},
+          doc: () => {},
+        }
+      } else {
+        c.searchTerms( value )
+      }
+
+      if ( value === defaults.searchTerms ) { c.data( c.files() ) }
+      //search all props of the object
+      else {
+        c.data(
+          c.files().filter( obj =>
+            searchInObject( value, obj.toJS(), c.columnHeader() ) )
+        )
+      }
+      //reset view
+      /*c.page( defaults.page )
+      c.startPageAt( defaults.startPageAt )
+      c.rowDisplay(
+        c.data().length > defaults.rowDisplay
+          ? defaults.rowDisplay
+          : c.data().length )*/
+    },
     //
     // SORTING
     //
     colSort:         m.prop( 'index' ),
+    checkSorting:    () => {
+      if ( !c.columnHeader().getIn( [c.colSort(), 'sorted'] ) ) {
+        c.data( c.files().sortBy( x => x.get( 'index' ) ) ) // reset sorting
+      } else {
+        c.data( c.files().sort( c.sorting ) )           // sort and update data
+      }
+    },
     sort:            colId => {
       if ( c.columnHeader().getIn( [colId, 'sortable'] ) ) {
         c.colSort( colId )
@@ -62,11 +104,7 @@ Table.controller = function controller (attrs) {
         c.updateColSorted( colId )                      // toggle sort
         //model.startPageAt( defaults.startPageAt );    // reset view
         //model.page( defaults.page );                  // reset page
-        if ( !c.columnHeader().getIn( [c.colSort(), 'sorted'] ) ) {
-          c.data( c.files().sortBy( x => x.get( 'index' ) ) ) // reset sorting
-        } else {
-          c.data( c.files().sort( c.sorting ) )           // sort and update data
-        }
+        c.checkSorting()
       }
     },
     sorting:         (a, b) => {
@@ -95,10 +133,11 @@ Table.controller = function controller (attrs) {
         throw new Error( 'ERROR: Inconsistent state in updateColSorted. ColId = ' + colId )
       }
       // reset other columns
-      conf.map( x =>
+      conf = conf.map( x =>
         x.get( 'id' ) !== colId
-          ? x = x.withMutations( map => map.set( 'sorted', defaults.col.sorted )
-                                           .set( 'order', defaults.col.order ) )
+          ? x = x.withMutations( map =>
+          map.set( 'sorted', defaults.col.sorted )
+            .set( 'order', defaults.col.order ) )
           : x )
       // update config
       c.operation( c.columnHeader( conf.set( colId, toImmutable( col ) ) ), action )
@@ -123,6 +162,7 @@ Table.controller = function controller (attrs) {
     init:            () => {
       c.operation( c.columnHeader(), 'Init state' )
       c.data( c.files() )
+      /*console.log('c.data', c.data())*/
     }
   }
 
@@ -133,26 +173,31 @@ Table.controller = function controller (attrs) {
 
 Table.view = function view (c) {
   return (
-    <div>
-      <h2>Table</h2>
-      <ul style='display: inline-block;'>
-        {
-          c.columnHeader()
-            .toList()
-            .sortBy( x => x.get( 'index' ) )
-            .filter( x => x.get( 'toggle' ) )
-            .map( x =>
-              <li onclick={ () => { c.toggleVisibility( x.get('id') ) } }>
-                { m.trust( x.get( 'name' ) ) }
-              </li> ).toJS()
-        }
-      </ul>
-      <ul style='display: inline-block;'>
-        { c.actions.map( x => <li>{ x.toUpperCase() }</li> ) }
-      </ul>
-      <hr/>
-      <button disabled={ !c.hasUndo() } onclick={c.undo}>UNDO</button>
-      <button disabled={ !c.hasRedo() } onclick={c.redo}>REDO</button>
+    <div>{ (window.sessionStorage.undo === true) ? (
+      <div>
+        <ul style='display: inline-block;'>
+          {
+            c.columnHeader()
+              .toList()
+              .sortBy( x => x.get( 'index' ) )
+              .filter( x => x.get( 'toggle' ) )
+              .map( x =>
+                <li onclick={ () => { c.toggleVisibility( x.get('id') ) } }>
+                  { m.trust( x.get( 'name' ) ) }
+                </li> ).toJS()
+          }
+        </ul>
+        <ul style='display: inline-block;'>
+          { c.actions.map( x => <li>{ x.toUpperCase() }</li> ) }
+        </ul>
+        <hr/>
+        <button disabled={ !c.hasUndo() } onclick={c.undo}>UNDO</button>
+        <button disabled={ !c.hasRedo() } onclick={c.redo}>REDO</button>
+      </div>
+    ) : ''}
+      <div>
+        {'MenuFilter : ' + c.menuFilter()}
+      </div>
       <table>
         <thead>
         {
