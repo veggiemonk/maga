@@ -31,7 +31,8 @@
       "lodash": "npm:lodash@^3.10.1",
       "mithril": "npm:mithril@^0.2.0",
       "moment": "npm:moment@^2.10.6",
-      "postcss-safe-parser": "npm:postcss-safe-parser@^1.0.1"
+      "postcss-safe-parser": "npm:postcss-safe-parser@^1.0.1",
+      "redux": "npm:redux@^3.0.4"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

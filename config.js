@@ -1,4 +1,3 @@
-// jscs:disable
 System.config({
   baseURL: "./",
   defaultJSExtensions: true,
@@ -35,6 +34,7 @@ System.config({
     "mithril": "npm:mithril@0.2.0",
     "moment": "npm:moment@2.10.6",
     "postcss-safe-parser": "npm:postcss-safe-parser@1.0.1",
+    "redux": "npm:redux@3.0.4",
     "github:capaj/jspm-hot-reloader@0.4.0": {
       "lodash.clonedeep": "npm:lodash.clonedeep@3.0.2",
       "socket.io-client": "github:socketio/socket.io-client@1.3.7",
@@ -188,6 +188,9 @@ System.config({
     },
     "npm:process@0.11.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
+    "npm:redux@3.0.4": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:source-map@0.5.3": {
       "process": "github:jspm/nodelibs-process@0.1.2"

@@ -11,6 +11,7 @@ let Table = {}
 
 Table.controller = function controller (attrs) {
   let c = {
+    store:            attrs.store,
     data:             m.prop( [] ),
     files:            attrs.files,
     columnHeader:     attrs.columnHeader,
@@ -164,6 +165,12 @@ Table.controller = function controller (attrs) {
       c.operation( c.columnHeader(), 'Init state' )
       c.data( c.files() )
       /*console.log('c.data', c.data())*/
+      c.store().dispatch({
+        text: 'Use Redux',
+        type: 'TEXT_CHANGE',
+        completed: false,
+        id: 0
+      })
     }
   }
 
