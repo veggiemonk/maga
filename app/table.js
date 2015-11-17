@@ -1,5 +1,5 @@
 import m from 'mithril'
-
+import { fromJS as toImmutable } from 'immutable'
 import Row from './row'
 
 import { invalidate, inc, dec, fpush, searchInObject } from './utils'
@@ -57,14 +57,15 @@ Table.controller = function controller (attrs) {
     },
     //
     // FILTER / SEARCH
-    //
+    //TODO
     filter:          value => {
       if (c.menuFilter().hasOwnProperty('type') ) {
+        console.log('c.menuFilter() = ', c.menuFilter())
         //filter
         let filter = {
-          root: () => { },
-          cat: () => {},
-          doc: () => {},
+          root: () => {c.data( c.files() ) },
+          cat: () => { c.data( c.files().filter( x => x /*TODO*/))},
+          doc: () => { c.data( c.files().filter( x => x.get('referenceDocument') === c.menuFilter().val))},
         }
       } else {
         c.searchTerms( value )
