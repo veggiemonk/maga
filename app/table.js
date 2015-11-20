@@ -165,7 +165,7 @@ Table.controller = function controller (props) {
       c.operation( c.columnHeader(), 'Init state' )
       c.data( c.files() )
       /*console.log('c.data', c.data())*/
-      c.store().dispatch({
+      c.store.dispatch({
         text: 'Use Redux',
         type: 'TEXT_CHANGE',
         completed: false,
@@ -206,7 +206,7 @@ Table.view = function view (c) {
       <div>
         {'MenuFilter : ' + c.menuFilter()}
       </div>
-      <div>{'Hello Word: ' +  c.store().getState().table.text }</div>
+      <div>{'Hello Word: ' +  c.store.getState().table.text }</div>
       <table>
         <thead>
         {

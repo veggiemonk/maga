@@ -18,7 +18,5 @@ React.render(
 )
 /**** DevTools ****/
 
-let component = m.component(app, {store: store})
-let ctrl = component.controller()
-m.render(document.getElementById('app'), component.view(ctrl))
-
+m.mount(document.getElementById('app'), 
+          m.component(app, {store: store}) )
