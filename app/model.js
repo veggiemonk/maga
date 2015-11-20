@@ -5,26 +5,16 @@ import { inc, dec, stackLoader, loaderDisplay } from './utils'
 import { groupMenu, sanitize } from './data'
 import { fetchFile, fetchCategory, headers } from './settings'
 
-import configureStore from './createStore'
-
-let store = configureStore(/*{
-  text: 'Use Redux',
-  completed: false,
-  id: 0
-}*/)
-
-store.subscribe(m.redraw.bind(m))
-
 /** CSS MODULES !! **/
 import styles from './css/index.css!'
 
 let Model = {}
 
-Model.controller = function controller (attrs) {
+Model.controller = function controller (props) {
   let c = {
-    files:             attrs.files,
-    category:          attrs.category,
-    store:             attrs.store,
+    files:             props.files,
+    category:          props.category,
+    store:             props.store,
     fetchFileList:     () => fetch( fetchFile, headers( 'GET' ) ).then( res => res.json() ),
     fetchCategoryList: () => fetch( fetchCategory, headers( 'GET' ) ).then( res => res.json() ),
     load:              () => {
@@ -34,8 +24,8 @@ Model.controller = function controller (attrs) {
         .then( ([FileList, CategoryList]) => {
           c.files( toImmutable( sanitize( FileList, CategoryList ) ) )
           c.category( toImmutable( groupMenu( CategoryList, FileList ) ) )
-          c.store( store )
-          console.log(store)
+          //c.store( store )
+          console.log(c.store)
         } )
         .then( () => {
           dec( stackLoader )

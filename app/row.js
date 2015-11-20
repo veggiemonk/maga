@@ -1,16 +1,18 @@
 import m from 'mithril'
 
+import css from 'font-awesome/css/font-awesome.css!'
+//console.log('css = ', css)
 //import { Map, fromJS as toImmutable } from 'immutable'
 
 import styles from './css/row.css!'
 
 let Row = {}
 
-Row.controller = function controller( attrs ) {
-  //console.log( attrs.columnHeader() )
+Row.controller = function controller( props ) {
+  //console.log( props.columnHeader() )
   return {
-    file:         attrs.file,
-    columnHeader: attrs.columnHeader,
+    file:         props.file,
+    columnHeader: props.columnHeader,
     download:     fileId => {
       alert( 'DOWNLOAD: ' + fileId )
     },
@@ -27,7 +29,7 @@ Row.view = function view( c ) {
       <td class='center iconSelect'>{ m.trust( c.file.get( 'checkbox' ) ) }</td>
       <td class={styles.textcenter}>
         <button onclick={()=> {c.download(c.file.get('fileId'))}}>
-          <i class={'fa ' + c.file.get('dlClass') + ' fa-lg ' + c.file.get('alreadyDL') }></i>
+          <i class={ css.fa + ' ' + c.file.get('dlClass') + ' ' + css['fa-lg'] + ' ' + c.file.get('alreadyDL') }></i>
           <small class={styles.textmuted}> { c.file.get( 'downloadCount' ) }</small>
         </button>
       </td>

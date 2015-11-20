@@ -9,13 +9,13 @@ import styles from './css/visibleColumn.css!'
 
 let Table = {}
 
-Table.controller = function controller (attrs) {
+Table.controller = function controller (props) {
   let c = {
-    store:            attrs.store,
+    store:            props.store,
     data:             m.prop( [] ),
-    files:            attrs.files,
-    columnHeader:     attrs.columnHeader,
-    menuFilter:       attrs.menuFilter,
+    files:            props.files,
+    columnHeader:     props.columnHeader,
+    menuFilter:       props.menuFilter,
     /**** HISTORY ****/
     //TODO: make it generic!!!
     //TODO: add colSort to history!!!
@@ -206,6 +206,7 @@ Table.view = function view (c) {
       <div>
         {'MenuFilter : ' + c.menuFilter()}
       </div>
+      <div>{'Hello Word: ' +  c.store().getState().table.text }</div>
       <table>
         <thead>
         {

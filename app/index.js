@@ -17,7 +17,7 @@ import ColumnVisibility  from './columnVisibility'
 import { inc, dec, stackLoader, loaderDisplay } from './utils'
 
 export default {
-  controller: () => {
+  controller: (prop) => {
     //TODO: LANGUAGE!!!
     //TODO: LOGIN and CREDENTIALS
     let c = {
@@ -25,7 +25,7 @@ export default {
       category: m.prop( [] ),
       columnHeader: m.prop( columnHeader ),
       menuFilter: m.prop({type: 'root'}),
-      store: m.prop({}),
+      store: prop.store,
     }
 
     //<ColumnVisibility columnHeader={ c.columnHeader } />
@@ -39,7 +39,6 @@ export default {
       <p>
         <a href='/login' config={ m.route }>LOGIN</a>
       </p>
-      <div>{'Hello Word: ' +  c.store().text }</div>
       <Header />
       <Menu category={c.category}
             menuFilter={c.menuFilter}

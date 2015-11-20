@@ -2,9 +2,9 @@ import m from 'mithril'
 
 let ColumnVisibility = {}
 
-ColumnVisibility.controller = attrs => {
+ColumnVisibility.controller = props => {
   let c = {
-    columnHeader:     attrs.columnHeader,
+    columnHeader:     props.columnHeader,
     toggleVisibility: colId => {
       c.operation( //TODO: get it from somewhere
         c.columnHeader( c.columnHeader()

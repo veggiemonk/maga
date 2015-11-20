@@ -1,15 +1,12 @@
-var Header = {
+var Header = {}
 
-};
-
-Header.controller = function controller (attrs, children) {
+Header.controller = function controller ( props, children ) {
   var c = {}
 
-  return c;
+  return c
 }
 
-
-Header.view = function view (ctrl, attrs, children) {
+Header.view = function view ( ctrl, props, children ) {
   return (
     <div> Header </div>
   )

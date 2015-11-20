@@ -27,7 +27,7 @@ const permanentColumn = [
     toggle:     false,
     sortable:   false,
     searchable: false,
-  },]
+  }, ]
 
 const unvisibleColumn = [
   {
@@ -124,7 +124,7 @@ const unvisibleColumn = [
     name:    'Comments',
     visible: true,
     toggle:  true,
-  },]
+  }, ]
 
 export const defaults = {
   col:         {

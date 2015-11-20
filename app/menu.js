@@ -2,10 +2,10 @@ import styles from './css/menu.css!'
 
 var Menu = {}
 
-Menu.controller = function controller (attrs, children) {
+Menu.controller = function controller (props, children) {
   let c = {
-    category:   attrs.category,
-    menuFilter: attrs.menuFilter,
+    category:   props.category,
+    menuFilter: props.menuFilter,
   }
   return c
 }
