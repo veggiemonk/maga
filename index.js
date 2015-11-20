@@ -37,7 +37,7 @@ const view = test => {
 } 
 
 
-React.render( view(sessionStorage.test), document.getElementById('devtools') )
+React.render( view(JSON.parse(sessionStorage.test)), document.getElementById('devtools') )
 /**** DevTools ****/
 
 m.mount(document.getElementById('app'), 
