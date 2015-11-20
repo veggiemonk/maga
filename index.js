@@ -12,20 +12,32 @@ import { devTools, persistState } from 'redux-devtools'
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react'
 import { TestMonitor } from 'redux-devtools-gentest-plugin'
 
-const view = () => (
-  <div>
-    <DebugPanel top right bottom>
-      <DevTools store={store}
-                monitor={LogMonitor} />
-    </DebugPanel>
-    <DebugPanel top left bottom>
-    <DevTools store={store}
-              monitor={TestMonitor}/>
-    </DebugPanel>
-  </div>
-)
+const view = test => {
+  if (test) {
+    return (
+      <div>
+        <DebugPanel top right bottom>
+          <DevTools store={store}
+                    monitor={LogMonitor} />
+        </DebugPanel>
+        <DebugPanel top left bottom>
+        <DevTools store={store}
+                  monitor={TestMonitor}/>
+        </DebugPanel>
+      </div>
+    )
+  } else {
+    return (
+      <DebugPanel top right bottom>
+        <DevTools store={store}
+                  monitor={LogMonitor} />
+      </DebugPanel>
+    )
+  }
+} 
 
-React.render( view(), document.getElementById('devtools') )
+
+React.render( view(sessionStorage.test), document.getElementById('devtools') )
 /**** DevTools ****/
 
 m.mount(document.getElementById('app'), 
