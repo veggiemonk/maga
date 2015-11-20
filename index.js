@@ -10,12 +10,22 @@ store.subscribe(m.redraw.bind(m))
 import React from 'react'
 import { devTools, persistState } from 'redux-devtools'
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react'
+import { TestMonitor } from 'redux-devtools-gentest-plugin'
 
-React.render(
-  <DebugPanel top right bottom>
-    <DevTools store={store} monitor={LogMonitor} />
-  </DebugPanel>, document.getElementById('devtools')
+const view = () => (
+  <div>
+    <DebugPanel top right bottom>
+      <DevTools store={store}
+                monitor={LogMonitor} />
+    </DebugPanel>
+    <DebugPanel top left bottom>
+    <DevTools store={store}
+              monitor={TestMonitor}/>
+    </DebugPanel>
+  </div>
 )
+
+React.render( view(), document.getElementById('devtools') )
 /**** DevTools ****/
 
 m.mount(document.getElementById('app'), 
