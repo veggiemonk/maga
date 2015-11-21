@@ -25,6 +25,7 @@ System.config({
     "babel-plugin-mjsx": "npm:babel-plugin-mjsx@1.0.3",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@0.4.0",
+    "chai": "npm:chai@3.4.1",
     "core-js": "npm:core-js@1.2.6",
     "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
     "fetch": "npm:whatwg-fetch@0.10.1",
@@ -32,6 +33,7 @@ System.config({
     "immutable": "npm:immutable@3.7.5",
     "lodash": "npm:lodash@3.10.1",
     "mithril": "npm:mithril@0.2.0",
+    "mocha": "npm:mocha@2.3.4",
     "moment": "npm:moment@2.10.6",
     "postcss-safe-parser": "npm:postcss-safe-parser@1.0.1",
     "react": "npm:react@0.14.3",
@@ -98,6 +100,14 @@ System.config({
       "ieee754": "npm:ieee754@1.1.6",
       "is-array": "npm:is-array@1.0.1"
     },
+    "npm:chai@3.4.1": {
+      "assertion-error": "npm:assertion-error@1.0.1",
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "deep-eql": "npm:deep-eql@0.1.3",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0",
+      "type-detect": "npm:type-detect@1.0.0"
+    },
     "npm:core-js@1.2.6": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
@@ -123,6 +133,10 @@ System.config({
     },
     "npm:debounce@1.0.0": {
       "date-now": "npm:date-now@1.0.1"
+    },
+    "npm:deep-eql@0.1.3": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "type-detect": "npm:type-detect@0.1.1"
     },
     "npm:domain-browser@1.1.4": {
       "events": "github:jspm/nodelibs-events@0.1.1"
@@ -215,6 +229,9 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream": "github:jspm/nodelibs-stream@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:mocha@2.3.4": {
+      "css": "github:systemjs/plugin-css@0.1.19"
     },
     "npm:moment@2.10.6": {
       "process": "github:jspm/nodelibs-process@0.1.2"

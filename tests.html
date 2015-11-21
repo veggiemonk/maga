@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <title>TEST:</title>
+  <meta name="description" content="maga">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="jspm_packages/system.js"></script>
+  <script src="config.js"></script>
+  <script>
+    //System.trace = true;
+    var readyForMainLoad;
+    var debug = sessionStorage['DEBUG'] && sessionStorage['DEBUG'] == 'true' || localStorage['DEBUG'] && localStorage['DEBUG'] == 'true';
+    if ( location.origin.match( /localhost/ ) && debug ) {
+      System.trace     = true;
+      readyForMainLoad = System.import( 'capaj/jspm-hot-reloader' ).then( function (HotReloader) {
+        hr = new HotReloader.default( 'http://localhost:3000' )  // chokidar-socket-emitter port
+      } );
+    }
+    Promise.resolve( readyForMainLoad ).then( function () {
+      System.import( 'test/testInit.js' ).then( function () {
+        console.log( 'ran at ', new Date() );
+      } )
+    } )
+    //System.import('index.js');
+  </script>
+
+</head>
+<body>
+<div id="mocha"></div>
+
+</body>
+</html>
