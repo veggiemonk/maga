@@ -37,7 +37,7 @@ const initialState = {
     rowDisplayed:  defaults.rowDisplay,
     dateBegin:     defaults.dateBegin,
     dateEnd:       defaults.dateEnd,
-    menuFilter:    { cat: '', ref: '' },
+    menuFilter:    defaults.menuFilter,
     searchKeyword: defaults.searchKeyword,
   },
   files:   List( [] ),
@@ -89,7 +89,7 @@ const rootReducer = (state = initialState, action) => {
 
     case FILTER_DATE_BEGIN:
       return Object.assign( {}, state, {
-        filters: { dateBegin: action.date }
+        filters: { dateBegin: action.date } // TODO: FULL MERGE!!!!!
       } )
 
     case FILTER_DATE_END:
@@ -119,7 +119,11 @@ const rootReducer = (state = initialState, action) => {
           filters: {
             page:         state.filters.page + 1,
             startPageAt:  sa + rd,
-            rowDisplayed: state.filters.rowDisplayed
+            rowDisplayed: state.filters.rowDisplayed,
+            dateBegin:     state.filters.dateBegin,
+            dateEnd:       state.filters.dateEnd,
+            menuFilter:    state.filters.menuFilter,
+            searchKeyword: state.filters.searchKeyword,
           }
         } )
       } else {
@@ -130,9 +134,13 @@ const rootReducer = (state = initialState, action) => {
       if ( sa - rd >= 0 ) {
         return Object.assign( {}, state, {
           filters: {
-            page:         state.filters.page - 1,
-            startPageAt:  sa - rd,
-            rowDisplayed: state.filters.rowDisplayed
+            page:          state.filters.page - 1,
+            startPageAt:   sa - rd,
+            rowDisplayed:  state.filters.rowDisplayed,
+            dateBegin:     state.filters.dateBegin,
+            dateEnd:       state.filters.dateEnd,
+            menuFilter:    state.filters.menuFilter,
+            searchKeyword: state.filters.searchKeyword,
           }
         } )
       } else {

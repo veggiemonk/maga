@@ -30,8 +30,6 @@ export default {
       menuFilter:   m.prop( { type: 'root' } ),
       store:        props.store,
     }
-    //c.store.dispatch( resetView() )
-
     //<ColumnVisibility columnHeader={ c.columnHeader } />
     return c
   },

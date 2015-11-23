@@ -8,24 +8,28 @@ export const sort = (columns, id) => (a, b) => {
       : ( a.get( _id ) < b.get( _id ) ? -1 : 1 )
 }
 
-export const sortColumn = (state, id) => {
-  let col = state.columns.get( id ).toJS()
-  if ( !col.sorted && !col.order ) {
-    col.sorted = !col.sorted      ///* toggle sorted */
-  } else if ( col.sorted && !col.order ) {
-    col.order = !col.order        ///* toggle order */
-  } else if ( col.sorted && col.order ) {
-    col.sorted = !col.sorted      ///* toggle both sorted and order */
-    col.order = !col.order
+const toggleSort = col => {
+  let c = col.toJS()
+  if ( !c.sorted && !c.order ) {
+    c.sorted = !c.sorted      ///* toggle sorted */
+  } else if ( c.sorted && !c.order ) {
+    c.order = !c.order        ///* toggle order */
+  } else if ( c.sorted && c.order ) {
+    c.sorted = !c.sorted      ///* toggle both sorted and order */
+    c.order = !c.order
   } else {
     /* Should not reach here !! */
-    throw new Error( 'ERROR: Inconsistent state in updateColSorted. ColId = ' + id )
+    throw new Error( 'ERROR: Inconsistent state in updateColSorted. ColId = ' + col.id )
   }
+  return toImmutable(c)
+}
+
+export const sortColumn = (state, id) => {
   // reset other columns and update the selected one
   return state.columns.map( x =>
       x.get( 'id' ) !== id
           ? x = x.withMutations( map =>
           map.set( 'sorted', defaults.col.sorted )
               .set( 'order', defaults.col.order ) )
-          : toImmutable( col ) )
+          : x = toggleSort( state.columns.get( id ) ) )
 }
