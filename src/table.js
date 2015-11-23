@@ -222,7 +222,7 @@ Table.view = function view(c) {
           </thead>
           <tbody>
           {
-            c.data().map( file => (
+            state.data.map( file => (
                 <Row
                     key={ file.get('index') }
                     file={ file }

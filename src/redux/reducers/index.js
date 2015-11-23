@@ -10,6 +10,7 @@
 import { Map, List, fromJS as toImmutable } from 'immutable'
 
 import { defaults } from '../../settings'
+import { sortColumn } from './columns'
 
 import {
     FILTER_DATE_BEGIN,
@@ -65,31 +66,16 @@ const rootReducer = (state = initialState, action) => {
           } )
     case SORT_COLUMN:
       if ( state.columns.getIn( [ action.id, 'sortable'] ) ) {
-        let col = state.columns.get( action.id ).toJS()
-        if ( !col.sorted && !col.order ) {
-          col.sorted = !col.sorted      ///* toggle sorted */
-        } else if ( col.sorted && !col.order ) {
-          col.order = !col.order        ///* toggle order */
-        } else if ( col.sorted && col.order ) {
-          col.sorted = !col.sorted      ///* toggle both sorted and order */
-          col.order = !col.order
-        } else {
-          /* Should not reach here !! */
-          throw new Error( 'ERROR: Inconsistent state in updateColSorted. ColId = ' + action.id )
+        let newColumns = sortColumn(state, action.id )
+        const sorting = (a, b) => {
+          return newColumns.getIn( [ action.id, 'order' ] )
+              ? ( b.get( action.id ) < a.get( action.id ) ? -1 : 1 )
+              : ( a.get( action.id ) < b.get( action.id ) ? -1 : 1 )
         }
-        // reset other columns and update the selected one
-        return Object.assign( {}, state,
-        { columns: state.columns.map( x =>
-            x.get( 'id' ) !== action.id
-                ? x = x.withMutations( map =>
-                  map.set( 'sorted', defaults.col.sorted )
-                    .set( 'order', defaults.col.order ) )
-                : toImmutable( col ) ),
-          filters: {
-            startPageAt: defaults.startPageAt,
-            page: defaults.page,
-            rowDisplayed: state.filters.rowDisplayed
-          }
+        return Object.assign( {}, state, {
+          columns: newColumns,
+          filters: state.filters,
+          data: state.files.sort(sorting)
         } )
       } else {
         return state
