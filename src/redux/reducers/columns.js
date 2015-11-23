@@ -1,6 +1,13 @@
 import { fromJS as toImmutable } from 'immutable'
 import { defaults } from '../../settings'
 
+export const sort = (columns, id) => (a, b) => {
+  const _id = columns.getIn( [ id, 'sorted' ] ) ? id : defaults.index
+  return columns.getIn( [ _id, 'order' ] )
+      ? ( b.get( _id ) < a.get( _id ) ? -1 : 1 )
+      : ( a.get( _id ) < b.get( _id ) ? -1 : 1 )
+}
+
 export const sortColumn = (state, id) => {
   let col = state.columns.get( id ).toJS()
   if ( !col.sorted && !col.order ) {

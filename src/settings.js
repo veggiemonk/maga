@@ -142,7 +142,10 @@ export const defaults = {
   rowDisplay:  10,
   page:        1,
   startPageAt: 0,
-  searchTerms: '',
+  dateBegin: '',
+  dateEnd: '',
+  menuFilter: { cat: undefined, ref: undefined },
+  searchKeyword: '',
 }
 
 const col = Map( defaults.col )
