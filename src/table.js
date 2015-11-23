@@ -162,8 +162,8 @@ Table.controller = function controller(props) {
           return !col.sorted
               ? ( <i class='fa fa-sort right'></i> )
               : ( col.order
-              ? ( <i class='fa fa-sort-desc right'></i> )
-              : ( <i class='fa fa-sort-asc right'></i>  ) )
+                ? ( <i class='fa fa-sort-desc right'></i> )
+                : ( <i class='fa fa-sort-asc right'></i>  ) )
         }
       }
     },

@@ -68,14 +68,15 @@ const rootReducer = (state = initialState, action) => {
       if ( state.columns.getIn( [ action.id, 'sortable'] ) ) {
         let newColumns = sortColumn(state, action.id )
         const sorting = (a, b) => {
-          return newColumns.getIn( [ action.id, 'order' ] )
-              ? ( b.get( action.id ) < a.get( action.id ) ? -1 : 1 )
-              : ( a.get( action.id ) < b.get( action.id ) ? -1 : 1 )
+          const id = newColumns.getIn( [ action.id, 'sorted' ] ) ? action.id : defaults.index
+          return newColumns.getIn( [ id, 'order' ] )
+              ? ( b.get( id ) < a.get( id ) ? -1 : 1 )
+              : ( a.get( id ) < b.get( id ) ? -1 : 1 )
         }
         return Object.assign( {}, state, {
           columns: newColumns,
           filters: state.filters,
-          data: state.files.sort(sorting)
+          data: state.data.sort(sorting)
         } )
       } else {
         return state

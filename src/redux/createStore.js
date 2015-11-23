@@ -7,7 +7,7 @@ import { devTools, persistState } from 'redux-devtools'
 const loggerMiddleware = createLogger()
 
 const finalCreateStore = compose(
-  applyMiddleware( thunkMiddleware, loggerMiddleware  ),
+  applyMiddleware( thunkMiddleware/*, loggerMiddleware*/  ),
   devTools(),
   // Lets you write ?debug_session=<name> in address bar to persist debug sessions
   persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
