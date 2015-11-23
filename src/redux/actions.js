@@ -3,8 +3,8 @@
  */
 
 /* HYDRATING STORE */
-export const LOAD_COLUMN_HEADER = 'LOAD_COLUMN_HEADER'
-export const loadColumnHeader   = columnHeader => ( { type: LOAD_COLUMN_HEADER, columnHeader } )
+export const LOAD_DATA = 'LOAD_DATA'
+export const loadData  = ( columnHeader, files, data ) => ( { type: LOAD_DATA, columnHeader, files, data } )
 
 /* VIEW */
 export const RESET_VIEW = 'RESET_VIEW'

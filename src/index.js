@@ -3,7 +3,7 @@ import 'fetch'
 import { Map, List, fromJS as toImmutable } from 'immutable'
 
 // ActionCreators
-import { loadColumnHeader, resetView } from './redux/actions'
+import { loadData, resetView } from './redux/actions'
 
 // DATA
 import Model from './model'
@@ -30,8 +30,7 @@ export default {
       menuFilter:   m.prop( { type: 'root' } ),
       store:        props.store,
     }
-    c.store.dispatch( loadColumnHeader( columnHeader ) )
-    c.store.dispatch( resetView() )
+    //c.store.dispatch( resetView() )
 
     //<ColumnVisibility columnHeader={ c.columnHeader } />
     return c
@@ -39,7 +38,11 @@ export default {
 
   view: c => (
       <div>
-        <Model store={c.store} files={c.files} category={c.category}/>
+        <Model
+            columnHeader={columnHeader}
+            store={c.store}
+            files={c.files}
+            category={c.category}/>
         <h1>TRANSFER</h1>
         <p>
           <a href='/login' config={ m.route }>LOGIN</a>

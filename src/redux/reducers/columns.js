@@ -1,12 +1,12 @@
 import { Map, fromJS as toImmutable } from 'immutable'
 import { defaults } from '../../settings'
 
-import { LOAD_COLUMN_HEADER, SORT_COLUMN, TOGGLE_COLUMN_VIEW } from '../actions'
+import { LOAD_DATA, SORT_COLUMN, TOGGLE_COLUMN_VIEW } from '../actions'
 
 export default (state = Map({id: 'index'}), action) => {
 
   switch ( action.type ) {
-    case LOAD_COLUMN_HEADER:
+    case LOAD_DATA:
       return  action.columnHeader
     case TOGGLE_COLUMN_VIEW:
       return state.setIn( [ action.id, 'visible' ], !state.getIn( [ action.id, 'visible' ] ) )

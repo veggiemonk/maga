@@ -7,7 +7,7 @@
  filters,
  })*/
 
-import { Map, fromJS as toImmutable } from 'immutable'
+import { Map, List, fromJS as toImmutable } from 'immutable'
 
 import { defaults } from '../../settings'
 
@@ -22,7 +22,7 @@ import {
     CHANGE_ROW_DISPLAYED,
     TOGGLE_SELECT_ALL,
     SELECT_ROW,
-    LOAD_COLUMN_HEADER,
+    LOAD_DATA,
     SORT_COLUMN,
     TOGGLE_COLUMN_VIEW,
     RESET_VIEW,
@@ -34,7 +34,9 @@ const initialState = {
     startPageAt: defaults.startPageAt,
     page: defaults.page,
     rowDisplayed: defaults.rowDisplay,
-  }
+  },
+  files: List([]),
+  data: List([])
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -51,8 +53,12 @@ const rootReducer = (state = initialState, action) => {
           rowDisplayed: defaults.rowDisplay,
         }
       } )
-    case LOAD_COLUMN_HEADER:
-      return Object.assign( {}, state, { columns: action.columnHeader } )
+    case LOAD_DATA:
+      return Object.assign( {}, state, {
+        columns: action.columnHeader,
+        files: action.files,
+        data: action.data,
+      } )
     case TOGGLE_COLUMN_VIEW:
       return Object.assign( {}, state, {
             columns: state.columns.setIn( [ action.id, 'visible' ], !state.columns.getIn( [ action.id, 'visible' ] ) )

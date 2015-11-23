@@ -5,6 +5,8 @@ import { inc, dec, stackLoader, loaderDisplay } from './utils'
 import { groupMenu, sanitize } from './data'
 import { fetchFile, fetchCategory, headers } from './settings'
 
+import { loadData, resetView } from './redux/actions'
+
 /** CSS MODULES !! **/
 import styles from './css/index.css!'
 
@@ -24,7 +26,8 @@ Model.controller = function controller (props) {
         .then( ([FileList, CategoryList]) => {
           c.files( toImmutable( sanitize( FileList, CategoryList ) ) )
           c.category( toImmutable( groupMenu( CategoryList, FileList ) ) )
-          //c.store( store )
+
+          c.store.dispatch( loadData( props.columnHeader, c.files(), c.files().toJS() ) )
           //console.log(c.store)
         } )
         .then( () => {
