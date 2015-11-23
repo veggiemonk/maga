@@ -23,7 +23,7 @@
     "dependencies": {
       "babel-loader": "github:veggiemonk/plugin-babel@master",
       "babel-plugin-mjsx": "npm:babel-plugin-mjsx@^1.0.3",
-      "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@^0.4.0",
+      "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@^0.4.2",
       "css": "npm:jspm-loader-css-modules@^1.0.1-beta1",
       "fetch": "npm:whatwg-fetch@^0.10.1",
       "font-awesome": "npm:font-awesome@^4.4.0",

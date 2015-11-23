@@ -1,7 +1,7 @@
 import m from 'mithril'
 import app from 'src/index'
-import finalCreateStore from 'src/createStore'
-import reducer from 'src/reducers/index'
+import finalCreateStore from 'src/redux/createStore'
+import reducer from 'src/redux/reducers/index'
 
 let store = finalCreateStore( reducer )
 store.subscribe(m.redraw.bind(m))
@@ -39,5 +39,4 @@ const view = test => {
 React.render( view( JSON.parse( sessionStorage.test || false ) ), document.getElementById('devtools') )
 /**** DevTools ****/
 
-m.mount(document.getElementById('app'),
-          m.component(app, {store: store}) )
+m.mount(document.getElementById('app'), m.component(app, {store: store}) )

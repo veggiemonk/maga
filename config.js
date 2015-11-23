@@ -24,7 +24,7 @@ System.config({
     "babel-loader": "github:veggiemonk/plugin-babel@master",
     "babel-plugin-mjsx": "npm:babel-plugin-mjsx@1.0.3",
     "babel-runtime": "npm:babel-runtime@5.8.34",
-    "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@0.4.0",
+    "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@0.4.2",
     "core-js": "npm:core-js@1.2.6",
     "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
     "fetch": "npm:whatwg-fetch@0.10.1",
@@ -41,7 +41,7 @@ System.config({
     "redux-devtools-gentest-plugin": "npm:redux-devtools-gentest-plugin@1.0.5",
     "redux-logger": "npm:redux-logger@2.0.4",
     "redux-thunk": "npm:redux-thunk@1.0.0",
-    "github:capaj/jspm-hot-reloader@0.4.0": {
+    "github:capaj/jspm-hot-reloader@0.4.2": {
       "lodash.clonedeep": "npm:lodash.clonedeep@3.0.2",
       "socket.io-client": "github:socketio/socket.io-client@1.3.7",
       "weakee": "npm:weakee@0.9.1"

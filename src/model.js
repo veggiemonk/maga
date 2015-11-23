@@ -25,7 +25,7 @@ Model.controller = function controller (props) {
           c.files( toImmutable( sanitize( FileList, CategoryList ) ) )
           c.category( toImmutable( groupMenu( CategoryList, FileList ) ) )
           //c.store( store )
-          console.log(c.store)
+          //console.log(c.store)
         } )
         .then( () => {
           dec( stackLoader )

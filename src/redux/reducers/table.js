@@ -9,7 +9,7 @@ const initialState = [
   }
 ]
 
-export default ( state = initialState, action ) => {
+export default ( state = {}, action ) => {
 
   switch ( action.type ) {
     case 'TEXT_CHANGE':
