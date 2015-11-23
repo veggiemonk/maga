@@ -14,7 +14,7 @@ System.config({
   },
 
   meta: {
-    "app/*": {
+    "src/*": {
       "loader": "babel-loader"
     }
   },
