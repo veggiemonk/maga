@@ -33,9 +33,9 @@ const toggleSort = col => {
  */
 
 export const getSortedColumn = columns => {
-  const _c = columns.toList().filter( c => c.get( 'sorted' ) )
-  return _c.count() > 0
-      ? _c.first().get( 'id' )
+  const _c = columns.find( c => c.get( 'sorted' ) )
+  return _c
+      ? _c.get('id')
       : defaults.index
 }
 
