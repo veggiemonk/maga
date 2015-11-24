@@ -48,6 +48,10 @@ export const PAGE_NEXT            = 'PAGE_NEXT'
 export const pageNext             = filesTotal => ( { type: PAGE_NEXT, filesTotal } )
 export const PAGE_PREV            = 'PAGE_PREV'
 export const pagePrev             = () => ( { type: PAGE_PREV } )
+export const PAGE_FIRST           = 'PAGE_FIRST'
+export const pageFirst            = () => ( { type: PAGE_FIRST } )
+export const PAGE_LAST           = 'PAGE_LAST'
+export const pageLast            = () => ( { type: PAGE_LAST } )
 export const CHANGE_ROW_DISPLAYED = 'CHANGE_ROW_DISPLAYED'
 export const changeRowDisplayed   = num => ( { type: CHANGE_ROW_DISPLAYED, num })
 

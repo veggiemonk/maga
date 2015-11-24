@@ -6,6 +6,7 @@ import {
     sortColumn, toggleColumnView,
     filterDateBegin, filterDateEnd, filterMenuCat, filterMenuRef, filterSearch
 } from './redux/actions'
+import { sort, getSortedColumn } from './redux/reducers/columns'
 
 import { invalidate, inc, dec, fpush, searchInObject } from './utils'
 import { defaults } from './settings'
@@ -222,7 +223,11 @@ Table.view = function view(c) {
           </thead>
           <tbody>
           {
-            state.data.map( file => (
+            state.data
+                .sort( sort( state.columns, getSortedColumn( state.columns ) ) )
+                .skip( state.filters.startPageAt )
+                .take( state.filters.rowDisplayed )
+                .map( file => (
                 <Row
                     key={ file.get('index') }
                     file={ file }

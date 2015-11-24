@@ -31,6 +31,11 @@ export default {
       store:        props.store,
     }
     //<ColumnVisibility columnHeader={ c.columnHeader } />
+    /*
+     <Menu category={c.category}
+     menuFilter={c.menuFilter}
+     store={c.store}/>
+    * */
     return c
   },
 
@@ -45,9 +50,6 @@ export default {
         <p>
           <a href='/login' config={ m.route }>LOGIN</a>
         </p>
-        <Menu category={c.category}
-              menuFilter={c.menuFilter}
-              store={c.store}/>
         <Header store={c.store} filesTotal={ c.files } />
         { ( c.files().size > 0)
             ? <Table files={ c.files }

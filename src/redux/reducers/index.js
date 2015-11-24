@@ -10,8 +10,8 @@
 import { Map, List, fromJS as toImmutable } from 'immutable'
 
 import { defaults } from '../../settings'
-import { sortColumn, sort } from './columns'
-
+import { sortColumn, sort, resetSort, getSortedColumn } from './columns'
+import { filtering } from './filters'
 import {
     FILTER_DATE_BEGIN,
     FILTER_DATE_END,
@@ -20,6 +20,8 @@ import {
     FILTER_SEARCH,
     PAGE_NEXT,
     PAGE_PREV,
+    PAGE_FIRST,
+    PAGE_LAST,
     CHANGE_ROW_DISPLAYED,
     TOGGLE_SELECT_ALL,
     SELECT_ROW,
@@ -77,75 +79,78 @@ const rootReducer = (state = initialState, action) => {
 
     case SORT_COLUMN:
       if ( state.columns.getIn( [ action.id, 'sortable' ] ) ) {
-        let newColumns = sortColumn( state, action.id )
+        //let newColumns = sortColumn( state, action.id )
         return Object.assign( {}, state, {
-          columns: newColumns,
-          filters: state.filters,
-          data:    state.data.sort( sort( newColumns, action.id ) )
+          columns: sortColumn( state, action.id ),
         } )
       } else {
         return state
       }
 
     case FILTER_DATE_BEGIN:
-      return Object.assign( {}, state, {
-        filters: { dateBegin: action.date } // TODO: FULL MERGE!!!!!
-      } )
+      return filtering( Object.assign( {}, state, {
+        columns: resetSort( state.columns ),
+        filters: Object.assign( {}, state.filters, { dateBegin: action.date } )
+      } ) )
 
     case FILTER_DATE_END:
-      return Object.assign( {}, state, {
-        filters: { dateEnd: action.date }
-      } )
+      return filtering( Object.assign( {}, state, {
+        columns: resetSort( state.columns ),
+        filters: Object.assign( {}, state.filters, { dateEnd: action.date } )
+      } ) )
 
     case FILTER_MENU_REF:
-      return Object.assign( {}, state, {
-        filters: { menuFilter: { ref: action.ref } },
-        data:    state.files.filter( x => x.get( 'referenceDocument' ) === action.ref )
-      } )
+      return filtering( Object.assign( {}, state, {
+        columns: resetSort( state.columns ),
+        filters: Object.assign( {}, state.filters, { menuFilter: { cat: defaults.cat, ref: action.ref } } )
+      } ) )
 
     case FILTER_MENU_CAT:
-      return Object.assign( {}, state, {
-        filters: { menuFilter: { cat: action.cat } }
-      } )
+      return filtering( Object.assign( {}, state, {
+        columns: resetSort( state.columns ),
+        filters: Object.assign( {}, state.filters, { menuFilter: { cat: action.cat, ref: defaults.ref } } )
+      } ) )
 
     case FILTER_SEARCH:
-      return Object.assign( {}, state, {
+      return filtering( Object.assign( {}, state, {
+        columns: resetSort( state.columns ),
         filters: { searchKeyword: action.search }
-      } )
+      } ) )
 
     case PAGE_NEXT:
       if ( action.filesTotal > sa + rd ) {
-        return Object.assign( {}, state, {
-          filters: {
-            page:         state.filters.page + 1,
-            startPageAt:  sa + rd,
-            rowDisplayed: state.filters.rowDisplayed,
-            dateBegin:     state.filters.dateBegin,
-            dateEnd:       state.filters.dateEnd,
-            menuFilter:    state.filters.menuFilter,
-            searchKeyword: state.filters.searchKeyword,
-          }
-        } )
+        return filtering( Object.assign( {}, state, {
+          filters: Object.assign( {}, state.filters, { page: state.filters.page + 1, startPageAt: sa + rd } ),
+          data:    state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
+        } ) )
       } else {
         return state
       }
 
     case PAGE_PREV:
       if ( sa - rd >= 0 ) {
-        return Object.assign( {}, state, {
-          filters: {
-            page:          state.filters.page - 1,
-            startPageAt:   sa - rd,
-            rowDisplayed:  state.filters.rowDisplayed,
-            dateBegin:     state.filters.dateBegin,
-            dateEnd:       state.filters.dateEnd,
-            menuFilter:    state.filters.menuFilter,
-            searchKeyword: state.filters.searchKeyword,
-          }
-        } )
+        return filtering( Object.assign( {}, state, {
+          filters: Object.assign( {}, state.filters, { page: state.filters.page - 1, startPageAt: sa - rd } ),
+          data:    state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
+        } ) )
       } else {
         return state
       }
+
+    case PAGE_FIRST:
+      return Object.assign( {}, state, {
+        filters: Object.assign( {}, state.filters, { page: defaults.page, startPageAt: defaults.startPageAt } ),
+        data:    state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
+      } )
+
+    case PAGE_LAST:
+      return Object.assign( {}, state, {
+        filters: Object.assign( {}, state.filters, {
+          page:        Math.ceil( state.data.count() / state.filters.rowDisplayed ),
+          startPageAt: ( (Math.ceil( state.data.count() / state.filters.rowDisplayed ) - 1) * state.filters.rowDisplayed ),
+        } ),
+        data:        state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
+      } )
 
     default:
       return state

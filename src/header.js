@@ -1,4 +1,4 @@
-import {pageNext, pagePrev} from './redux/actions'
+import {pageFirst, pageLast, pageNext, pagePrev} from './redux/actions'
 
 let Header = {}
 
@@ -25,7 +25,7 @@ Header.view = function view(c, props, children) {
           </div>
 
           <div class="six columns">
-            <button onclick={ () => { } }>
+            <button onclick={ () => { c.store.dispatch( pageFirst() )} }>
               <i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>
             </button>
 
@@ -37,7 +37,7 @@ Header.view = function view(c, props, children) {
               <i class="fa fa-chevron-right"></i>
             </button>
 
-            <button onclick={ () => { } }>
+            <button onclick={ () => { c.store.dispatch( pageLast() ) } }>
               <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i>
             </button>
           </div>
