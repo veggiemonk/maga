@@ -1,11 +1,18 @@
-import {pageFirst, pageLast, pageNext, pagePrev} from './redux/actions'
+import m from 'mithril'
+import {
+    pageFirst,
+    pageLast,
+    pageNext,
+    pagePrev,
+    filterSearch,
+} from './redux/actions'
 
 let Header = {}
 
 Header.controller = function controller(props, children) {
   let c = {
     store: props.store,
-    filesTotal: props.filesTotal,
+    search: val => {c.store.dispatch(filterSearch(val))}
   }
 
   return c
@@ -20,7 +27,14 @@ Header.view = function view(c, props, children) {
             <button class="button-primary">RELOAD</button>
 
             <input type="search"
+                   incremental
+                   oninput={ m.withAttr('value', c.search ) }
+                   value={ state.filters.searchKeyword }
                    placeholder="Search Here"/>
+            <input type="search"
+                   placeholder="Date Begin"/>
+            <input type="search"
+                   placeholder="Date End"/>
 
           </div>
 
@@ -33,7 +47,7 @@ Header.view = function view(c, props, children) {
               <i class="fa fa-chevron-left"></i>
             </button>
 
-            <button onclick={ () => { c.store.dispatch( pageNext( c.filesTotal().count() ) ) } }>
+            <button onclick={ () => { c.store.dispatch( pageNext( state.data.count() ) ) } }>
               <i class="fa fa-chevron-right"></i>
             </button>
 
@@ -47,14 +61,20 @@ Header.view = function view(c, props, children) {
             <input type="text" style="width: 50px;"
                    value={ state.filters.rowDisplayed }/>
 
+            <select name="select">
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="all">ALL</option>
+            </select>
             <label for="rowDisplay"> # row to Display </label>
-            <input type="range" min="1" max={ c.filesTotal().count() } step="1"
+            <input type="range" min="1" max={ state.data.count() } step="1"
                    name="rowDisplay" id="rowDisplay"
                    list="number"
                    value={ state.filters.rowDisplayed }/>
             <datalist id="number">
               <option>1</option>
-              {[ , ...Array( Math.floor( c.filesTotal().count() / 10 ) ) ].map( (x, i) =>
+              {[ , ...Array( Math.floor( state.data.count() / 10 ) ) ].map( (x, i) =>
                   <option label={i * 10}>{i * 10}</option>
               )}
             </datalist>
@@ -63,9 +83,9 @@ Header.view = function view(c, props, children) {
 
         <div class="row">
           <div class="u-full-width center">
-            <span>Showing: { state.filters.rowDisplay } files</span>
+            <span>Showing: { state.filters.rowDisplay } files out of { state.data.count()}</span>
             <br />
-            <span> Page #: { state.filters.page }</span>
+            <span> Page #: { state.filters.page } out of {Math.ceil( state.data.count() / state.filters.rowDisplayed )}</span>
           </div>
         </div>
 

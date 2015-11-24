@@ -1,12 +1,3 @@
-/*import { combineReducers } from 'redux'
- import columns from './columns'
- import filters from './filters'
-
- const rootReducer = combineReducers({
- columns,
- filters,
- })*/
-
 import { Map, List, fromJS as toImmutable } from 'immutable'
 
 import { defaults } from '../../settings'
@@ -48,15 +39,16 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
 
-  let rd = state.filters.rowDisplayed
-  let sa = state.filters.startPageAt
+  const rd = state.filters.rowDisplayed
+  const sa = state.filters.startPageAt
 
   switch ( action.type ) {
     case LOAD_DATA:
       return Object.assign( {}, state, {
-        columns: action.columnHeader,
-        files:   action.files,
-        data:    action.data,
+        columns:  action.columnHeader,
+        files:    action.files,
+        data:     action.data,
+        category: action.category,
       } )
 
     case RESET_VIEW:
@@ -114,7 +106,7 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_SEARCH:
       return filtering( Object.assign( {}, state, {
         columns: resetSort( state.columns ),
-        filters: { searchKeyword: action.search }
+        filters: Object.assign({}, state.filters, { searchKeyword: action.search } )
       } ) )
 
     case PAGE_NEXT:
@@ -149,7 +141,7 @@ const rootReducer = (state = initialState, action) => {
           page:        Math.ceil( state.data.count() / state.filters.rowDisplayed ),
           startPageAt: ( (Math.ceil( state.data.count() / state.filters.rowDisplayed ) - 1) * state.filters.rowDisplayed ),
         } ),
-        data:        state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
+        data:    state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
       } )
 
     default:

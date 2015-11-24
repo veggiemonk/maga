@@ -144,7 +144,7 @@ export const defaults = {
   startPageAt: 0,
   dateBegin: '',
   dateEnd: '',
-  menuFilter: { cat: undefined, ref: undefined },
+  menuFilter: { cat: '', ref: '' },
   searchKeyword: '',
 }
 
@@ -165,6 +165,7 @@ export const columnHeader = Map( __columnHeader.reduce(
 
 export const urlServer     = 'http://localhost:8019'
 export const fetchURL      = urlServer + '/file/list'
+//export const fetchFile     = '/test/fileListF01.json'
 export const fetchFile     = '/test/fileList.json'
 export const fetchCategory = '/test/category.json'
 export const headers       = method => {

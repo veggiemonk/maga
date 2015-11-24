@@ -27,7 +27,9 @@ Model.controller = function controller (props) {
           c.files( toImmutable( sanitize( FileList, CategoryList ) ) )
           c.category( toImmutable( groupMenu( CategoryList, FileList ) ) )
 
-          c.store.dispatch( loadData( props.columnHeader, c.files(), c.files() ) )
+          c.store.dispatch(
+              loadData( props.columnHeader, c.files(), c.files(), c.category() )
+          )
           //console.log(c.store)
         } )
         .then( () => {

@@ -4,7 +4,9 @@
 
 /* HYDRATING STORE */
 export const LOAD_DATA = 'LOAD_DATA'
-export const loadData  = ( columnHeader, files, data ) => ( { type: LOAD_DATA, columnHeader, files, data } )
+export const loadData  = ( columnHeader, files, data, category ) => (
+  { type: LOAD_DATA, columnHeader, files, data, category }
+)
 
 /* VIEW */
 export const RESET_VIEW = 'RESET_VIEW'

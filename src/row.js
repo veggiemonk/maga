@@ -9,7 +9,6 @@ import styles from './css/row.css!'
 let Row = {}
 
 Row.controller = function controller( props ) {
-  //console.log( props.columnHeader() )
   return {
     file:         props.file,
     columnHeader: props.columnHeader,
@@ -23,7 +22,7 @@ Row.controller = function controller( props ) {
 }
 
 Row.view = function view( c ) {
-  let v = k => c.columnHeader().get( k ).get('visible')
+  let v = k => c.columnHeader.get( k ).get('visible')
   return (
     <tr>
       <td class='center iconSelect'>{ m.trust( c.file.get( 'checkbox' ) ) }</td>

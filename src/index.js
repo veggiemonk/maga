@@ -11,7 +11,7 @@ import Model from './model'
 import { columnHeader } from './settings'
 
 // Components
-import Header from './header'
+import Filter from './filter'
 import Menu   from './menu'
 import Table  from './table'
 import ColumnVisibility  from './columnVisibility'
@@ -27,7 +27,6 @@ export default {
       files:        m.prop( List([]) ),
       category:     m.prop( [] ),
       columnHeader: m.prop( columnHeader ),
-      menuFilter:   m.prop( { type: 'root' } ),
       store:        props.store,
     }
     //<ColumnVisibility columnHeader={ c.columnHeader } />
@@ -50,12 +49,11 @@ export default {
         <p>
           <a href='/login' config={ m.route }>LOGIN</a>
         </p>
-        <Header store={c.store} filesTotal={ c.files } />
+        <Filter store={c.store} />
+        <Menu category={c.category}
+              store={c.store}/>
         { ( c.files().size > 0)
-            ? <Table files={ c.files }
-                     columnHeader={ c.columnHeader }
-                     menuFilter={c.menuFilter}
-                     store={c.store}/>
+            ? <Table store={c.store}/>
             : ''
         }
       </div>

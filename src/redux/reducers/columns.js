@@ -23,14 +23,6 @@ const toggleSort = col => {
   }
   return toImmutable( c )
 }
-/*
- if ( model.configCol().get( key ).sortable ) {
- model.updateColSorted( key );                 // toggle sort
- model.startPageAt( defaults.startPageAt );    // reset view
- model.page( defaults.page );                  // reset page
- model.data( model.seqSort( key ).toArray() ); // sort data
- }
- */
 
 export const getSortedColumn = columns => {
   const _c = columns.find( c => c.get( 'sorted' ) )
