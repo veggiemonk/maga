@@ -5,14 +5,18 @@ import {
     pageNext,
     pagePrev,
     filterSearch,
+    filterDateBegin,
+    filterDateEnd,
 } from './redux/actions'
 
 let Header = {}
 
 Header.controller = function controller(props, children) {
   let c = {
-    store: props.store,
-    search: val => {c.store.dispatch(filterSearch(val))}
+    store:     props.store,
+    search:    val => {c.store.dispatch( filterSearch( val ) )},
+    dateBegin: val => {c.store.dispatch( filterDateBegin( val ) )},
+    dateEnd:   val => {c.store.dispatch( filterDateEnd( val ) )},
   }
 
   return c
@@ -32,8 +36,12 @@ Header.view = function view(c, props, children) {
                    value={ state.filters.searchKeyword }
                    placeholder="Search Here"/>
             <input type="search"
+                   oninput={ m.withAttr('value', c.dateBegin ) }
+                   value={ state.filters.dateBegin }
                    placeholder="Date Begin"/>
             <input type="search"
+                   oninput={ m.withAttr('value', c.dateEnd ) }
+                   value={ state.filters.dateEnd }
                    placeholder="Date End"/>
 
           </div>
@@ -85,7 +93,8 @@ Header.view = function view(c, props, children) {
           <div class="u-full-width center">
             <span>Showing: { state.filters.rowDisplay } files out of { state.data.count()}</span>
             <br />
-            <span> Page #: { state.filters.page } out of {Math.ceil( state.data.count() / state.filters.rowDisplayed )}</span>
+            <span> Page #: { state.filters.page }
+              out of {Math.ceil( state.data.count() / state.filters.rowDisplayed )}</span>
           </div>
         </div>
 

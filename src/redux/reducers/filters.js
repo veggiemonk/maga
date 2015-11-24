@@ -1,15 +1,5 @@
 import { defaults } from '../../settings'
-
-export const searchInObject = (value, obj, conf) => {
-  const regex = new RegExp( value, 'i' )
-  for ( const prop in obj ) {
-    if ( obj.hasOwnProperty( prop )
-        && conf.get(prop).get('searchable')
-        && regex.test( obj[prop] ) ) {
-      return true
-    }
-  }
-}
+import moment from 'moment'
 
 export const filtering = state => {
   const { columns, filters, files }  = state
@@ -28,6 +18,7 @@ export const filtering = state => {
         isValid = file.get( 'date' ) >= filters.dateBegin
       }
       if ( isValid && filters.dateEnd ) {
+        //TODO: REWRITE DATE COMPARISON FUNCTION!!!!
         isValid = file.get( 'date' ) < filters.dateEnd
       }
       if ( isValid && filters.searchKeyword ) {
