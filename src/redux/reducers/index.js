@@ -143,6 +143,10 @@ const rootReducer = (state = initialState, action) => {
         } ),
         data:    state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
       } )
+    case CHANGE_ROW_DISPLAYED:
+      return  Object.assign( {}, state, {
+        filters: Object.assign({}, state.filters, { rowDisplayed: action.num } )
+      } )
 
     default:
       return state

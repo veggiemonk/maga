@@ -7,6 +7,7 @@ import {
     filterSearch,
     filterDateBegin,
     filterDateEnd,
+    changeRowDisplayed,
 } from './redux/actions'
 
 let Header = {}
@@ -14,6 +15,7 @@ let Header = {}
 Header.controller = function controller(props, children) {
   let c = {
     store:     props.store,
+    select:    val => {c.store.dispatch( changeRowDisplayed( val ) )},
     search:    val => {c.store.dispatch( filterSearch( val ) )},
     dateBegin: val => {c.store.dispatch( filterDateBegin( val ) )},
     dateEnd:   val => {c.store.dispatch( filterDateEnd( val ) )},
@@ -69,7 +71,11 @@ Header.view = function view(c, props, children) {
             <input type="text" style="width: 50px;"
                    value={ state.filters.rowDisplayed }/>
 
-            <select name="select">
+            <select 
+              name="select"
+              onchange={ m.withAttr('value', c.select) }
+              value={ c.select }
+              >
               <option value="10">10</option>
               <option value="20">20</option>
               <option value="50">50</option>
