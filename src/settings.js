@@ -136,13 +136,17 @@ export const defaults = {
     order:      false, // desc = true
     name:       'Column',
     dataType:   'string',
-    tdWidth:    '50px',
+    tdMinWidth:    '60px',
+    tdMaxWidth:    '100px',
   },
   index:       'index', //column that contains the index of the table
   rowDisplay:  10,
   page:        1,
   startPageAt: 0,
-  searchTerms: '',
+  dateBegin: '',
+  dateEnd: '',
+  menuFilter: { cat: '', ref: '' },
+  searchKeyword: '',
 }
 
 const col = Map( defaults.col )
@@ -162,6 +166,7 @@ export const columnHeader = Map( __columnHeader.reduce(
 
 export const urlServer     = 'http://localhost:8019'
 export const fetchURL      = urlServer + '/file/list'
+//export const fetchFile     = '/test/fileListF01.json'
 export const fetchFile     = '/test/fileList.json'
 export const fetchCategory = '/test/category.json'
 export const headers       = method => {

@@ -5,6 +5,11 @@
 
   "disallowSemicolons": true,
   "requireSemicolons": false,
+  "disallowVar": true,
+  "requireArrayDestructuring": true,
+  "requireObjectDestructuring": true,
+  /*"requireCamelCaseOrUpperCaseIdentifiers": { "strict": true },*/
+
   "disallowEmptyBlocks": true,
   "disallowQuotedKeysInObjects": true,
   "disallowMixedSpacesAndTabs": true,
@@ -26,9 +31,10 @@
   "requireSpaceBeforeBlockStatements": true,
   "requireParenthesesAroundIIFE": true,
   "requireSpacesInConditionalExpression": true,
+  "requireSpaceAfterComma": {"allExcept": ["trailing"]},
   "requireTrailingComma": false,
 
-  "validateQuoteMarks": "'",
+  "validateQuoteMarks": { "mark": "'", "escape": true, "ignoreJSX": true },
   "validateIndentation": 2,
   "maxErrors": 100,
   "verbose": true

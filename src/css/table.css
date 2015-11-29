@@ -1,0 +1,9 @@
+.main_div {
+	width: 70%;
+	display: inline-block;
+}
+
+.row_width {
+	min-width: 60px;
+	max-width: 100px;
+}

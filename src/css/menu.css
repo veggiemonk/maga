@@ -1,3 +1,15 @@
+.main_div {
+	width: 30%;
+	display: inline-block;
+}
+
+.text_overflow {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .menu {
     list-style-type: none;
 }
@@ -7,14 +19,26 @@
     width:   100%;
 }
 
-.menuDocRoot {
-    width: 200px;
+.menuRoot {
+    border: 1px solid #969cff;
 }
 
 .menuRefDoc {
     list-style-type: none;
 }
 
-.menuDocRefLi, .menuCatLi {
+.menuDocRefSpan {
+	compose-with: text_overflow;
+    display: block;
+    width:   100%;
+}
+
+
+.menuDocRefLi {
     border: 1px solid #969cff;
 }
+.menuCatLi {
+    border: 1px solid #969cff;
+}
+
+

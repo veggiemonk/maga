@@ -56,7 +56,7 @@ m.bindValueTo = (setter, getterName) => m.withAttr( getterName || 'value', sette
  * */
 export let searchInObject = (value, obj, conf) => {
   const regex = new RegExp( value, 'i' )
-  for ( var prop in obj ) {
+  for ( const prop in obj ) {
     if ( obj.hasOwnProperty( prop )
       && conf.get(prop).get('searchable')
       && regex.test( obj[prop] ) ) {
