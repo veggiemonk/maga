@@ -1,31 +1,46 @@
 import styles from './css/menu.css!'
 
-import {filterMenuRef, filterMenuCat } from './redux/actions'
+import {filterMenuRef, filterMenuCat, resetView } from './redux/actions'
 
 let Menu = {}
 
 Menu.controller = function controller(props) {
   let c = {
     category:   props.category,
-    menuFilter: props.menuFilter,
     store:      props.store,
   }
   return c
 }
-
+//TODO : i18n
 Menu.view = function view(c) {
+
+  const listRefDoc = (listCat, cat) => 
+    listCat.filter( x => x.get( 'categoryNumber' ) === cat)
+      .reduce((acc, next) => {
+        acc.push(next.get('referenceDocument'))
+        return acc
+      }, [])
+      
+  const state = c.store.getState()
   return (
-      <div>
+      <div class={styles.main_div}>
 
         <ul class='menu'>
           <li class={styles.menuRoot}
-              onclick={() => {c.menuFilter({type: 'root'})}}>
-            {'All Documents'}
+              onclick={() => {c.store.dispatch(resetView())}}>
+            'All Documents'
           </li>
-          {c.category().toList().map( cat => (
+          {state.category.toList().map( cat => (
               <li class={styles.menuCatLi}>
             <span class={styles.menuCatSpan}
-                  onclick={() => {c.store.dispatch( filterMenuCat(cat.get( 0 ).get( 'categoryNumber' ) ) ) } }>
+                  onclick={() => {
+                    c.store.dispatch( 
+                      filterMenuCat( 
+                        listRefDoc( cat, cat.get( 0 ).get( 'categoryNumber' ) ) 
+                      )
+                    ) 
+                  } 
+            }>
               { cat.get( 0 ).get( 'categoryNumber' ) + '-' + cat.get( 0 ).get( 'labelCategoryFR' )}
             </span>
                 <ul class={styles.menuRefDoc}>

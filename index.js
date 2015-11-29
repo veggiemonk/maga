@@ -7,6 +7,9 @@ let store = finalCreateStore( reducer )
 store.subscribe(m.redraw.bind(m))
 
 /**** DevTools ****/
+// maybe check npm
+// jspm install redux-devtools redux-devtools-gentest-plugin
+/*
 import React from 'react'
 import { devTools, persistState } from 'redux-devtools'
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react'
@@ -37,6 +40,7 @@ const view = test => {
 }
 
 React.render( view( JSON.parse( sessionStorage.test || false ) ), document.getElementById('devtools') )
+*/
 /**** DevTools ****/
 
 m.mount(document.getElementById('app'), m.component(app, {store: store}) )

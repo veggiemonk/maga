@@ -26,31 +26,31 @@ Row.view = function view( c ) {
   return (
     <tr>
       <td class='center iconSelect'>{ m.trust( c.file.get( 'checkbox' ) ) }</td>
-      <td class={styles.textcenter}>
+      <td class={styles.text_center}>
         <button onclick={()=> {c.download(c.file.get('fileId'))}}>
           <i class={ css.fa + ' ' + c.file.get('dlClass') + ' ' + css['fa-lg'] + ' ' + c.file.get('alreadyDL') }></i>
-          <small class={styles.textmuted}> { c.file.get( 'downloadCount' ) }</small>
+          <small class={styles.text_muted}> { c.file.get( 'downloadCount' ) }</small>
         </button>
       </td>
-      {v( 'date' ) ? <td class={styles.textcenter}>{ c.file.get( 'dateFormatted' )}</td> : ''}
+      {v( 'date' ) ? <td class={styles.text_center}>{ c.file.get( 'dateFormatted' )}</td> : ''}
       {v( 'fileName' ) ? <td><a class='dlfileLabel'>{ c.file.get( 'fileName' )}</a></td> : '' }
       {v( 'uploadUserName' ) ? <td>{ c.file.get( 'uploadUserName' )}</td> : '' }
       {v( 'employerNumber' ) ? <td>{ c.file.get( 'employerNumber' )}</td> : '' }
-      {v( 'label' ) ? <td><a class='dlfileLabel'>{ c.file.get( 'label' )}</a></td> : '' }
+      {v( 'label' ) ? <td class={styles.text_overflow}><a class='dlfileLabel'>{ c.file.get( 'label' )}</a></td> : '' }
       {v( 'referenceDocument' ) ? <td>{ c.file.get( 'referenceDocument' )}</td> : '' }
-      {v( 'size' ) ? <td class={styles.textright}>{ c.file.get( 'sizeFormatted' ) }</td> : '' }
-      {v( 'extension' ) ? <td class={styles.textcenter}>{ m.trust( c.file.get( 'extensionFormatted' ) ) }</td> : '' }
+      {v( 'size' ) ? <td class={styles.text_right}>{ c.file.get( 'sizeFormatted' ) }</td> : '' }
+      {v( 'extension' ) ? <td class={styles.text_center}>{ m.trust( c.file.get( 'extensionFormatted' ) ) }</td> : '' }
       {v( 'path' ) ? <td>{ c.file.get( 'path' ) }</td> : '' }
       {v( 'referenceClient' ) ? <td>{ c.file.get( 'referenceClient' ) }</td> : '' }
       {v( 'counter' ) ? <td>{ c.file.get( 'counter' ) }</td> : '' }
       {v( 'referenceGroupS' ) ? <td>{ c.file.get( 'referenceGroupS' ) }</td> : '' }
-      {v( 'uploadStamp' ) ? <td class={styles.textcenter}>{c.file.get( 'uploadStampFormatted' )}</td> : '' }
+      {v( 'uploadStamp' ) ? <td class={styles.text_center}>{c.file.get( 'uploadStampFormatted' )}</td> : '' }
       {v( 'uploaderComment' ) ?
         <td class='comments' data-toggle='tooltip' data-placement='left' data-container='body' data-html='true'
             title={ c.file.get('uploaderComment') }>{ c.file.get( 'uploaderCommentLimit' ) }
         </td> : ''  }
-      <td class={styles.textcenter}>
-        <a class={styles.textdanger} title='Remove' onclick={() => { c.remove( c.file.get( 'fileId' ) ) } }>
+      <td class={styles.text_center}>
+        <a class={styles.text_danger} title='Remove' onclick={() => { c.remove( c.file.get( 'fileId' ) ) } }>
           { m.trust( c.file.get( 'remove' ) )}
         </a></td>
     </tr>

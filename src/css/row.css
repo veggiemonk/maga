@@ -1,45 +1,51 @@
-
-.textleft {
-    text-align: left;
-}
-
-.textright {
-    text-align: right;
-}
-
-.textcenter {
-    text-align: center;
-}
-
-.textjustify {
-    text-align: justify;
-}
-
-.textnowrap {
+.text_overflow {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.textlowercase {
+.text_left {
+    text-align: left;
+}
+
+.text_right {
+    text-align: right;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.text_justify {
+    text-align: justify;
+}
+
+.text_nowrap {
+    white-space: nowrap;
+}
+
+.text_lowercase {
     text-transform: lowercase;
 }
 
-.textuppercase {
+.text_uppercase {
     text-transform: uppercase;
 }
 
-.textcapitalize {
+.text_capitalize {
     text-transform: capitalize;
 }
 
-.textmuted {
+.text_muted {
     color: #777;
 }
 
-.textprimary {
+.text_primary {
     color: #337ab7;
 }
 
-.textdanger {
+.text_danger {
     color: #a94442;
 }
 

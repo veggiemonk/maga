@@ -97,7 +97,7 @@ Header.view = function view(c, props, children) {
 
         <div class="row">
           <div class="u-full-width center">
-            <span>Showing: { state.filters.rowDisplay } files out of { state.data.count()}</span>
+            <span>Showing: { Math.min(state.filters.rowDisplayed, state.data.count() ) } files out of { state.data.count()} (total: {state.files.count()})</span>
             <br />
             <span> Page #: { state.filters.page }
               out of {Math.ceil( state.data.count() / state.filters.rowDisplayed )}</span>

@@ -1,4 +1,5 @@
 import { defaults } from '../../settings'
+import _ from 'lodash'
 import moment from 'moment'
 
 export const filtering = state => {
@@ -8,8 +9,7 @@ export const filtering = state => {
       let isValid = true
       if ( filters.menuFilter ) {
         if ( isValid && filters.menuFilter.cat ) {
-          isValid = file.get( 'referenceDocument' ) === filters.menuFilter.ref
-          /*TODO get data from menu category*/
+          isValid = _.contains(filters.menuFilter.cat, file.get( 'referenceDocument' ) )
         } else if ( isValid && filters.menuFilter.ref ) {
           isValid = file.get( 'referenceDocument' ) === filters.menuFilter.ref
         }
@@ -26,11 +26,6 @@ export const filtering = state => {
         isValid = columns
             .filter( c => c.get('visible') && c.get('searchable'))
             .some( c => regex.test( String( file.get( c.get('id') ) ) ) )
-        /*for ( let keys of columns.filter( c => c.get('visible') && c.get('searchable')).keys() ) {
-          console.log( keys, isValid, regex.test( String( file.get( keys ) ) ) )
-          isValid ? isValid = regex.test( String( file.get( keys ) ) ) : isValid
-        }*/
-        //file.find( v => regex.test(v) )
       }
       return isValid
     } )

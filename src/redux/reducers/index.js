@@ -1,4 +1,4 @@
-import { Map, List, fromJS as toImmutable } from 'immutable'
+import { fromJS as toImmutable } from 'immutable'
 
 import { defaults } from '../../settings'
 import { sortColumn, sort, resetSort, getSortedColumn } from './columns'
@@ -23,7 +23,7 @@ import {
 } from '../actions'
 
 const initialState = {
-  columns: Map( {} ),
+  columns: toImmutable( [['col1',{col1: 'fake data'}]] ),
   filters: {
     startPageAt:   defaults.startPageAt,
     page:          defaults.page,
@@ -33,14 +33,14 @@ const initialState = {
     menuFilter:    defaults.menuFilter,
     searchKeyword: defaults.searchKeyword,
   },
-  files:   List( [] ),
-  data:    List( [] )
+  files:   toImmutable( [] ),
+  data:    toImmutable( [] )
 }
 
 const rootReducer = (state = initialState, action) => {
 
-  const rd = state.filters.rowDisplayed
-  const sa = state.filters.startPageAt
+  const rd = Number(state.filters.rowDisplayed)
+  const sa = Number(state.filters.startPageAt)
 
   switch ( action.type ) {
     case LOAD_DATA:
@@ -52,7 +52,8 @@ const rootReducer = (state = initialState, action) => {
       } )
 
     case RESET_VIEW:
-      return Object.assign( {}, state, {
+      return filtering( Object.assign( {}, state, {
+        columns: resetSort( state.columns ),
         filters: {
           startPageAt:   defaults.startPageAt,
           page:          defaults.page,
@@ -62,7 +63,7 @@ const rootReducer = (state = initialState, action) => {
           menuFilter:    defaults.menuFilter,
           searchKeyword: defaults.searchKeyword,
         }
-      } )
+      } ) )
 
     case TOGGLE_COLUMN_VIEW:
       return Object.assign( {}, state, {

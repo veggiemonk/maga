@@ -136,7 +136,8 @@ export const defaults = {
     order:      false, // desc = true
     name:       'Column',
     dataType:   'string',
-    tdWidth:    '50px',
+    tdMinWidth:    '60px',
+    tdMaxWidth:    '100px',
   },
   index:       'index', //column that contains the index of the table
   rowDisplay:  10,

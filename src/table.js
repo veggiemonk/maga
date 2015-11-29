@@ -1,5 +1,5 @@
 import m from 'mithril'
-import { fromJS as toImmutable } from 'immutable'
+import immutable from 'immutable'
 import Row from './row'
 
 import {
@@ -11,7 +11,7 @@ import { sort, getSortedColumn } from './redux/reducers/columns'
 import { invalidate, inc, dec, fpush, searchInObject } from './utils'
 import { defaults } from './settings'
 //TODO: move it elsewhere!!!
-import styles from './css/visibleColumn.css!'
+import styles from './css/table.css!'
 
 let Table = {}
 
@@ -47,7 +47,7 @@ Table.controller = function controller(props) {
 Table.view = function view(c) {
   const state = c.store.getState()
   return (
-      <div>
+      <div class={styles.main_div}>
         <table>
           <thead>
           {
@@ -57,6 +57,7 @@ Table.view = function view(c) {
                 .filter( x => x.get( 'visible' ) )
                 .map( col =>
                     <th
+                        class={styles.row_width}
                         key={ col.get('id') }
                         onclick={() => { c.store.dispatch( sortColumn( col.get( 'id' ) ) ) } }>
                       { m.trust( col.get( 'name' ) ) }

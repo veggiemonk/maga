@@ -34,11 +34,8 @@ System.config({
     "mithril": "npm:mithril@0.2.0",
     "moment": "npm:moment@2.10.6",
     "postcss-safe-parser": "npm:postcss-safe-parser@1.0.1",
-    "react": "npm:react@0.14.3",
     "react-dom": "npm:react-dom@0.14.3",
     "redux": "npm:redux@3.0.4",
-    "redux-devtools": "npm:redux-devtools@2.1.5",
-    "redux-devtools-gentest-plugin": "npm:redux-devtools-gentest-plugin@1.0.5",
     "redux-logger": "npm:redux-logger@2.0.4",
     "redux-thunk": "npm:redux-thunk@1.0.0",
     "github:capaj/jspm-hot-reloader@0.4.2": {
@@ -95,8 +92,11 @@ System.config({
     },
     "npm:buffer@3.5.2": {
       "base64-js": "npm:base64-js@0.0.8",
+      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
       "ieee754": "npm:ieee754@1.1.6",
-      "is-array": "npm:is-array@1.0.1"
+      "is-array": "npm:is-array@1.0.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:core-js@1.2.6": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -155,13 +155,6 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
-    },
-    "npm:invariant@2.2.0": {
-      "loose-envify": "npm:loose-envify@1.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:jquery@2.1.4": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:js-base64@2.1.9": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
@@ -262,30 +255,8 @@ System.config({
       "asap": "npm:asap@2.0.3",
       "fs": "github:jspm/nodelibs-fs@0.1.2"
     },
-    "npm:ramda@0.16.0": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
     "npm:react-dom@0.14.3": {
       "react": "npm:react@0.14.3"
-    },
-    "npm:react-json-tree@0.1.9": {
-      "babel-runtime": "npm:babel-runtime@5.8.34",
-      "react": "npm:react@0.14.3",
-      "react-mixin": "npm:react-mixin@1.7.0"
-    },
-    "npm:react-mixin@1.7.0": {
-      "object-assign": "npm:object-assign@2.1.1",
-      "smart-mixin": "npm:smart-mixin@1.2.1"
-    },
-    "npm:react-redux@3.1.0": {
-      "hoist-non-react-statics": "npm:hoist-non-react-statics@1.0.3",
-      "invariant": "npm:invariant@2.2.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "redux": "npm:redux@3.0.4"
-    },
-    "npm:react-zeroclipboard@1.1.0": {
-      "envify": "npm:envify@3.4.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:react@0.14.3": {
       "envify": "npm:envify@3.4.0",
@@ -301,21 +272,6 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
-    },
-    "npm:redux-devtools-gentest-plugin@1.0.5": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "jquery": "npm:jquery@2.1.4",
-      "ramda": "npm:ramda@0.16.0",
-      "react-pure-render": "npm:react-pure-render@1.0.2",
-      "react-redux": "npm:react-redux@3.1.0",
-      "react-zeroclipboard": "npm:react-zeroclipboard@1.1.0",
-      "redux": "npm:redux@3.0.4"
-    },
-    "npm:redux-devtools@2.1.5": {
-      "react-json-tree": "npm:react-json-tree@0.1.9",
-      "react-mixin": "npm:react-mixin@1.7.0",
-      "react-redux": "npm:react-redux@3.1.0",
-      "redux": "npm:redux@3.0.4"
     },
     "npm:redux-logger@2.0.4": {
       "path": "github:jspm/nodelibs-path@0.1.0",

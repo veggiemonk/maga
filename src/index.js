@@ -15,6 +15,7 @@ import Filter from './filter'
 import Menu   from './menu'
 import Table  from './table'
 import ColumnVisibility  from './columnVisibility'
+import Header from './header'
 
 //utils
 import { inc, dec, stackLoader, loaderDisplay } from './utils'
@@ -45,6 +46,7 @@ export default {
             store={c.store}
             files={c.files}
             category={c.category}/>
+        <Header />
         <h1>TRANSFER</h1>
         <p>
           <a href='/login' config={ m.route }>LOGIN</a>
