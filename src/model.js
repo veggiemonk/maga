@@ -5,7 +5,7 @@ import { inc, dec, stackLoader, loaderDisplay } from './utils'
 import { groupMenu, sanitize } from './data'
 import { fetchFile, fetchCategory, headers } from './settings'
 
-import { loadData, resetView } from './redux/actions'
+import { loadData } from './redux/actions'
 
 /** CSS MODULES !! **/
 import styles from './css/index.css!'
