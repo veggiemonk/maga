@@ -10,7 +10,7 @@ export const filtering = state => {
       if ( filters.menuFilter ) {
         if ( isValid && filters.menuFilter.cat ) {
           isValid = _.contains(filters.menuFilter.cat, file.get( 'referenceDocument' ) )
-        } else if ( isValid && filters.menuFilter.ref ) {
+        } else if ( isValid && filters.menuFilter.ref !== undefined ) {
           isValid = file.get( 'referenceDocument' ) === filters.menuFilter.ref
         }
       }

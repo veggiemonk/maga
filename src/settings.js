@@ -133,6 +133,7 @@ export const defaults = {
     sortable:   true,
     searchable: true,
     visible:    true,
+    toggle:     false,
     order:      false, // desc = true
     name:       'Column',
     dataType:   'string',
@@ -145,8 +146,9 @@ export const defaults = {
   startPageAt: 0,
   dateBegin: '',
   dateEnd: '',
-  menuFilter: { cat: '', ref: '' },
+  menuFilter: { cat: undefined, ref: undefined },
   searchKeyword: '',
+  menuColumnView: false,
 }
 
 const col = Map( defaults.col )

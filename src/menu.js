@@ -28,21 +28,22 @@ Menu.view = function view(c) {
         <ul class='menu'>
           <li class={styles.menuRoot}
               onclick={() => {c.store.dispatch(resetView())}}>
-            'All Documents'
+            'All Documents' <span style='float: right;'>{ state.files.count() }</span>
           </li>
           {state.category.toList().map( cat => (
               <li class={styles.menuCatLi}>
-            <span class={styles.menuCatSpan}
-                  onclick={() => {
-                    c.store.dispatch( 
-                      filterMenuCat( 
-                        listRefDoc( cat, cat.get( 0 ).get( 'categoryNumber' ) ) 
-                      )
-                    ) 
-                  } 
-            }>
-              { cat.get( 0 ).get( 'categoryNumber' ) + '-' + cat.get( 0 ).get( 'labelCategoryFR' )}
-            </span>
+                <span class={styles.menuCatSpan}
+                      onclick={() => {
+                        c.store.dispatch( 
+                          filterMenuCat( 
+                            listRefDoc( cat, cat.get( 0 ).get( 'categoryNumber' ) ) 
+                          )
+                        ) 
+                      } 
+                }>
+                  { cat.get( 0 ).get( 'categoryNumber' ) + '-' + cat.get( 0 ).get( 'labelCategoryFR' )}
+                </span>
+                <span>{ cat.get( 0 ).get('filesPerCat') }</span>
                 <ul class={styles.menuRefDoc}>
                   { cat.toList().map( doc => (
                       <li class={styles.menuDocRefLi}
@@ -50,11 +51,16 @@ Menu.view = function view(c) {
                   <span class={styles.menuDocRefSpan}>
                     { doc.get( 'referenceDocument' ) + ' - ' + doc.get( 'labelDocFR' )}
                   </span>
+                  <span>{ doc.get('filesPerRef') }</span>
                       </li>
                   ) ).toJS()
                   }</ul>
               </li>
           ) ).toJS()}
+        <li 
+          class={styles.menuCatLi}
+          onclick={() => { c.store.dispatch(filterMenuRef(''))} }
+        >'OTHERS' </li>
         </ul>
       </div>
   )

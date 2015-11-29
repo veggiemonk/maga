@@ -15,7 +15,8 @@
 }
 
 .menuCatSpan {
-    display: block;
+    compose-with: text_overflow;
+    display: inline-block;
     width:   100%;
 }
 
@@ -29,7 +30,7 @@
 
 .menuDocRefSpan {
 	compose-with: text_overflow;
-    display: block;
+    display: inline-block;
     width:   100%;
 }
 

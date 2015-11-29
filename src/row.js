@@ -11,7 +11,7 @@ let Row = {}
 Row.controller = function controller( props ) {
   return {
     file:         props.file,
-    columnHeader: props.columnHeader,
+    store: props.store,
     download:     fileId => {
       alert( 'DOWNLOAD: ' + fileId )
     },
@@ -22,7 +22,8 @@ Row.controller = function controller( props ) {
 }
 
 Row.view = function view( c ) {
-  let v = k => c.columnHeader.get( k ).get('visible')
+  const { columns } = c.store.getState()
+  const v = k => columns.get( k ).get('visible')
   return (
     <tr>
       <td class='center iconSelect'>{ m.trust( c.file.get( 'checkbox' ) ) }</td>

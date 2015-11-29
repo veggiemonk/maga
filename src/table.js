@@ -48,7 +48,7 @@ Table.view = function view(c) {
   const state = c.store.getState()
   return (
       <div class={styles.main_div}>
-        <table>
+        <table class={styles.scroll}>
           <thead>
           {
             state.columns
@@ -75,7 +75,7 @@ Table.view = function view(c) {
                     <Row
                         key={ file.get('index') }
                         file={ file }
-                        columnHeader={ state.columns }>
+                        store={ c.store }>
                     </Row> ) ).toJS()
           }
           </tbody>

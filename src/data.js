@@ -2,22 +2,32 @@ import {
     formatExtension,
     formatSize,
     labelDocI18n
-}
-    from './utils'
+} from './utils'
+
 import moment from 'moment'
 import _ from 'lodash'
+
 export const groupMenu = (category, files) => {
-  let refDocUsed = _.sortBy( _.uniq( _.pluck( files, 'referenceDocument' ) ) )
-  return _.groupBy(
-      _.filter( category, (obj) => {
-        if ( _.contains( refDocUsed, obj.referenceDocument ) ) {
-          return obj
-        }
-      } ),
-      obj => obj.categoryNumber
-  )
+  const refDocUsed = _.sortBy( _.uniq( _.pluck( files, 'referenceDocument' ) ) )
+  const categoryUsed = _.filter( category, cat => _.contains( refDocUsed, cat.referenceDocument ) )
+  const filesPerRef = _.countBy(files, 'referenceDocument')
+  const filesPerCat = _.reduce( categoryUsed, (acc, curr) => {
+    acc[curr.categoryNumber] 
+      ? acc[curr.categoryNumber] += filesPerRef[curr.referenceDocument]
+      : acc[curr.categoryNumber] = filesPerRef[curr.referenceDocument]
+    return acc
+  }, [] )
+
+  return _.chain( categoryUsed )
+    .map( cat => {
+        cat.filesPerRef = filesPerRef[cat.referenceDocument]
+        cat.filesPerCat = filesPerCat[cat.categoryNumber]
+        return cat
+      } )
+    .groupBy(cat => cat.categoryNumber)
+    .value()  
 }
-const notNaNPlease     = val => Number( val ) ? Number( val ) : ''
+
 export const sanitize  = (files, category) => {
   let username = sessionStorage.username || ''
   return files.map( row => {
@@ -40,13 +50,16 @@ export const sanitize  = (files, category) => {
           row.dlClass = row.uploadUserName === username ? 'fa-upload' : 'fa-download'
         },
         label:             () => {
-          row[key] = labelDocI18n(
+          const ref = Number( row.referenceDocument )
+          ref
+            ? row[key] = labelDocI18n(
               _.find( category, {
-                referenceDocument: Number( row.referenceDocument )
+                referenceDocument: ref
               } ), 'fr' /* TODO: I18N */
-          )
+            )
+            : row[key] = row.fileName
         },
-        referenceDocument: () => { row[ key ] ? row[ key ] = Number( row[ key ] ) : '' },
+        referenceDocument: () => { row[ key ] ? row[ key ] = Number( row[ key ] ) : '_' },
         size:              () => { row.sizeFormatted = formatSize( row[ key ] ) },
         extension:         () => { row.extensionFormatted = formatExtension( row[ key ] ) },
         path:              () => {},

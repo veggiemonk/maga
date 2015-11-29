@@ -6,7 +6,7 @@ Header.view = c => (
 	<div class={styles.container}>
 		<div class={`${styles.codrops_top} ${styles.clearfix}`}>
 			<a href="http://tympanus.net/Tutorials/BasicReadyToUseCSSStyles/">
-				<strong>HEADER LEFT</strong> InsertTextHere
+				<strong>TRANSFER</strong>
 			</a>
 			<span class={styles.right}>
 				<a href="http://tympanus.net/codrops/?p=11775">

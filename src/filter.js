@@ -8,6 +8,7 @@ import {
     filterDateBegin,
     filterDateEnd,
     changeRowDisplayed,
+    toggleMenuColumnView,
 } from './redux/actions'
 
 let Header = {}
@@ -15,10 +16,11 @@ let Header = {}
 Header.controller = function controller(props, children) {
   let c = {
     store:     props.store,
-    select:    val => {c.store.dispatch( changeRowDisplayed( val ) )},
-    search:    val => {c.store.dispatch( filterSearch( val ) )},
-    dateBegin: val => {c.store.dispatch( filterDateBegin( val ) )},
-    dateEnd:   val => {c.store.dispatch( filterDateEnd( val ) )},
+    select:    val => {c.store.dispatch( changeRowDisplayed( Number( val ) ) ) },
+    search:    val => {c.store.dispatch( filterSearch( val ) ) },
+    dateBegin: val => {c.store.dispatch( filterDateBegin( val ) ) },
+    dateEnd:   val => {c.store.dispatch( filterDateEnd( val ) ) },
+    toggleMenuColumnView: () => {c.store.dispatch( toggleMenuColumnView() ) }
   }
 
   return c
@@ -46,6 +48,9 @@ Header.view = function view(c, props, children) {
                    value={ state.filters.dateEnd }
                    placeholder="Date End"/>
 
+            <input type="checkbox"
+                   onclick={ m.withAttr('checked', c.toggleMenuColumnView ) }
+                   checked={state.filters.menuColumnView} />
           </div>
 
           <div class="six columns">
@@ -79,7 +84,7 @@ Header.view = function view(c, props, children) {
               <option value="10">10</option>
               <option value="20">20</option>
               <option value="50">50</option>
-              <option value="all">ALL</option>
+              <option value={state.data.count()}>ALL</option>
             </select>
             <label for="rowDisplay"> # row to Display </label>
             <input type="range" min="1" max={ state.data.count() } step="1"

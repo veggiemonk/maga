@@ -20,6 +20,7 @@ import {
     SORT_COLUMN,
     TOGGLE_COLUMN_VIEW,
     RESET_VIEW,
+    TOGGLE_MENU_COLUMN_VIEW,
 } from '../actions'
 
 const initialState = {
@@ -32,6 +33,7 @@ const initialState = {
     dateEnd:       defaults.dateEnd,
     menuFilter:    defaults.menuFilter,
     searchKeyword: defaults.searchKeyword,
+    menuColumnView: defaults.menuColumnView
   },
   files:   toImmutable( [] ),
   data:    toImmutable( [] )
@@ -39,8 +41,8 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
 
-  const rd = Number(state.filters.rowDisplayed)
-  const sa = Number(state.filters.startPageAt)
+  const rd = state.filters.rowDisplayed
+  const sa = state.filters.startPageAt
 
   switch ( action.type ) {
     case LOAD_DATA:
@@ -62,13 +64,23 @@ const rootReducer = (state = initialState, action) => {
           dateEnd:       defaults.dateEnd,
           menuFilter:    defaults.menuFilter,
           searchKeyword: defaults.searchKeyword,
+          menuColumnView: defaults.menuColumnView,
         }
       } ) )
 
     case TOGGLE_COLUMN_VIEW:
-      return Object.assign( {}, state, {
+      return filtering( Object.assign( {}, state, {
         columns: state.columns.setIn( [ action.id, 'visible' ], !state.columns.getIn( [ action.id, 'visible' ] ) )
-      } )
+      } ) )
+
+    case TOGGLE_MENU_COLUMN_VIEW:
+      return Object.assign( {}, state, {
+        filters: Object.assign( {}, state.filters, { 
+          page: defaults.page, 
+          startPageAt: defaults.startPageAt,
+          menuColumnView: !state.filters.menuColumnView,
+        } )
+      })
 
     case SORT_COLUMN:
       if ( state.columns.getIn( [ action.id, 'sortable' ] ) ) {
@@ -83,31 +95,52 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_DATE_BEGIN:
       return filtering( Object.assign( {}, state, {
         columns: resetSort( state.columns ),
-        filters: Object.assign( {}, state.filters, { dateBegin: action.date } )
+        filters: Object.assign( {}, state.filters, { 
+          page: defaults.page, 
+          startPageAt: defaults.startPageAt,
+          dateBegin: action.date,
+        } )
       } ) )
 
     case FILTER_DATE_END:
       return filtering( Object.assign( {}, state, {
         columns: resetSort( state.columns ),
-        filters: Object.assign( {}, state.filters, { dateEnd: action.date } )
+        filters: Object.assign( {}, state.filters, { 
+          page: defaults.page, 
+          startPageAt: defaults.startPageAt,
+          dateEnd: action.date,
+        } )
       } ) )
 
     case FILTER_MENU_REF:
       return filtering( Object.assign( {}, state, {
         columns: resetSort( state.columns ),
-        filters: Object.assign( {}, state.filters, { menuFilter: { cat: defaults.cat, ref: action.ref } } )
+        filters: Object.assign( {}, state.filters, { 
+          page: defaults.page, 
+          startPageAt: defaults.startPageAt,
+          menuFilter: { cat: defaults.cat, ref: action.ref },
+        } )
       } ) )
 
     case FILTER_MENU_CAT:
       return filtering( Object.assign( {}, state, {
         columns: resetSort( state.columns ),
-        filters: Object.assign( {}, state.filters, { menuFilter: { cat: action.cat, ref: defaults.ref } } )
+        filters: Object.assign( {}, state.filters, { 
+          page: defaults.page, 
+          startPageAt: defaults.startPageAt,
+          menuFilter: { cat: action.cat, ref: defaults.ref }, 
+        } )
       } ) )
 
     case FILTER_SEARCH:
       return filtering( Object.assign( {}, state, {
         columns: resetSort( state.columns ),
-        filters: Object.assign({}, state.filters, { searchKeyword: action.search } )
+        //every time it filters, reset page and startPageAt
+        filters: Object.assign({}, state.filters, { 
+          page: defaults.page, 
+          startPageAt: defaults.startPageAt,
+          searchKeyword: action.search,
+        } )
       } ) )
 
     case PAGE_NEXT:
@@ -146,7 +179,12 @@ const rootReducer = (state = initialState, action) => {
       } )
     case CHANGE_ROW_DISPLAYED:
       return  Object.assign( {}, state, {
-        filters: Object.assign({}, state.filters, { rowDisplayed: action.num } )
+        filters: Object.assign({}, state.filters, 
+          { 
+            page: defaults.page,
+            startPageAt: defaults.startPageAt,
+            rowDisplayed: action.num
+          } )
       } )
 
     default:
