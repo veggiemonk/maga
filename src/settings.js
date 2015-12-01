@@ -138,7 +138,7 @@ export const defaults = {
     name:       'Column',
     dataType:   'string',
     tdMinWidth:    '60px',
-    tdMaxWidth:    '100px',
+    tdMaxWidth:    '300px',
   },
   index:       'index', //column that contains the index of the table
   rowDisplay:  10,
