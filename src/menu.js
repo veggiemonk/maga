@@ -5,41 +5,41 @@ import {filterMenuRef, filterMenuCat, resetView } from './redux/actions'
 let Menu = {}
 
 Menu.controller = function controller(props) {
-  let c = {
-    category:   props.category,
-    store:      props.store,
-  }
-  return c
-}
-//TODO : i18n
-Menu.view = function view(c) {
 
-  const listRefDoc = (listCat, cat) => 
-    listCat.filter( x => x.get( 'categoryNumber' ) === cat)
-      .reduce((acc, next) => {
-        acc.push(next.get('referenceDocument'))
-        return acc
-      }, [])
+}
+
+//TODO : i18n
+const listRefDoc = (listCat, cat) => 
+  listCat.filter( x => x.get( 'categoryNumber' ) === cat)
+    .reduce((acc, next) => {
+      acc.push(next.get('referenceDocument'))
+      return acc
+    }, [])
       
-  const state = c.store.getState()
+
+Menu.view = function view(c, props) {
+
+  const state = props.store.getState()
+  const dispatch = props.store.dispatch
   return (
       <div class={styles.main_div}>
 
         <ul class='menu'>
           <li class={styles.menuRoot}
-              onclick={() => {c.store.dispatch(resetView())}}>
+              onclick={() => {dispatch(resetView())}}>
             'All Documents' <span style='float: right;'>{ state.files.count() }</span>
           </li>
-          {state.category.toList().map( cat => (
+            {
+              state.category && state.category.toList().map( cat => (
               <li class={styles.menuCatLi}>
                 <span class={styles.menuCatSpan}
                       onclick={() => {
-                        c.store.dispatch( 
+                        dispatch( 
                           filterMenuCat( 
                             listRefDoc( cat, cat.get( 0 ).get( 'categoryNumber' ) ) 
                           )
-                        ) 
-                      } 
+                        )
+                      }
                 }>
                   { cat.get( 0 ).get( 'categoryNumber' ) + '-' + cat.get( 0 ).get( 'labelCategoryFR' )}
                 </span>
@@ -47,20 +47,22 @@ Menu.view = function view(c) {
                 <ul class={styles.menuRefDoc}>
                   { cat.toList().map( doc => (
                       <li class={styles.menuDocRefLi}
-                          onclick={() => {c.store.dispatch( filterMenuRef(doc.get( 'referenceDocument' ) ) ) } }>
+                          onclick={() => {dispatch( filterMenuRef(doc.get( 'referenceDocument' ) ) ) } }>
                   <span class={styles.menuDocRefSpan}>
                     { doc.get( 'referenceDocument' ) + ' - ' + doc.get( 'labelDocFR' )}
                   </span>
                   <span>{ doc.get('filesPerRef') }</span>
                       </li>
                   ) ).toJS()
-                  }</ul>
+                  }
+                </ul>
               </li>
-          ) ).toJS()}
+          ) ).toJS()
+}
         <li 
           class={styles.menuCatLi}
-          onclick={() => { c.store.dispatch(filterMenuRef(''))} }
-        >'OTHERS' </li>
+          onclick={() => { dispatch(filterMenuRef(''))} }
+        >'OTHERS' <span>{state.files.filter(x => x.get('referenceDocument') === '').count()}</span></li>
         </ul>
       </div>
   )
