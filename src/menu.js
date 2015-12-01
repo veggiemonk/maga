@@ -31,7 +31,7 @@ Menu.view = function view(c, props) {
           </li>
             {
               state.category && state.category.toList().map( cat => (
-              <li class={styles.menuCatLi}>
+              <li class={styles.menuCatLi} key={cat.get( 0 ).get( 'categoryNumber' )}>
                 <span class={styles.menuCatSpan}
                       onclick={() => {
                         dispatch( 
@@ -46,7 +46,7 @@ Menu.view = function view(c, props) {
                 <span>{ cat.get( 0 ).get('filesPerCat') }</span>
                 <ul class={styles.menuRefDoc}>
                   { cat.toList().map( doc => (
-                      <li class={styles.menuDocRefLi}
+                      <li class={styles.menuDocRefLi} key={doc.get( 'referenceDocument' )}
                           onclick={() => {dispatch( filterMenuRef(doc.get( 'referenceDocument' ) ) ) } }>
                   <span class={styles.menuDocRefSpan}>
                     { doc.get( 'referenceDocument' ) + ' - ' + doc.get( 'labelDocFR' )}
