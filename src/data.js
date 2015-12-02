@@ -1,18 +1,33 @@
-import {
-    formatExtension,
-    formatSize,
-    labelDocI18n
-} from './utils'
+import { formatExtension, formatSize } from './utils'
 
 import moment from 'moment'
 import _ from 'lodash'
+
+const LANG = 'fr'
+
+/***
+ *
+ * @param item
+ * @param lang
+ * @returns {*}
+ */
+export const labelDocI18n = (item, lang) => {
+
+  let doc = {
+    fr:      () => item.labelDocFR,
+    nl:      () => item.labelDocNL,
+    de:      () => item.labelDocDE,
+    default: () => item.labelDocX,
+  }
+  return (doc[lang] || doc['default'])()
+}
 
 export const groupMenu = (category, files) => {
   const refDocUsed = _.sortBy( _.uniq( _.pluck( files, 'referenceDocument' ) ) )
   const categoryUsed = _.filter( category, cat => _.contains( refDocUsed, cat.referenceDocument ) )
   const filesPerRef = _.countBy(files, 'referenceDocument')
   const filesPerCat = _.reduce( categoryUsed, (acc, curr) => {
-    acc[curr.categoryNumber] 
+    acc[curr.categoryNumber]
       ? acc[curr.categoryNumber] += filesPerRef[curr.referenceDocument]
       : acc[curr.categoryNumber] = filesPerRef[curr.referenceDocument]
     return acc
@@ -25,7 +40,7 @@ export const groupMenu = (category, files) => {
         return cat
       } )
     .groupBy(cat => cat.categoryNumber)
-    .value()  
+    .value()
 }
 
 export const sanitize  = (files, category) => {
@@ -55,7 +70,7 @@ export const sanitize  = (files, category) => {
             ? row[key] = labelDocI18n(
               _.find( category, {
                 referenceDocument: ref
-              } ), 'fr' /* TODO: I18N */
+              } ), LANG /* TODO: I18N */
             )
             : row[key] = row.fileName
         },

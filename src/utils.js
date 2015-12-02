@@ -64,36 +64,20 @@ export let searchInObject = (value, obj, conf) => {
     }
   }
 }
-/***
- *
- * @param item
- * @param lang
- * @returns {*}
- */
-export let labelDocI18n   = (item, lang) => {
-
-  let doc = {
-    fr:      () => item.labelDocFR,
-    nl:      () => item.labelDocNL,
-    de:      () => item.labelDocDE,
-    default: () => item.labelDocX,
-  }
-  return (doc[lang] || doc['default'])()
-}
 
 /***
  *
- * @param item
+ * @param Immutable Object
  * @param lang
  * @returns {*}
  */
 export let labelCati18n = (item, lang) => {
 
   let cat = {
-    fr:      () => item.labelCategoryFR,
-    nl:      () => item.labelCategoryNL,
-    de:      () => item.labelCategoryDE,
-    default: () => item.labelCategoryX,
+    fr:      () => item.get( 'labelCategoryFR' ),
+    nl:      () => item.get( 'labelCategoryNL' ),
+    de:      () => item.get( 'labelCategoryDE' ),
+    default: () => item.get( 'labelCategoryX' ),
   }
   return (cat[lang] || cat['default'])()
 }

@@ -9,9 +9,9 @@ import {
     filterDateEnd,
     changeRowDisplayed,
     toggleMenuColumnView,
-} from './redux/actions'
+} from '../redux/actions'
 
-//import styles from './css/skeleton.css!'
+//import styles from '../css/skeleton.css!'
 
 let Header = {}
 
@@ -76,7 +76,7 @@ Header.view = function view(c, props, children) {
 
           <div class="three columns">
 
-            <select 
+            <select
               name="select"
               onchange={ m.withAttr('value', c.select) }
               value={ c.select }>

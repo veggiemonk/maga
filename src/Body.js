@@ -1,11 +1,11 @@
 import m from 'mithril'
 
 // Components
-import Filter from './filter'
-import Menu   from './menu'
-import Table  from './table'
-import ColumnVisibility  from './columnVisibility'
-import Header from './header'
+import Filter from './components/Filter'
+import Menu   from './components/Menu'
+import Table  from './components/Table'
+import ColumnVisibility  from './components/ColumnVisibility'
+import Header from './components/Header'
 
 let Body = {}
 
@@ -25,7 +25,7 @@ Body.view = (c, props) => {
         <Filter store={props.store} />
 
         <Menu store={props.store}/>
-        { 
+        {
           state.files.count() > 0
             ? <Table store={props.store}/>
             : 'Table not loaded yet --> show loader'

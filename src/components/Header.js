@@ -1,4 +1,4 @@
-import styles from './css/header.css!'
+import styles from '../css/header.css!'
 
 let Header = {}
 

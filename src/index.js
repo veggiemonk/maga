@@ -6,7 +6,7 @@ import { fromJS as toImmutable } from 'immutable'
 import { loadData, resetView } from './redux/actions'
 
 // DATA
-import Model from './model'
+import Model from './Model'
 
 // Columns settings
 import { columnHeader } from './settings'
@@ -27,7 +27,7 @@ export default {
   },
 
   view: c => {
-    return (  
+    return (
       <div>
         <Model
           columnHeader={columnHeader}

@@ -1,6 +1,6 @@
-import styles from './css/menu.css!'
+import styles from '../css/menu.css!'
 
-import {filterMenuRef, filterMenuCat, resetView } from './redux/actions'
+import {filterMenuRef, filterMenuCat, resetView } from './../redux/actions'
 
 let Menu = {}
 
@@ -9,13 +9,13 @@ Menu.controller = function controller(props) {
 }
 
 //TODO : i18n
-const listRefDoc = (listCat, cat) => 
+const listRefDoc = (listCat, cat) =>
   listCat.filter( x => x.get( 'categoryNumber' ) === cat)
     .reduce((acc, next) => {
       acc.push(next.get('referenceDocument'))
       return acc
     }, [])
-      
+
 
 Menu.view = function view(c, props) {
 
@@ -34,9 +34,9 @@ Menu.view = function view(c, props) {
               <li class={styles.menuCatLi} key={cat.get( 0 ).get( 'categoryNumber' )}>
                 <span class={styles.menuCatSpan}
                       onclick={() => {
-                        dispatch( 
-                          filterMenuCat( 
-                            listRefDoc( cat, cat.get( 0 ).get( 'categoryNumber' ) ) 
+                        dispatch(
+                          filterMenuCat(
+                            listRefDoc( cat, cat.get( 0 ).get( 'categoryNumber' ) )
                           )
                         )
                       }
@@ -59,7 +59,7 @@ Menu.view = function view(c, props) {
               </li>
           ) ).toJS()
 }
-        <li 
+        <li
           class={styles.menuCatLi}
           onclick={() => { dispatch(filterMenuRef(''))} }
         >'OTHERS' <span>{state.files.filter(x => x.get('referenceDocument') === '').count()}</span></li>

@@ -1,17 +1,17 @@
 import m from 'mithril'
 import immutable from 'immutable'
-import Row from './row'
+import Row from './Row'
 
 import {
     sortColumn, toggleColumnView,
     filterDateBegin, filterDateEnd, filterMenuCat, filterMenuRef, filterSearch
-} from './redux/actions'
-import { sort, getSortedColumn } from './redux/reducers/columns'
+} from './../redux/actions'
+import { sort, getSortedColumn } from './../redux/reducers/columns'
 
-import { invalidate, inc, dec, fpush, searchInObject } from './utils'
-import { defaults } from './settings'
+import { invalidate, inc, dec, fpush, searchInObject } from './../utils'
+import { defaults } from './../settings'
 //TODO: move it elsewhere!!!
-import styles from './css/table.css!'
+import styles from '../css/table.css!'
 
 let Table = {}
 

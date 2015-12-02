@@ -4,7 +4,7 @@ import css from 'font-awesome/css/font-awesome.css!'
 //console.log('css = ', css)
 //import { Map, fromJS as toImmutable } from 'immutable'
 
-import styles from './css/row.css!'
+import styles from '../css/row.css!'
 
 let Row = {}
 

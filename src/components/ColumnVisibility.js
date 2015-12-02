@@ -1,8 +1,8 @@
 import m from 'mithril'
 
-import { toggleColumnView } from './redux/actions'
+import { toggleColumnView } from './../redux/actions'
 
-import styles from './css/visibleColumn.css!'
+import styles from '../css/visibleColumn.css!'
 
 let ColumnVisibility = {}
 
@@ -27,7 +27,7 @@ ColumnVisibility.view = c => {
             .filter( x => x.get( 'toggle' ) )
             .sortBy( x => x.get( 'name' ) )
             .map( x =>
-              <a class={ !x.get( 'visible' ) ? styles.active : '' } 
+              <a class={ !x.get( 'visible' ) ? styles.active : '' }
                 onclick={ () => { c.store.dispatch( toggleColumnView( x.get('id') ) ) } }>
                 { m.trust( x.get( 'name' ) ) }
               </a> ).toJS()
