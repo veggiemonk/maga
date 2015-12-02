@@ -5,8 +5,8 @@ import createLogger from 'redux-logger'
 const loggerMiddleware = createLogger()
 
 const finalCreateStore = compose(
-  applyMiddleware( thunkMiddleware/*, loggerMiddleware*/  ),
+  applyMiddleware( thunkMiddleware/*, loggerMiddleware*/ ),
   window.devToolsExtension ? window.devToolsExtension() : f => f
-)(createStore)
+)( createStore )
 
 export default finalCreateStore

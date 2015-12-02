@@ -12,7 +12,7 @@ import styles from './css/index.css!'
 
 let Model = {}
 
-Model.controller = function controller (props) {
+Model.controller = function controller( props ) {
   let c = {
     files:             props.files,
     category:          props.category,
@@ -22,13 +22,13 @@ Model.controller = function controller (props) {
     load:              () => {
       inc( stackLoader )
       m.startComputation()
-      Promise.all( [c.fetchFileList(), c.fetchCategoryList()] )
-        .then( ([FileList, CategoryList]) => {
+      Promise.all( [ c.fetchFileList(), c.fetchCategoryList() ] )
+        .then( ( [FileList, CategoryList] ) => {
           c.files( toImmutable( sanitize( FileList, CategoryList ) ) )
           c.category( toImmutable( groupMenu( CategoryList, FileList ) ) )
 
           c.store.dispatch(
-              loadData( props.columnHeader, c.files(), c.files(), c.category() )
+            loadData( props.columnHeader, c.files(), c.files(), c.category() )
           )
           //console.log(c.store)
         } )
@@ -44,7 +44,7 @@ Model.controller = function controller (props) {
   return c
 }
 
-Model.view = function view () {
+Model.view = function view() {
   return (
     <div class={ styles.loading } style={ loaderDisplay() }>
       <div class={ styles.pulseloader }></div>

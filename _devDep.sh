@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 jspm install redux-devtools=github:gaearon/redux-devtools@next \
   -o "{main:'src/index',dependencies:{'lodash':'^3.10.1','react-redux':'^4.0.0','redux':'^3.0.0','react':'^0.14.0','react-addons-test-utils':'npm:react-addons-test-utils@^0.14.0','react-dom':'npm:react-dom@^0.14.0'} } "
 jspm install redux-devtools-gentest-plugin=github:lapanoid/redux-devtools-gentest-plugin@next \

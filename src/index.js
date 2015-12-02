@@ -8,18 +8,20 @@ import { loadData, resetView } from './redux/actions'
 // DATA
 import Model from './Model'
 
+// Components
+import Body from './Body'
+import Header from './components/Header/index'
+
 // Columns settings
 import { columnHeader } from './settings'
-
-import Body from './Body'
 
 export default {
   controller: props => {
     //TODO: LANGUAGE!!!
     //TODO: LOGIN and CREDENTIALS
     let c = {
-      files:        m.prop( toImmutable([]) ),
-      category:     m.prop( toImmutable([]) ),
+      files:        m.prop( toImmutable( [] ) ),
+      category:     m.prop( toImmutable( [] ) ),
       columnHeader: m.prop( columnHeader ),
       store:        props.store,
     }
@@ -33,11 +35,12 @@ export default {
           columnHeader={columnHeader}
           store={c.store}
           files={c.files}
-          category={c.category} >
+          category={c.category}>
         </Model>
-        <Body store={c.store} />
+        <Header />
+        <Body store={c.store}/>
 
       </div>
-      )
+    )
   },
 }

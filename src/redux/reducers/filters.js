@@ -9,7 +9,7 @@ export const filtering = state => {
       let isValid = true
       if ( filters.menuFilter ) {
         if ( isValid && filters.menuFilter.cat ) {
-          isValid = _.contains(filters.menuFilter.cat, file.get( 'referenceDocument' ) )
+          isValid = _.contains( filters.menuFilter.cat, file.get( 'referenceDocument' ) )
         } else if ( isValid && filters.menuFilter.ref !== undefined ) {
           isValid = file.get( 'referenceDocument' ) === filters.menuFilter.ref
         }
@@ -22,10 +22,10 @@ export const filtering = state => {
         isValid = file.get( 'date' ) < filters.dateEnd
       }
       if ( isValid && filters.searchKeyword ) {
-        const regex = new RegExp( String( filters.searchKeyword ), 'i')
-        isValid = columns
-            .filter( c => c.get('visible') && c.get('searchable'))
-            .some( c => regex.test( String( file.get( c.get('id') ) ) ) )
+        const regex = new RegExp( String( filters.searchKeyword ), 'i' )
+        isValid     = columns
+          .filter( c => c.get( 'visible' ) && c.get( 'searchable' ) )
+          .some( c => regex.test( String( file.get( c.get( 'id' ) ) ) ) )
       }
       return isValid
     } )

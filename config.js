@@ -40,6 +40,7 @@ System.config({
     "redux": "npm:redux@3.0.4",
     "redux-logger": "npm:redux-logger@2.0.4",
     "redux-thunk": "npm:redux-thunk@1.0.0",
+    "rome": "npm:rome@2.1.22",
     "github:capaj/jspm-hot-reloader@0.4.3": {
       "debug": "npm:debug@2.2.0",
       "lodash.clonedeep": "npm:lodash.clonedeep@3.0.2",
@@ -196,6 +197,11 @@ System.config({
       "is-array": "npm:is-array@1.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:bullseye@1.4.6": {
+      "crossvent": "npm:crossvent@1.5.0",
+      "seleccion": "npm:seleccion@2.0.0",
+      "sell": "npm:sell@1.0.0"
+    },
     "npm:chai@3.4.1": {
       "assertion-error": "npm:assertion-error@1.0.1",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -212,6 +218,10 @@ System.config({
     },
     "npm:constants-browserify@0.0.1": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:contra@1.9.1": {
+      "atoa": "npm:atoa@1.0.0",
+      "ticky": "npm:ticky@1.0.0"
     },
     "npm:core-js@1.2.6": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -243,6 +253,14 @@ System.config({
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "inherits": "npm:inherits@2.0.1",
       "stream": "github:jspm/nodelibs-stream@0.1.0"
+    },
+    "npm:crossvent@1.5.0": {
+      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
+      "custom-event": "npm:custom-event@1.0.0",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:crypto-browserify@3.11.0": {
       "browserify-cipher": "npm:browserify-cipher@1.0.0",
@@ -515,6 +533,16 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:rome@2.1.22": {
+      "bullseye": "npm:bullseye@1.4.6",
+      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
+      "contra": "npm:contra@1.9.1",
+      "crossvent": "npm:crossvent@1.5.0",
+      "moment": "npm:moment@2.10.6",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
     "npm:sha.js@2.4.4": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -545,6 +573,9 @@ System.config({
     "npm:through@2.3.8": {
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream": "github:jspm/nodelibs-stream@0.1.0"
+    },
+    "npm:ticky@1.0.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:timers-browserify@1.4.1": {
       "process": "npm:process@0.11.2"

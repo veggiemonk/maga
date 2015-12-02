@@ -5,7 +5,7 @@ export default {
   controller: () => {
 
   },
-  view: () => {
+  view:       () => {
     return (
       <div>
         <h1>Hello Maga: Login</h1>

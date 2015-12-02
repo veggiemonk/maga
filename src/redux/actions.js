@@ -5,12 +5,12 @@
 /* HYDRATING STORE */
 export const LOAD_DATA = 'LOAD_DATA'
 export const loadData  = ( columnHeader, files, data, category ) => (
-  { type: LOAD_DATA, columnHeader, files, data, category }
+{ type: LOAD_DATA, columnHeader, files, data, category }
 )
 
 /* VIEW */
 export const RESET_VIEW = 'RESET_VIEW'
-export const resetView = () => ( { type: RESET_VIEW } )
+export const resetView  = () => ( { type: RESET_VIEW } )
 
 /* COLUMNS */
 export const SORT_COLUMN = 'SORT_COLUMN'
@@ -55,13 +55,13 @@ export const PAGE_PREV            = 'PAGE_PREV'
 export const pagePrev             = () => ( { type: PAGE_PREV } )
 export const PAGE_FIRST           = 'PAGE_FIRST'
 export const pageFirst            = () => ( { type: PAGE_FIRST } )
-export const PAGE_LAST           = 'PAGE_LAST'
-export const pageLast            = () => ( { type: PAGE_LAST } )
+export const PAGE_LAST            = 'PAGE_LAST'
+export const pageLast             = () => ( { type: PAGE_LAST } )
 export const CHANGE_ROW_DISPLAYED = 'CHANGE_ROW_DISPLAYED'
 export const changeRowDisplayed   = num => ( { type: CHANGE_ROW_DISPLAYED, num })
 //TODO
 export const TOGGLE_MENU_COLUMN_VIEW = 'TOGGLE_MENU_COLUMN_VIEW'
-export const toggleMenuColumnView = () => ( { type: TOGGLE_MENU_COLUMN_VIEW} )
+export const toggleMenuColumnView    = () => ( { type: TOGGLE_MENU_COLUMN_VIEW } )
 
 /* ROWS */
 export const TOGGLE_SELECT_ALL = 'TOGGLE_SELECT_ALL'
@@ -71,6 +71,6 @@ export const SELECT_ROW        = 'SELECT_ROW'
 /* GLOBALS */
 //TODO
 export const SET_LANGUAGE = 'SET_LANGUAGE'
-export const setLanguage = lang => ( { type: SET_LANGUAGE, lang } )
+export const setLanguage  = lang => ( { type: SET_LANGUAGE, lang } )
 export const SET_USERNAME = 'SET_USERNAME'
-export const setUsername = username => ( { type: SET_USERNAME, username } )
+export const setUsername  = username => ( { type: SET_USERNAME, username } )

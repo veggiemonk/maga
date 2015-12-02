@@ -1,11 +1,11 @@
 import { fromJS as toImmutable } from 'immutable'
 import { defaults } from '../../settings'
 
-export const sort = (columns, id) => (a, b) => {
+export const sort = ( columns, id ) => ( a, b ) => {
   const _id = columns.getIn( [ id, 'sorted' ] ) ? id : defaults.index
   return columns.getIn( [ _id, 'order' ] )
-      ? ( b.get( _id ) < a.get( _id ) ? -1 : 1 )
-      : ( a.get( _id ) < b.get( _id ) ? -1 : 1 )
+    ? ( b.get( _id ) < a.get( _id ) ? -1 : 1 )
+    : ( a.get( _id ) < b.get( _id ) ? -1 : 1 )
 }
 
 const toggleSort = col => {
@@ -27,22 +27,22 @@ const toggleSort = col => {
 export const getSortedColumn = columns => {
   const _c = columns.find( c => c.get( 'sorted' ) )
   return _c
-      ? _c.get('id')
-      : defaults.index
+    ? _c.get( 'id' )
+    : defaults.index
 }
 
 export const resetSort = columns => {
   return columns.map( x => x.withMutations( map =>
-      map.set( 'sorted', defaults.col.sorted )
-          .set( 'order', defaults.col.order ) ) )
+    map.set( 'sorted', defaults.col.sorted )
+      .set( 'order', defaults.col.order ) ) )
 }
 
-export const sortColumn = (state, id) => (
-    state.columns.map( x =>
-        x.get( 'id' ) !== id
-            ? x = x.withMutations( map =>
-            map.set( 'sorted', defaults.col.sorted )
-                .set( 'order', defaults.col.order ) )
-            : x = toggleSort( state.columns.get( id ) ) )
+export const sortColumn = ( state, id ) => (
+  state.columns.map( x =>
+    x.get( 'id' ) !== id
+      ? x = x.withMutations( map =>
+      map.set( 'sorted', defaults.col.sorted )
+        .set( 'order', defaults.col.order ) )
+      : x = toggleSort( state.columns.get( id ) ) )
 )
 

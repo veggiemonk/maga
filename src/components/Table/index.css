@@ -3,8 +3,8 @@
 	display: inline-block;
 }
 
-.scroll {
-	overflow: auto;
+.collapse {
+	border-collapse: collapse;
 }
 
 .row_width {

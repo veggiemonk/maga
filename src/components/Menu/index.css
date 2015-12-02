@@ -1,6 +1,7 @@
 .main_div {
 	width: 30%;
-	display: inline-block;
+	/*display: inline-block;*/
+    float: left;
 }
 
 .text_overflow {

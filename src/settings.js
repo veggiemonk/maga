@@ -127,7 +127,7 @@ const unvisibleColumn = [
   }, ]
 
 export const defaults = {
-  col:         {
+  col:            {
     /*index:      0,*/ // number to appear
     sorted:     false,
     sortable:   true,
@@ -137,37 +137,37 @@ export const defaults = {
     order:      false, // desc = true
     name:       'Column',
     dataType:   'string',
-    tdMinWidth:    '60px',
-    tdMaxWidth:    '300px',
+    tdMinWidth: '60px',
+    tdMaxWidth: '300px',
   },
-  index:       'index', //column that contains the index of the table
-  rowDisplay:  10,
-  page:        1,
-  startPageAt: 0,
-  dateBegin: '',
-  dateEnd: '',
-  menuFilter: { cat: undefined, ref: undefined },
-  searchKeyword: '',
+  index:          'index', //column that contains the index of the table
+  rowDisplay:     10,
+  page:           1,
+  startPageAt:    0,
+  dateBegin:      '',
+  dateEnd:        '',
+  menuFilter:     { cat: undefined, ref: undefined },
+  searchKeyword:  '',
   menuColumnView: false,
 }
 
 const col = Map( defaults.col )
 
 //concat arrays into immutable object (sorted)
-const _columnHeader = sortBy( [...permanentColumn, ...unvisibleColumn], x => x.index )
+const _columnHeader = sortBy( [ ...permanentColumn, ...unvisibleColumn ], x => x.index )
 //merge with default config
 const __columnHeader = toImmutable( _columnHeader.map( x => Object.assign( col.toJS(), x ) ) )
 // Convert array of object to become a map, keys are a prop in the objects.
 export const columnHeader = Map( __columnHeader.reduce(
-  (acc, x) => {
-    acc[x.get( 'id' )] = x
+  ( acc, x ) => {
+    acc[ x.get( 'id' ) ] = x
     return acc
   }, {} ) )
 
 //export const basicConfig = Map( columnConfig ).sortBy( o => o.index ).map( x => Object.assign( dc.toJS(), x ) )
 
-export const urlServer     = 'http://localhost:8019'
-export const fetchURL      = urlServer + '/file/list'
+export const urlServer = 'http://localhost:8019'
+export const fetchURL  = urlServer + '/file/list'
 //export const fetchFile     = '/test/fileListF01.json'
 export const fetchFile     = '/test/fileList.json'
 export const fetchCategory = '/test/category.json'
