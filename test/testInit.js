@@ -8,16 +8,16 @@ import mocha from 'mocha'
 //
 // This defines the list of test files we want to load and run tests against.
 //
-var mochaTestScripts = [
-  './test/table.spec.js',
-  './test/menu.spec.js'
+let mochaTestScripts = [
+  './test/redux.spec.js',
+  //'./test/menu.spec.js'
 ]
 
 //
 // If you have a global or two that get exposed from your
 // tests that is expected you can include them here
 //
-var allowedMochaGlobals = [
+let allowedMochaGlobals = [
   'jQuery'
 ]
 
@@ -29,7 +29,7 @@ var allowedMochaGlobals = [
 // Maybe you create a button in your website and allow anyone to run tests.
 // Check out http://staxmanade.com/2015/03/in-app-unit-tests/ for more on the thought
 //
-var mochaDiv = document.createElement('div')
+let mochaDiv = document.createElement('div')
 mochaDiv.id = 'mocha'
 document.body.appendChild(mochaDiv)
 
@@ -38,7 +38,7 @@ document.body.appendChild(mochaDiv)
 // I found this is one way to manually expose the globals, however if you know of a better way please let me know...
 //
 mocha.suite.on('pre-require', function (context) {
-  var exports = window
+  let exports = window
 
   exports.afterEach = context.afterEach || context.teardown
   exports.after = context.after || context.suiteTeardown

@@ -43,7 +43,7 @@ const rootReducer = ( state = initialState, action ) => {
         filters: {
           startPageAt:    defaults.startPageAt,
           page:           defaults.page,
-          rowDisplayed:   defaults.rowDisplay,
+          rowDisplayed:   defaults.rowDisplayed,
           dateBegin:      defaults.dateBegin,
           dateEnd:        defaults.dateEnd,
           menuFilter:     defaults.menuFilter,

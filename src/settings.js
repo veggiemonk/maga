@@ -142,7 +142,7 @@ export const defaults = {
     tdMaxWidth: '300px',
   },
   index:          'index', //column that contains the index of the table
-  rowDisplay:     10,
+  rowDisplayed:   10,
   page:           1,
   startPageAt:    0,
   dateBegin:      '',
@@ -157,7 +157,7 @@ export const initialState = {
   filters: {
     startPageAt:    defaults.startPageAt,
     page:           defaults.page,
-    rowDisplayed:   defaults.rowDisplay,
+    rowDisplayed:   defaults.rowDisplayed,
     dateBegin:      defaults.dateBegin,
     dateEnd:        defaults.dateEnd,
     menuFilter:     defaults.menuFilter,

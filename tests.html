@@ -12,8 +12,8 @@
   <script>
     //System.trace = true;
     var readyForMainLoad;
-    var debug = sessionStorage['DEBUG'] && sessionStorage['DEBUG'] == 'true' || localStorage['DEBUG'] && localStorage['DEBUG'] == 'true';
-    if ( location.origin.match( /localhost/ ) && debug ) {
+    var hot = sessionStorage['HOT'] && sessionStorage['HOT'] == 'true' || localStorage['HOT'] && localStorage['HOT'] == 'true';
+    if ( location.origin.match( /localhost/ ) && hot ) {
       System.trace     = true;
       readyForMainLoad = System.import( 'capaj/jspm-hot-reloader' ).then( function (HotReloader) {
         hr = new HotReloader.default( 'http://localhost:3000' )  // chokidar-socket-emitter port

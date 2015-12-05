@@ -27,10 +27,10 @@ export const LOGOUT = 'LOGOUT'
 /* FILTERS */
 export const FILTER_DATE_BEGIN = 'FILTER_DATE_BEGIN'
 export const filterDateBegin   = date => ( { type: FILTER_DATE_BEGIN, date } )
-export const FILTER_DATE_END   = 'FILTER_DATE_END'
+export const FILTER_DATE_END   = 'FILTER_DATE_END' //TODO: parse Date with MOMENT
 export const filterDateEnd     = date => ( { type: FILTER_DATE_END, date } )
 export const FILTER_MENU_REF   = 'FILTER_MENU_REF'
-export const filterMenuRef     = ref => ( { type: FILTER_MENU_REF, ref } )
+export const filterMenuRef     = ref => ( { type: FILTER_MENU_REF, ref: Number.parseInt(ref) } )
 export const FILTER_MENU_CAT   = 'FILTER_MENU_CAT'
 export const filterMenuCat     = cat => ( { type: FILTER_MENU_CAT, cat } )
 export const FILTER_SEARCH     = 'FILTER_SEARCH'
