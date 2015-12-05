@@ -3,4 +3,7 @@
 node_modules
 jspm_packages
 .idea
+dist/
+npm-debug.log
+
 

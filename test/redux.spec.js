@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import 'fetch'
+import 'isomorphic-fetch'
 import { fromJS as toImmutable } from 'immutable'
 import { groupMenu, sanitize } from '../src/data'
 import { fetchFile, fetchCategory, headers, columnHeader } from '../src/settings'

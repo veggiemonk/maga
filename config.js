@@ -28,9 +28,9 @@ System.config({
     "chai": "npm:chai@3.4.1",
     "core-js": "npm:core-js@1.2.6",
     "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
-    "fetch": "npm:whatwg-fetch@0.10.1",
     "font-awesome": "npm:font-awesome@4.4.0",
     "immutable": "npm:immutable@3.7.5",
+    "isomorphic-fetch": "npm:isomorphic-fetch@2.2.0",
     "lodash": "npm:lodash@3.10.1",
     "mithril": "npm:mithril@0.2.0",
     "mocha": "npm:mocha@2.3.4",
@@ -73,6 +73,9 @@ System.config({
       "url": "github:jspm/nodelibs-url@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
+    "github:jspm/nodelibs-https@0.1.0": {
+      "https-browserify": "npm:https-browserify@0.0.0"
+    },
     "github:jspm/nodelibs-net@0.1.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
@@ -109,6 +112,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:jspm/nodelibs-zlib@0.1.0": {
+      "browserify-zlib": "npm:browserify-zlib@0.1.4"
     },
     "github:veggiemonk/plugin-babel@master": {
       "babel": "npm:babel-core@5.8.34",
@@ -184,6 +190,14 @@ System.config({
       "inherits": "npm:inherits@2.0.1",
       "parse-asn1": "npm:parse-asn1@5.0.0",
       "stream": "github:jspm/nodelibs-stream@0.1.0"
+    },
+    "npm:browserify-zlib@0.1.4": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "pako": "npm:pako@0.2.8",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "readable-stream": "npm:readable-stream@1.1.13",
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:buffer-xor@1.0.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -326,6 +340,10 @@ System.config({
       "inherits": "npm:inherits@2.0.1",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
+    "npm:encoding@0.1.11": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "iconv-lite": "npm:iconv-lite@0.4.13"
+    },
     "npm:envify@3.4.0": {
       "jstransform": "npm:jstransform@10.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -360,8 +378,22 @@ System.config({
     "npm:hash.js@1.0.3": {
       "inherits": "npm:inherits@2.0.1"
     },
+    "npm:https-browserify@0.0.0": {
+      "http": "github:jspm/nodelibs-http@1.7.1"
+    },
+    "npm:iconv-lite@0.4.13": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "stream": "github:jspm/nodelibs-stream@0.1.0",
+      "string_decoder": "github:jspm/nodelibs-string_decoder@0.1.0",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:isomorphic-fetch@2.2.0": {
+      "node-fetch": "npm:node-fetch@1.3.3",
+      "whatwg-fetch": "npm:whatwg-fetch@0.10.1"
     },
     "npm:js-base64@2.1.9": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
@@ -424,6 +456,19 @@ System.config({
       "css": "github:systemjs/plugin-css@0.1.19"
     },
     "npm:moment@2.10.6": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:node-fetch@1.3.3": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "encoding": "npm:encoding@0.1.11",
+      "http": "github:jspm/nodelibs-http@1.7.1",
+      "https": "github:jspm/nodelibs-https@0.1.0",
+      "stream": "github:jspm/nodelibs-stream@0.1.0",
+      "url": "github:jspm/nodelibs-url@0.1.0",
+      "zlib": "github:jspm/nodelibs-zlib@0.1.0"
+    },
+    "npm:pako@0.2.8": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:parse-asn1@5.0.0": {
