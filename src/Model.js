@@ -1,7 +1,7 @@
 import m from 'mithril'
 import 'fetch'
 import { fromJS as toImmutable } from 'immutable'
-import { inc, dec, stackLoader, loaderDisplay } from './utils'
+import { loaderDisplay } from './utils'
 import { groupMenu, sanitize } from './data'
 import { fetchFile, fetchCategory, headers } from './settings'
 
@@ -14,28 +14,19 @@ let Model = {}
 
 Model.controller = function controller( props ) {
   let c = {
-    files:             props.files,
-    category:          props.category,
     store:             props.store,
     fetchFileList:     () => fetch( fetchFile, headers( 'GET' ) ).then( res => res.json() ),
     fetchCategoryList: () => fetch( fetchCategory, headers( 'GET' ) ).then( res => res.json() ),
     load:              () => {
-      inc( stackLoader )
-      m.startComputation()
-      Promise.all( [ c.fetchFileList(), c.fetchCategoryList() ] )
-        .then( ( [FileList, CategoryList] ) => {
-          c.files( toImmutable( sanitize( FileList, CategoryList ) ) )
-          c.category( toImmutable( groupMenu( CategoryList, FileList ) ) )
+      return Promise.all( [c.fetchFileList(), c.fetchCategoryList()] )
+        .then( ([FileList, CategoryList]) => {
+          const files = toImmutable( sanitize( FileList, CategoryList ) )
 
           c.store.dispatch(
-            loadData( props.columnHeader, c.files(), c.files(), c.category() )
+              loadData( props.columnHeader, files, files, 
+                toImmutable( groupMenu( CategoryList, FileList ) ) )
           )
-          //console.log(c.store)
-        } )
-        .then( () => {
-          dec( stackLoader )
-          m.endComputation()
-        } )
+      } )  
     }
   }
 

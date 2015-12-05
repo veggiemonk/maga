@@ -1,6 +1,6 @@
 import { fromJS as toImmutable } from 'immutable'
 
-import { defaults } from '../../settings'
+import { defaults, initialState } from '../../settings'
 import { sortColumn, sort, resetSort, getSortedColumn } from './columns'
 import { filtering } from './filters'
 import {
@@ -22,22 +22,6 @@ import {
   RESET_VIEW,
   TOGGLE_MENU_COLUMN_VIEW,
 } from '../actions'
-
-const initialState = {
-  columns: toImmutable( [ [ 'col1', { col1: 'fake data' } ] ] ),
-  filters: {
-    startPageAt:    defaults.startPageAt,
-    page:           defaults.page,
-    rowDisplayed:   defaults.rowDisplay,
-    dateBegin:      defaults.dateBegin,
-    dateEnd:        defaults.dateEnd,
-    menuFilter:     defaults.menuFilter,
-    searchKeyword:  defaults.searchKeyword,
-    menuColumnView: defaults.menuColumnView
-  },
-  files:   toImmutable( [] ),
-  data:    toImmutable( [] )
-}
 
 const rootReducer = ( state = initialState, action ) => {
 

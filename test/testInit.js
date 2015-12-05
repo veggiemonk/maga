@@ -69,4 +69,4 @@ mocha.suite.on('pre-require', function (context) {
 
 })
 
-mocha.setup('bdd')
+mocha.setup('tdd')

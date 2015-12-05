@@ -35,7 +35,6 @@
       "mocha": "npm:mocha@^2.3.4",
       "moment": "npm:moment@^2.10.6",
       "postcss-safe-parser": "npm:postcss-safe-parser@^1.0.1",
-      "react-dom": "npm:react-dom@^0.14.3",
       "redux": "npm:redux@^3.0.4",
       "redux-logger": "npm:redux-logger@^2.0.4",
       "redux-thunk": "npm:redux-thunk@^1.0.0",

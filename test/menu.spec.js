@@ -1,10 +1,10 @@
 import { expect } from 'chai'
 
-describe('This is another describe', function () {
-  it('sample test that should pass', function () {
+suite('This is another describe', function () {
+  test('sample test that should pass', function () {
     expect(true).to.equal(true)
   })
-  it('sample test that should fail', function () {
+  test('sample test that should fail', function () {
     expect(true).to.equal(false)
   })
 })

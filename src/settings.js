@@ -1,3 +1,4 @@
+
 import { Map, fromJS as toImmutable } from 'immutable'
 import sortBy from 'lodash/collection/sortBy'
 import {i18n, lang} from './i18n.js'
@@ -151,12 +152,31 @@ export const defaults = {
   menuColumnView: false,
 }
 
-const col = Map( defaults.col )
+export const initialState = {
+  columns: toImmutable( [ [ 'col1', { col1: 'fake data' } ] ] ),
+  filters: {
+    startPageAt:    defaults.startPageAt,
+    page:           defaults.page,
+    rowDisplayed:   defaults.rowDisplay,
+    dateBegin:      defaults.dateBegin,
+    dateEnd:        defaults.dateEnd,
+    menuFilter:     defaults.menuFilter,
+    searchKeyword:  defaults.searchKeyword,
+    menuColumnView: defaults.menuColumnView
+  },
+  category:   toImmutable( [] ),
+  files:   toImmutable( [] ),
+  data:    toImmutable( [] )
+}
+
 
 //concat arrays into immutable object (sorted)
 const _columnHeader = sortBy( [ ...permanentColumn, ...unvisibleColumn ], x => x.index )
+
 //merge with default config
+const col = Map( defaults.col )
 const __columnHeader = toImmutable( _columnHeader.map( x => Object.assign( col.toJS(), x ) ) )
+
 // Convert array of object to become a map, keys are a prop in the objects.
 export const columnHeader = Map( __columnHeader.reduce(
   ( acc, x ) => {
@@ -164,8 +184,7 @@ export const columnHeader = Map( __columnHeader.reduce(
     return acc
   }, {} ) )
 
-//export const basicConfig = Map( columnConfig ).sortBy( o => o.index ).map( x => Object.assign( dc.toJS(), x ) )
-
+//TODO: URL FOR TEST, DEV, QA and PROD???
 export const urlServer = 'http://localhost:8019'
 export const fetchURL  = urlServer + '/file/list'
 //export const fetchFile     = '/test/fileListF01.json'
