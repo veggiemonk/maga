@@ -15,6 +15,7 @@ let Model = {}
 Model.controller = function controller( props ) {
   let c = {
     store:             props.store,
+    //TODO: .catch(function(error) { console.log('There has been a problem with your fetch operation: ' + error.message) })
     fetchFileList:     () => fetch( fetchFile, headers( 'GET' ) ).then( res => res.json() ),
     fetchCategoryList: () => fetch( fetchCategory, headers( 'GET' ) ).then( res => res.json() ),
     load:              () => {
@@ -23,10 +24,10 @@ Model.controller = function controller( props ) {
           const files = toImmutable( sanitize( FileList, CategoryList ) )
 
           c.store.dispatch(
-              loadData( props.columnHeader, files, files, 
+              loadData( props.columnHeader, files, files,
                 toImmutable( groupMenu( CategoryList, FileList ) ) )
           )
-      } )  
+        } )
     }
   }
 

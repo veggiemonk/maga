@@ -4,3 +4,6 @@
   width: 300px;
   cursor: crosshair;
 }
+.size {
+  float: right;
+}

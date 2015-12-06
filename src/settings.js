@@ -186,6 +186,7 @@ export const columnHeader = Map( __columnHeader.reduce(
 
 //TODO: URL FOR TEST, DEV, QA and PROD???
 export const urlServer = 'http://localhost:8019'
+export const urlEchoServer = 'http://localhost:4000/echo/json'
 export const fetchURL  = urlServer + '/file/list'
 //export const fetchFile     = '/test/fileListF01.json'
 export const fetchFile     = '/test/fileList.json'
