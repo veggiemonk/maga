@@ -4,8 +4,9 @@ import { fromJS as toImmutable } from 'immutable'
 import { loaderDisplay } from './../../utils'
 import { groupMenu, sanitize } from './../../data'
 import { fetchFile, fetchCategory, headers } from './../../settings'
-
 import { loadData } from './../../redux/actions'
+
+import { connect } from './redux/mithril-redux'
 
 /** CSS MODULES !! **/
 import styles from './index.css!'
@@ -43,5 +44,7 @@ Model.view = function view() {
     </div>
   )
 }
+
+Model = connect()(Model)
 
 export default Model

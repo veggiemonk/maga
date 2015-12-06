@@ -7,6 +7,8 @@ import Table  from './../Table/index'
 import ColumnVisibility  from './../ColumnVisibility/index'
 import Uploader from './../Uploader/index'
 
+import { connect } from '../../redux/mithril-redux'
+
 let Body = {}
 
 Body.controller = props => {
@@ -32,5 +34,7 @@ Body.view = (c, props) => {
     </div>
   )
 }
+
+Body = connect((state) => state)(Body)
 
 export default Body
