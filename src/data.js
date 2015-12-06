@@ -56,7 +56,10 @@ export const sanitize = ( files, category ) => {
             : row[ key ] = '<i style="color:red" class="fa fa-download"></i>'
         },
         downloadCount:     () => {},
-        date:              () => { row.dateFormatted = moment( row.date, 'YYYY-MM-DD' ).format( 'DD/MM/YYYY' ) },
+        date:              () => {
+          row[ key ] = moment( row[ key ], 'YYYY-MM-DD')
+          row.dateFormatted = row[ key ].format( 'DD/MM/YYYY' )
+        },
         fileId:            () => { row[ key ] ? row[ key ] = Number( row[ key ] ) : '' },
         fileName:          () => {},
         employerNumber:    () => { row[ key ] ? row[ key ] = Number( row[ key ] ) : '' },

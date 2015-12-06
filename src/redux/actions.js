@@ -4,13 +4,15 @@
 
 /* HYDRATING STORE */
 export const LOAD_DATA = 'LOAD_DATA'
-export const loadData  = ( columnHeader, files, data, category ) => (
+export const loadData  = (columnHeader, files, data, category) => (
 { type: LOAD_DATA, columnHeader, files, data, category }
 )
 
 /* VIEW */
-export const RESET_VIEW = 'RESET_VIEW'
-export const resetView  = () => ( { type: RESET_VIEW } )
+export const RESET_VIEW        = 'RESET_VIEW'
+export const resetView         = () => ( { type: RESET_VIEW } )
+export const SHOW_ALL_DOCUMENT = 'SHOW_ALL_DOCUMENT'
+export const showAllDocument   = () => ( { type: SHOW_ALL_DOCUMENT })
 
 /* COLUMNS */
 export const SORT_COLUMN = 'SORT_COLUMN'
@@ -28,13 +30,13 @@ export const LOGOUT = 'LOGOUT'
 export const FILTER_DATE_BEGIN = 'FILTER_DATE_BEGIN'
 export const filterDateBegin   = date => ( { type: FILTER_DATE_BEGIN, date } )
 export const FILTER_DATE_END   = 'FILTER_DATE_END' //TODO: parse Date with MOMENT
-export const filterDateEnd     = date => ( { type: FILTER_DATE_END, date } )
-export const FILTER_MENU_REF   = 'FILTER_MENU_REF'
-export const filterMenuRef     = ref => ( { type: FILTER_MENU_REF, ref: Number.parseInt(ref) } )
-export const FILTER_MENU_CAT   = 'FILTER_MENU_CAT'
-export const filterMenuCat     = cat => ( { type: FILTER_MENU_CAT, cat } )
-export const FILTER_SEARCH     = 'FILTER_SEARCH'
-export const filterSearch      = search => ( { type: FILTER_SEARCH, search } )
+export const filterDateEnd   = date => ( { type: FILTER_DATE_END, date } )
+export const FILTER_MENU_REF = 'FILTER_MENU_REF'
+export const filterMenuRef   = ref => ( { type: FILTER_MENU_REF, ref: Number.parseInt( ref ) } )
+export const FILTER_MENU_CAT = 'FILTER_MENU_CAT'
+export const filterMenuCat   = cat => ( { type: FILTER_MENU_CAT, cat } )
+export const FILTER_SEARCH   = 'FILTER_SEARCH'
+export const filterSearch    = search => ( { type: FILTER_SEARCH, search } )
 
 /* FILES */
 //TODO

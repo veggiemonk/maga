@@ -21,6 +21,7 @@ import {
   TOGGLE_COLUMN_VIEW,
   RESET_VIEW,
   TOGGLE_MENU_COLUMN_VIEW,
+  SHOW_ALL_DOCUMENT,
 } from '../actions'
 
 const rootReducer = ( state = initialState, action ) => {
@@ -50,6 +51,16 @@ const rootReducer = ( state = initialState, action ) => {
           searchKeyword:  defaults.searchKeyword,
           menuColumnView: defaults.menuColumnView,
         }
+      } ) )
+
+    case SHOW_ALL_DOCUMENT:
+      return filtering( Object.assign( {}, state, {
+        columns: resetSort( state.columns ),
+        filters: Object.assign( {}, state.filters, {
+          startPageAt:    defaults.startPageAt,
+          page:           defaults.page,
+          menuFilter:     defaults.menuFilter,
+        } )
       } ) )
 
     case TOGGLE_COLUMN_VIEW:

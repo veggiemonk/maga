@@ -59,7 +59,7 @@ suite( 'table', function () {
       expect( newStore.data.count() ).to.equal( 3 ) // check the number of files
     } )
 
-    test( 'should have ', () => {
+    test( 'should have WRITTEN MORE TESTS', () => {
       expect( true ).to.equal( false )
     } )
 
@@ -85,6 +85,22 @@ suite( 'table', function () {
       const newState2 = reducer( newState1, actions.filterMenuCat( [ 112, 737, 803, 804, 806 ] ) )
       expect( newState2.columns.filter( x => x.get( 'visible' ) ).count() ).to.equal( TOTAL_VISIBLE_COLUMNS + 1 )
     } )
+
+    test( 'should NOT change the number of rowDisplayed when # files > rowDisplayed', () => {
+      expect( state.files.count() ).to.equal( TOTAL_FILES ) // check we have all the files
+      const newState = reducer( state, actions.changeRowDisplayed( 20 ) )
+      const newStore = reducer( state, actions.filterMenuCat( [ 112, 737, 803, 804, 806 ] ) )
+      expect( newStore.data.count() ).to.equal( 48 )
+      expect( newState.filters.rowDisplayed ).to.equal( 20 )
+    })
+
+    test( 'should change the number of rowDisplayed when # files < rowDisplayed', () => {
+      expect( state.files.count() ).to.equal( TOTAL_FILES ) // check we have all the files
+      const newState = reducer( state, actions.changeRowDisplayed( 20 ) )
+      const newStore = reducer( state, actions.filterMenuRef( 804 ) )
+      expect( newStore.data.count() ).to.equal( 3 ) // check the number of files
+      expect( newState.filters.rowDisplayed ).to.equal( 20 )
+    })
 
   } )
 
