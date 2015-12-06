@@ -9,6 +9,8 @@ if ( process.env.NODE_ENV === 'production' ) {
   cache = -1
   console.log( 'DON\'T FORGET TO ADD: sessionStorage.HOT = true IN THE BROWSER CONSOLE TO USE HOT MODULE RELOADING' )
 }
+//TODO: create a route like '/echo/json' same as jsfiddle
+// use express!!!
 const server = httpServer.createServer( {
   root:    './',
   cache:   cache,

@@ -1,5 +1,5 @@
 import m from 'mithril'
-import 'fetch'
+import 'isomorphic-fetch'
 import { fromJS as toImmutable } from 'immutable'
 
 // ActionCreators

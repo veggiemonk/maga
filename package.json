@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "jspm install",
-    "test": "/node_modules/mocha/bin/mocha --compilers js:babel-core/register --ui tdd -R tap ./test/redux.spec.js",
+    "test": "./node_modules/mocha/bin/mocha --compilers js:babel-core/register --ui tdd -R tap ./test/redux.spec.js",
     "test:watch": "npm test -- --watch",
     "start": "node server",
     "bundle": "jspm bundle-sfx index.js dist/bundle.js --minify"
