@@ -34,7 +34,10 @@ suite( 'table', function () {
           return done
         } )
     }
-    return load().then( done => {state = store.getState(); return done() } )
+    return load().then( done => {
+      state = store.getState()
+      return done()
+    } )
   } )
 
   suite( 'UI Filters', () => {
@@ -81,26 +84,46 @@ suite( 'table', function () {
 
     test( 'should keep the same number of columns visible across filters', () => {
       expect( state.columns.filter( x => x.get( 'visible' ) ).count() ).to.equal( TOTAL_VISIBLE_COLUMNS )
-      const newState1 = reducer( state, actions.toggleColumnView( 'path' ) )
-      const newState2 = reducer( newState1, actions.filterMenuCat( [ 112, 737, 803, 804, 806 ] ) )
-      expect( newState2.columns.filter( x => x.get( 'visible' ) ).count() ).to.equal( TOTAL_VISIBLE_COLUMNS + 1 )
+      const newState = reducer( reducer( state,
+        actions.toggleColumnView( 'path' ) ),
+        actions.filterMenuCat( [ 112, 737, 803, 804, 806 ] ) )
+      expect( newState.columns.filter( x => x.get( 'visible' ) ).count() ).to.equal( TOTAL_VISIBLE_COLUMNS + 1 )
     } )
 
     test( 'should NOT change the number of rowDisplayed when # files > rowDisplayed', () => {
       expect( state.files.count() ).to.equal( TOTAL_FILES ) // check we have all the files
-      const newState = reducer( state, actions.changeRowDisplayed( 20 ) )
-      const newStore = reducer( state, actions.filterMenuCat( [ 112, 737, 803, 804, 806 ] ) )
-      expect( newStore.data.count() ).to.equal( 48 )
+      const newState = reducer( reducer( state,
+        actions.changeRowDisplayed( 20 ) ),
+        actions.filterMenuCat( [ 112, 737, 803, 804, 806 ] ) )
+      expect( newState.data.count() ).to.equal( 48 )
       expect( newState.filters.rowDisplayed ).to.equal( 20 )
-    })
+    } )
 
     test( 'should change the number of rowDisplayed when # files < rowDisplayed', () => {
       expect( state.files.count() ).to.equal( TOTAL_FILES ) // check we have all the files
-      const newState = reducer( state, actions.changeRowDisplayed( 20 ) )
-      const newStore = reducer( state, actions.filterMenuRef( 804 ) )
-      expect( newStore.data.count() ).to.equal( 3 ) // check the number of files
+      const newState = reducer( reducer( state,
+        actions.changeRowDisplayed( 20 ) ),
+        actions.filterMenuRef( 804 ) )
+      expect( newState.data.count() ).to.equal( 3 ) // check the number of files
       expect( newState.filters.rowDisplayed ).to.equal( 20 )
-    })
+    } )
+
+    test( 'should keep the same filters when showing all documents', () => {
+      expect( state.files.count() ).to.equal( TOTAL_FILES ) // check we have all the files
+      const newState = reducer( reducer( reducer( reducer( reducer( reducer( reducer( state,
+        actions.toggleMenuColumnView() ),
+        actions.toggleColumnView( 'uploadUserName' ) ),
+        actions.toggleMenuColumnView() ),
+        actions.filterSearch( 'group' ) ),
+        actions.filterMenuRef( 804 ) ),
+        actions.changeRowDisplayed( 20 ) ),
+        actions.showAllDocument()
+      )
+      expect( newState.filters.rowDisplayed ).to.equal( 20 )
+      expect( newState.filters.searchKeyword ).to.equal( 'group' )
+      expect( newState.data.count() ).to.equal( 195 ) // check the number of files
+      expect( newState.filters.rowDisplayed ).to.equal( 20 )
+    } )
 
   } )
 

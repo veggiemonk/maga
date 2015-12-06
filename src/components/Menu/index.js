@@ -1,6 +1,6 @@
 import styles from './index.css!'
 
-import {filterMenuRef, filterMenuCat, resetView } from './../../redux/actions'
+import {filterMenuRef, filterMenuCat, showAllDocument } from './../../redux/actions'
 
 let Menu = {}
 let LANG = 'fr' //TODO : i18n
@@ -38,7 +38,7 @@ Menu.view = function view( c, props ) {
 
       <ul class='menu'>
         <li class={styles.menuRoot}
-            onclick={() => {dispatch(resetView())}}>
+            onclick={() => {dispatch(showAllDocument())}}>
           'All Documents' <span style='float: right;'>{ state.files.count() }</span>
         </li>
         {
