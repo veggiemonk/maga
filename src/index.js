@@ -1,46 +1,38 @@
 import m from 'mithril'
-import 'isomorphic-fetch'
 import { fromJS as toImmutable } from 'immutable'
 
-// ActionCreators
+import { connect, Provider } from './redux/mithril-redux'
 import { loadData, resetView } from './redux/actions'
-
-// DATA
-import Model from './Model'
-
-// Components
-import Body from './Body'
+import Model from './components/Model/index' // DATA
+import Body from './components/Body/index'
 import Header from './components/Header/index'
-
-// Columns settings
 import { columnHeader } from './settings'
 
-export default {
-  controller: props => {
-    //TODO: LANGUAGE!!!
-    //TODO: LOGIN and CREDENTIALS
-    let c = {
-      files:        m.prop( toImmutable( [] ) ),
-      category:     m.prop( toImmutable( [] ) ),
-      columnHeader: m.prop( columnHeader ),
-      store:        props.store,
-    }
-    return c
-  },
 
-  view: c => {
-    return (
-      <div>
-        <Model
-          columnHeader={columnHeader}
-          store={c.store}
-          files={c.files}
-          category={c.category}>
-        </Model>
-        <Header />
-        <Body store={c.store}/>
 
-      </div>
-    )
-  },
+let App        = {}
+App.controller = props => {
+  //TODO: LANGUAGE!!!
+  //TODO: LOGIN and CREDENTIALS
+  let c = {
+    files:        m.prop( toImmutable( [] ) ),
+    category:     m.prop( toImmutable( [] ) ),
+    columnHeader: m.prop( columnHeader ),
+    //store:        props.store,
+  }
+  return c
 }
+
+App.view = (c, props) => {
+  return (
+    <div>
+      <Model {...props}/>
+      <Header {...props}/>
+      <Body {...props}/>
+    </div>
+  )
+}
+
+const AppInstance = connect((state) => state)(App)
+
+export default AppInstance

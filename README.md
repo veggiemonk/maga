@@ -1,10 +1,14 @@
 # maga
 [TEST] mithril ES6 JSX
 
-Just experimenting
+`JSPM` is used to manage dependencies and load `ES6 modules`, as well as bundling the `js` in a single file.
+The model is a `redux` store.
+The view and the controller are managed by `mithril`
+The view is written in `JSX` and is converted to object tag for `mithril` to use (done by `babel-plugin-mjsx`)
+The tests are written with `mocha` and `chai`
 
 # TODO:
-- [ ] how to deal with css lib (font-awesome)
-- [ ] convert from `m.prop()` to redux store
-- [ ] test bundle and deployment
-- [ ] automate test
+- [ ] how to deal with external css lib (e.g `font-awesome`)
+- [X] convert from `m.prop()` to `redux` store
+- [x] test bundle and deployment
+- [x] automate test (`mocha` and `chai`)

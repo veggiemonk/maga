@@ -11,3 +11,15 @@
 	min-width: 60px;
 	max-width: 300px;
 }
+
+td, th {
+  border: 1px solid #969cff;
+}
+
+tr:nth-child(even) {
+  background: aliceblue
+}
+
+tr:nth-child(odd) {
+  background: #ffffff
+}

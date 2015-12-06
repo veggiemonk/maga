@@ -34,8 +34,8 @@ System.config({
       "npm:isomorphic-fetch@2.2.0",
       "npm:immutable@3.7.5",
       "src/redux/actions.js",
-      "src/Model.js",
-      "src/Body.js",
+      "src/index.js",
+      "src/index.js",
       "src/components/Header/index.js",
       "src/settings.js"
     ],
