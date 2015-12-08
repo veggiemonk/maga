@@ -1,5 +1,6 @@
 import m from 'mithril'
 import rome from 'rome'
+import { connect } from '../../redux/mithril-redux'
 import {
   pageFirst,
   pageLast,
@@ -10,6 +11,7 @@ import {
   filterDateEnd,
   changeRowDisplayed,
   toggleMenuColumnView,
+  fetchData,
 } from '../../redux/actions'
 
 //import styles from '../../css/skeleton.css!'
@@ -17,17 +19,17 @@ import {
 let Filter = {}
 
 Filter.controller = function controller( props ) {
+  const { dispatch } = props
   return {
-    store:                props.store,
-    select:               val => {props.store.dispatch( changeRowDisplayed( Number( val ) ) ) },
-    search:               val => {props.store.dispatch( filterSearch( val ) ) },
+    select:               val => {dispatch( changeRowDisplayed( Number( val ) ) ) },
+    search:               val => {dispatch( filterSearch( val ) ) },
     dateBegin:            val => {
-      props.store.dispatch( filterDateBegin( val ) )
+      dispatch( filterDateBegin( val ) )
     },
     dateEnd:              val => {
-      props.store.dispatch( filterDateEnd( val ) )
+      dispatch( filterDateEnd( val ) )
     },
-    toggleMenuColumnView: () => {props.store.dispatch( toggleMenuColumnView() ) }
+    toggleMenuColumnView: () => {dispatch( toggleMenuColumnView() ) }
   }
 }
 
@@ -41,53 +43,56 @@ Filter.config = ctrl => ( element, isInitialized, context ) => {
 }
 
 Filter.view = function view( c, props, children ) {
-  const state = props.store.getState()
-  const count = state.data.count()
+  const { dispatch, filters, data, files } = props
+  const count = data.count()
   return (
     <div class="container">
       <div class="row">
         <div class="three columns">
-          <button class="button-primary">RELOAD</button>
+          <button
+            class="button-primary"
+            onclick={()=>{ dispatch() }}
+            >RELOAD</button>
 
           <input id="search"
                  type="search"
                  incremental
                  oninput={ m.withAttr('value', c.search ) }
-                 value={ state.filters.searchKeyword }
+                 value={ filters.searchKeyword }
                  placeholder="Search Here"/>
 
           <input id="dateBegin"
                  type="search"
                  config={Filter.config(c)}
                  oninput={ m.withAttr('value', c.dateBegin ) }
-                 value={ state.filters.dateBegin }
+                 value={ filters.dateBegin }
                  placeholder="Date Begin"/>
 
           <input id="dateEnd"
                  type="search"
                  oninput={ m.withAttr('value', c.dateEnd ) }
-                 value={ state.filters.dateEnd }
+                 value={ filters.dateEnd }
                  placeholder="Date End"/>
 
           <input type="checkbox"
                  onclick={ m.withAttr('checked', c.toggleMenuColumnView ) }
-                 checked={state.filters.menuColumnView}/>
+                 checked={filters.menuColumnView}/>
         </div>
 
         <div class="six columns">
-          <button onclick={ () => { c.store.dispatch( pageFirst() )} }>
+          <button onclick={ () => { dispatch( pageFirst() )} }>
             <i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>
           </button>
 
-          <button onclick={ () => {  c.store.dispatch( pagePrev() )  } }>
+          <button onclick={ () => { dispatch( pagePrev() )  } }>
             <i class="fa fa-chevron-left"></i>
           </button>
 
-          <button onclick={ () => { c.store.dispatch( pageNext( count ) ) } }>
+          <button onclick={ () => { dispatch( pageNext( count ) ) } }>
             <i class="fa fa-chevron-right"></i>
           </button>
 
-          <button onclick={ () => { c.store.dispatch( pageLast() ) } }>
+          <button onclick={ () => { dispatch( pageLast() ) } }>
             <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i>
           </button>
         </div>
@@ -108,7 +113,7 @@ Filter.view = function view( c, props, children ) {
                  oninput={ m.withAttr('value', c.select) }
                  name="rowDisplay" id="rowDisplay"
                  list="number"
-                 value={ state.filters.rowDisplayed }/>
+                 value={ filters.rowDisplayed }/>
           <datalist id="number">
             <option>1</option>
             {[ , ...Array( Math.floor( count / 10 ) ) ].map( ( x, i ) =>
@@ -120,10 +125,10 @@ Filter.view = function view( c, props, children ) {
 
       <div class="row">
         <div class="u-full-width center">
-          <span>Showing: { Math.min( state.filters.rowDisplayed, count ) } files out of { count }
-                (total: {state.files.count()})</span>
+          <span>Showing: { Math.min( filters.rowDisplayed, count ) } files out of { count }
+                (total: {files.count()})</span>
           <br />
-          <span> Page: { state.filters.page } out of {Math.ceil( count / state.filters.rowDisplayed )}</span>
+          <span> Page: { filters.page } out of {Math.ceil( count / filters.rowDisplayed )}</span>
         </div>
       </div>
 

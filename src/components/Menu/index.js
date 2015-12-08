@@ -30,19 +30,17 @@ const listRefDoc = ( listCat, cat ) =>
     }, [] )
 
 Menu.view = function view( c, props ) {
-
-  const state = props.store.getState()
-  const { dispatch } = props.store
+  const { category, files, dispatch } = props
   return (
     <div class={styles.main_div}>
 
       <ul class='menu'>
         <li class={styles.menuRoot}
             onclick={() => {dispatch(showAllDocument())}}>
-          'All Documents' <span style='float: right;'>{ state.files.count() }</span>
+          'All Documents' <span style='float: right;'>{ files.count() }</span>
         </li>
         {
-          state.category && state.category.toList().map( cat => (
+          category && category.toList().map( cat => (
             <li class={styles.menuCatLi} key={cat.get( 0 ).get( 'categoryNumber' )}>
                 <span class={styles.menuCatSpan}
                       onclick={() => {
@@ -74,7 +72,7 @@ Menu.view = function view( c, props ) {
         <li
           class={styles.menuCatLi}
           onclick={() => { dispatch(filterMenuRef(''))} }
-        >'OTHERS' <span>{state.files.filter( x => x.get( 'referenceDocument' ) === '' ).count()}</span></li>
+        >'OTHERS' <span>{files.filter( x => x.get( 'referenceDocument' ) === '' ).count()}</span></li>
       </ul>
     </div>
   )

@@ -17,11 +17,8 @@ let Table = {}
 
 Table.controller = function controller( props ) {
   let c = {
-    store:            props.store,
-    files:            props.files,
-    columnHeader:     props.columnHeader,
     toggleVisibility: colId => {
-      c.store.dispatch( toggleColumnView( colId ) )
+      dispatch( toggleColumnView( colId ) )
     },
     vm:               {
       /***
@@ -44,14 +41,13 @@ Table.controller = function controller( props ) {
   return c
 }
 
-Table.view = function view( c ) {
-  const state = c.store.getState()
+Table.view = function view( c, props ) {
+  const { dispatch, display, data, columns, filters } = props
   return (
-    <div class={styles.main_div}>
+    <div class={styles.main_div} style={`display : ${display ? 'block' : 'none'};`}>
       <table class={styles.collapse}>
-        <thead>
-        {
-          state.columns
+        <thead>{
+          columns
             .toList()
             .sortBy( x => x.get( 'index' ) )
             .filter( x => x.get( 'visible' ) )
@@ -59,26 +55,24 @@ Table.view = function view( c ) {
               <th
                 class={styles.row_width}
                 key={ col.get('id') }
-                onclick={() => { c.store.dispatch( sortColumn( col.get( 'id' ) ) ) } }>
+                onclick={() => { dispatch( sortColumn( col.get( 'id' ) ) ) } }>
                 { m.trust( col.get( 'name' ) ) }
-                { c.vm.cssSortToggle( state.columns.get( col.get( 'id' ) ).toJS() ) }
+                { c.vm.cssSortToggle( columns.get( col.get( 'id' ) ).toJS() ) }
               </th> ).toJS()
-        }
-        </thead>
-        <tbody>
-        {
-          state.data
-            .sort( sort( state.columns, getSortedColumn( state.columns ) ) )
-            .skip( state.filters.startPageAt )
-            .take( state.filters.rowDisplayed )
+        }</thead>
+        <tbody>{
+          data
+            .sort( sort( columns, getSortedColumn( columns ) ) )
+            .skip( filters.startPageAt )
+            .take( filters.rowDisplayed )
             .map( file => (
               <Row
                 key={ file.get('index') }
                 file={ file }
-                store={ c.store }>
+                dispatch={ dispatch }
+                {...props}>
               </Row> ) ).toJS()
-        }
-        </tbody>
+        }</tbody>
       </table>
     </div>
   )

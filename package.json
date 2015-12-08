@@ -1,6 +1,6 @@
 {
   "name": "maga",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "transfer",
   "main": "index.js",
   "scripts": {
@@ -42,8 +42,6 @@
       "moment": "npm:moment@^2.10.6",
       "postcss-safe-parser": "npm:postcss-safe-parser@^1.0.1",
       "redux": "npm:redux@^3.0.4",
-      "redux-logger": "npm:redux-logger@^2.0.4",
-      "redux-thunk": "npm:redux-thunk@^1.0.0",
       "rome": "npm:rome@^2.1.22"
     },
     "devDependencies": {
@@ -80,8 +78,6 @@
     "mocha": "^2.3.4",
     "moment": "^2.10.6",
     "redux": "^3.0.4",
-    "redux-logger": "^2.0.4",
-    "redux-thunk": "^1.0.0",
     "roma": "0.0.6"
   }
 }

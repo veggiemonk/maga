@@ -4,9 +4,9 @@ import { fromJS as toImmutable } from 'immutable'
 import { loaderDisplay } from './../../utils'
 import { groupMenu, sanitize } from './../../data'
 import { fetchFile, fetchCategory, headers } from './../../settings'
-import { loadData } from './../../redux/actions'
+import { loadData, fetchData } from './../../redux/actions'
 
-import { connect } from './redux/mithril-redux'
+import { connect } from '../../redux/mithril-redux'
 
 /** CSS MODULES !! **/
 import styles from './index.css!'
@@ -20,6 +20,7 @@ Model.controller = function controller( props ) {
     fetchFileList:     () => fetch( fetchFile, headers( 'GET' ) ).then( res => res.json() ),
     fetchCategoryList: () => fetch( fetchCategory, headers( 'GET' ) ).then( res => res.json() ),
     load:              () => {
+      dispatch(fetchData)
       return Promise.all( [c.fetchFileList(), c.fetchCategoryList()] )
         .then( ([FileList, CategoryList]) => {
           const files = toImmutable( sanitize( FileList, CategoryList ) )
@@ -37,7 +38,7 @@ Model.controller = function controller( props ) {
   return c
 }
 
-Model.view = function view() {
+Model.view = function view(c, props) {
   return (
     <div class={ styles.loading } style={ loaderDisplay() }>
       <div class={ styles.pulseloader }></div>
@@ -45,6 +46,6 @@ Model.view = function view() {
   )
 }
 
-Model = connect()(Model)
+Model = connect(((state) => state),'MODEL')(Model)
 
 export default Model

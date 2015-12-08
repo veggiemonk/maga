@@ -9,9 +9,9 @@ import styles from './index.css!'
 let Row = {}
 
 Row.controller = function controller( props ) {
+  const {dispatch} = props
   return {
     file:     props.file,
-    store:    props.store,
     download: fileId => {
       alert( 'DOWNLOAD: ' + fileId )
     },
@@ -22,7 +22,7 @@ Row.controller = function controller( props ) {
 }
 
 Row.view = function view( c ) {
-  const { columns } = c.store.getState()
+  const { columns } = props
   const v = k => columns.get( k ).get( 'visible' )
   return (
     <tr>

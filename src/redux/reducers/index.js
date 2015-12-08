@@ -17,6 +17,7 @@ import {
   TOGGLE_SELECT_ALL,
   SELECT_ROW,
   LOAD_DATA,
+  FETCH_DATA,
   SORT_COLUMN,
   TOGGLE_COLUMN_VIEW,
   RESET_VIEW,
@@ -32,11 +33,18 @@ const rootReducer = ( state = initialState, action ) => {
   switch ( action.type ) {
     case LOAD_DATA:
       return Object.assign( {}, state, {
-        columns:  action.columnHeader,
+        columns:  action.columns,
         files:    action.files,
         data:     action.data,
         category: action.category,
+        isFetching: false,
+        lastUpdated: action.receivedAt
       } )
+
+      case FETCH_DATA:
+      return Object.assign( {}, state, {
+        isFetching: true
+      })
 
     case RESET_VIEW:
       return filtering( Object.assign( {}, state, {

@@ -3,6 +3,7 @@ System.config({
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
+    "stage": 0,
     "optional": [
       "runtime",
       "optimisation.modules.system"
@@ -22,7 +23,7 @@ System.config({
   depCache: {
     "index.js": [
       "npm:mithril@0.2.0",
-      "src/index.js",
+      "src/components/Root/index.js",
       "src/redux/createStore.js",
       "src/redux/reducers/index.js"
     ],
@@ -31,18 +32,14 @@ System.config({
     ],
     "src/index.js": [
       "npm:mithril@0.2.0",
-      "npm:isomorphic-fetch@2.2.0",
       "npm:immutable@3.7.5",
-      "src/redux/actions.js",
-      "src/index.js",
-      "src/index.js",
-      "src/components/Header/index.js",
-      "src/settings.js"
+      "src/redux/mithril-redux.js",
+      "src/async.js",
+      "src/components/Body/index.js",
+      "src/components/Header/index.js"
     ],
     "src/redux/createStore.js": [
-      "npm:redux@3.0.4",
-      "npm:redux-thunk@1.0.0",
-      "npm:redux-logger@2.0.4"
+      "npm:redux@3.0.4"
     ],
     "src/redux/reducers/index.js": [
       "npm:babel-runtime@5.8.34/core-js/object/assign",
@@ -141,6 +138,7 @@ System.config({
       "npm:babel-runtime@5.8.34/helpers/to-consumable-array",
       "npm:mithril@0.2.0",
       "npm:rome@2.1.22",
+      "src/redux/mithril-redux.js",
       "src/redux/actions.js"
     ],
     "src/components/Table/index.js": [
@@ -159,6 +157,7 @@ System.config({
     ],
     "src/components/ColumnVisibility/index.js": [
       "npm:mithril@0.2.0",
+      "src/redux/mithril-redux.js",
       "src/redux/actions.js",
       "src/components/ColumnVisibility/index.css!npm:jspm-loader-css-modules@1.0.1-beta1"
     ],
@@ -788,6 +787,46 @@ System.config({
     ],
     "npm:seleccion@2.0.0/src/getSelectionSynthetic": [
       "npm:seleccion@2.0.0/src/rangeToTextRange"
+    ],
+    "src/components/Root/index.js": [
+      "npm:mithril@0.2.0",
+      "src/index.js",
+      "src/redux/mithril-redux.js",
+      "src/components/Root/index.css!npm:jspm-loader-css-modules@1.0.1-beta1"
+    ],
+    "src/redux/mithril-redux.js": [
+      "npm:babel-runtime@5.8.34/helpers/extends",
+      "npm:mithril@0.2.0",
+      "npm:lodash@3.10.1"
+    ],
+    "src/async.js": [
+      "npm:babel-runtime@5.8.34/helpers/sliced-to-array",
+      "npm:babel-runtime@5.8.34/core-js/promise",
+      "npm:immutable@3.7.5",
+      "npm:isomorphic-fetch@2.2.0",
+      "src/data.js",
+      "src/redux/actions.js",
+      "src/settings.js"
+    ],
+    "src/components/Body/index.js": [
+      "npm:babel-runtime@5.8.34/helpers/extends",
+      "npm:mithril@0.2.0",
+      "src/components/Filter/index.js",
+      "src/components/Menu/index.js",
+      "src/components/Table/index.js",
+      "src/components/ColumnVisibility/index.js",
+      "src/components/Uploader/index.js"
+    ],
+    "npm:babel-runtime@5.8.34/helpers/extends": [
+      "npm:babel-runtime@5.8.34/core-js/object/assign"
+    ],
+    "src/components/Uploader/index.js": [
+      "npm:mithril@0.2.0",
+      "npm:isomorphic-fetch@2.2.0",
+      "npm:lodash@3.10.1",
+      "src/settings.js",
+      "src/redux/mithril-redux.js",
+      "src/components/Uploader/index.css!npm:jspm-loader-css-modules@1.0.1-beta1"
     ]
   },
 
@@ -823,7 +862,7 @@ System.config({
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
-      "buffer": "npm:buffer@3.5.3"
+      "buffer": "npm:buffer@3.5.4"
     },
     "github:jspm/nodelibs-constants@0.1.0": {
       "constants-browserify": "npm:constants-browserify@0.0.1"
@@ -975,12 +1014,12 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
-    "npm:buffer@3.5.3": {
+    "npm:buffer@3.5.4": {
       "base64-js": "npm:base64-js@0.0.8",
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "ieee754": "npm:ieee754@1.1.6",
-      "is-array": "npm:is-array@1.0.1",
+      "isarray": "npm:isarray@0.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:bullseye@1.4.6": {

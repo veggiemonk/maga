@@ -39,14 +39,6 @@ const upload = files => {
   for ( let i = 0; i < files.length; i++ ) {
     formData.append( files[ i ].name, files[ i ] )
   }
-
-  /*return m.request( {
-   method:    'POST',
-   url:       'http://localhost:4000/echo/json',
-   data:      formData,
-   //simply pass the FormData object intact to the underlying XMLHttpRequest, instead of JSON.stringify'ing it
-   serialize: function (value) {return value}
-   } )*/
   return fetch( urlEchoServer, { method: 'POST', body: formData } )
 }
 
@@ -105,5 +97,4 @@ Uploader.view = (c, props) => {
   )
 }
 
-Uploader = connect((state) => state)(Uploader)
 export default Uploader
