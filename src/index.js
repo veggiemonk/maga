@@ -10,7 +10,8 @@ App.controller = props => {
   //TODO: LANGUAGE!!!
   //TODO: LOGIN and CREDENTIALS
   let c = {}
-  fetching(props.dispatch).then(()=>{ console.log('LOADED...')})
+  console.log('fetching, dispatch = ', props.dispatch)
+  fetching(props.dispatch).then(()=> { console.log('LOADED...')})
 
   return c
 }

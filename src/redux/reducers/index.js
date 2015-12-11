@@ -33,18 +33,18 @@ const rootReducer = ( state = initialState, action ) => {
   switch ( action.type ) {
     case LOAD_DATA:
       return Object.assign( {}, state, {
-        columns:  action.columns,
-        files:    action.files,
-        data:     action.data,
-        category: action.category,
-        isFetching: false,
+        columns:     action.columns,
+        files:       action.files,
+        data:        action.data,
+        category:    action.category,
+        isFetching:  false,
         lastUpdated: action.receivedAt
       } )
 
-      case FETCH_DATA:
+    case FETCH_DATA:
       return Object.assign( {}, state, {
         isFetching: true
-      })
+      } )
 
     case RESET_VIEW:
       return filtering( Object.assign( {}, state, {
@@ -65,9 +65,9 @@ const rootReducer = ( state = initialState, action ) => {
       return filtering( Object.assign( {}, state, {
         columns: resetSort( state.columns ),
         filters: Object.assign( {}, state.filters, {
-          startPageAt:    defaults.startPageAt,
-          page:           defaults.page,
-          menuFilter:     defaults.menuFilter,
+          startPageAt: defaults.startPageAt,
+          page:        defaults.page,
+          menuFilter:  defaults.menuFilter,
         } )
       } ) )
 

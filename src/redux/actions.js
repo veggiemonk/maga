@@ -4,16 +4,15 @@
 
 /* HYDRATING STORE */
 export const LOAD_DATA = 'LOAD_DATA'
-export const loadData  = (columns, files, data, category) => (
-	{
-		type: LOAD_DATA,
-		columns,
-		files,
-		data,
-		category,
-		receivedAt : Date.now(),
-	}
-)
+export const loadData  = (columns, files, data, category) => ( {
+  type: LOAD_DATA,
+  columns,
+  files,
+  data,
+  category,
+  receivedAt : Date.now(),
+	})
+
 export const FETCH_DATA = 'FETCH_DATA'
 export const fetchData = () => (
 	{ type: FETCH_DATA }

@@ -1,5 +1,5 @@
 import m from 'mithril'
-import immutable from 'immutable'
+import Immutable from 'immutable'
 import Row from './../Row/index'
 
 import {
@@ -17,10 +17,10 @@ let Table = {}
 
 Table.controller = function controller( props ) {
   let c = {
-    toggleVisibility: colId => {
-      dispatch( toggleColumnView( colId ) )
-    },
-    vm:               {
+    /* toggleVisibility: colId => {
+     dispatch( toggleColumnView( colId ) )
+     },*/
+    vm: {
       /***
        * show the 3 states of a column sortwise
        * @param: id  id of the column
@@ -32,8 +32,8 @@ Table.controller = function controller( props ) {
           return !col.sorted
             ? ( <i class='fa fa-sort right'></i> )
             : ( col.order
-            ? ( <i class='fa fa-sort-desc right'></i> )
-            : ( <i class='fa fa-sort-asc right'></i>  ) )
+              ? ( <i class='fa fa-sort-desc right'></i> )
+              : ( <i class='fa fa-sort-asc right'></i>  ) )
         }
       }
     },
