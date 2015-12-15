@@ -1,5 +1,4 @@
 import m from 'mithril'
-import { connect } from './../../redux/mithril-redux'
 
 import { toggleColumnView } from './../../redux/actions'
 

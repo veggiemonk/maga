@@ -21,7 +21,7 @@ Row.controller = function controller( props ) {
   }
 }
 
-Row.view = function view( c ) {
+Row.view = function view( c, props ) {
   const { columns } = props
   const v = k => columns.get( k ).get( 'visible' )
   return (

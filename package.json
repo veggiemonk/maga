@@ -37,7 +37,7 @@
       "immutable": "npm:immutable@^3.7.5",
       "isomorphic-fetch": "npm:isomorphic-fetch@^2.2.0",
       "lodash": "npm:lodash@^3.10.1",
-      "mithril": "npm:mithril@^0.2.0",
+      "mithril": "github:lhorie/mithril.js@next",
       "mocha": "npm:mocha@^2.3.4",
       "moment": "npm:moment@^2.10.6",
       "postcss-safe-parser": "npm:postcss-safe-parser@^1.0.1",

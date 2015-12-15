@@ -1,7 +1,7 @@
 import m from 'mithril'
 import { fromJS as toImmutable } from 'immutable'
-import { connect } from './redux/mithril-redux'
-import {fetching} from './async'
+
+import { fetching } from './async'
 import Body from './components/Body/index'
 import Header from './components/Header/index'
 
@@ -11,7 +11,7 @@ App.controller = props => {
   //TODO: LOGIN and CREDENTIALS
   let c = {}
   //console.log('fetching, dispatch = ', props.dispatch)
-  fetching(props.dispatch).then(()=> { console.log('LOADED...')})
+  fetching( props.store.dispatch ).then( ()=> { console.log( 'LOADED...' )} )
 
   return c
 }
@@ -19,12 +19,13 @@ App.controller = props => {
 App.view = (c, props) => {
   //const Body   = connect(((state)=> state), 'Body in App')(body)
   //const Header = connect(((state)=> state), 'Header in App')(header)
+  const state = props.store.getState()
   return (
     <div>
       <Header />
-      <Body {...props}/>
+      <Body dispatch={props.store.dispatch} {...state}/>
     </div>
   )
 }
-App = connect((state) => state)(App)
+//App = connect((state) => state)(App)
 export default App

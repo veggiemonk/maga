@@ -6,8 +6,6 @@ import { groupMenu, sanitize } from './../../data'
 import { fetchFile, fetchCategory, headers } from './../../settings'
 import { loadData, fetchData } from './../../redux/actions'
 
-import { connect } from '../../redux/mithril-redux'
-
 /** CSS MODULES !! **/
 import styles from './index.css!'
 
@@ -45,7 +43,5 @@ Model.view = function view(c, props) {
     </div>
   )
 }
-
-Model = connect(((state) => state),'MODEL')(Model)
 
 export default Model

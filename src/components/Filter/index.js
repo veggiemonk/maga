@@ -1,6 +1,5 @@
 import m from 'mithril'
 import rome from 'rome'
-import { connect } from '../../redux/mithril-redux'
 import { fetching } from '../../async'
 import {
   pageFirst,

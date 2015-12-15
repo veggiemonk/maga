@@ -3,8 +3,6 @@ import 'isomorphic-fetch'
 import _ from 'lodash'
 import { headers, urlEchoServer} from '../../settings'
 
-import { connect } from '../../redux/mithril-redux'
-
 import styles from './index.css!'
 
 let Uploader = {}

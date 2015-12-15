@@ -7,13 +7,9 @@ import Table  from './../Table/index'
 import ColumnVisibility  from './../ColumnVisibility/index'
 import Uploader from './../Uploader/index'
 
-//import { connect } from '../../redux/mithril-redux'
+import styles from './index.css!'
 
 let Body = {}
-
-Body.controller = props => {
-
-}
 
 Body.view = (c, props) => {
   const { filters, files } = props
