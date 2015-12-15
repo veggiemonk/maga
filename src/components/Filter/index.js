@@ -1,6 +1,7 @@
 import m from 'mithril'
 import rome from 'rome'
 import { connect } from '../../redux/mithril-redux'
+import { fetching } from '../../async'
 import {
   pageFirst,
   pageLast,
@@ -11,7 +12,7 @@ import {
   filterDateEnd,
   changeRowDisplayed,
   toggleMenuColumnView,
-  fetchData,
+  refreshData,
 } from '../../redux/actions'
 
 //import styles from '../../css/skeleton.css!'
@@ -51,7 +52,7 @@ Filter.view = function view( c, props, children ) {
         <div class="three columns">
           <button
             class="button-primary"
-            onclick={()=>{ dispatch() }}
+            onclick={() => { fetching(dispatch); m.startComputation(); m.endComputation() }}
             >RELOAD</button>
 
           <input id="search"

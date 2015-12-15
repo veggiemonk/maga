@@ -18,6 +18,11 @@ export const fetchData = () => (
 	{ type: FETCH_DATA }
 )
 
+export const REFRESH_DATA = 'REFRESH_DATA'
+export const refreshData = () => (
+  { type: REFRESH_DATA }
+)
+
 /* VIEW */
 export const RESET_VIEW        = 'RESET_VIEW'
 export const resetView         = () => ( { type: RESET_VIEW } )

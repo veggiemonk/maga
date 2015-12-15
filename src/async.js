@@ -11,7 +11,6 @@ export const fetchCategoryList = ( url ) => fetch( url, headers( 'GET' ) ).then(
 export const fetching          = ( dispatch ) => {
 
   dispatch( fetchData() )
-  console.log('fetching', fetchData())
   return Promise.all( [ fetchFileList( fetchURLFile ), fetchCategoryList( fetchURLCategory ) ] )
     .then( ( [FileList, CategoryList] ) => {
       const files = toImmutable( sanitize( FileList, CategoryList ) )
