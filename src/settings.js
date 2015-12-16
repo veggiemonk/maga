@@ -192,8 +192,8 @@ export const urlServer = 'http://localhost:8019'
 export const urlEchoServer = 'http://localhost:4000/echo/json'
 export const fetchURL  = urlServer + '/file/list'
 //export const fetchFile     = '/test/fileListF01.json'
-export const fetchURLFile     = '/test/fileList.json'
-export const fetchURLCategory = '/test/category.json'
+export const fetchURLFile     = 'test/fileList.json'
+export const fetchURLCategory = 'test/category.json'
 export const headers       = method => {
   return {
     credentials: 'same-origin',

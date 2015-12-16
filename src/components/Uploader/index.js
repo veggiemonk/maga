@@ -73,13 +73,11 @@ Uploader.controller = props => {
 Uploader.view = (c, props) => {
   return (
     <div>
-      <button onclick={c.toggleUpload}>{c.visible ? 'Hide Uploader' : 'Show Uploader'}</button>
-      { c.visible
-        ? (<div>
-        <h1>Upload Files Here</h1>
-        <p>folders not accepted</p>
-        <div class={styles.uploader} config={Uploader.config(c)}>
-          <ul>{
+      <a href="#box" onclick={c.toggleUpload}>Upload</a>
+      <div id="box" class={styles.box}>
+        <div class={styles.lightbox} config={Uploader.config(c)} >
+          <a href="#">X</a>
+          <ul class={styles.dropzone}>{
             _.map( c.files, ( x => (
               <li>
                 <span>{x.name}</span>
@@ -88,9 +86,7 @@ Uploader.view = (c, props) => {
             ) ) )
           }</ul>
         </div>
-      </div>)
-        : ''
-      }
+      </div>
     </div>
   )
 }

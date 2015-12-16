@@ -1,5 +1,5 @@
 System.config({
-  baseURL: "./",
+  baseURL: "/maga/",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
@@ -32,6 +32,7 @@ System.config({
     "font-awesome": "npm:font-awesome@4.4.0",
     "immutable": "npm:immutable@3.7.5",
     "isomorphic-fetch": "npm:isomorphic-fetch@2.2.0",
+    "jspm-hot-reloader-bootstrap": "npm:jspm-hot-reloader-bootstrap@0.0.1",
     "lodash": "npm:lodash@3.10.1",
     "mithril": "github:lhorie/mithril.js@next",
     "mocha": "npm:mocha@2.3.4",
@@ -42,6 +43,7 @@ System.config({
     "redux-logger": "npm:redux-logger@2.0.4",
     "redux-thunk": "npm:redux-thunk@1.0.0",
     "rome": "npm:rome@2.1.22",
+    "webfontloader": "github:components/webfontloader@1.6.3",
     "github:capaj/jspm-hot-reloader@0.4.3": {
       "debug": "npm:debug@2.2.0",
       "lodash.clonedeep": "npm:lodash.clonedeep@3.0.2",

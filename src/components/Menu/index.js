@@ -34,7 +34,7 @@ Menu.view = function view( c, props ) {
   return (
     <div class={styles.main_div}>
 
-      <ul class='menu'>
+      <ul class={styles.menu}>
         <li class={styles.menuRoot}
             onclick={() => {dispatch(showAllDocument())}}>
           'All Documents' <span style='float: right;'>{ files.count() }</span>

@@ -2,8 +2,11 @@ import m from 'mithril'
 import { fromJS as toImmutable } from 'immutable'
 
 import { fetching } from './async'
-import Body from './components/Body/index'
-import Header from './components/Header/index'
+
+// Components
+import Main from './components/Main/index'
+import Aside   from './components/Aside/index'
+
 
 let App        = {}
 App.controller = props => {
@@ -15,15 +18,14 @@ App.controller = props => {
 
   return c
 }
-//{...props}
-App.view = (c, props) => {
-  //const Body   = connect(((state)=> state), 'Body in App')(body)
-  //const Header = connect(((state)=> state), 'Header in App')(header)
+
+App.view = ( c, props ) => {
+
   const state = props.store.getState()
   return (
     <div>
-      <Header />
-      <Body dispatch={props.store.dispatch} {...state}/>
+      <Aside dispatch={props.store.dispatch} {...state}/>
+      <Main dispatch={props.store.dispatch} {...state}/>
     </div>
   )
 }

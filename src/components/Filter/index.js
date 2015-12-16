@@ -41,7 +41,7 @@ Filter.config = ctrl => ( element, isInitialized, context ) => {
     } )
   }
 }
-
+//todo breadcrumbs
 Filter.view = function view( c, props, children ) {
   const { dispatch, filters, data, files } = props
   const count = data.count()

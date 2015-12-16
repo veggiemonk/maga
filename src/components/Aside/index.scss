@@ -1,0 +1,9 @@
+$headerHeight: 80px;
+$footerHeight: 30px;
+
+.Aside {
+  display: table-cell;
+  float: left;
+  min-width: 200px;
+  height: calc(100vh - (#{$headerHeight} + #{$footerHeight}))
+}

@@ -4,18 +4,18 @@
 
 /* HYDRATING STORE */
 export const LOAD_DATA = 'LOAD_DATA'
-export const loadData  = (columns, files, data, category) => ( {
-  type: LOAD_DATA,
+export const loadData  = ( columns, files, data, category ) => ( {
+  type:       LOAD_DATA,
   columns,
   files,
   data,
   category,
-  receivedAt : Date.now(),
-	})
+  receivedAt: Date.now(),
+})
 
 export const FETCH_DATA = 'FETCH_DATA'
-export const fetchData = () => (
-	{ type: FETCH_DATA }
+export const fetchData  = () => (
+{ type: FETCH_DATA }
 )
 
 export const REFRESH_DATA = 'REFRESH_DATA'
@@ -38,20 +38,22 @@ export const toggleColumnView   = id => ( { type: TOGGLE_COLUMN_VIEW, id } )
 
 /* CONNECTION */
 //TODO
-export const LOGIN  = 'LOGIN'
-export const LOGOUT = 'LOGOUT'
+export const LOGIN         = 'LOGIN'
+export const LOGIN_FAILED  = 'LOGIN_FAILED'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const LOGOUT        = 'LOGOUT'
 
 /* FILTERS */
 export const FILTER_DATE_BEGIN = 'FILTER_DATE_BEGIN'
 export const filterDateBegin   = date => ( { type: FILTER_DATE_BEGIN, date } )
-export const FILTER_DATE_END   = 'FILTER_DATE_END' //TODO: parse Date with MOMENT
-export const filterDateEnd   = date => ( { type: FILTER_DATE_END, date } )
-export const FILTER_MENU_REF = 'FILTER_MENU_REF'
-export const filterMenuRef   = ref => ( { type: FILTER_MENU_REF, ref: Number.parseInt( ref ) } )
-export const FILTER_MENU_CAT = 'FILTER_MENU_CAT'
-export const filterMenuCat   = cat => ( { type: FILTER_MENU_CAT, cat } )
-export const FILTER_SEARCH   = 'FILTER_SEARCH'
-export const filterSearch    = search => ( { type: FILTER_SEARCH, search } )
+export const FILTER_DATE_END   = 'FILTER_DATE_END'
+export const filterDateEnd     = date => ( { type: FILTER_DATE_END, date } ) //TODO: parse Date with MOMENT
+export const FILTER_MENU_REF   = 'FILTER_MENU_REF'
+export const filterMenuRef     = ref => ( { type: FILTER_MENU_REF, ref: Number.parseInt( ref ) } )
+export const FILTER_MENU_CAT   = 'FILTER_MENU_CAT'
+export const filterMenuCat     = cat => ( { type: FILTER_MENU_CAT, cat } )
+export const FILTER_SEARCH     = 'FILTER_SEARCH'
+export const filterSearch      = search => ( { type: FILTER_SEARCH, search } )
 
 /* FILES */
 //TODO
