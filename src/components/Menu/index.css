@@ -1,7 +1,6 @@
 .main_div {
   display: table-cell;
   float: left;
-  width: 20%;
   height: calc(100vh - (80px + 30px));
   overflow-y: auto;
   overflow-x: hidden;
@@ -19,7 +18,7 @@
 }
 
 .menuCatSpan {
-    compose-with: text_overflow;
+    composes: text_overflow;
     display: inline-block;
     width:   100%;
 }

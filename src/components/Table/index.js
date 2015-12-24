@@ -43,19 +43,7 @@ Table.controller = function controller(props) {
 
 Table.view = function view(c, props) {
   const { dispatch, display, data, columns, filters } = props
-  const dat = data
-    .sort( sort( columns, getSortedColumn( columns ) ) )
-    .skip( filters.startPageAt )
-    .take( filters.rowDisplayed )
-    .map( file => (
-      <Row
-        key={ file.get('index') }
-        file={ file }
-        dispatch={ dispatch }
-        {...props}>
-      </Row> ) ).toJS()
-
-  const vdom = (<div class={styles.main_div} style={`display : ${display ? 'inline-block' : 'none'};`}>
+  return (<div class={styles.main_div} style={`display : ${display ? 'inline-block' : 'none'};`}>
     <table class={styles.collapse}>
       <thead>{
         columns
@@ -71,10 +59,20 @@ Table.view = function view(c, props) {
               { c.vm.cssSortToggle( columns.get( col.get( 'id' ) ).toJS() ) }
             </th> ).toJS()
       }</thead>
-      <tbody>{ dat }</tbody>
+      <tbody>{ data
+        .sort( sort( columns, getSortedColumn( columns ) ) )
+        .skip( filters.startPageAt )
+        .take( filters.rowDisplayed )
+        .map( file => (
+          <Row
+            key={ file.get('index') }
+            file={ file }
+            dispatch={ dispatch }
+            {...props}>
+          </Row> ) ).toJS()
+      }</tbody>
     </table>
   </div>)
-  return vdom
 }
 
 export default Table

@@ -4,9 +4,14 @@ import { fromJS as toImmutable } from 'immutable'
 import { fetching } from './async'
 
 // Components
-import Main from './components/Main/index'
-import Aside   from './components/Aside/index'
+import Loader from './components/Loader/index'
+import Menu from './components/Menu/index'
+import Uploader from './components/Uploader/index'
+import Filter from './components/Filter/index'
+import Table from './components/Table/index'
+import ColumnVisibility from './components/ColumnVisibility/index'
 
+import styles from './css/global.css!'
 
 let App        = {}
 App.controller = props => {
@@ -22,12 +27,22 @@ App.controller = props => {
 App.view = ( c, props ) => {
 
   const state = props.store.getState()
+  const { dispatch } = props.store
+  const {filters, files, isFetching} = state
   return (
     <div>
-      <Aside dispatch={props.store.dispatch} {...state}/>
-      <Main dispatch={props.store.dispatch} {...state}/>
+      <Loader display={isFetching}/>
+      <aside class={styles.Aside}>
+        <Uploader dispatch={dispatch} {...state}/>
+        <Menu dispatch={dispatch} {...state} />
+      </aside>
+      <main class={styles.Main}>
+        <ColumnVisibility display={filters.menuColumnView} dispatch={dispatch} {...state}/>
+        <Filter dispatch={dispatch} {...state}/>
+        <Table display={files.count() > 0} dispatch={dispatch} {...state} />
+      </main>
     </div>
   )
 }
-//App = connect((state) => state)(App)
+
 export default App

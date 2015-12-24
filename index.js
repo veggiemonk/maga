@@ -13,8 +13,6 @@ store.subscribe( m.redraw.bind( m ) )
 
 m.mount( document.getElementById( 'header' ), m.component( Header ) )
 
-m.mount( document.getElementById( 'transfer' ),
-  m.component( App, { store: store } ) )
-// m.mount(document.getElementById( 'app' ), (<Root store={store} />));
+m.mount( document.getElementById( 'transfer' ), m.component( App, { store: store } ) )
 
 m.mount( document.getElementById( 'footer' ), m.component( Footer ) )

@@ -66,9 +66,9 @@ body {
 .Main {
   display: table-cell;
   float: left;
-  width: 80%;
+  width: 75%;
   /* less aside width */
-  height: calc(100vh - (80px + 30px));
+  height: calc(100vh -  (80px + 30px));
   overflow-y: auto;
   overflow-x: hidden; }
 
