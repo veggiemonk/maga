@@ -10,7 +10,7 @@ import { sort, getSortedColumn } from './../../redux/reducers/columns'
 
 import { invalidate, inc, dec } from './../../utils'
 import { defaults } from './../../settings'
-//TODO: move it elsewhere!!!
+
 import styles from './index.css!'
 
 let Table = {}
@@ -43,20 +43,20 @@ Table.controller = function controller(props) {
 
 Table.view = function view(c, props) {
   const { dispatch, display, data, columns, filters } = props
-  return (<div class={styles.main_div} style={`display : ${display ? 'inline-block' : 'none'};`}>
+  return (<div /*class={styles.main_div}*/ style={`display : ${display ? 'inline-block' : 'none'};`}>
     <table class={styles.collapse}>
       <thead>{
         columns
           .toList()
-          .sortBy( x => x.get( 'index' ) )
-          .filter( x => x.get( 'visible' ) )
+          .sortBy( x => x[ 'index' ] )
+          .filter( x => x[ 'visible' ] )
           .map( col =>
             <th
               class={styles.row_width}
-              key={ col.get('id') }
-              onclick={() => { dispatch( sortColumn( col.get( 'id' ) ) ) } }>
-              { m.trust( col.get( 'name' ) ) }
-              { c.vm.cssSortToggle( columns.get( col.get( 'id' ) ).toJS() ) }
+              key={ col[ 'id' ] }
+              onclick={() => { dispatch( sortColumn( col[ 'id' ] ) ) } }>
+              { m.trust( col[ 'name' ] ) }
+              { c.vm.cssSortToggle( columns[ col[ 'id' ] ] ) }
             </th> ).toJS()
       }</thead>
       <tbody>{ data

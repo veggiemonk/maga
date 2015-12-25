@@ -1,6 +1,4 @@
-$heightHeader: 80px;
-$heightFooter: 30px;
-
+@import 'constants';
 
 * {
   -webkit-box-sizing: border-box;
@@ -20,7 +18,7 @@ body {
 .Header {
   height: 80px;
   line-height: 80px;
-  background-color: #086cc3;
+  background-color: $groupSBlue;
   width: 100%;
 }
 
@@ -82,7 +80,7 @@ body {
 .Main {
   display: table-cell;
   float: left;
-  width: 75%; /* less aside width */
+/*  width: 79%;*/ /* less aside width */
   height: calc(100vh -  (#{$heightHeader} + #{$heightFooter}));
   overflow-y: auto;
   overflow-x: hidden;
@@ -95,8 +93,8 @@ body {
   bottom: 0;
   width: 100%;
   height: $heightFooter;
-  color: #aaa;
-  background: #424242;
+  color: $footerTextColor;
+  background: $footerColor;
 
 }
 

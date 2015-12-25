@@ -8,6 +8,7 @@
     "test": "./node_modules/mocha/bin/mocha --compilers js:babel-core/register --ui tdd -R tap ./test/redux.spec.js",
     "test:watch": "npm test -- --watch",
     "start": "node server",
+    "echo": "node _echoServer.js",
     "bundle": "jspm bundle-sfx index.js dist/bundle.js --minify"
   },
   "repository": {
@@ -30,13 +31,12 @@
     "dependencies": {
       "babel-loader": "github:veggiemonk/plugin-babel@master",
       "babel-plugin-mjsx": "npm:babel-plugin-mjsx@^1.0.3",
-      "capaj/jspm-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.4.3",
+      "capaj/jspm-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.1",
       "chai": "npm:chai@^3.4.1",
       "css": "npm:jspm-loader-css-modules@^1.0.1-beta1",
       "font-awesome": "npm:font-awesome@^4.4.0",
       "immutable": "npm:immutable@^3.7.5",
       "isomorphic-fetch": "npm:isomorphic-fetch@^2.2.0",
-      "jspm-hot-reloader-bootstrap": "npm:jspm-hot-reloader-bootstrap@^0.0.1",
       "lodash": "npm:lodash@^3.10.1",
       "mithril": "github:lhorie/mithril.js@next",
       "mocha": "npm:mocha@^2.3.4",

@@ -9,7 +9,6 @@ import styles from './src/components/Header/style.css!'
 
 let store = finalCreateStore( reducer )
 store.subscribe( m.redraw.bind( m ) )
-//store.subscribe( () => {console.log('STATE SUBSCRIBED!!!!!!')})
 
 m.mount( document.getElementById( 'header' ), m.component( Header ) )
 

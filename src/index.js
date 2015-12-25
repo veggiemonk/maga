@@ -1,5 +1,4 @@
 import m from 'mithril'
-import { fromJS as toImmutable } from 'immutable'
 
 import { fetching } from './async'
 
@@ -11,11 +10,12 @@ import Filter from './components/Filter/index'
 import Table from './components/Table/index'
 import ColumnVisibility from './components/ColumnVisibility/index'
 
+import i18n from './i18n'
+
 import styles from './css/global.css!'
 
 let App        = {}
 App.controller = props => {
-  //TODO: LANGUAGE!!!
   //TODO: LOGIN and CREDENTIALS
   let c = {}
   //console.log('fetching, dispatch = ', props.dispatch)
@@ -33,13 +33,35 @@ App.view = ( c, props ) => {
     <div>
       <Loader display={isFetching}/>
       <aside class={styles.Aside}>
-        <Uploader dispatch={dispatch} {...state}/>
-        <Menu dispatch={dispatch} {...state} />
+        <Uploader
+          dispatch={dispatch}
+          i18n={i18n.uploader}
+          {...state}>
+        </Uploader>
+        <Menu
+          dispatch={dispatch}
+          {...state}
+          i18n={i18n.menu}>
+        </Menu>
       </aside>
       <main class={styles.Main}>
-        <ColumnVisibility display={filters.menuColumnView} dispatch={dispatch} {...state}/>
-        <Filter dispatch={dispatch} {...state}/>
-        <Table display={files.count() > 0} dispatch={dispatch} {...state} />
+        <ColumnVisibility
+          display={filters.menuColumnView}
+          dispatch={dispatch}
+          i18n={i18n.columnVisibility}
+          {...state}>
+        </ColumnVisibility>
+        <Filter
+          dispatch={dispatch}
+          i18n={i18n.filter}
+          {...state}>
+        </Filter>
+        <Table
+          display={files.count() > 0}
+          dispatch={dispatch}
+          i18n={i18n.table}
+          {...state}>
+        </Table>
       </main>
     </div>
   )

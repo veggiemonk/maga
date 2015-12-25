@@ -1,5 +1,4 @@
 
-import { Map, fromJS as toImmutable } from 'immutable'
 import sortBy from 'lodash/collection/sortBy'
 import {i18n, lang} from './i18n.js'
 
@@ -153,7 +152,7 @@ export const defaults = {
 }
 
 export const initialState = {
-  columns: toImmutable( [ [ 'col1', { col1: 'fake data' } ] ] ),
+  columns: new Map( [ [ 'col1', { col1: 'fake data' } ] ] ),
   filters: {
     startPageAt:    defaults.startPageAt,
     page:           defaults.page,
@@ -164,9 +163,9 @@ export const initialState = {
     searchKeyword:  defaults.searchKeyword,
     menuColumnView: defaults.menuColumnView
   },
-  category:   toImmutable( [] ),
-  files:   toImmutable( [] ),
-  data:    toImmutable( [] ),
+  category:   [],
+  files:   [],
+  data:    [],
   isFetching: false,
   didInvalidate: false,
   lastUpdated: Date.now(),
@@ -178,18 +177,18 @@ const _columnHeader = sortBy( [ ...permanentColumn, ...unvisibleColumn ], x => x
 
 //merge with default config
 const col = Map( defaults.col )
-const __columnHeader = toImmutable( _columnHeader.map( x => Object.assign( col.toJS(), x ) ) )
+const __columnHeader = _columnHeader.map( x => Object.assign( col.toJS(), x ) )
 
 // Convert array of object to become a map, keys are a prop in the objects.
-export const columnHeader = Map( __columnHeader.reduce(
+export const columnHeader = new Map( __columnHeader.reduce(
   ( acc, x ) => {
-    acc[ x.get( 'id' ) ] = x
+    acc[ x['id'] ] = x
     return acc
   }, {} ) )
 
 //TODO: URL FOR TEST, DEV, QA and PROD???
 export const urlServer = 'http://localhost:8019'
-export const urlEchoServer = 'http://localhost:4000/echo/json'
+export const urlEchoServer = 'http://localhost:3246/echo/json'
 export const fetchURL  = urlServer + '/file/list'
 //export const fetchFile     = '/test/fileListF01.json'
 export const fetchURLFile     = 'test/fileList.json'

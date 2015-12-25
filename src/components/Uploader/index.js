@@ -7,6 +7,7 @@ import styles from './index.css!'
 
 let Uploader = {}
 
+//TODO: extract to client side execution when doing server side rendering
 //drag and drop micro-library
 const dragdrop = (element, options) => {
   options = options || {}
@@ -58,6 +59,7 @@ Uploader.controller = props => {
         .then( () => { m.redraw() } )
         .catch( e => {
           console.error(e)
+          alert('File upload Failed')
           throw new Error('File upload Failed', e)
         } )
     } ),

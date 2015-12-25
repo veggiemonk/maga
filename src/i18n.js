@@ -14,7 +14,14 @@ export function navigatorLanguage () {
   return locale
 }
 
-export const i18n = {
+const i18n = {
+  menu:{
+    all: {
+      fr: 'Tous',
+      nl: 'Alle',
+      en: 'all',
+    }
+  },
   fr: {
     button:          {
       search:      'Recherche...',
@@ -382,3 +389,5 @@ export const i18n = {
     clientListEmpty: 'Error: Cannot retrieve client list.'
   }
 }
+
+export default i18n

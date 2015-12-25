@@ -25,7 +25,7 @@ const toggleSort = col => {
 }
 
 export const getSortedColumn = columns => {
-  const _c = columns.find( c => c.get( 'sorted' ) )
+  const _c = columns.find( c => c[ 'sorted' ] )
   return _c
     ? _c.get( 'id' )
     : defaults.index

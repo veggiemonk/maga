@@ -3,7 +3,7 @@ import styles from './index.css!'
 import {filterMenuRef, filterMenuCat, showAllDocument } from './../../redux/actions'
 
 let Menu = {}
-let LANG = 'fr' //TODO : i18n
+const lang = 'fr' //TODO : i18n
 
 /***
  *
@@ -30,14 +30,14 @@ const listRefDoc = ( listCat, cat ) =>
     }, [] )
 
 Menu.view = function view( c, props ) {
-  const { category, files, dispatch } = props
+  const { category, files, dispatch, i18n } = props
   return (
     <div class={styles.main_div}>
 
       <ul class={styles.menu}>
         <li class={styles.menuRoot}
             onclick={() => {dispatch(showAllDocument())}}>
-          'All Documents' <span style='float: right;'>{ files.count() }</span>
+          {i18n.all[lang]} <span style='float: right;'>{ files.count() }</span>
         </li>
         {
           category && category.toList().map( cat => (
@@ -51,7 +51,7 @@ Menu.view = function view( c, props ) {
                         )
                       }
                 }>
-                  { cat.get( 0 ).get( 'categoryNumber' ) + '-' + labelCati18n( cat.get( 0 ), LANG ) }
+                  { cat.get( 0 ).get( 'categoryNumber' ) + '-' + labelCati18n( cat.get( 0 ), lang ) }
                 </span>
               <span>{ cat.get( 0 ).get( 'filesPerCat' ) }</span>
               <ul class={styles.menuRefDoc}>

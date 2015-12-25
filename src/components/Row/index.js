@@ -47,7 +47,7 @@ Row.view = function view( c, props ) {
       {v( 'referenceGroupS' ) ? <td>{ c.file.get( 'referenceGroupS' ) }</td> : '' }
       {v( 'uploadStamp' ) ? <td class={styles.text_center}>{c.file.get( 'uploadStampFormatted' )}</td> : '' }
       {v( 'uploaderComment' ) ?
-        <td class='comments' data-toggle='tooltip' data-placement='left' data-container='body' data-html='true'
+        <td data-toggle='tooltip' data-placement='left' data-container='body' data-html='true'
             title={ c.file.get('uploaderComment') }>{ c.file.get( 'uploaderCommentLimit' ) }
         </td> : ''  }
       <td class={styles.text_center}>

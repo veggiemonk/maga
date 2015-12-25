@@ -1,10 +1,9 @@
+'use strict'
 const VERSION = '0.1.0'
 
-let metrics = require('./metrics')
-//todo: remove/erase metrics
 let http = require('http')
 let dns = require('dns')
-let port = process.env.PORT || parseInt(process.argv[2], 10) || 4000
+let port = process.env.PORT || parseInt(process.argv[2], 10) || 3246
 let echoes = []
 let total = 0
 let live = 0
@@ -74,8 +73,6 @@ http.createServer(function (req, res) {
     return res.end()
   } else if (/^\/echo\/(\d+)\/?/.test(req.url)) {
     return getEcho(RegExp.$1, res)
-  } else if (/^\/echoes-request/.test(req.url)) {
-    return metrics.fetch(req, res)
   } else if (/^\/echoes/.test(req.url)) {
     return getEchos(res)
   } else if (/^\/proxy\.html(\?src=(.+))?$/.test(req.url)) {
@@ -134,8 +131,7 @@ http.createServer(function (req, res) {
   let send = function () {
     //send after has domains AND request ended
     if (data.domains === null || !req.ended) return
-    //process (if able)
-    metrics.process(data)
+
     let buff = new Buffer(JSON.stringify(data, null, 2))
     let length = buff.length
     headers['content-length'] = length

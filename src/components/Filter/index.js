@@ -51,7 +51,7 @@ Filter.view = function view( c, props, children ) {
         <div class="three columns">
           <button
             class="button-primary"
-            onclick={() => { fetching(dispatch); m.startComputation(); m.endComputation() }}
+            onclick={() => { fetching(dispatch);/* m.startComputation(); m.endComputation()*/ }}
             >RELOAD</button>
 
           <input id="search"
