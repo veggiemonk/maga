@@ -78,9 +78,9 @@ body {
 
 /* Main --------------------------------------------------------------------------------------------------------------*/
 .Main {
-  display: table-cell;
+  /*display: table-cell;
   float: left;
-/*  width: 79%;*/ /* less aside width */
+  width: 79%;*/ /* less aside width */
   height: calc(100vh -  (#{$heightHeader} + #{$heightFooter}));
   overflow-y: auto;
   overflow-x: hidden;

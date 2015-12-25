@@ -20,6 +20,11 @@ const i18n = {
       fr: 'Tous',
       nl: 'Alle',
       en: 'all',
+    },
+    others: {
+      fr: 'Autres',
+      nl: 'Anders',
+      en: 'Others'
     }
   },
   fr: {

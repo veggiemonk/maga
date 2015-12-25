@@ -1,4 +1,5 @@
 import m from 'mithril'
+import _ from 'lodash'
 import rome from 'rome'
 import { fetching } from '../../async'
 import {
@@ -44,7 +45,7 @@ Filter.config = ctrl => ( element, isInitialized, context ) => {
 //todo breadcrumbs
 Filter.view = function view( c, props, children ) {
   const { dispatch, filters, data, files } = props
-  const count = data.count()
+  const count = data.length
   return (
     <div class="container">
       <div class="row">
@@ -115,10 +116,9 @@ Filter.view = function view( c, props, children ) {
                  list="number"
                  value={ filters.rowDisplayed }/>
           <datalist id="number">
-            <option>1</option>
-            {[ , ...Array( Math.floor( count / 10 ) ) ].map( ( x, i ) =>
+            {_([ , ...Array( Math.floor( count / 10 ) ) ]).map( ( x, i ) =>
               <option label={i * 10}>{i * 10}</option>
-            )}
+            ).value()}
           </datalist>
         </div>
       </div>
@@ -126,7 +126,7 @@ Filter.view = function view( c, props, children ) {
       <div class="row">
         <div class="u-full-width center">
           <span>Showing: { Math.min( filters.rowDisplayed, count ) } files out of { count }
-                (total: {files.count()})</span>
+                (total: {files.length})</span>
           <br />
           <span> Page: { filters.page } out of {Math.ceil( count / filters.rowDisplayed )}</span>
         </div>

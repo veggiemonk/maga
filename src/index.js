@@ -18,8 +18,7 @@ let App        = {}
 App.controller = props => {
   //TODO: LOGIN and CREDENTIALS
   let c = {}
-  //console.log('fetching, dispatch = ', props.dispatch)
-  fetching( props.store.dispatch ).then( ()=> { console.log( 'LOADED...' )} )
+  fetching( props.store.dispatch )//.then( ()=> { console.log( 'LOADED...' )} )
 
   return c
 }
@@ -57,7 +56,7 @@ App.view = ( c, props ) => {
           {...state}>
         </Filter>
         <Table
-          display={files.count() > 0}
+          display={files.length > 0}
           dispatch={dispatch}
           i18n={i18n.table}
           {...state}>

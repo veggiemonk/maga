@@ -1,5 +1,5 @@
 import m from 'mithril'
-import Immutable from 'immutable'
+import _ from 'lodash'
 import Row from './../Row/index'
 
 import {
@@ -46,8 +46,7 @@ Table.view = function view(c, props) {
   return (<div /*class={styles.main_div}*/ style={`display : ${display ? 'inline-block' : 'none'};`}>
     <table class={styles.collapse}>
       <thead>{
-        columns
-          .toList()
+        _(columns)
           .sortBy( x => x[ 'index' ] )
           .filter( x => x[ 'visible' ] )
           .map( col =>
@@ -56,20 +55,21 @@ Table.view = function view(c, props) {
               key={ col[ 'id' ] }
               onclick={() => { dispatch( sortColumn( col[ 'id' ] ) ) } }>
               { m.trust( col[ 'name' ] ) }
-              { c.vm.cssSortToggle( columns[ col[ 'id' ] ] ) }
-            </th> ).toJS()
+              { c.vm.cssSortToggle( col ) }
+            </th> ).value()
       }</thead>
-      <tbody>{ data
-        .sort( sort( columns, getSortedColumn( columns ) ) )
-        .skip( filters.startPageAt )
+      <tbody>{
+        _(data)
+        .sortBy( sort( columns, getSortedColumn( columns ) ) )
+        .slice( filters.startPageAt )
         .take( filters.rowDisplayed )
         .map( file => (
           <Row
-            key={ file.get('index') }
+            key={ file['index'] }
             file={ file }
             dispatch={ dispatch }
             {...props}>
-          </Row> ) ).toJS()
+          </Row> ) ).value()
       }</tbody>
     </table>
   </div>)

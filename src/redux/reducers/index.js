@@ -1,7 +1,10 @@
-import { fromJS as toImmutable } from 'immutable'
-
+import _ from 'lodash'
 import { defaults, initialState } from '../../settings'
-import { sortColumn, sort, resetSort, getSortedColumn } from './columns'
+import { sortColumn,
+  sort,
+  resetSort,
+  getSortedColumn,
+  toggleColView } from './columns'
 import { filtering } from './filters'
 import {
   FILTER_DATE_BEGIN,
@@ -73,7 +76,7 @@ const rootReducer = ( state = initialState, action ) => {
 
     case TOGGLE_COLUMN_VIEW:
       return filtering( Object.assign( {}, state, {
-        columns: state.columns.setIn( [ action.id, 'visible' ], !state.columns.getIn( [ action.id, 'visible' ] ) )
+        columns: toggleColView(state.columns, action.id)
       } ) )
 
     case TOGGLE_MENU_COLUMN_VIEW:
@@ -86,7 +89,7 @@ const rootReducer = ( state = initialState, action ) => {
       } )
 
     case SORT_COLUMN:
-      if ( state.columns.getIn( [ action.id, 'sortable' ] ) ) {
+      if ( _(state.columns).get( [ action.id, 'sortable' ] ) ) {
         //let newColumns = sortColumn( state, action.id )
         return Object.assign( {}, state, {
           columns: sortColumn( state, action.id ),
@@ -150,7 +153,7 @@ const rootReducer = ( state = initialState, action ) => {
       if ( action.filesTotal > sa + rd ) {
         return filtering( Object.assign( {}, state, {
           filters: Object.assign( {}, state.filters, { page: state.filters.page + 1, startPageAt: sa + rd } ),
-          data:    state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
+          data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
         } ) )
       } else {
         return state
@@ -160,7 +163,7 @@ const rootReducer = ( state = initialState, action ) => {
       if ( sa - rd >= 0 ) {
         return filtering( Object.assign( {}, state, {
           filters: Object.assign( {}, state.filters, { page: state.filters.page - 1, startPageAt: sa - rd } ),
-          data:    state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
+          data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
         } ) )
       } else {
         return state
@@ -169,7 +172,7 @@ const rootReducer = ( state = initialState, action ) => {
     case PAGE_FIRST:
       return Object.assign( {}, state, {
         filters: Object.assign( {}, state.filters, { page: defaults.page, startPageAt: defaults.startPageAt } ),
-        data:    state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
+        data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
       } )
 
     case PAGE_LAST:
@@ -178,7 +181,7 @@ const rootReducer = ( state = initialState, action ) => {
           page:        Math.ceil( state.data.count() / state.filters.rowDisplayed ),
           startPageAt: ( (Math.ceil( state.data.count() / state.filters.rowDisplayed ) - 1) * state.filters.rowDisplayed ),
         } ),
-        data:    state.data.sort( sort( state.columns, getSortedColumn( state.columns ) ) ),
+        data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
       } )
     case CHANGE_ROW_DISPLAYED:
       return Object.assign( {}, state, {

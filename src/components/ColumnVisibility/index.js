@@ -1,4 +1,5 @@
 import m from 'mithril'
+import _ from 'lodash'
 
 import { toggleColumnView } from './../../redux/actions'
 
@@ -15,15 +16,14 @@ ColumnVisibility.view = (c, props) => {
       <nav class={`${styles.spmenu} ${styles.spmenu_vertical} ${styles.spmenu_right} ${styles.spmenu_open}`}>
         <h3>Columns</h3>
         {
-          columns
-            .toList()
+          _(columns)
             .filter( x => x[ 'toggle' ] )
             .sortBy( x => x[ 'name'] )
             .map( x =>
               <a class={ !x[ 'visible' ] ? styles.active : '' }
                  onclick={ () => { dispatch( toggleColumnView( x['id'] ) ) } }>
                 { m.trust( x[ 'name' ] ) }
-              </a> ).toJS()
+              </a> ).value()
         }
       </nav>
     </div>
