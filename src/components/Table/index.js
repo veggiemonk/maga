@@ -43,6 +43,9 @@ Table.controller = function controller(props) {
 
 Table.view = function view(c, props) {
   const { dispatch, display, data, columns, filters } = props
+  const idColSorted = getSortedColumn( columns )
+  const orderColSorted = _.result(_.find(columns, {id: idColSorted}), 'order') ? 'desc' : 'asc'
+
   return (<div /*class={styles.main_div}*/ style={`display : ${display ? 'inline-block' : 'none'};`}>
     <table class={styles.collapse}>
       <thead>{
@@ -60,7 +63,7 @@ Table.view = function view(c, props) {
       }</thead>
       <tbody>{
         _(data)
-        .sortBy( sort( columns, getSortedColumn( columns ) ) )
+        .sortByOrder( idColSorted, orderColSorted )
         .slice( filters.startPageAt )
         .take( filters.rowDisplayed )
         .map( file => (

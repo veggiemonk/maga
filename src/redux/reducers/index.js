@@ -89,10 +89,9 @@ const rootReducer = ( state = initialState, action ) => {
       } )
 
     case SORT_COLUMN:
-      if ( _(state.columns).get( [ action.id, 'sortable' ] ) ) {
-        //let newColumns = sortColumn( state, action.id )
+      if (_.result(_.find(state.columns, { id:  action.id} ), 'sortable')) {
         return Object.assign( {}, state, {
-          columns: sortColumn( state, action.id ),
+          columns: sortColumn( state.columns, action.id ),
         } )
       } else {
         return state

@@ -61,12 +61,16 @@ suite( 'table', function () {
 
     test( 'should have 3 files left after searching for "fiche" keyword', () => {
       expect( state.files.length ).to.equal( TOTAL_FILES ) // check we have all the files
-      const newStore = reducer( state, actions.filterSearch( 'fiche' ) )
-      expect( newStore.data.length ).to.equal( 3 ) // check the number of files
+      const newState = reducer( state, actions.filterSearch( 'fiche' ) )
+      expect( newState.data.length ).to.equal( 3 ) // check the number of files
     } )
 
     test( 'should be sorted', () => {
-      expect( true ).to.equal( false )
+      //expect( state.files[0].index ).to.equal( 1 )
+      expect( _.result( _.find( state.columns, {id: 'path'} ), 'sorted' ) ).to.equal(false)
+      const newState = reducer( state, actions.sortColumn('path'))
+      expect( _.result( _.find( newState.columns, {id: 'path'} ), 'sorted' ) ).to.equal(true)
+      //expect( newState.data[0].index ).to.equal( 194 )
     } )
 
     test( 'should not be sorted', () => {
@@ -87,14 +91,14 @@ suite( 'table', function () {
 
     test( 'should return 3 files when filter reference document = 804', () => {
       expect( state.files.length ).to.equal( TOTAL_FILES ) // check we have all the files
-      const newStore = reducer( state, actions.filterMenuRef( 804 ) )
-      expect( newStore.data.length ).to.equal( 3 ) // check the number of files
+      const newState = reducer( state, actions.filterMenuRef( 804 ) )
+      expect( newState.data.length ).to.equal( 3 ) // check the number of files
     } )
 
     test( 'should return 48 files when filter category document = 2', () => {
       expect( state.files.length ).to.equal( TOTAL_FILES ) // check we have all the files
-      const newStore = reducer( state, actions.filterMenuCat( [ 112, 737, 803, 804, 806 ] ) )
-      expect( newStore.data.length ).to.equal( 48 ) // check the number of files
+      const newState = reducer( state, actions.filterMenuCat( [ 112, 737, 803, 804, 806 ] ) )
+      expect( newState.data.length ).to.equal( 48 ) // check the number of files
     } )
 
     test( 'should keep the same number of columns visible across filters', () => {

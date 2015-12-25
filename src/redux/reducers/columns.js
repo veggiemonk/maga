@@ -9,7 +9,7 @@ export const sort = ( columns, id ) => ( a, b ) => {
 }
 
 const toggleSort = col => {
-  let c = col
+  let c = _.clone(col)
   if ( !c.sorted && !c.order ) {
     c.sorted = !c.sorted      ///* toggle sorted */
   } else if ( c.sorted && !c.order ) {
@@ -32,18 +32,19 @@ export const toggleColView = (columns, id) => {
 }
 
 export const getSortedColumn = columns => {
-  const _c = _(columns).find( c => c[ 'sorted' ] )
+  const _c = _.find( columns, 'sorted')
   return _c ? _c[ 'id' ] : defaults.index
 }
 
-export const sortColumn = ( state, id ) => {
-  return _(state.columns).map(x =>
+export const sortColumn = ( columns, id ) => {
+  return _(columns).map(x =>
     x['id'] !== id
-      ? _.assign({}, x, {
+      ? Object.assign({}, x, {
       sorted: defaults.col.sorted,
       order: defaults.col.order
     })
-      : toggleSort(_(state.columns).get(id)))
+      : toggleSort(_.find( columns, { id })))
+  .value()
 }
 
 export const resetSort = columns => {

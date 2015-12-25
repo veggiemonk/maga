@@ -24,12 +24,8 @@ Filter.controller = function controller( props ) {
   return {
     select:               val => {dispatch( changeRowDisplayed( Number( val ) ) ) },
     search:               val => {dispatch( filterSearch( val ) ) },
-    dateBegin:            val => {
-      dispatch( filterDateBegin( val ) )
-    },
-    dateEnd:              val => {
-      dispatch( filterDateEnd( val ) )
-    },
+    dateBegin:            val => {dispatch( filterDateBegin( val ) ) },
+    dateEnd:              val => {dispatch( filterDateEnd( val ) ) },
     toggleMenuColumnView: () => {dispatch( toggleMenuColumnView() ) }
   }
 }

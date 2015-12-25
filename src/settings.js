@@ -124,7 +124,16 @@ const unvisibleColumn = [
     name:    'Comments',
     visible: true,
     toggle:  true,
-  }, ]
+  }, {
+    index: 19,
+    id: 'index',
+    name: 'index',
+    sortable: true,
+    searchable: false,
+    visible: false,
+    toggle: false,
+    dataType: 'number',
+  } ]
 
 export const defaults = {
   col:            {
@@ -152,7 +161,7 @@ export const defaults = {
 }
 
 export const initialState = {
-  columns: new Map( [ [ 'col1', { col1: 'fake data' } ] ] ),
+  columns: [],
   filters: {
     startPageAt:    defaults.startPageAt,
     page:           defaults.page,
