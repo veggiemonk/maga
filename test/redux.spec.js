@@ -6,6 +6,7 @@ import { groupMenu, sanitize } from '../src/data'
 import { fetchURLFile, fetchURLCategory, headers, columns } from '../src/settings'
 import finalCreateStore from '../src/redux/createStore'
 import reducer from '../src/redux/reducers/index'
+import { getSortedColumn } from '../src/redux/reducers/columns'
 import * as actions from '../src/redux/actions'
 import { defaults } from '../src/settings'
 
@@ -15,6 +16,21 @@ let state
 const TOTAL_FILES           = 197
 const TOTAL_VISIBLE_COLUMNS = 11
 
+
+const extractTableData = state => {
+  const idColSorted = getSortedColumn( state.columns )
+  const orderColSorted = _.result(_.find(state.columns, {id: idColSorted}), 'order') ? 'desc' : 'asc'
+  return _(state.data)
+    .sortByOrder( idColSorted, orderColSorted)
+    .slice( state.filters.startPageAt )
+    .take( state.filters.rowDisplayed )
+    .map( file => (
+    {
+      key: file['index'],
+      file,
+    } ) )
+    .value()
+}
 
 suite( 'table', function () {
 
@@ -66,19 +82,27 @@ suite( 'table', function () {
     } )
 
     test( 'should be sorted', () => {
-      //expect( state.files[0].index ).to.equal( 1 )
       expect( _.result( _.find( state.columns, {id: 'path'} ), 'sorted' ) ).to.equal(false)
       const newState = reducer( state, actions.sortColumn('path'))
       expect( _.result( _.find( newState.columns, {id: 'path'} ), 'sorted' ) ).to.equal(true)
-      //expect( newState.data[0].index ).to.equal( 194 )
     } )
 
     test( 'should not be sorted', () => {
-      expect( true ).to.equal( false )
+      expect( _.result( _.find( state.columns, {id: 'path'} ), 'sorted' ) ).to.equal(false)
+      const newState = reducer( reducer( reducer( state,
+        actions.sortColumn('path')),
+        actions.sortColumn('path')),
+        actions.sortColumn('path'))
+      expect( _.result( _.find( newState.columns, {id: 'path'} ), 'sorted' ) ).to.equal(false)
     } )
 
     test( 'should be sorted by date', () => {
-      expect( true ).to.equal( false )
+      //expect( state.files[0].index ).to.equal( 1 )
+      expect( _.result( _.find( state.columns, {id: 'date'} ), 'sorted' ) ).to.equal(false)
+      const newState = reducer( state, actions.sortColumn('date'))
+      expect( _.result( _.find( newState.columns, {id: 'date'} ), 'sorted' ) ).to.equal(true)
+      const newData = extractTableData(newState)
+      expect( newData[0].key ).to.equal( 165 )
     } )
 
     test( 'should have WRITTEN MORE TESTS', () => {

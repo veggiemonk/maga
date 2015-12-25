@@ -19,7 +19,7 @@ App.controller = props => {
   //TODO: LOGIN and CREDENTIALS
   let c = {}
   fetching( props.store.dispatch )//.then( ()=> { console.log( 'LOADED...' )} )
-
+  m.redraw.strategy( 'diff' )
   return c
 }
 

@@ -1,13 +1,6 @@
 import _ from 'lodash'
 import { defaults } from '../../settings'
 
-export const sort = ( columns, id ) => ( a, b ) => {
-  const _id = _(columns).get( [ id, 'sorted' ] ) ? id : defaults.index
-  return _(columns).get( [ _id, 'order' ] )
-    ? ( b[ _id ] < a[ _id ] ? -1 : 1 )
-    : ( a[ _id ] < b[ _id ] ? -1 : 1 )
-}
-
 const toggleSort = col => {
   let c = _.clone(col)
   if ( !c.sorted && !c.order ) {

@@ -30,7 +30,6 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
     "font-awesome": "npm:font-awesome@4.4.0",
-    "immutable": "npm:immutable@3.7.5",
     "isomorphic-fetch": "npm:isomorphic-fetch@2.2.0",
     "lodash": "npm:lodash@3.10.1",
     "mithril": "github:lhorie/mithril.js@next",
