@@ -6,6 +6,7 @@ import css from 'font-awesome/css/font-awesome.css!'
 //import { Map, fromJS as toImmutable } from 'immutable'
 
 import styles from './index.css!'
+import Button from '../Button/index'
 
 let Row = {}
 
@@ -28,11 +29,11 @@ Row.view = function view( c, props ) {
     <tr>
       <td class='center iconSelect'>{ m.trust( file[ 'checkbox' ] ) }</td>
       <td class={styles.text_center}>
-        <button onclick={()=> {c.download(file['fileId'])}}>
+        <Button onclick={()=> {c.download(file['fileId'])}}>
           <i class={ `${css.fa} ${file['dlClass']} ${css['fa-lg']} ${file['alreadyDL']}` }>
           </i>
           <small class={styles.text_muted}> { file[ 'downloadCount' ] }</small>
-        </button>
+        </Button>
       </td>
       {v( 'date' ) ? <td class={styles.text_center}>{ file[ 'dateFormatted' ]}</td> : ''}
       {v( 'fileName' ) ? <td><a class='dlfileLabel'>{ file[ 'fileName' ]}</a></td> : '' }

@@ -36,11 +36,13 @@
       "css": "npm:jspm-loader-css-modules@^1.0.1-beta1",
       "font-awesome": "npm:font-awesome@^4.4.0",
       "isomorphic-fetch": "npm:isomorphic-fetch@^2.2.0",
+      "jspm-loader-css": "npm:jspm-loader-css@^1.0.1-beta1",
       "lodash": "npm:lodash@^3.10.1",
       "mithril": "github:lhorie/mithril.js@next",
       "mocha": "npm:mocha@^2.3.4",
       "moment": "npm:moment@^2.10.6",
       "postcss-safe-parser": "npm:postcss-safe-parser@^1.0.1",
+      "postcss-simple-vars": "npm:postcss-simple-vars@^1.2.0",
       "redux": "npm:redux@^3.0.4",
       "rome": "npm:rome@^2.1.22",
       "webfontloader": "github:components/webfontloader@^1.6.3"

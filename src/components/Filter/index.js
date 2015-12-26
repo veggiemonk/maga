@@ -4,7 +4,7 @@ import rome from 'rome'
 import { fetching } from '../../async'
 import Button from '../Button/index'
 import Input from '../Input/index'
-import styleCB from '../CheckBox/checkbox.css!'
+import styleCB from '../../css/checkbox.css!'
 import {
   pageFirst,
   pageLast,
@@ -55,6 +55,7 @@ Filters.view = function view( c, props, children ) {
             className={'test'}
             onclick={() => { fetching(dispatch);/* m.startComputation(); m.endComputation()*/ }}
             >
+            <i class="fa fa-2x fa-refresh"></i>
             {i18n.reload[lang]}
           </Button>
 

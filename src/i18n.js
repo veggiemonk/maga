@@ -59,6 +59,13 @@ const i18n = {
       en: 'Show Column',
     }
   },
+  uploader: {
+    uploadBtn: {
+      fr: 'Déposer des fichiers',
+      nl: 'Bestanden uploaden naar Group S',
+      en: 'Upload files on the server',
+    }
+  },
   fr: {
     button:          {
       search:      'Recherche...',

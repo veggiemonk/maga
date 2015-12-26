@@ -28,14 +28,15 @@ System.config({
     "capaj/jspm-hot-reloader": "github:capaj/systemjs-hot-reloader@0.5.1",
     "chai": "npm:chai@3.4.1",
     "core-js": "npm:core-js@1.2.6",
-    "css": "npm:jspm-loader-css-modules@1.0.1-beta1",
     "font-awesome": "npm:font-awesome@4.4.0",
     "isomorphic-fetch": "npm:isomorphic-fetch@2.2.0",
+    "jspm-loader-css": "npm:jspm-loader-css@1.0.1-beta1",
     "lodash": "npm:lodash@3.10.1",
     "mithril": "github:lhorie/mithril.js@next",
     "mocha": "npm:mocha@2.3.4",
     "moment": "npm:moment@2.10.6",
     "postcss-safe-parser": "npm:postcss-safe-parser@1.0.1",
+    "postcss-simple-vars": "npm:postcss-simple-vars@1.2.0",
     "react-dom": "npm:react-dom@0.14.3",
     "redux": "npm:redux@3.0.4",
     "redux-logger": "npm:redux-logger@2.0.4",
@@ -492,7 +493,19 @@ System.config({
     "npm:postcss-safe-parser@1.0.1": {
       "postcss": "npm:postcss@5.0.10"
     },
+    "npm:postcss-simple-vars@1.2.0": {
+      "postcss": "npm:postcss@5.0.13"
+    },
     "npm:postcss@5.0.10": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "js-base64": "npm:js-base64@2.1.9",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "source-map": "npm:source-map@0.5.3",
+      "supports-color": "npm:supports-color@3.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+    },
+    "npm:postcss@5.0.13": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "js-base64": "npm:js-base64@2.1.9",
       "path": "github:jspm/nodelibs-path@0.1.0",

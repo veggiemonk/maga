@@ -1,0 +1,27 @@
+@import '../../css/constants';
+
+.main_div {
+  width: 70%;
+  display: inline-block;
+}
+
+.collapse {
+  border-collapse: collapse;
+}
+
+.row_width {
+  min-width: 60px;
+  max-width: 300px;
+}
+
+td, th {
+  border: 1px solid $groupSBlue;
+}
+
+tr:nth-child(even) {
+  background: aliceblue
+}
+
+tr:nth-child(odd) {
+  background: #ffffff
+}

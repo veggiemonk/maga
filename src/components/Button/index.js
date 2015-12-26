@@ -1,6 +1,6 @@
 import m from 'mithril'
 
-import styles from './buttons.css!'
+import styles from '../../css/buttons.css!'
 
 let Button = {}
 

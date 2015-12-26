@@ -11,7 +11,7 @@ import { sort, getSortedColumn } from './../../redux/reducers/columns'
 import { invalidate, inc, dec } from './../../utils'
 import { defaults } from './../../settings'
 
-import styles from './index.css!'
+import styles from './table.css!'
 
 let Table = {}
 

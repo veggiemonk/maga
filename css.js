@@ -1,12 +1,12 @@
 import { CSSLoader, Plugins } from 'jspm-loader-css'
-import vars from 'postcss-simple-vars' // you want to use this postcss plugin
+//import vars from 'postcss-simple-vars' // you want to use this postcss plugin
 
 const {fetch, bundle} = new CSSLoader([
-  vars,
+  Plugins.values,
   Plugins.localByDefault,
   Plugins.extractImports,
   Plugins.scope,
   Plugins.autoprefixer()
-], __moduleName);
+], __moduleName)
 
-export {fetch, bundle};
+export {fetch, bundle}
