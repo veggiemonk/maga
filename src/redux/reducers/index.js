@@ -177,8 +177,8 @@ const rootReducer = ( state = initialState, action ) => {
     case PAGE_LAST:
       return Object.assign( {}, state, {
         filters: Object.assign( {}, state.filters, {
-          page:        Math.ceil( state.data.count() / state.filters.rowDisplayed ),
-          startPageAt: ( (Math.ceil( state.data.count() / state.filters.rowDisplayed ) - 1) * state.filters.rowDisplayed ),
+          page:        Math.ceil( state.data.length / state.filters.rowDisplayed ),
+          startPageAt: ( (Math.ceil( state.data.length / state.filters.rowDisplayed ) - 1) * state.filters.rowDisplayed ),
         } ),
         data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
       } )

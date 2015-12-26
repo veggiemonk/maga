@@ -6,7 +6,7 @@ import { fetching } from './async'
 import Loader from './components/Loader/index'
 import Menu from './components/Menu/index'
 import Uploader from './components/Uploader/index'
-import Filter from './components/Filter/index'
+import Filters from './components/Filter/index'
 import Table from './components/Table/index'
 import ColumnVisibility from './components/ColumnVisibility/index'
 
@@ -50,17 +50,18 @@ App.view = ( c, props ) => {
           i18n={i18n.columnVisibility}
           {...state}>
         </ColumnVisibility>
-        <Filter
+        <Filters
           dispatch={dispatch}
-          i18n={i18n.filter}
+          i18n={i18n.filters}
           {...state}>
-        </Filter>
-        <Table
-          display={files.length > 0}
-          dispatch={dispatch}
-          i18n={i18n.table}
-          {...state}>
-        </Table>
+          <Table
+            display={files.length > 0}
+            dispatch={dispatch}
+            i18n={i18n.table}
+            {...state}>
+          </Table>
+        </Filters>
+
       </main>
     </div>
   )

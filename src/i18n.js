@@ -27,6 +27,38 @@ const i18n = {
       en: 'Others'
     }
   },
+  filters: {
+    reload: {
+      fr:'Rafraîchir',
+      nl: 'Opnieuw laden',
+      en: 'Reload',
+    },
+    search: {
+      fr: 'Recherche...',
+      nl: 'Zoeken...',
+      en: 'Search...',
+    },
+    dateTo: {
+      fr: 'à',
+      nl: 'tot',
+      en: 'to',
+    },
+    dateBegin: {
+      fr: 'Date début',
+      nl: 'Begindatum',
+      en: 'Start Date',
+    },
+    dateEnd: {
+      fr: 'Date fin',
+      nl: 'Einddatum',
+      en: 'End Date',
+    },
+    colVisible : {
+      fr: 'Afficher Colonnes',
+      nl: 'Tonen',
+      en: 'Show Column',
+    }
+  },
   fr: {
     button:          {
       search:      'Recherche...',

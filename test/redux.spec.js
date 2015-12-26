@@ -9,6 +9,7 @@ import reducer from '../src/redux/reducers/index'
 import { getSortedColumn } from '../src/redux/reducers/columns'
 import * as actions from '../src/redux/actions'
 import { defaults } from '../src/settings'
+import { getLastPage, getStartPageAt, numberOfFilesDisplayed } from '../src/utils'
 
 const store = finalCreateStore( reducer )
 let state
@@ -97,7 +98,8 @@ suite( 'table', function () {
     } )
 
     test( 'should be sorted by date', () => {
-      //expect( state.files[0].index ).to.equal( 1 )
+      const data = extractTableData(state)
+      expect( data[0].key ).to.equal( 1 )
       expect( _.result( _.find( state.columns, {id: 'date'} ), 'sorted' ) ).to.equal(false)
       const newState = reducer( state, actions.sortColumn('date'))
       expect( _.result( _.find( newState.columns, {id: 'date'} ), 'sorted' ) ).to.equal(true)
@@ -105,8 +107,117 @@ suite( 'table', function () {
       expect( newData[0].key ).to.equal( 165 )
     } )
 
+    test( 'should go to next page', () => {
+      expect( state.filters.startPageAt ).to.equal( defaults.startPageAt ) //0
+      expect( state.filters.page ).to.equal( defaults.page ) //1
+      expect( state.filters.rowDisplayed ).to.equal( defaults.rowDisplayed ) //10
+      const data = extractTableData(state)
+      expect( data[0].key ).to.equal( 1 )
+      const newState = reducer( state, actions.pageNext(state.files.length))
+      expect( newState.filters.startPageAt ).to.equal( defaults.rowDisplayed ) //10
+      expect( newState.filters.page ).to.equal( defaults.page + 1 ) //2
+      expect( newState.filters.rowDisplayed ).to.equal( defaults.rowDisplayed  )
+      const newData = extractTableData(newState)
+      expect( newData[0].key ).to.equal( 11 )
+    } )
+
+    test( 'should not go to next page because we are on the last page', () => {
+      //TODO: move basic check to beforeAll()
+      //check basic data
+      expect( state.filters.startPageAt ).to.equal( defaults.startPageAt ) //0
+      expect( state.filters.page ).to.equal( defaults.page ) //1
+      expect( state.filters.rowDisplayed ).to.equal( defaults.rowDisplayed ) //10
+      const data = extractTableData(state)
+      expect( data[0].key ).to.equal( 1 )
+      //go to last page
+      const newState = reducer( state, actions.pageLast())
+      //check it is on the last page
+      expect( newState.filters.startPageAt ).to.equal( getStartPageAt(newState.data.length, newState.filters.rowDisplayed ) )
+      expect( newState.filters.page ).to.equal( getLastPage(newState.data.length, newState.filters.rowDisplayed ) )
+      expect( newState.filters.rowDisplayed ).to.equal( defaults.rowDisplayed  ) //10
+      //try to go to next page
+      const newState1 = reducer( newState, actions.pageNext(state.files.length))
+      expect( newState1.filters.startPageAt ).to.equal( getStartPageAt(newState1.data.length, newState1.filters.rowDisplayed ) )
+      expect( newState1.filters.page ).to.equal( getLastPage(newState1.data.length, newState1.filters.rowDisplayed ) )
+      expect( newState1.filters.rowDisplayed ).to.equal( defaults.rowDisplayed  ) //10
+      const newData = extractTableData(newState1)
+      expect( newData[0].key ).to.equal( newState1.filters.startPageAt + 1 )
+    } )
+
+    test( 'should  go to previous page', () => {
+      //TODO: move basic check to beforeAll()
+      //check basic data
+      expect( state.filters.startPageAt ).to.equal( defaults.startPageAt ) //0
+      expect( state.filters.page ).to.equal( defaults.page ) //1
+      expect( state.filters.rowDisplayed ).to.equal( defaults.rowDisplayed ) //10
+      const data = extractTableData(state)
+      expect( data[0].key ).to.equal( 1 )
+      //go to next page
+      const newState = reducer( state, actions.pageNext(state.files.length))
+      expect( newState.filters.startPageAt ).to.equal( defaults.rowDisplayed ) //10
+      expect( newState.filters.page ).to.equal( defaults.page + 1 ) //2
+      expect( newState.filters.rowDisplayed ).to.equal( defaults.rowDisplayed  )
+      const newData = extractTableData(newState)
+      expect( newData[0].key ).to.equal( 11 )
+      //go to previous page
+      const newState1 = reducer( state, actions.pagePrev())
+      expect( newState1.filters.startPageAt ).to.equal( defaults.startPageAt ) //0
+      expect( newState1.filters.page ).to.equal( defaults.page ) //1
+      expect( newState1.filters.rowDisplayed ).to.equal( defaults.rowDisplayed ) //10
+      const newData1 = extractTableData(newState1)
+      expect( newData1[0].key ).to.equal( 1 )
+    } )
+
+    test( 'should not go to previous page because we are on the first page', () => {
+      //TODO: move basic check to beforeAll()
+      //check basic data
+      expect( state.filters.startPageAt ).to.equal( defaults.startPageAt ) //0
+      expect( state.filters.page ).to.equal( defaults.page ) //1
+      expect( state.filters.rowDisplayed ).to.equal( defaults.rowDisplayed ) //10
+      const data = extractTableData(state)
+      expect( data[0].key ).to.equal( 1 )
+      //go to first page
+      const newState = reducer( state, actions.pageFirst())
+      expect( newState.filters.startPageAt ).to.equal( defaults.startPageAt ) //0
+      expect( newState.filters.page ).to.equal( defaults.page ) //1
+      expect( newState.filters.rowDisplayed ).to.equal( defaults.rowDisplayed ) //10
+      const newData = extractTableData(newState)
+      expect( newData[0].key ).to.equal( 1 )
+      //try to go to previous page
+      const newState1 = reducer( state, actions.pagePrev())
+      expect( newState1.filters.startPageAt ).to.equal( defaults.startPageAt ) //0
+      expect( newState1.filters.page ).to.equal( defaults.page ) //1
+      expect( newState1.filters.rowDisplayed ).to.equal( defaults.rowDisplayed ) //10
+      const newData1 = extractTableData(newState1)
+      expect( newData1[0].key ).to.equal( 1 )
+    } )
+
     test( 'should have WRITTEN MORE TESTS', () => {
       expect( true ).to.equal( false )
+    } )
+
+    test( 'should show only 7 files on the last page', () => {
+      //TODO: move basic check to beforeAll()
+      //check basic data
+      expect( state.filters.startPageAt ).to.equal( defaults.startPageAt ) //0
+      expect( state.filters.page ).to.equal( defaults.page ) //1
+      expect( state.filters.rowDisplayed ).to.equal( defaults.rowDisplayed ) //10
+      expect( numberOfFilesDisplayed(
+        state.files.length,
+        state.filters.rowDisplayed,
+        state.filters.startPageAt ) ).to.equal( defaults.rowDisplayed ) //10
+      const data = extractTableData(state)
+      expect( data[0].key ).to.equal( 1 )
+      //go to last page
+      const newState = reducer( state, actions.pageLast())
+      //check it is on the last page
+      expect( newState.filters.startPageAt ).to.equal( getStartPageAt(newState.data.length, newState.filters.rowDisplayed ) )
+      expect( newState.filters.page ).to.equal( getLastPage(newState.data.length, newState.filters.rowDisplayed ) )
+      expect( newState.filters.rowDisplayed ).to.equal( defaults.rowDisplayed  ) //10
+      expect( numberOfFilesDisplayed(
+        newState.files.length,
+        newState.filters.rowDisplayed,
+        newState.filters.startPageAt ) ).to.equal( 7 )
     } )
 
   } )

@@ -7,6 +7,18 @@ export const inc           = f => f( f() + 1 )
 export const dec           = f => f( f() - 1 )
 export const toggle        = f => f( !f() )
 
+export const getLastPage = (totalFiles, rowDisplayed) => {
+  return Math.ceil( totalFiles / rowDisplayed )
+}
+
+export const getStartPageAt = (totalFiles, rowDisplayed) => {
+  return ( (Math.ceil( totalFiles / rowDisplayed ) - 1) * rowDisplayed )
+}
+
+export const numberOfFilesDisplayed = (totalFiles, rowDisplayed, startPageAt) => {
+  return Math.min( rowDisplayed, (totalFiles - startPageAt) )
+}
+
 /**
  * Make sure Mithril knows we updated something
  */

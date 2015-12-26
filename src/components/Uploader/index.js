@@ -2,7 +2,7 @@ import m from 'mithril'
 import 'isomorphic-fetch'
 import _ from 'lodash'
 import { headers, urlEchoServer} from '../../settings'
-
+import styleB from '../Button/buttons.css!'
 import styles from './index.css!'
 
 let Uploader = {}
@@ -75,7 +75,9 @@ Uploader.controller = props => {
 Uploader.view = (c, props) => {
   return (
     <div>
-      <a href="#box" onclick={c.toggleUpload}>Upload</a>
+      <a href="#box"
+         class={`${styleB.button} ${styles.upload}`}
+         onclick={c.toggleUpload}>props.i18n.</a>
       <div id="box" class={styles.box}>
         <div class={styles.lightbox} config={Uploader.config(c)} >
           <a href="#">X</a>
