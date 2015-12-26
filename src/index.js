@@ -3,6 +3,7 @@ import m from 'mithril'
 import { fetching } from './async'
 
 // Components
+import Login from './components/Login/index'
 import Loader from './components/Loader/index'
 import Menu from './components/Menu/index'
 import Uploader from './components/Uploader/index'
@@ -27,9 +28,15 @@ App.view = ( c, props ) => {
 
   const state = props.store.getState()
   const { dispatch } = props.store
-  const {filters, files, isFetching} = state
+  const {filters, files, isFetching, language, isAuthenticated} = state
   return (
     <div>
+      <Login
+        display={!isAuthenticated}
+        dispatch={dispatch}
+        i18n={i18n.login}
+        language={language}
+      />
       <Loader display={isFetching}/>
       <aside class={styles.Aside}>
         <Uploader
@@ -39,8 +46,8 @@ App.view = ( c, props ) => {
         </Uploader>
         <Menu
           dispatch={dispatch}
-          {...state}
-          i18n={i18n.menu}>
+          i18n={i18n.menu}
+          {...state}>
         </Menu>
       </aside>
       <main class={styles.Main}>

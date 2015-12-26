@@ -8,7 +8,7 @@ Button.view = (c, props, children) => {
   const { className } = props
   return(
     <button
-      class={`${styles.button} ${styles.button_primary} ${className}`}
+      class={`${styles.button} ${styles.button_primary} ${className || ''}`}
       onclick={props.onclick}>
       {children}
     </button>

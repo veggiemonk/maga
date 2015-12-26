@@ -14,14 +14,10 @@ export const loadData  = ( columns, files, data, category ) => ( {
 })
 
 export const FETCH_DATA = 'FETCH_DATA'
-export const fetchData  = () => (
-{ type: FETCH_DATA }
-)
+export const fetchData  = () => ( { type: FETCH_DATA } )
 
 export const REFRESH_DATA = 'REFRESH_DATA'
-export const refreshData = () => (
-  { type: REFRESH_DATA }
-)
+export const refreshData = () => ( { type: REFRESH_DATA } )
 
 /* VIEW */
 export const RESET_VIEW        = 'RESET_VIEW'
@@ -47,7 +43,7 @@ export const LOGOUT        = 'LOGOUT'
 export const FILTER_DATE_BEGIN = 'FILTER_DATE_BEGIN'
 export const filterDateBegin   = date => ( { type: FILTER_DATE_BEGIN, date } )
 export const FILTER_DATE_END   = 'FILTER_DATE_END'
-export const filterDateEnd     = date => ( { type: FILTER_DATE_END, date } ) //TODO: parse Date with MOMENT
+export const filterDateEnd     = date => ( { type: FILTER_DATE_END, date } )
 export const FILTER_MENU_REF   = 'FILTER_MENU_REF'
 export const filterMenuRef     = ref => ( { type: FILTER_MENU_REF, ref: Number.parseInt( ref ) } )
 export const FILTER_MENU_CAT   = 'FILTER_MENU_CAT'
@@ -86,10 +82,12 @@ export const toggleMenuColumnView    = () => ( { type: TOGGLE_MENU_COLUMN_VIEW }
 export const TOGGLE_SELECT_ALL = 'TOGGLE_SELECT_ALL'
 export const toggleSelectAll   = () => ( { type: TOGGLE_SELECT_ALL } )
 export const SELECT_ROW        = 'SELECT_ROW'
+export const selectRow         = (row) => ( { type: SELECT_ROW, row } )
+export const UNSELECT_ROW      = 'UNSELECT_ROW'
+export const unselectRow       = (row) => ( { type: UNSELECT_ROW, row } )
 
 /* GLOBALS */
-//TODO
 export const SET_LANGUAGE = 'SET_LANGUAGE'
-export const setLanguage  = lang => ( { type: SET_LANGUAGE, lang } )
+export const setLanguage  = language => ( { type: SET_LANGUAGE, language } )
 export const SET_USERNAME = 'SET_USERNAME'
 export const setUsername  = username => ( { type: SET_USERNAME, username } )

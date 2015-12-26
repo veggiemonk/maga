@@ -46,36 +46,38 @@ Table.view = function view(c, props) {
   const idColSorted = getSortedColumn( columns )
   const orderColSorted = _.result(_.find(columns, {id: idColSorted}), 'order') ? 'desc' : 'asc'
 
-  return (<div /*class={styles.main_div}*/ style={`display : ${display ? 'inline-block' : 'none'};`}>
-    <table class={styles.collapse}>
-      <thead>{
-        _(columns)
-          .sortBy( x => x[ 'index' ] )
-          .filter( x => x[ 'visible' ] )
-          .map( col =>
-            <th
-              class={styles.row_width}
-              key={ col[ 'id' ] }
-              onclick={() => { dispatch( sortColumn( col[ 'id' ] ) ) } }>
-              { m.trust( col[ 'name' ] ) }
-              { c.vm.cssSortToggle( col ) }
-            </th> ).value()
-      }</thead>
-      <tbody>{
-        _(data)
-        .sortByOrder( idColSorted, orderColSorted )
-        .slice( filters.startPageAt )
-        .take( filters.rowDisplayed )
-        .map( file => (
-          <Row
-            key={ file['index'] }
-            file={ file }
-            dispatch={ dispatch }
-            {...props}>
-          </Row> ) ).value()
-      }</tbody>
-    </table>
-  </div>)
+  return (
+    <div style={`display : ${display ? 'inline-block' : 'none'};`}>
+      <table class={styles.collapse}>
+        <thead>{
+          _(columns)
+            .sortBy( x => x[ 'index' ] )
+            .filter( x => x[ 'visible' ] )
+            .map( col =>
+              <th
+                class={` ${styles.row_width} ${col[ 'id' ]} `}
+                key={ col[ 'id' ] }
+                onclick={() => { dispatch( sortColumn( col[ 'id' ] ) ) } }>
+                { m.trust( col[ 'name' ] ) }
+                { c.vm.cssSortToggle( col ) }
+              </th> ).value()
+        }</thead>
+        <tbody>{
+          _(data)
+          .sortByOrder( idColSorted, orderColSorted )
+          .slice( filters.startPageAt )
+          .take( filters.rowDisplayed )
+          .map( file => (
+            <Row
+              key={ file['index'] }
+              file={ file }
+              dispatch={ dispatch }
+              {...props}>
+            </Row> ) ).value()
+        }</tbody>
+      </table>
+    </div>
+  )
 }
 
 export default Table

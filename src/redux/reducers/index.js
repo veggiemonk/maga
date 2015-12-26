@@ -19,6 +19,7 @@ import {
   CHANGE_ROW_DISPLAYED,
   TOGGLE_SELECT_ALL,
   SELECT_ROW,
+  UNSELECT_ROW,
   LOAD_DATA,
   FETCH_DATA,
   SORT_COLUMN,
@@ -26,6 +27,8 @@ import {
   RESET_VIEW,
   TOGGLE_MENU_COLUMN_VIEW,
   SHOW_ALL_DOCUMENT,
+  SET_LANGUAGE,
+  SET_USERNAME,
 } from '../actions'
 
 const rootReducer = ( state = initialState, action ) => {
@@ -48,6 +51,16 @@ const rootReducer = ( state = initialState, action ) => {
       return Object.assign( {}, state, {
         isFetching: true
       } )
+
+    case SELECT_ROW:
+      return Object.assign( {}, state, {
+        selectedRow: [...state.selectedRow, action.row]
+      })
+
+    case UNSELECT_ROW:
+      return Object.assign( {}, state, {
+        selectedRow: _.without(state.selectedRow, action.row)
+      })
 
     case RESET_VIEW:
       return filtering( Object.assign( {}, state, {
@@ -97,6 +110,7 @@ const rootReducer = ( state = initialState, action ) => {
         return state
       }
 
+    //TODO: parse Date with MOMENT
     case FILTER_DATE_BEGIN:
       return filtering( Object.assign( {}, state, {
         columns: resetSort( state.columns ),
@@ -107,6 +121,7 @@ const rootReducer = ( state = initialState, action ) => {
         } )
       } ) )
 
+    //TODO: parse Date with MOMENT
     case FILTER_DATE_END:
       return filtering( Object.assign( {}, state, {
         columns: resetSort( state.columns ),
@@ -182,6 +197,7 @@ const rootReducer = ( state = initialState, action ) => {
         } ),
         data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
       } )
+
     case CHANGE_ROW_DISPLAYED:
       return Object.assign( {}, state, {
         filters: Object.assign( {}, state.filters,
@@ -191,6 +207,16 @@ const rootReducer = ( state = initialState, action ) => {
             rowDisplayed: action.num
           } )
       } )
+
+    case SET_LANGUAGE:
+      return Object.assign( {}, state, {
+        language: action.language
+      })
+
+    case SET_USERNAME:
+      return Object.assign( {}, state, {
+        username: action.username
+      })
 
     default:
       return state

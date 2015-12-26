@@ -1,12 +1,13 @@
 import m from 'mithril'
 import _ from 'lodash'
 
-import css from 'font-awesome/css/font-awesome.css!'
-//console.log('css = ', css)
-//import { Map, fromJS as toImmutable } from 'immutable'
-
-import styles from './index.css!'
+import { selectRow } from '../../redux/actions'
 import Button from '../Button/index'
+
+import css from 'font-awesome/css/font-awesome.css!'
+//import styles from './row.css!'
+import styles from '../../css/text.css!'
+
 
 let Row = {}
 
@@ -23,11 +24,12 @@ Row.controller = function controller( props ) {
 }
 
 Row.view = function view( c, props ) {
-  const { columns, file } = props
+  const { columns, file, dispatch } = props
   const v = k => _.result(_.find(columns, { id: k} ), 'visible')
   return (
     <tr>
-      <td class='center iconSelect'>{ m.trust( file[ 'checkbox' ] ) }</td>
+      <td class={styles.text_center}
+          onclick={() => { dispatch(selectRow(file.fileId)) }}>{ m.trust( file[ 'checkbox' ] ) }</td>
       <td class={styles.text_center}>
         <Button onclick={()=> {c.download(file['fileId'])}}>
           <i class={ `${css.fa} ${file['dlClass']} ${css['fa-lg']} ${file['alreadyDL']}` }>

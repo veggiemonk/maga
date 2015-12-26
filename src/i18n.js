@@ -15,18 +15,6 @@ export function navigatorLanguage () {
 }
 
 const i18n = {
-  menu:{
-    all: {
-      fr: 'Tous',
-      nl: 'Alle',
-      en: 'all',
-    },
-    others: {
-      fr: 'Autres',
-      nl: 'Anders',
-      en: 'Others'
-    }
-  },
   filters: {
     reload: {
       fr:'Rafraîchir',
@@ -57,6 +45,35 @@ const i18n = {
       fr: 'Afficher Colonnes',
       nl: 'Tonen',
       en: 'Show Column',
+    }
+  },
+  login: {
+    login: {
+      fr: 'nom d\'utilisateur',
+      nl: 'gebruikernaam',
+      en: 'username',
+    },
+    password: {
+      fr: 'mot de passe',
+      nl: 'password',
+      en: 'password',
+    },
+    submit: {
+      fr: 'Envoyer',
+      nl: 'Verzenden',
+      en: 'Submit',
+    },
+  },
+  menu:{
+    all: {
+      fr: 'Tous',
+      nl: 'Alle',
+      en: 'all',
+    },
+    others: {
+      fr: 'Autres',
+      nl: 'Anders',
+      en: 'Others'
     }
   },
   uploader: {
