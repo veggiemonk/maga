@@ -1,5 +1,5 @@
 import m from 'mithril'
-import immutable from 'immutable'
+import _ from 'lodash'
 import Row from './../Row/index'
 
 import {
@@ -10,20 +10,17 @@ import { sort, getSortedColumn } from './../../redux/reducers/columns'
 
 import { invalidate, inc, dec } from './../../utils'
 import { defaults } from './../../settings'
-//TODO: move it elsewhere!!!
-import styles from './index.css!'
+
+import styles from './table.css!'
 
 let Table = {}
 
-Table.controller = function controller( props ) {
+Table.controller = function controller(props) {
   let c = {
-    store:            props.store,
-    files:            props.files,
-    columnHeader:     props.columnHeader,
-    toggleVisibility: colId => {
-      c.store.dispatch( toggleColumnView( colId ) )
-    },
-    vm:               {
+    /* toggleVisibility: colId => {
+     dispatch( toggleColumnView( colId ) )
+     },*/
+    vm: {
       /***
        * show the 3 states of a column sortwise
        * @param: id  id of the column
@@ -35,8 +32,8 @@ Table.controller = function controller( props ) {
           return !col.sorted
             ? ( <i class='fa fa-sort right'></i> )
             : ( col.order
-            ? ( <i class='fa fa-sort-desc right'></i> )
-            : ( <i class='fa fa-sort-asc right'></i>  ) )
+              ? ( <i class='fa fa-sort-desc right'></i> )
+              : ( <i class='fa fa-sort-asc right'></i>  ) )
         }
       }
     },
@@ -44,41 +41,40 @@ Table.controller = function controller( props ) {
   return c
 }
 
-Table.view = function view( c ) {
-  const state = c.store.getState()
+Table.view = function view(c, props) {
+  const { dispatch, display, data, columns, filters } = props
+  const idColSorted = getSortedColumn( columns )
+  const orderColSorted = _.result(_.find(columns, {id: idColSorted}), 'order') ? 'desc' : 'asc'
+
   return (
-    <div class={styles.main_div}>
+    <div style={`display : ${display ? 'inline-block' : 'none'};`}>
       <table class={styles.collapse}>
-        <thead>
-        {
-          state.columns
-            .toList()
-            .sortBy( x => x.get( 'index' ) )
-            .filter( x => x.get( 'visible' ) )
+        <thead>{
+          _(columns)
+            .sortBy( x => x[ 'index' ] )
+            .filter( x => x[ 'visible' ] )
             .map( col =>
               <th
-                class={styles.row_width}
-                key={ col.get('id') }
-                onclick={() => { c.store.dispatch( sortColumn( col.get( 'id' ) ) ) } }>
-                { m.trust( col.get( 'name' ) ) }
-                { c.vm.cssSortToggle( state.columns.get( col.get( 'id' ) ).toJS() ) }
-              </th> ).toJS()
-        }
-        </thead>
-        <tbody>
-        {
-          state.data
-            .sort( sort( state.columns, getSortedColumn( state.columns ) ) )
-            .skip( state.filters.startPageAt )
-            .take( state.filters.rowDisplayed )
-            .map( file => (
-              <Row
-                key={ file.get('index') }
-                file={ file }
-                store={ c.store }>
-              </Row> ) ).toJS()
-        }
-        </tbody>
+                class={` ${styles.row_width} ${col[ 'id' ]} `}
+                key={ col[ 'id' ] }
+                onclick={() => { dispatch( sortColumn( col[ 'id' ] ) ) } }>
+                { m.trust( col[ 'name' ] ) }
+                { c.vm.cssSortToggle( col ) }
+              </th> ).value()
+        }</thead>
+        <tbody>{
+          _(data)
+          .sortByOrder( idColSorted, orderColSorted )
+          .slice( filters.startPageAt )
+          .take( filters.rowDisplayed )
+          .map( file => (
+            <Row
+              key={ file['index'] }
+              file={ file }
+              dispatch={ dispatch }
+              {...props}>
+            </Row> ) ).value()
+        }</tbody>
       </table>
     </div>
   )

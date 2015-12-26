@@ -1,6 +1,6 @@
 {
   "name": "maga",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "transfer",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "test": "./node_modules/mocha/bin/mocha --compilers js:babel-core/register --ui tdd -R tap ./test/redux.spec.js",
     "test:watch": "npm test -- --watch",
     "start": "node server",
+    "echo": "node _echoServer.js",
     "bundle": "jspm bundle-sfx index.js dist/bundle.js --minify"
   },
   "repository": {
@@ -30,21 +31,21 @@
     "dependencies": {
       "babel-loader": "github:veggiemonk/plugin-babel@master",
       "babel-plugin-mjsx": "npm:babel-plugin-mjsx@^1.0.3",
-      "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@^0.4.3",
+      "capaj/jspm-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.1",
       "chai": "npm:chai@^3.4.1",
       "css": "npm:jspm-loader-css-modules@^1.0.1-beta1",
       "font-awesome": "npm:font-awesome@^4.4.0",
-      "immutable": "npm:immutable@^3.7.5",
       "isomorphic-fetch": "npm:isomorphic-fetch@^2.2.0",
+      "jspm-loader-css": "npm:jspm-loader-css@^1.0.1-beta1",
       "lodash": "npm:lodash@^3.10.1",
-      "mithril": "npm:mithril@^0.2.0",
+      "mithril": "github:lhorie/mithril.js@next",
       "mocha": "npm:mocha@^2.3.4",
       "moment": "npm:moment@^2.10.6",
       "postcss-safe-parser": "npm:postcss-safe-parser@^1.0.1",
+      "postcss-simple-vars": "npm:postcss-simple-vars@^1.2.0",
       "redux": "npm:redux@^3.0.4",
-      "redux-logger": "npm:redux-logger@^2.0.4",
-      "redux-thunk": "npm:redux-thunk@^1.0.0",
-      "rome": "npm:rome@^2.1.22"
+      "rome": "npm:rome@^2.1.22",
+      "webfontloader": "github:components/webfontloader@^1.6.3"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
@@ -80,8 +81,6 @@
     "mocha": "^2.3.4",
     "moment": "^2.10.6",
     "redux": "^3.0.4",
-    "redux-logger": "^2.0.4",
-    "redux-thunk": "^1.0.0",
     "roma": "0.0.6"
   }
 }

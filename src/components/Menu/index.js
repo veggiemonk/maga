@@ -1,80 +1,88 @@
+import _ from 'lodash'
 import styles from './index.css!'
 
 import {filterMenuRef, filterMenuCat, showAllDocument } from './../../redux/actions'
 
 let Menu = {}
-let LANG = 'fr' //TODO : i18n
+const lang = 'fr' //TODO : i18n
 
 /***
  *
- * @param item Immutable Object
+ * @param item Object containing the `lang` key (language)
  * @param lang language
  * @returns {*}
  */
 export let labelCati18n = ( item, lang ) => {
 
   let cat = {
-    fr:      () => item.get( 'labelCategoryFR' ),
-    nl:      () => item.get( 'labelCategoryNL' ),
-    de:      () => item.get( 'labelCategoryDE' ),
-    default: () => item.get( 'labelCategoryX' ),
+    fr:      () => item[ 'labelCategoryFR' ],
+    nl:      () => item[ 'labelCategoryNL' ],
+    de:      () => item[ 'labelCategoryDE' ],
+    default: () => item[ 'labelCategoryX' ],
   }
   return (cat[ lang ] || cat[ 'default' ])()
 }
 
 const listRefDoc = ( listCat, cat ) =>
-  listCat.filter( x => x.get( 'categoryNumber' ) === cat )
+  _(listCat)
+    .filter( x => x[ 'categoryNumber' ] === cat )
     .reduce( ( acc, next ) => {
-      acc.push( next.get( 'referenceDocument' ) )
+      acc.push( next[ 'referenceDocument' ] )
       return acc
     }, [] )
 
 Menu.view = function view( c, props ) {
-
-  const state = props.store.getState()
-  const { dispatch } = props.store
-  return (
-    <div class={styles.main_div}>
-
-      <ul class='menu'>
-        <li class={styles.menuRoot}
-            onclick={() => {dispatch(showAllDocument())}}>
-          'All Documents' <span style='float: right;'>{ state.files.count() }</span>
-        </li>
-        {
-          state.category && state.category.toList().map( cat => (
-            <li class={styles.menuCatLi} key={cat.get( 0 ).get( 'categoryNumber' )}>
+  const { category, files, dispatch, i18n } = props
+  const root = (
+    <li class={styles.menuRoot}
+        onclick={() => {dispatch(showAllDocument())}}>
+    {i18n.all[lang]} <span style='float: right;'>{ files.length }</span>
+  </li>
+  )
+  const others = (
+    <li
+    class={styles.menuCatLi}
+    onclick={() => { dispatch(filterMenuRef(''))} }>
+    {i18n.others[lang]} <span>{files.filter( x => x[ 'referenceDocument' ] === '' ).length}</span>
+  </li>
+  )
+  const catego = (
+    _(category).map( cat => (
+      <li class={styles.menuCatLi} key={_(cat).get( [0 , 'categoryNumber'] )}>
                 <span class={styles.menuCatSpan}
                       onclick={() => {
                         dispatch(
                           filterMenuCat(
-                            listRefDoc( cat, cat.get( 0 ).get( 'categoryNumber' ) )
+                            listRefDoc( cat, _(cat).get( [0 , 'categoryNumber'] ) )
                           )
                         )
                       }
                 }>
-                  { cat.get( 0 ).get( 'categoryNumber' ) + '-' + labelCati18n( cat.get( 0 ), LANG ) }
+                  { _(cat).get( [0 , 'categoryNumber'] ) + '-' + labelCati18n( cat[0], lang ) }
                 </span>
-              <span>{ cat.get( 0 ).get( 'filesPerCat' ) }</span>
-              <ul class={styles.menuRefDoc}>
-                { cat.toList().map( doc => (
-                  <li class={styles.menuDocRefLi} key={doc.get( 'referenceDocument' )}
-                      onclick={() => {dispatch( filterMenuRef(doc.get( 'referenceDocument' ) ) ) } }>
+        <span>{ _(cat).get( [0, 'filesPerCat'] ) }</span>
+        <ul class={styles.menuRefDoc}>
+          { _(cat).map( doc => (
+            <li class={styles.menuDocRefLi} key={doc['referenceDocument']}
+                onclick={() => {dispatch( filterMenuRef(doc['referenceDocument'] ) ) } }>
                   <span class={styles.menuDocRefSpan}>
-                    { doc.get( 'referenceDocument' ) + ' - ' + doc.get( 'labelDocFR' )}
+                    { doc[ 'referenceDocument' ] + ' - ' + doc['labelDoc'+lang.toUpperCase()]}
                   </span>
-                    <span>{ doc.get( 'filesPerRef' ) }</span>
-                  </li>
-                ) ).toJS()
-                }
-              </ul>
+              <span>{ doc['filesPerRef'] }</span>
             </li>
-          ) ).toJS()
-        }
-        <li
-          class={styles.menuCatLi}
-          onclick={() => { dispatch(filterMenuRef(''))} }
-        >'OTHERS' <span>{state.files.filter( x => x.get( 'referenceDocument' ) === '' ).count()}</span></li>
+          ) ).value()
+          }
+        </ul>
+      </li>
+    ) ).value()
+  )
+
+  return (
+    <div class={styles.main_div}>
+      <ul class={styles.menu}>
+        {root}
+        {catego}
+        {others}
       </ul>
     </div>
   )

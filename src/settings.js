@@ -1,6 +1,5 @@
 
-import { Map, fromJS as toImmutable } from 'immutable'
-import sortBy from 'lodash/collection/sortBy'
+import _ from 'lodash'
 import {i18n, lang} from './i18n.js'
 
 const permanentColumn = [
@@ -125,7 +124,16 @@ const unvisibleColumn = [
     name:    'Comments',
     visible: true,
     toggle:  true,
-  }, ]
+  }, {
+    index: 19,
+    id: 'index',
+    name: 'index',
+    sortable: true,
+    searchable: false,
+    visible: false,
+    toggle: false,
+    dataType: 'number',
+  } ]
 
 export const defaults = {
   col:            {
@@ -153,7 +161,7 @@ export const defaults = {
 }
 
 export const initialState = {
-  columns: toImmutable( [ [ 'col1', { col1: 'fake data' } ] ] ),
+  columns: [],
   filters: {
     startPageAt:    defaults.startPageAt,
     page:           defaults.page,
@@ -164,33 +172,32 @@ export const initialState = {
     searchKeyword:  defaults.searchKeyword,
     menuColumnView: defaults.menuColumnView
   },
-  category:   toImmutable( [] ),
-  files:   toImmutable( [] ),
-  data:    toImmutable( [] )
+  category:   [],
+  files:   [],
+  data:    [],
+  selectedRow: [],
+  language: 'en',
+  username: 'username',
+  isAuthenticated: false,
+  isFetching: false,
+  didInvalidate: false,
+  lastUpdated: Date.now(),
 }
 
 
-//concat arrays into immutable object (sorted)
-const _columnHeader = sortBy( [ ...permanentColumn, ...unvisibleColumn ], x => x.index )
-
-//merge with default config
-const col = Map( defaults.col )
-const __columnHeader = toImmutable( _columnHeader.map( x => Object.assign( col.toJS(), x ) ) )
-
-// Convert array of object to become a map, keys are a prop in the objects.
-export const columnHeader = Map( __columnHeader.reduce(
-  ( acc, x ) => {
-    acc[ x.get( 'id' ) ] = x
-    return acc
-  }, {} ) )
+//sort then merge with default config
+export const columns = _( [ ...permanentColumn, ...unvisibleColumn ] )
+  .sortBy( x => x.index )
+  .map( x => Object.assign( {}, defaults.col, x ))
+  .value()
 
 //TODO: URL FOR TEST, DEV, QA and PROD???
 export const urlServer = 'http://localhost:8019'
-export const urlEchoServer = 'http://localhost:4000/echo/json'
+export const urlEchoServer = 'http://localhost:3246/echo/json'
 export const fetchURL  = urlServer + '/file/list'
-//export const fetchFile     = '/test/fileListF01.json'
-export const fetchFile     = '/test/fileList.json'
-export const fetchCategory = '/test/category.json'
+//export const fetchURLFile     = '/test/fileListF01.json'
+export const fetchURLFile     = 'test/fileList.json'
+export const fetchURLCategory = 'test/category.json'
 export const headers       = method => {
   return {
     credentials: 'same-origin',
@@ -201,5 +208,4 @@ export const headers       = method => {
       Credentials:    'GroupsFTP username=F00000001 password=P@$$w0rd',
     },
   }
-
 }

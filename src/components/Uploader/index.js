@@ -2,11 +2,13 @@ import m from 'mithril'
 import 'isomorphic-fetch'
 import _ from 'lodash'
 import { headers, urlEchoServer} from '../../settings'
-
+import styleB from '../../css/buttons.css!'
 import styles from './index.css!'
 
+const lang = 'fr'
 let Uploader = {}
 
+//TODO: extract to client side execution when doing server side rendering
 //drag and drop micro-library
 const dragdrop = (element, options) => {
   options = options || {}
@@ -37,14 +39,6 @@ const upload = files => {
   for ( let i = 0; i < files.length; i++ ) {
     formData.append( files[ i ].name, files[ i ] )
   }
-
-  /*return m.request( {
-   method:    'POST',
-   url:       'http://localhost:4000/echo/json',
-   data:      formData,
-   //simply pass the FormData object intact to the underlying XMLHttpRequest, instead of JSON.stringify'ing it
-   serialize: function (value) {return value}
-   } )*/
   return fetch( urlEchoServer, { method: 'POST', body: formData } )
 }
 
@@ -66,6 +60,7 @@ Uploader.controller = props => {
         .then( () => { m.redraw() } )
         .catch( e => {
           console.error(e)
+          alert('File upload Failed')
           throw new Error('File upload Failed', e)
         } )
     } ),
@@ -81,13 +76,13 @@ Uploader.controller = props => {
 Uploader.view = (c, props) => {
   return (
     <div>
-      <button onclick={c.toggleUpload}>{c.visible ? 'Hide Uploader' : 'Show Uploader'}</button>
-      { c.visible
-        ? (<div>
-        <h1>Upload Files Here</h1>
-        <p>folders not accepted</p>
-        <div class={styles.uploader} config={Uploader.config(c)}>
-          <ul>{
+      <a href="#box"
+         class={`${styleB.button} ${styles.upload}`}
+         onclick={c.toggleUpload}><i class="fa fa-2x fa-cloud-upload"></i>{props.i18n.uploadBtn[lang]}</a>
+      <div id="box" class={styles.box}>
+        <div class={styles.lightbox} config={Uploader.config(c)} >
+          <a href="#">X</a>
+          <ul class={styles.dropzone}>{
             _.map( c.files, ( x => (
               <li>
                 <span>{x.name}</span>
@@ -96,12 +91,9 @@ Uploader.view = (c, props) => {
             ) ) )
           }</ul>
         </div>
-      </div>)
-        : ''
-      }
+      </div>
     </div>
   )
 }
-
 
 export default Uploader

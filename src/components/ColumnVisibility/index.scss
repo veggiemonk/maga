@@ -1,0 +1,170 @@
+@import '../../css/constants';
+/* General styles for all menus */
+$textColor: #fff;
+
+.spmenu {
+  background: $groupSBlue;
+  position: fixed;
+  margin-top: $heightHeader;
+  h3 {
+    color: $textColor;
+    text-decoration: underline;
+    font-size: 1.9em;
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+    background: $groupSBlue;
+  }
+  a {
+    display: block;
+    padding: 1em;
+    color: $textColor;
+    font-size: 1.1em;
+    font-weight: 300;
+    &:hover {
+      background: #258ecd;
+    }
+    &:active {
+      background: $groupSBlue;
+      color: $footerColor;
+    }
+  }
+}
+
+.active {
+  background: $footerColor;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.spmenu_vertical {
+  width: 240px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+  overflow: auto;
+  /*a {
+    border-bottom: 1px solid $groupSBlue;
+    padding: 1em;
+  }*/
+}
+
+.spmenu_horizontal {
+  width: 100%;
+  height: 150px;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+  h3 {
+    height: 100%;
+    width: 20%;
+    float: left;
+  }
+  a {
+    float: left;
+    width: 20%;
+    padding: 0.8em;
+    border-left: 1px solid #258ecd;
+  }
+}
+
+/* Vertical menu that slides from the left or right */
+
+.spmenu_left {
+  left: -240px;
+}
+
+.spmenu_right {
+  right: -240px;
+}
+
+.spmenu_left.spmenu_open {
+  left: 0px;
+}
+
+.spmenu_right.spmenu_open {
+  right: 0px;
+}
+
+/* Horizontal menu that slides from the top or bottom */
+
+.spmenu_top {
+  top: -150px;
+}
+
+.spmenu_bottom {
+  bottom: -150px;
+}
+
+.spmenu_top.spmenu_open {
+  top: 0px;
+}
+
+.spmenu_bottom.spmenu_open {
+  bottom: 0px;
+}
+
+/* Push classes applied to the body */
+
+.spmenu_push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.spmenu_push_toright {
+  left: 240px;
+}
+
+.spmenu_push_toleft {
+  left: -240px;
+}
+
+/* Transitions */
+
+.spmenu,
+.spmenu_push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em){
+
+  .spmenu_horizontal {
+    font-size: 75%;
+    height: 110px;
+  }
+
+  .spmenu_top {
+    top: -110px;
+  }
+
+  .spmenu_bottom {
+    bottom: -110px;
+  }
+
+}
+
+@media screen and (max-height: 26.375em){
+
+  .spmenu_vertical {
+    font-size: 90%;
+    width: 190px;
+  }
+
+  .spmenu_left,
+  .spmenu_push-toleft {
+    left: -190px;
+  }
+
+  .spmenu_right {
+    right: -190px;
+  }
+
+  .spmenu_push-toright {
+    left: 190px;
+  }
+}

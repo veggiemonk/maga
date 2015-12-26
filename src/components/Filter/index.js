@@ -1,5 +1,10 @@
 import m from 'mithril'
+import _ from 'lodash'
 import rome from 'rome'
+import { fetching } from '../../async'
+import Button from '../Button/index'
+import Input from '../Input/index'
+import styleCB from '../../css/checkbox.css!'
 import {
   pageFirst,
   pageLast,
@@ -10,28 +15,27 @@ import {
   filterDateEnd,
   changeRowDisplayed,
   toggleMenuColumnView,
+  refreshData,
 } from '../../redux/actions'
 
-//import styles from '../../css/skeleton.css!'
 
-let Filter = {}
+//TODO: make a session var in state
+const lang = 'fr'
 
-Filter.controller = function controller( props ) {
+let Filters = {}
+
+Filters.controller = function controller( props ) {
+  const { dispatch } = props
   return {
-    store:                props.store,
-    select:               val => {props.store.dispatch( changeRowDisplayed( Number( val ) ) ) },
-    search:               val => {props.store.dispatch( filterSearch( val ) ) },
-    dateBegin:            val => {
-      props.store.dispatch( filterDateBegin( val ) )
-    },
-    dateEnd:              val => {
-      props.store.dispatch( filterDateEnd( val ) )
-    },
-    toggleMenuColumnView: () => {props.store.dispatch( toggleMenuColumnView() ) }
+    select:               val => {dispatch( changeRowDisplayed( Number( val ) ) ) },
+    search:               val => {dispatch( filterSearch( val ) ) },
+    dateBegin:            val => {dispatch( filterDateBegin( val ) ) },
+    dateEnd:              val => {dispatch( filterDateEnd( val ) ) },
+    toggleMenuColumnView: () => {dispatch( toggleMenuColumnView() ) }
   }
 }
 
-Filter.config = ctrl => ( element, isInitialized, context ) => {
+Filters.config = ctrl => ( element, isInitialized, context ) => {
   if ( !isInitialized ) {
     rome( document.querySelector( '#dateBegin' ), {
       autoHideOnBlur: true,
@@ -39,59 +43,68 @@ Filter.config = ctrl => ( element, isInitialized, context ) => {
     } )
   }
 }
-
-Filter.view = function view( c, props, children ) {
-  const state = props.store.getState()
-  const count = state.data.count()
+//todo breadcrumbs
+Filters.view = function view( c, props, children ) {
+  const { dispatch, i18n, filters, data, files } = props
+  const count = data.length
   return (
     <div class="container">
       <div class="row">
         <div class="three columns">
-          <button class="button-primary">RELOAD</button>
+          <Button
+            className={'test'}
+            onclick={() => { fetching(dispatch);/* m.startComputation(); m.endComputation()*/ }}
+            >
+            <i class="fa fa-2x fa-refresh"></i>
+            {i18n.reload[lang]}
+          </Button>
 
-          <input id="search"
-                 type="search"
+          <Input type="search"
                  incremental
                  oninput={ m.withAttr('value', c.search ) }
-                 value={ state.filters.searchKeyword }
-                 placeholder="Search Here"/>
+                 value={ filters.searchKeyword }
+                 placeholder={i18n.search[lang]}/>
 
-          <input id="dateBegin"
+          <Input id="dateBegin"
                  type="search"
-                 config={Filter.config(c)}
+                 config={Filters.config(c)}
                  oninput={ m.withAttr('value', c.dateBegin ) }
-                 value={ state.filters.dateBegin }
-                 placeholder="Date Begin"/>
+                 value={ filters.dateBegin }
+                 placeholder={i18n.dateBegin[lang]}/>
 
-          <input id="dateEnd"
+          <Input id="dateEnd"
                  type="search"
                  oninput={ m.withAttr('value', c.dateEnd ) }
-                 value={ state.filters.dateEnd }
-                 placeholder="Date End"/>
-
+                 value={ filters.dateEnd }
+                 placeholder={i18n.dateEnd[lang]}/>
+        </div>
+        <div class={`${styleCB.squaredFour}`}>
           <input type="checkbox"
+                 name="squaredFour"
                  onclick={ m.withAttr('checked', c.toggleMenuColumnView ) }
-                 checked={state.filters.menuColumnView}/>
+                 checked={filters.menuColumnView}/>
+          <label for="squaredFour"></label>
+          <p>{i18n.colVisible[lang]}</p>
         </div>
 
         <div class="six columns">
-          <button onclick={ () => { c.store.dispatch( pageFirst() )} }>
+          <Button onclick={ () => { dispatch( pageFirst() )} }>
             <i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>
-          </button>
+          </Button>
 
-          <button onclick={ () => {  c.store.dispatch( pagePrev() )  } }>
+          <Button onclick={ () => { dispatch( pagePrev() )  } }>
             <i class="fa fa-chevron-left"></i>
-          </button>
+          </Button>
 
-          <button onclick={ () => { c.store.dispatch( pageNext( count ) ) } }>
+          <Button onclick={ () => { dispatch( pageNext( count ) ) } }>
             <i class="fa fa-chevron-right"></i>
-          </button>
+          </Button>
 
-          <button onclick={ () => { c.store.dispatch( pageLast() ) } }>
+          <Button onclick={ () => { dispatch( pageLast() ) } }>
             <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i>
-          </button>
+          </Button>
         </div>
-
+        {children}
         <div class="three columns">
 
           <select
@@ -108,22 +121,21 @@ Filter.view = function view( c, props, children ) {
                  oninput={ m.withAttr('value', c.select) }
                  name="rowDisplay" id="rowDisplay"
                  list="number"
-                 value={ state.filters.rowDisplayed }/>
+                 value={ filters.rowDisplayed }/>
           <datalist id="number">
-            <option>1</option>
-            {[ , ...Array( Math.floor( count / 10 ) ) ].map( ( x, i ) =>
+            {_([ , ...Array( Math.floor( count / 10 ) ) ]).map( ( x, i ) =>
               <option label={i * 10}>{i * 10}</option>
-            )}
+            ).value()}
           </datalist>
         </div>
       </div>
 
       <div class="row">
         <div class="u-full-width center">
-          <span>Showing: { Math.min( state.filters.rowDisplayed, count ) } files out of { count }
-                (total: {state.files.count()})</span>
+          <span>Showing: { Math.min( filters.rowDisplayed, count - filters.startPageAt ) } files out of { count }
+                (total: {files.length})</span>
           <br />
-          <span> Page: { state.filters.page } out of {Math.ceil( count / state.filters.rowDisplayed )}</span>
+          <span> Page: { filters.page } out of {Math.ceil( count / filters.rowDisplayed )}</span>
         </div>
       </div>
 
@@ -131,4 +143,4 @@ Filter.view = function view( c, props, children ) {
   )
 }
 
-export default Filter
+export default Filters
