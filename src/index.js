@@ -7,7 +7,7 @@ import Login from './components/Login/index'
 import Loader from './components/Loader/index'
 import Menu from './components/Menu/index'
 import Uploader from './components/Uploader/index'
-import Filters from './components/Filter/index'
+import Filters from './components/Filters/index'
 import Table from './components/Table/index'
 import ColumnVisibility from './components/ColumnVisibility/index'
 

@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import styles from './index.css!'
+import styles from './menu.css!'
 
 import {filterMenuRef, filterMenuCat, showAllDocument } from './../../redux/actions'
 

@@ -1,0 +1,55 @@
+@import '../../css/constants';
+
+.main_div {
+  display: table-cell;
+  float: left;
+  height: calc(100vh - (#{$heightHeader} + #{$heightFooter}));
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.text_overflow {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.collapse {
+  border-collapse: collapse;
+}
+.menu {
+  list-style-type: none;
+}
+
+.menuCatSpan {
+  composes: text_overflow;
+  display: inline-block;
+  width:   100%;
+}
+
+.menuRoot {
+  composes: collapse;
+  border: 1px solid $groupSBlue;
+}
+
+.menuRefDoc {
+  list-style-type: none;
+}
+
+.menuDocRefSpan {
+  composes: text_overflow;
+  display: inline-block;
+  width:   100%;
+}
+
+
+.menuDocRefLi {
+  composes: collapse;
+  border: 1px solid $groupSBlue;
+}
+.menuCatLi {
+  composes: collapse;
+  border: 1px solid $groupSBlue;
+}
+
+

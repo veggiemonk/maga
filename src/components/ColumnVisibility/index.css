@@ -1,6 +1,6 @@
 /* General styles for all menus */
 .spmenu {
-  background: #086cc3;
+  background: #086CC3;
   position: fixed;
   margin-top: 80px; }
   .spmenu h3 {
@@ -10,7 +10,7 @@
     padding: 20px;
     margin: 0;
     font-weight: 300;
-    background: #086cc3; }
+    background: #086CC3; }
   .spmenu a {
     display: block;
     padding: 1em;
@@ -20,7 +20,7 @@
     .spmenu a:hover {
       background: #258ecd; }
     .spmenu a:active {
-      background: #086cc3;
+      background: #086CC3;
       color: #424242; }
 
 .active {

@@ -4,10 +4,9 @@ import _ from 'lodash'
 import { selectRow } from '../../redux/actions'
 import Button from '../Button/index'
 
-import css from 'font-awesome/css/font-awesome.css!'
+//import css from 'font-awesome/css/font-awesome.css!'
 //import styles from './row.css!'
 import styles from '../../css/text.css!'
-
 
 let Row = {}
 
@@ -32,7 +31,7 @@ Row.view = function view( c, props ) {
           onclick={() => { dispatch(selectRow(file.fileId)) }}>{ m.trust( file[ 'checkbox' ] ) }</td>
       <td class={styles.text_center}>
         <Button onclick={()=> {c.download(file['fileId'])}}>
-          <i class={ `${css.fa} ${file['dlClass']} ${css['fa-lg']} ${file['alreadyDL']}` }>
+          <i class={ `fa fa-lg ${file['dlClass'] || ''} ${file['alreadyDL'] || ''}` }>
           </i>
           <small class={styles.text_muted}> { file[ 'downloadCount' ] }</small>
         </Button>
