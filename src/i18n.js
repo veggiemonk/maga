@@ -49,14 +49,14 @@ const i18n = {
   },
   login: {
     login: {
-      fr: 'nom d\'utilisateur',
-      nl: 'gebruikernaam',
-      en: 'username',
+      fr: 'Nom d\'utilisateur',
+      nl: 'Gebruikernaam',
+      en: 'Username',
     },
     password: {
-      fr: 'mot de passe',
-      nl: 'password',
-      en: 'password',
+      fr: 'Mot de passe',
+      nl: 'Password',
+      en: 'Password',
     },
     submit: {
       fr: 'Envoyer',
@@ -82,7 +82,10 @@ const i18n = {
       nl: 'Bestanden uploaden naar Group S',
       en: 'Upload files on the server',
     }
-  },
+  }
+}
+
+const old = {
   fr: {
     button:          {
       search:      'Recherche...',

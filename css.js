@@ -1,5 +1,7 @@
+// this is the post css loader
+// customize away :D
+
 import { CSSLoader, Plugins } from 'jspm-loader-css'
-//import vars from 'postcss-simple-vars' // you want to use this postcss plugin
 
 const {fetch, bundle} = new CSSLoader([
   Plugins.values,
