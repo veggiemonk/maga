@@ -14,7 +14,7 @@ export function navigatorLanguage () {
   return locale
 }
 
-const i18n = {
+export const i18n = {
   filters: {
     reload: {
       fr:'Rafraîchir',
@@ -454,4 +454,4 @@ const old = {
   }
 }
 
-export default i18n
+//export default i18n

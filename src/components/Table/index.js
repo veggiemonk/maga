@@ -49,7 +49,7 @@ Table.view = function view(c, props) {
   return (
     <div style={`display : ${display ? 'inline-block' : 'none'};`}>
       <table class={styles.collapse}>
-        <thead>{
+        <thead class={`${styles.fixed}`}>{
           _(columns)
             .sortBy( x => x[ 'index' ] )
             .filter( x => x[ 'visible' ] )

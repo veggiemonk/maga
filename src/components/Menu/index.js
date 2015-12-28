@@ -15,6 +15,7 @@ const lang = 'fr' //TODO : i18n
 export let labelCati18n = ( item, lang ) => {
 
   let cat = {
+    en:      () => item[ 'labelCategoryX' ],
     fr:      () => item[ 'labelCategoryFR' ],
     nl:      () => item[ 'labelCategoryNL' ],
     de:      () => item[ 'labelCategoryDE' ],
@@ -36,20 +37,20 @@ Menu.view = function view( c, props ) {
   const root = (
     <li class={styles.menuRoot}
         onclick={() => {dispatch(showAllDocument())}}>
-    {i18n.all[lang]} <span style='float: right;'>{ files.length }</span>
+    {i18n.all[lang]} <span class={styles.badge}>{ files.length }</span>
   </li>
   )
   const others = (
     <li
-    class={styles.menuCatLi}
+    class={styles.catLi}
     onclick={() => { dispatch(filterMenuRef(''))} }>
-    {i18n.others[lang]} <span>{files.filter( x => x[ 'referenceDocument' ] === '' ).length}</span>
+    {i18n.others[lang]} <span class={styles.badge}>{files.filter( x => x[ 'referenceDocument' ] === '' ).length}</span>
   </li>
   )
   const catego = (
     _(category).map( cat => (
-      <li class={styles.menuCatLi} key={_(cat).get( [0 , 'categoryNumber'] )}>
-                <span class={styles.menuCatSpan}
+      <li class={styles.catLi} key={_(cat).get( [0 , 'categoryNumber'] )}>
+                <span class={styles.catSpan}
                       onclick={() => {
                         dispatch(
                           filterMenuCat(
@@ -60,15 +61,16 @@ Menu.view = function view( c, props ) {
                 }>
                   { _(cat).get( [0 , 'categoryNumber'] ) + '-' + labelCati18n( cat[0], lang ) }
                 </span>
-        <span>{ _(cat).get( [0, 'filesPerCat'] ) }</span>
-        <ul class={styles.menuRefDoc}>
+        <span class={styles.badge}>{ _(cat).get( [0, 'filesPerCat'] ) }</span>
+        <ul class={styles.refDoc}>
           { _(cat).map( doc => (
-            <li class={styles.menuDocRefLi} key={doc['referenceDocument']}
+            <li class={styles.docLi} key={doc['referenceDocument']}
                 onclick={() => {dispatch( filterMenuRef(doc['referenceDocument'] ) ) } }>
-                  <span class={styles.menuDocRefSpan}>
+                  <span class={styles.docSpan}>
                     { doc[ 'referenceDocument' ] + ' - ' + doc['labelDoc'+lang.toUpperCase()]}
                   </span>
-              <span>{ doc['filesPerRef'] }</span>
+              <span></span>
+              <span class={styles.badge}>{ doc['filesPerRef'] }</span>
             </li>
           ) ).value()
           }

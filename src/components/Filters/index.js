@@ -81,9 +81,12 @@ Filters.view = function view( c, props, children ) {
         <div class={`${styleCB.squaredFour}`}>
           <input type="checkbox"
                  name="squaredFour"
-                 onclick={ m.withAttr('checked', c.toggleMenuColumnView ) }
+                 onclick={ (e) => {console.log(e)} /*m.withAttr('checked', c.toggleMenuColumnView )*/ }
                  checked={filters.menuColumnView}/>
-          <label for="squaredFour"></label>
+          <label
+            for="squaredFour"
+            onclick={ m.withAttr('checked', c.toggleMenuColumnView ) /*(e) => {console.log(e)}*/ }>
+          </label>
           <p>{i18n.colVisible[lang]}</p>
         </div>
 

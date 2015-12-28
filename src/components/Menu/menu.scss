@@ -1,6 +1,7 @@
 @import '../../css/constants';
+@import '../../css/text';
 
-.main_div {
+/*.main_div {
   display: table-cell;
   float: left;
   height: calc(100vh - (#{$heightHeader} + #{$heightFooter}));
@@ -20,7 +21,10 @@
 .menu {
   list-style-type: none;
 }
-
+.menuCatLi {
+  composes: collapse;
+  border: 1px solid $groupSBlue;
+}
 .menuCatSpan {
   composes: text_overflow;
   display: inline-block;
@@ -42,14 +46,73 @@
   width:   100%;
 }
 
-
 .menuDocRefLi {
   composes: collapse;
   border: 1px solid $groupSBlue;
+}*/
+
+.main_div {
+  display: table-cell;
+  float: left;
+  height: calc(100vh - (#{$heightHeader} + #{$heightFooter}));
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-.menuCatLi {
-  composes: collapse;
-  border: 1px solid $groupSBlue;
+
+.menu,
+.refDoc {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.catLi,
+.docLi {
+  list-style-type: none;
+  border-left: 2px solid #000;
+  margin-left: 1em;
+}
+
+.catSpan,
+.docSpan  {
+  composes: text_overflow;
+  padding-left: 1em;
+  position: relative;
+}
+
+.badge {
+  /*float: right;*/
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #777;
+  border-radius: 10px;
+}
+
+.catSpan:before ,
+.docSpan:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  bottom: 50%;
+  width: 0.75em;
+  border: 2px solid #000;
+  border-top: 0 none transparent;
+  border-right: 0 none transparent;
+}
+
+menu > .catLi:last-child,
+.refDoc > .refLi:last-child {
+  border-left: 2px solid transparent;
 }
 
 

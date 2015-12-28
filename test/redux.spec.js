@@ -192,10 +192,6 @@ suite( 'table', function () {
       expect( newData1[0].key ).to.equal( 1 )
     } )
 
-    test( 'should have WRITTEN MORE TESTS', () => {
-      expect( true ).to.equal( false )
-    } )
-
     test( 'should show only 7 files on the last page', () => {
       //TODO: move basic check to beforeAll()
       //check basic data
@@ -220,6 +216,28 @@ suite( 'table', function () {
         newState.filters.startPageAt ) ).to.equal( 7 )
     } )
 
+    test( 'should have WRITTEN MORE TESTS', () => {
+      expect( true ).to.equal( false )
+    } )
+
+    test( 'should filter files created after 22/05/2014', () => {
+      expect( true ).to.equal( false )
+    } )
+
+    test( 'should filter files created after 22/05/2014 and before 01/01/2015', () => {
+      expect( true ).to.equal( false )
+    } )
+
+    test( 'should filter files created before 01/01/2015', () => {
+      expect( true ).to.equal( false )
+    } )
+
+    test( 'should select a row', () => {
+      expect( true ).to.equal( false )
+    } )
+    test( 'should deselect a row', () => {
+      expect( true ).to.equal( false )
+    } )
   } )
 
   suite( 'Menu filters', () => {

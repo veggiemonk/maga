@@ -10,6 +10,22 @@
   max-width: 300px;
 }
 
+.fixed {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 205px;
+  th {
+    position: relative;
+    background: transparent;
+    color: #555555;
+    padding: 9px 25px;
+    top: 0;
+    margin-left: -25px;
+    line-height: normal;
+    border-left: 1px solid #800;
+  }
+}
+
 td, th {
   border: 1px solid $groupSBlue;
 }
@@ -21,3 +37,4 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background: #ffffff
 }
+

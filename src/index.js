@@ -11,7 +11,7 @@ import Filters from './components/Filters/index'
 import Table from './components/Table/index'
 import ColumnVisibility from './components/ColumnVisibility/index'
 
-import i18n from './i18n'
+import {lang, i18n} from './i18n'
 
 import styles from './css/global.css!'
 
@@ -35,10 +35,9 @@ App.view = ( c, props ) => {
         display={!isAuthenticated}
         dispatch={dispatch}
         i18n={i18n.login}
-        language={language}
-      />
-      <Loader display={isFetching}/>
-      <aside class={styles.Aside}>
+        language={language} />
+      <Loader display={isFetching} />
+      <aside class={styles.Aside} >
         <Uploader
           dispatch={dispatch}
           i18n={i18n.uploader}
@@ -61,14 +60,13 @@ App.view = ( c, props ) => {
           dispatch={dispatch}
           i18n={i18n.filters}
           {...state}>
-          <Table
-            display={files.length > 0}
-            dispatch={dispatch}
-            i18n={i18n.table}
-            {...state}>
-          </Table>
         </Filters>
-
+        <Table
+          display={files.length > 0}
+          dispatch={dispatch}
+          i18n={i18n.table}
+          {...state}>
+        </Table>
       </main>
     </div>
   )
