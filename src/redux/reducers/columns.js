@@ -48,7 +48,7 @@ export const sortColumn = ( columns, id ) => {
 }
 
 export const resetSort = columns => {
-  return _(columns).map(x => _.assign({}, x, {
+  return _(columns).map(x => Object.assign({}, x, {
     sorted: defaults.col.sorted,
     order: defaults.col.order
   })).value()

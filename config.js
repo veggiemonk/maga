@@ -1,7 +1,9 @@
 System.config({
+  baseURL: "./",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
+    "stage": 0,
     "optional": [
       "runtime",
       "optimisation.modules.system"
@@ -10,6 +12,12 @@ System.config({
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
+  },
+
+  meta: {
+    "src/*": {
+      "loader": "babel-loader"
+    }
   },
 
   map: {

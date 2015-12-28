@@ -178,7 +178,7 @@ export const initialState = {
   selectedRow: [],
   language: 'en',
   username: 'username',
-  isAuthenticated: false,
+  isAuthenticated: true,
   isFetching: false,
   didInvalidate: false,
   lastUpdated: Date.now(),
