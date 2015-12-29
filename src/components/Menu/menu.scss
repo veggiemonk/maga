@@ -52,61 +52,63 @@
 }*/
 
 .main_div {
-  display: table-cell;
-  float: left;
-  height: calc(100vh - (#{$heightHeader} + #{$heightFooter}));
+  display:    table-cell;
+  float:      left;
+  height:     calc(100vh - (#{$heightHeader} + #{$heightFooter}));
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .menu,
 .refDoc {
-  padding: 0;
-  margin: 0;
+  padding:         0;
+  margin:          0;
   list-style-type: none;
-  position: relative;
+  position:        relative;
 }
 
 .catLi,
 .docLi {
   list-style-type: none;
-  border-left: 2px solid #000;
-  margin-left: 1em;
+  border-left:     2px solid #000;
+  /*margin-left: 1em;*/
+  margin:          1em;
 }
 
 .catSpan,
-.docSpan  {
-  composes: text_overflow;
+.docSpan {
+  composes:     text_overflow;
   padding-left: 1em;
-  position: relative;
+  position:     relative;
+  cursor:          pointer;
 }
 
 .badge {
   /*float: right;*/
-  display: inline-block;
-  min-width: 10px;
-  padding: 3px 7px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
+  display:          inline-block;
+  min-width:        10px;
+  padding:          3px 7px;
+  font-size:        12px;
+  font-weight:      700;
+  line-height:      1;
+  color:            #fff;
+  text-align:       center;
+  white-space:      nowrap;
+  vertical-align:   middle;
   background-color: #777;
-  border-radius: 10px;
+  border-radius:    10px;
 }
 
-.catSpan:before ,
+.catSpan:before,
 .docSpan:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -2px;
-  bottom: 50%;
-  width: 0.75em;
-  border: 2px solid #000;
-  border-top: 0 none transparent;
+  content:      '';
+  position:     absolute;
+  top:          0;
+  left:         -2px;
+  bottom:       50%;
+  width:        0.75em;
+  border:       2px solid #000;
+  border-top:   0 none transparent;
   border-right: 0 none transparent;
 }
 

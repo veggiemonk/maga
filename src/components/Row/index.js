@@ -1,7 +1,7 @@
 import m from 'mithril'
 import _ from 'lodash'
 
-import { selectRow } from '../../redux/actions'
+import { toggleSelectRow } from '../../redux/actions'
 import Button from '../Button/index'
 
 //import css from 'font-awesome/css/font-awesome.css!'
@@ -24,11 +24,11 @@ Row.controller = function controller( props ) {
 
 Row.view = function view( c, props ) {
   const { columns, file, dispatch } = props
-  const v = k => _.result(_.find(columns, { id: k} ), 'visible')
+  const v = k => _.result( _.find( columns, { id: k } ), 'visible' )
   return (
     <tr>
       <td class={styles.text_center}
-          onclick={() => { dispatch(selectRow(file.fileId)) }}>{ m.trust( file[ 'checkbox' ] ) }</td>
+          onclick={() => { dispatch(toggleSelectRow(file.fileId)) }}>{ m.trust( file[ 'checkbox' ] ) }</td>
       <td class={styles.text_center}>
         <Button onclick={()=> {c.download(file['fileId'])}}>
           <i class={ `fa fa-lg ${file['dlClass'] || ''} ${file['alreadyDL'] || ''}` }>
@@ -54,7 +54,9 @@ Row.view = function view( c, props ) {
             title={ file['uploaderComment'] }>{ file[ 'uploaderCommentLimit' ] }
         </td> : ''  }
       <td class={styles.text_center}>
-        <a class={styles.text_danger} title='Remove' onclick={() => { c.remove( file[ 'fileId' ] ) } }>
+        <a class={styles.text_danger}
+           title='Remove'
+           onclick={() => { c.remove( file[ 'fileId' ] ) } }>
           { m.trust( file[ 'remove' ] )}
         </a></td>
     </tr>

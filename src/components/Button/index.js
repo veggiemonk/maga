@@ -4,9 +4,9 @@ import styles from '../../css/buttons.css!'
 
 let Button = {}
 
-Button.view = (c, props, children) => {
+Button.view = ( c, props, children ) => {
   const { className } = props
-  return(
+  return (
     <button
       class={`${styles.button} ${styles.button_primary} ${className || ''}`}
       onclick={props.onclick}>

@@ -4,20 +4,21 @@
 
 /* HYDRATING STORE */
 export const LOAD_DATA = 'LOAD_DATA'
-export const loadData  = ( columns, files, data, category ) => ( {
-  type:       LOAD_DATA,
-  columns,
-  files,
-  data,
-  category,
-  receivedAt: Date.now(),
-})
+export const loadData  = ( columns, files, data, category ) => (
+  {
+    type:       LOAD_DATA,
+    columns,
+    files,
+    data,
+    category,
+    receivedAt: Date.now(),
+  } )
 
 export const FETCH_DATA = 'FETCH_DATA'
 export const fetchData  = () => ( { type: FETCH_DATA } )
 
 export const REFRESH_DATA = 'REFRESH_DATA'
-export const refreshData = () => ( { type: REFRESH_DATA } )
+export const refreshData  = () => ( { type: REFRESH_DATA } )
 
 /* VIEW */
 export const RESET_VIEW        = 'RESET_VIEW'
@@ -33,11 +34,14 @@ export const TOGGLE_COLUMN_VIEW = 'TOGGLE_COLUMN_VIEW'
 export const toggleColumnView   = id => ( { type: TOGGLE_COLUMN_VIEW, id } )
 
 /* CONNECTION */
-//TODO
 export const LOGIN         = 'LOGIN'
+export const login         = ( username, password ) => ( { type: LOGIN, username, password } )
 export const LOGIN_FAILED  = 'LOGIN_FAILED'
+export const loginFailed   = ( msg ) => ( { type: LOGIN_FAILED, msg } )
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const loginSuccess  = ( credentials ) => ( { type: LOGIN_FAILED, credentials } )
 export const LOGOUT        = 'LOGOUT'
+export const logout        = () => ( { type: LOGOUT } )
 
 /* FILTERS */
 export const FILTER_DATE_BEGIN = 'FILTER_DATE_BEGIN'
@@ -74,17 +78,14 @@ export const PAGE_LAST            = 'PAGE_LAST'
 export const pageLast             = () => ( { type: PAGE_LAST } )
 export const CHANGE_ROW_DISPLAYED = 'CHANGE_ROW_DISPLAYED'
 export const changeRowDisplayed   = num => ( { type: CHANGE_ROW_DISPLAYED, num })
-//TODO
 export const TOGGLE_MENU_COLUMN_VIEW = 'TOGGLE_MENU_COLUMN_VIEW'
 export const toggleMenuColumnView    = () => ( { type: TOGGLE_MENU_COLUMN_VIEW } )
 
 /* ROWS */
 export const TOGGLE_SELECT_ALL = 'TOGGLE_SELECT_ALL'
 export const toggleSelectAll   = () => ( { type: TOGGLE_SELECT_ALL } )
-export const SELECT_ROW        = 'SELECT_ROW'
-export const selectRow         = (row) => ( { type: SELECT_ROW, row } )
-export const UNSELECT_ROW      = 'UNSELECT_ROW'
-export const unselectRow       = (row) => ( { type: UNSELECT_ROW, row } )
+export const TOGGLE_SELECT_ROW = 'TOGGLE_SELECT_ROW'
+export const toggleSelectRow   = ( row ) => ( { type: TOGGLE_SELECT_ROW, row } )
 
 /* GLOBALS */
 export const SET_LANGUAGE = 'SET_LANGUAGE'

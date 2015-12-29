@@ -57,7 +57,7 @@ export const sanitize = ( files, category ) => {
         },
         downloadCount:     () => {},
         date:              () => {
-          row[ key ] = moment( row[ key ], 'YYYY-MM-DD')
+          row[ key ]        = moment( row[ key ], 'YYYY-MM-DD' )
           row.dateFormatted = row[ key ].format( 'DD/MM/YYYY' )
         },
         fileId:            () => { row[ key ] ? row[ key ] = Number( row[ key ] ) : '' },

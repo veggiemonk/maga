@@ -10,7 +10,7 @@ import mocha from 'mocha'
 //
 let mochaTestScripts = [
   './test/redux.spec.js',
-  //'./test/menu.spec.js'
+  './test/utils.spec.js'
 ]
 
 //

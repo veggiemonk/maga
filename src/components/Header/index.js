@@ -2,7 +2,7 @@ import m from 'mithril'
 import styles from './style.css!'
 let Header = {}
 
-Header.controller = (props, children) => {
+Header.controller = ( props, children ) => {
   let c = {
     init: () => {
       //console.log(styles);
@@ -12,7 +12,7 @@ Header.controller = (props, children) => {
   return c
 }
 
-Header.view = (c, props, children) => {
+Header.view = ( c, props, children ) => {
   return (
     <ul>
       <li class={styles.HeaderBrand}>

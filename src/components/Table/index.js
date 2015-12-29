@@ -15,7 +15,7 @@ import styles from './table.css!'
 
 let Table = {}
 
-Table.controller = function controller(props) {
+Table.controller = function controller( props ) {
   let c = {
     /* toggleVisibility: colId => {
      dispatch( toggleColumnView( colId ) )
@@ -32,8 +32,8 @@ Table.controller = function controller(props) {
           return !col.sorted
             ? ( <i class='fa fa-sort right'></i> )
             : ( col.order
-              ? ( <i class='fa fa-sort-desc right'></i> )
-              : ( <i class='fa fa-sort-asc right'></i>  ) )
+            ? ( <i class='fa fa-sort-desc right'></i> )
+            : ( <i class='fa fa-sort-asc right'></i>  ) )
         }
       }
     },
@@ -41,16 +41,16 @@ Table.controller = function controller(props) {
   return c
 }
 
-Table.view = function view(c, props) {
+Table.view = function view( c, props ) {
   const { dispatch, display, data, columns, filters } = props
-  const idColSorted = getSortedColumn( columns )
-  const orderColSorted = _.result(_.find(columns, {id: idColSorted}), 'order') ? 'desc' : 'asc'
+  const idColSorted    = getSortedColumn( columns )
+  const orderColSorted = _.result( _.find( columns, { id: idColSorted } ), 'order' ) ? 'desc' : 'asc'
 
   return (
     <div style={`display : ${display ? 'inline-block' : 'none'};`}>
       <table class={styles.collapse}>
         <thead class={`${styles.fixed}`}>{
-          _(columns)
+          _( columns )
             .sortBy( x => x[ 'index' ] )
             .filter( x => x[ 'visible' ] )
             .map( col =>
@@ -63,17 +63,17 @@ Table.view = function view(c, props) {
               </th> ).value()
         }</thead>
         <tbody>{
-          _(data)
-          .sortByOrder( idColSorted, orderColSorted )
-          .slice( filters.startPageAt )
-          .take( filters.rowDisplayed )
-          .map( file => (
-            <Row
-              key={ file['index'] }
-              file={ file }
-              dispatch={ dispatch }
-              {...props}>
-            </Row> ) ).value()
+          _( data )
+            /*.sortByOrder( idColSorted, orderColSorted )
+            .slice( filters.startPageAt )
+            .take( filters.rowDisplayed )*/
+            .map( file => (
+              <Row
+                key={ file['index'] }
+                file={ file }
+                dispatch={ dispatch }
+                {...props}>
+              </Row> ) ).value()
         }</tbody>
       </table>
     </div>

@@ -1,6 +1,6 @@
 import m from 'mithril'
 import _ from 'lodash'
-import rome from 'rome'
+//import rome from 'rome'
 import { fetching } from '../../async'
 import Button from '../Button/index'
 import Input from '../Input/index'
@@ -19,9 +19,6 @@ import {
 } from '../../redux/actions'
 
 
-//TODO: make a session var in state
-const lang = 'fr'
-
 let Filters = {}
 
 Filters.controller = function controller( props ) {
@@ -36,16 +33,16 @@ Filters.controller = function controller( props ) {
 }
 
 Filters.config = ctrl => ( element, isInitialized, context ) => {
-  if ( !isInitialized ) {
+  /*if ( !isInitialized ) {
     rome( document.querySelector( '#dateBegin' ), {
       autoHideOnBlur: true,
-      inputFormat: 'DD/MM/YYYY',
+      inputFormat:    'DD/MM/YYYY',
     } )
-  }
+  }*/
 }
 //todo breadcrumbs
 Filters.view = function view( c, props, children ) {
-  const { dispatch, i18n, filters, data, files } = props
+  const { dispatch, i18n, language, filters, data, files } = props
   const count = data.length
   return (
     <div class="container">
@@ -53,30 +50,29 @@ Filters.view = function view( c, props, children ) {
         <div class="three columns">
           <Button
             className={'test'}
-            onclick={() => { fetching(dispatch);/* m.startComputation(); m.endComputation()*/ }}
-            >
+            onclick={ () => { fetching(dispatch) } }>
             <i class="fa fa-2x fa-refresh"></i>
-            {i18n.reload[lang]}
+            {i18n.reload[ language ]}
           </Button>
 
           <Input type="search"
                  incremental
                  oninput={ m.withAttr('value', c.search ) }
                  value={ filters.searchKeyword }
-                 placeholder={i18n.search[lang]}/>
+                 placeholder={i18n.search[language]}/>
 
           <Input id="dateBegin"
                  type="search"
                  config={Filters.config(c)}
                  oninput={ m.withAttr('value', c.dateBegin ) }
                  value={ filters.dateBegin }
-                 placeholder={i18n.dateBegin[lang]}/>
+                 placeholder={i18n.dateBegin[language]}/>
 
           <Input id="dateEnd"
                  type="search"
                  oninput={ m.withAttr('value', c.dateEnd ) }
                  value={ filters.dateEnd }
-                 placeholder={i18n.dateEnd[lang]}/>
+                 placeholder={i18n.dateEnd[language]}/>
         </div>
         <div class={`${styleCB.squaredFour}`}>
           <input type="checkbox"
@@ -87,7 +83,7 @@ Filters.view = function view( c, props, children ) {
             for="squaredFour"
             onclick={ m.withAttr('checked', c.toggleMenuColumnView ) /*(e) => {console.log(e)}*/ }>
           </label>
-          <p>{i18n.colVisible[lang]}</p>
+          <p>{i18n.colVisible[ language ]}</p>
         </div>
 
         <div class="six columns">
@@ -126,7 +122,7 @@ Filters.view = function view( c, props, children ) {
                  list="number"
                  value={ filters.rowDisplayed }/>
           <datalist id="number">
-            {_([ , ...Array( Math.floor( count / 10 ) ) ]).map( ( x, i ) =>
+            {_( [ , ...Array( Math.floor( count / 10 ) ) ] ).map( ( x, i ) =>
               <option label={i * 10}>{i * 10}</option>
             ).value()}
           </datalist>
@@ -136,7 +132,7 @@ Filters.view = function view( c, props, children ) {
       <div class="row">
         <div class="u-full-width center">
           <span>Showing: { Math.min( filters.rowDisplayed, count - filters.startPageAt ) } files out of { count }
-                (total: {files.length})</span>
+            (total: {files.length})</span>
           <br />
           <span> Page: { filters.page } out of {Math.ceil( count / filters.rowDisplayed )}</span>
         </div>

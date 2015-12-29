@@ -1,6 +1,5 @@
 @import '../../css/constants';
 
-
 .collapse {
   border-collapse: collapse;
 }
@@ -13,8 +12,8 @@
 .fixed {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 205px;
-  th {
+  height:     205px;
+  /*th {
     position: relative;
     background: transparent;
     color: #555555;
@@ -23,7 +22,7 @@
     margin-left: -25px;
     line-height: normal;
     border-left: 1px solid #800;
-  }
+  }*/
 }
 
 td, th {

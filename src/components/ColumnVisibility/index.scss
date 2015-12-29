@@ -4,29 +4,29 @@ $textColor: #fff;
 
 .spmenu {
   background: $groupSBlue;
-  position: fixed;
+  position:   fixed;
   margin-top: $heightHeader;
   h3 {
-    color: $textColor;
+    color:           $textColor;
     text-decoration: underline;
-    font-size: 1.9em;
-    padding: 20px;
-    margin: 0;
-    font-weight: 300;
-    background: $groupSBlue;
+    font-size:       1.9em;
+    padding:         20px;
+    margin:          0;
+    font-weight:     300;
+    background:      $groupSBlue;
   }
   a {
-    display: block;
-    padding: 1em;
-    color: $textColor;
-    font-size: 1.1em;
+    display:     block;
+    padding:     1em;
+    color:       $textColor;
+    font-size:   1.1em;
     font-weight: 300;
     &:hover {
       background: #258ecd;
     }
     &:active {
       background: $groupSBlue;
-      color: $footerColor;
+      color:      $footerColor;
     }
   }
 }
@@ -38,10 +38,10 @@ $textColor: #fff;
 /* Orientation-dependent styles for the content of the menu */
 
 .spmenu_vertical {
-  width: 240px;
-  height: 100%;
-  top: 0;
-  z-index: 1000;
+  width:    240px;
+  height:   100%;
+  top:      0;
+  z-index:  1000;
   overflow: auto;
   /*a {
     border-bottom: 1px solid $groupSBlue;
@@ -50,20 +50,20 @@ $textColor: #fff;
 }
 
 .spmenu_horizontal {
-  width: 100%;
-  height: 150px;
-  left: 0;
-  z-index: 1000;
+  width:    100%;
+  height:   150px;
+  left:     0;
+  z-index:  1000;
   overflow: hidden;
   h3 {
     height: 100%;
-    width: 20%;
-    float: left;
+    width:  20%;
+    float:  left;
   }
   a {
-    float: left;
-    width: 20%;
-    padding: 0.8em;
+    float:       left;
+    width:       20%;
+    padding:     0.8em;
     border-left: 1px solid #258ecd;
   }
 }
@@ -108,8 +108,8 @@ $textColor: #fff;
 
 .spmenu_push {
   overflow-x: hidden;
-  position: relative;
-  left: 0;
+  position:   relative;
+  left:       0;
 }
 
 .spmenu_push_toright {
@@ -125,17 +125,17 @@ $textColor: #fff;
 .spmenu,
 .spmenu_push {
   -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -moz-transition:    all 0.3s ease;
+  transition:         all 0.3s ease;
 }
 
 /* Example media queries */
 
-@media screen and (max-width: 55.1875em){
+@media screen and (max-width: 55.1875em) {
 
   .spmenu_horizontal {
     font-size: 75%;
-    height: 110px;
+    height:    110px;
   }
 
   .spmenu_top {
@@ -148,11 +148,11 @@ $textColor: #fff;
 
 }
 
-@media screen and (max-height: 26.375em){
+@media screen and (max-height: 26.375em) {
 
   .spmenu_vertical {
     font-size: 90%;
-    width: 190px;
+    width:     190px;
   }
 
   .spmenu_left,

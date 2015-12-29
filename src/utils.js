@@ -1,23 +1,70 @@
 import m from 'mithril'
+import moment from 'moment'
 
-export const stackLoader   = m.prop( 0 )
-export const isLoading     = () => stackLoader() > 0
-export const loaderDisplay = () => isLoading() ? 'display: block' : 'display: none'
 export const inc           = f => f( f() + 1 )
 export const dec           = f => f( f() - 1 )
 export const toggle        = f => f( !f() )
 
-export const getLastPage = (totalFiles, rowDisplayed) => {
+export const getLastPage = ( totalFiles, rowDisplayed ) => {
   return Math.ceil( totalFiles / rowDisplayed )
 }
 
-export const getStartPageAt = (totalFiles, rowDisplayed) => {
+export const getStartPageAt = ( totalFiles, rowDisplayed ) => {
   return ( (Math.ceil( totalFiles / rowDisplayed ) - 1) * rowDisplayed )
 }
 
-export const numberOfFilesDisplayed = (totalFiles, rowDisplayed, startPageAt) => {
+export const numberOfFilesDisplayed = ( totalFiles, rowDisplayed, startPageAt ) => {
   return Math.min( rowDisplayed, (totalFiles - startPageAt) )
 }
+
+/**
+ *
+ * @param date {string}
+ * @returns {Moment || null}
+ */
+export const validateDate = (date) => {
+  let dateError = false
+  if (!date) {
+    return null
+  } //Invalide Date
+
+  let sDate = date.split(/[.,\/ -]/)
+  let [sDay, sMonth, sYear] = sDate
+  if (!sDay) dateError = true
+
+  if (sMonth) {
+    if (isNaN(sMonth)) dateError = true
+  } else {
+    sMonth = new Date().getMonth() + 1
+  }
+
+  if (sYear) {
+    if (isNaN(sYear)) {
+      dateError = true
+    } else {
+      if (sYear < 100) {
+        if (sYear < 50) {
+          sYear = 2000 + parseInt(sYear)
+        } else {
+          sYear = 1900 + parseInt(sYear)
+        }
+      }
+    }
+  } else {
+    sYear = new Date().getFullYear() // fix bug : if month = 0 and year = 0 -> month <> january
+  }
+  //console.log({year: sYear, month: sMonth - 1, day: sDay});
+  const dateMoment = moment({
+    year: sYear,
+    month: sMonth - 1,
+    day: sDay
+  })
+
+  if (!dateError && (!dateMoment.isValid())) dateError = true
+
+  return !dateError ? dateMoment /*.format( 'DD/MM/YYYY' ).toString()*/ : null
+}
+
 
 /**
  * Make sure Mithril knows we updated something

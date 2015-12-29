@@ -8,8 +8,8 @@
 .fixed {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 205px; }
-  .fixed th {
+  height: 205px;
+  /*th {
     position: relative;
     background: transparent;
     color: #555555;
@@ -17,10 +17,11 @@
     top: 0;
     margin-left: -25px;
     line-height: normal;
-    border-left: 1px solid #800; }
+    border-left: 1px solid #800;
+  }*/ }
 
 td, th {
-  border: 1px solid #086CC3; }
+  border: 1px solid #086cc3; }
 
 tr:nth-child(even) {
   background: aliceblue; }

@@ -1,54 +1,51 @@
-//TODO: make it dynamic
-export const lang = (sessionStorage && sessionStorage.lang) || navigatorLanguage()
-
 
 /**
  * Returns one of supported language, default if not.
  * Supported languages: 'nl', 'fr', 'en' (default).
  * @returns {string}
  */
-export function navigatorLanguage () {
+export function navigatorLanguage() {
   let locale = (window.navigator.userLanguage || window.navigator.language)
-  locale = /..-../.test(locale) ? locale.split('-')[0] : locale.split('_')[0]
-  if ((locale !== 'en') && (locale !== 'fr') && (locale !== 'nl') ) locale = 'en'
+  locale     = /..-../.test( locale ) ? locale.split( '-' )[ 0 ] : locale.split( '_' )[ 0 ]
+  if ( (locale !== 'en') && (locale !== 'fr') && (locale !== 'nl') ) locale = 'en'
   return locale
 }
 
 export const i18n = {
-  filters: {
-    reload: {
-      fr:'Rafraîchir',
+  filters:  {
+    reload:     {
+      fr: 'Rafraîchir',
       nl: 'Opnieuw laden',
       en: 'Reload',
     },
-    search: {
+    search:     {
       fr: 'Recherche...',
       nl: 'Zoeken...',
       en: 'Search...',
     },
-    dateTo: {
+    dateTo:     {
       fr: 'à',
       nl: 'tot',
       en: 'to',
     },
-    dateBegin: {
+    dateBegin:  {
       fr: 'Date début',
       nl: 'Begindatum',
       en: 'Start Date',
     },
-    dateEnd: {
+    dateEnd:    {
       fr: 'Date fin',
       nl: 'Einddatum',
       en: 'End Date',
     },
-    colVisible : {
+    colVisible: {
       fr: 'Afficher Colonnes',
       nl: 'Tonen',
       en: 'Show Column',
     }
   },
-  login: {
-    login: {
+  login:    {
+    login:    {
       fr: 'Nom d\'utilisateur',
       nl: 'Gebruikernaam',
       en: 'Username',
@@ -58,14 +55,14 @@ export const i18n = {
       nl: 'Password',
       en: 'Password',
     },
-    submit: {
-      fr: 'Envoyer',
+    submit:   {
+      fr: 's\'Authentifier',
       nl: 'Verzenden',
       en: 'Submit',
     },
   },
-  menu:{
-    all: {
+  menu:     {
+    all:    {
       fr: 'Tous',
       nl: 'Alle',
       en: 'all',

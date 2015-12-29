@@ -3,7 +3,7 @@ import styles from './menu.css!'
 
 import {filterMenuRef, filterMenuCat, showAllDocument } from './../../redux/actions'
 
-let Menu = {}
+let Menu   = {}
 const lang = 'fr' //TODO : i18n
 
 /***
@@ -25,7 +25,7 @@ export let labelCati18n = ( item, lang ) => {
 }
 
 const listRefDoc = ( listCat, cat ) =>
-  _(listCat)
+  _( listCat )
     .filter( x => x[ 'categoryNumber' ] === cat )
     .reduce( ( acc, next ) => {
       acc.push( next[ 'referenceDocument' ] )
@@ -34,21 +34,22 @@ const listRefDoc = ( listCat, cat ) =>
 
 Menu.view = function view( c, props ) {
   const { category, files, dispatch, i18n } = props
-  const root = (
+  const root   = (
     <li class={styles.menuRoot}
         onclick={() => {dispatch(showAllDocument())}}>
-    {i18n.all[lang]} <span class={styles.badge}>{ files.length }</span>
-  </li>
+      {i18n.all[ lang ]} <span class={styles.badge}>{ files.length }</span>
+    </li>
   )
   const others = (
     <li
-    class={styles.catLi}
-    onclick={() => { dispatch(filterMenuRef(''))} }>
-    {i18n.others[lang]} <span class={styles.badge}>{files.filter( x => x[ 'referenceDocument' ] === '' ).length}</span>
-  </li>
+      class={styles.catLi}
+      onclick={() => { dispatch(filterMenuRef(''))} }>
+      {i18n.others[ lang ]} <span
+      class={styles.badge}>{files.filter( x => x[ 'referenceDocument' ] === '' ).length}</span>
+    </li>
   )
   const catego = (
-    _(category).map( cat => (
+    _( category ).map( cat => (
       <li class={styles.catLi} key={_(cat).get( [0 , 'categoryNumber'] )}>
                 <span class={styles.catSpan}
                       onclick={() => {
@@ -59,18 +60,18 @@ Menu.view = function view( c, props ) {
                         )
                       }
                 }>
-                  { _(cat).get( [0 , 'categoryNumber'] ) + '-' + labelCati18n( cat[0], lang ) }
+                  { _( cat ).get( [ 0, 'categoryNumber' ] ) + '-' + labelCati18n( cat[ 0 ], lang ) }
                 </span>
-        <span class={styles.badge}>{ _(cat).get( [0, 'filesPerCat'] ) }</span>
+        <span class={styles.badge}>{ _( cat ).get( [ 0, 'filesPerCat' ] ) }</span>
         <ul class={styles.refDoc}>
-          { _(cat).map( doc => (
+          { _( cat ).map( doc => (
             <li class={styles.docLi} key={doc['referenceDocument']}
                 onclick={() => {dispatch( filterMenuRef(doc['referenceDocument'] ) ) } }>
                   <span class={styles.docSpan}>
-                    { doc[ 'referenceDocument' ] + ' - ' + doc['labelDoc'+lang.toUpperCase()]}
+                    { doc[ 'referenceDocument' ] + ' - ' + doc[ 'labelDoc' + lang.toUpperCase() ]}
                   </span>
               <span></span>
-              <span class={styles.badge}>{ doc['filesPerRef'] }</span>
+              <span class={styles.badge}>{ doc[ 'filesPerRef' ] }</span>
             </li>
           ) ).value()
           }

@@ -5,12 +5,12 @@ import { headers, urlEchoServer} from '../../settings'
 import styleB from '../../css/buttons.css!'
 import styles from './index.css!'
 
-const lang = 'fr'
+const lang   = 'fr'
 let Uploader = {}
 
 //TODO: extract to client side execution when doing server side rendering
 //drag and drop micro-library
-const dragdrop = (element, options) => {
+const dragdrop = ( element, options ) => {
   options = options || {}
 
   element.addEventListener( 'dragover', activate )
@@ -20,13 +20,13 @@ const dragdrop = (element, options) => {
   element.addEventListener( 'drop', update )
   window.addEventListener( 'blur', deactivate )
 
-  function activate(e) {
+  function activate( e ) {
     e.preventDefault()
   }
 
   function deactivate() {}
 
-  function update(e) {
+  function update( e ) {
     e.preventDefault()
     if ( typeof options.onchange == 'function' ) {
       options.onchange( (e.dataTransfer || e.target).files )
@@ -42,7 +42,7 @@ const upload = files => {
   return fetch( urlEchoServer, { method: 'POST', body: formData } )
 }
 
-Uploader.config = ctrl => (element, isInitialized, context) => {
+Uploader.config = ctrl => ( element, isInitialized, context ) => {
   if ( !isInitialized ) {
     dragdrop( element, { onchange: ctrl.onchange } )
   }
@@ -59,9 +59,9 @@ Uploader.controller = props => {
       upload( files )
         .then( () => { m.redraw() } )
         .catch( e => {
-          console.error(e)
-          alert('File upload Failed')
-          throw new Error('File upload Failed', e)
+          console.error( e )
+          alert( 'File upload Failed' )
+          throw new Error( 'File upload Failed', e )
         } )
     } ),
     toggleUpload: () => {
@@ -73,14 +73,14 @@ Uploader.controller = props => {
 }
 //TODO: progress bar
 
-Uploader.view = (c, props) => {
+Uploader.view = ( c, props ) => {
   return (
     <div>
       <a href="#box"
          class={`${styleB.button} ${styles.upload}`}
-         onclick={c.toggleUpload}><i class="fa fa-2x fa-cloud-upload"></i>{props.i18n.uploadBtn[lang]}</a>
+         onclick={c.toggleUpload}><i class="fa fa-2x fa-cloud-upload"></i>{props.i18n.uploadBtn[ lang ]}</a>
       <div id="box" class={styles.box}>
-        <div class={styles.lightbox} config={Uploader.config(c)} >
+        <div class={styles.lightbox} config={Uploader.config(c)}>
           <a href="#">X</a>
           <ul class={styles.dropzone}>{
             _.map( c.files, ( x => (

@@ -1,6 +1,5 @@
-
 import _ from 'lodash'
-import {i18n, lang} from './i18n.js'
+import {i18n, navigatorLanguage} from './i18n.js'
 
 const permanentColumn = [
   {
@@ -125,14 +124,14 @@ const unvisibleColumn = [
     visible: true,
     toggle:  true,
   }, {
-    index: 19,
-    id: 'index',
-    name: 'index',
-    sortable: true,
+    index:      19,
+    id:         'index',
+    name:       'index',
+    sortable:   true,
     searchable: false,
-    visible: false,
-    toggle: false,
-    dataType: 'number',
+    visible:    false,
+    toggle:     false,
+    dataType:   'number',
   } ]
 
 export const defaults = {
@@ -158,11 +157,12 @@ export const defaults = {
   menuFilter:     { cat: undefined, ref: undefined },
   searchKeyword:  '',
   menuColumnView: false,
+  username:       'username'
 }
 
 export const initialState = {
-  columns: [],
-  filters: {
+  columns:         [],
+  filters:         {
     startPageAt:    defaults.startPageAt,
     page:           defaults.page,
     rowDisplayed:   defaults.rowDisplayed,
@@ -172,33 +172,33 @@ export const initialState = {
     searchKeyword:  defaults.searchKeyword,
     menuColumnView: defaults.menuColumnView
   },
-  category:   [],
-  files:   [],
-  data:    [],
-  selectedRow: [],
-  language: 'en',
-  username: 'username',
-  isAuthenticated: true,
-  isFetching: false,
-  didInvalidate: false,
-  lastUpdated: Date.now(),
+  category:        [],
+  files:           [],
+  data:            [],
+  selectedRow:     [],
+  language:        (localStorage && localStorage.lang) || navigatorLanguage(),
+  username:        (localStorage && localStorage.lastLogin) || defaults.username,
+  isAuthenticated: false,
+  isFetching:      false,
+  didInvalidate:   false,
+  lastUpdated:     Date.now(),
 }
 
 
 //sort then merge with default config
 export const columns = _( [ ...permanentColumn, ...unvisibleColumn ] )
   .sortBy( x => x.index )
-  .map( x => Object.assign( {}, defaults.col, x ))
+  .map( x => Object.assign( {}, defaults.col, x ) )
   .value()
 
 //TODO: URL FOR TEST, DEV, QA and PROD???
-export const urlServer = 'http://localhost:8019'
+export const urlServer     = 'http://localhost:8019'
 export const urlEchoServer = 'http://localhost:3246/echo/json'
-export const fetchURL  = urlServer + '/file/list'
+export const fetchURL      = urlServer + '/file/list'
 //export const fetchURLFile     = '/test/fileListF01.json'
 export const fetchURLFile     = 'test/fileList.json'
 export const fetchURLCategory = 'test/category.json'
-export const headers       = method => {
+export const headers          = method => {
   return {
     credentials: 'same-origin',
     method:      method,

@@ -29,8 +29,8 @@
 
 .input[type="submit"].button_primary, .input[type="reset"].button_primary, .input[type="button"].button_primary {
   color: #fff;
-  background-color: #086CC3;
-  border-color: #086CC3; }
+  background-color: #086cc3;
+  border-color: #086cc3; }
 
 .input[type="submit"].button_primary:hover, .input[type="reset"].button_primary:hover, .input[type="button"].button_primary:hover {
   color: #fff;

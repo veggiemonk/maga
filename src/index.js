@@ -11,7 +11,7 @@ import Filters from './components/Filters/index'
 import Table from './components/Table/index'
 import ColumnVisibility from './components/ColumnVisibility/index'
 
-import {lang, i18n} from './i18n'
+import {i18n} from './i18n'
 
 import styles from './css/global.css!'
 
@@ -19,27 +19,34 @@ let App        = {}
 App.controller = props => {
   //TODO: LOGIN and CREDENTIALS
   let c = {}
+  //move async one level up
   fetching( props.store.dispatch )//.then( ()=> { console.log( 'LOADED...' )} )
   m.redraw.strategy( 'diff' )
   return c
 }
 
+const putTimestamp = (dispatch) => (action) => {
+  action.receivedAt = Date.now()
+  dispatch(action)
+}
+
 App.view = ( c, props ) => {
 
   const state = props.store.getState()
-  const { dispatch } = props.store
+  const { dispatch: origDispatch } = props.store
+  const dispatch = putTimestamp(origDispatch)
   const {filters, files, isFetching, language, isAuthenticated} = state
   return (
     <div>
       <Login
         display={!isAuthenticated}
-        dispatch={dispatch}
+        dispatch={putTimestamp(dispatch)}
         i18n={i18n.login}
-        language={language} />
-      <Loader display={isFetching} />
-      <aside class={styles.Aside} >
+        language={language}/>
+      <Loader display={isFetching}/>
+      <aside class={styles.Aside}>
         <Uploader
-          dispatch={dispatch}
+          dispatch={putTimestamp(dispatch)}
           i18n={i18n.uploader}
           {...state}>
         </Uploader>
@@ -52,18 +59,18 @@ App.view = ( c, props ) => {
       <main class={styles.Main}>
         <ColumnVisibility
           display={filters.menuColumnView}
-          dispatch={dispatch}
+          dispatch={putTimestamp(dispatch)}
           i18n={i18n.columnVisibility}
           {...state}>
         </ColumnVisibility>
         <Filters
-          dispatch={dispatch}
+          dispatch={putTimestamp(dispatch)}
           i18n={i18n.filters}
           {...state}>
         </Filters>
         <Table
           display={files.length > 0}
-          dispatch={dispatch}
+          dispatch={putTimestamp(dispatch)}
           i18n={i18n.table}
           {...state}>
         </Table>

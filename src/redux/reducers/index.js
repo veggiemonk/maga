@@ -6,6 +6,7 @@ import { sortColumn,
   getSortedColumn,
   toggleColView } from './columns'
 import { filtering } from './filters'
+import { validateDate } from './../../utils'
 import {
   FILTER_DATE_BEGIN,
   FILTER_DATE_END,
@@ -18,8 +19,7 @@ import {
   PAGE_LAST,
   CHANGE_ROW_DISPLAYED,
   TOGGLE_SELECT_ALL,
-  SELECT_ROW,
-  UNSELECT_ROW,
+  TOGGLE_SELECT_ROW,
   LOAD_DATA,
   FETCH_DATA,
   SORT_COLUMN,
@@ -29,6 +29,10 @@ import {
   SHOW_ALL_DOCUMENT,
   SET_LANGUAGE,
   SET_USERNAME,
+  LOGIN,
+  LOGIN_FAILED,
+  LOGIN_SUCCESS,
+  LOGOUT,
 } from '../actions'
 
 const rootReducer = ( state = initialState, action ) => {
@@ -44,26 +48,26 @@ const rootReducer = ( state = initialState, action ) => {
         data:        action.data,
         category:    action.category,
         isFetching:  false,
-        lastUpdated: action.receivedAt
+        lastUpdated: action.receivedAt || Date.now(),
       } )
 
     case FETCH_DATA:
       return Object.assign( {}, state, {
-        isFetching: true
+        isFetching: true,
+        lastUpdated: action.receivedAt || Date.now(),
       } )
 
-    case SELECT_ROW:
+    case TOGGLE_SELECT_ROW:
       return Object.assign( {}, state, {
-        selectedRow: [...state.selectedRow, action.row]
-      })
-
-    case UNSELECT_ROW:
-      return Object.assign( {}, state, {
-        selectedRow: _.without(state.selectedRow, action.row)
-      })
+        lastUpdated: action.receivedAt || Date.now(),
+        selectedRow: _.contains( state.selectedRow, action.row )
+                       ? _.without( state.selectedRow, actions.row ) // remove selected row
+                       : [ ...state.selectedRow, action.row ]   // add selected row
+      } )
 
     case RESET_VIEW:
       return filtering( Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         columns: resetSort( state.columns ),
         filters: {
           startPageAt:    defaults.startPageAt,
@@ -79,6 +83,7 @@ const rootReducer = ( state = initialState, action ) => {
 
     case SHOW_ALL_DOCUMENT:
       return filtering( Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         columns: resetSort( state.columns ),
         filters: Object.assign( {}, state.filters, {
           startPageAt: defaults.startPageAt,
@@ -89,11 +94,13 @@ const rootReducer = ( state = initialState, action ) => {
 
     case TOGGLE_COLUMN_VIEW:
       return filtering( Object.assign( {}, state, {
-        columns: toggleColView(state.columns, action.id)
+        lastUpdated: action.receivedAt || Date.now(),
+        columns: toggleColView( state.columns, action.id )
       } ) )
 
     case TOGGLE_MENU_COLUMN_VIEW:
       return Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         filters: Object.assign( {}, state.filters, {
           page:           defaults.page,
           startPageAt:    defaults.startPageAt,
@@ -102,38 +109,44 @@ const rootReducer = ( state = initialState, action ) => {
       } )
 
     case SORT_COLUMN:
-      if (_.result(_.find(state.columns, { id:  action.id} ), 'sortable')) {
+      if ( _.result( _.find( state.columns, { id: action.id } ), 'sortable' ) ) {
         return Object.assign( {}, state, {
+          lastUpdated: action.receivedAt || Date.now(),
           columns: sortColumn( state.columns, action.id ),
         } )
       } else {
         return state
       }
 
-    //TODO: parse Date with MOMENT
     case FILTER_DATE_BEGIN:
-      return filtering( Object.assign( {}, state, {
+      const dateB = validateDate(action.date)
+      return dateB ? filtering( Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         columns: resetSort( state.columns ),
         filters: Object.assign( {}, state.filters, {
           page:        defaults.page,
           startPageAt: defaults.startPageAt,
-          dateBegin:   action.date,
+          dateBegin:   dateB.format( 'DD/MM/YYYY' ).toString(),
         } )
       } ) )
+        : state
 
-    //TODO: parse Date with MOMENT
     case FILTER_DATE_END:
-      return filtering( Object.assign( {}, state, {
+      const dateE = validateDate(action.date)
+      return dateE ? filtering( Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         columns: resetSort( state.columns ),
         filters: Object.assign( {}, state.filters, {
           page:        defaults.page,
           startPageAt: defaults.startPageAt,
-          dateEnd:     action.date,
+          dateEnd:     dateE.format( 'DD/MM/YYYY' ).toString(),
         } )
       } ) )
+        : state
 
     case FILTER_MENU_REF:
       return filtering( Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         columns: resetSort( state.columns ),
         filters: Object.assign( {}, state.filters, {
           page:        defaults.page,
@@ -144,6 +157,7 @@ const rootReducer = ( state = initialState, action ) => {
 
     case FILTER_MENU_CAT:
       return filtering( Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         columns: resetSort( state.columns ),
         filters: Object.assign( {}, state.filters, {
           page:        defaults.page,
@@ -154,6 +168,7 @@ const rootReducer = ( state = initialState, action ) => {
 
     case FILTER_SEARCH:
       return filtering( Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         columns: resetSort( state.columns ),
         //every time it filters, reset page and startPageAt
         filters: Object.assign( {}, state.filters, {
@@ -166,8 +181,9 @@ const rootReducer = ( state = initialState, action ) => {
     case PAGE_NEXT:
       if ( action.filesTotal > sa + rd ) {
         return filtering( Object.assign( {}, state, {
+          lastUpdated: action.receivedAt || Date.now(),
           filters: Object.assign( {}, state.filters, { page: state.filters.page + 1, startPageAt: sa + rd } ),
-          data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
+          data:    _( state.data ).sortBy( sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
         } ) )
       } else {
         return state
@@ -176,8 +192,9 @@ const rootReducer = ( state = initialState, action ) => {
     case PAGE_PREV:
       if ( sa - rd >= 0 ) {
         return filtering( Object.assign( {}, state, {
+          lastUpdated: action.receivedAt || Date.now(),
           filters: Object.assign( {}, state.filters, { page: state.filters.page - 1, startPageAt: sa - rd } ),
-          data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
+          data:    _( state.data ).sortBy( sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
         } ) )
       } else {
         return state
@@ -185,21 +202,24 @@ const rootReducer = ( state = initialState, action ) => {
 
     case PAGE_FIRST:
       return Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         filters: Object.assign( {}, state.filters, { page: defaults.page, startPageAt: defaults.startPageAt } ),
-        data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
+        data:    _( state.data ).sortBy( sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
       } )
 
     case PAGE_LAST:
       return Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         filters: Object.assign( {}, state.filters, {
           page:        Math.ceil( state.data.length / state.filters.rowDisplayed ),
           startPageAt: ( (Math.ceil( state.data.length / state.filters.rowDisplayed ) - 1) * state.filters.rowDisplayed ),
         } ),
-        data:    _(state.data).sortBy(  sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
+        data:    _( state.data ).sortBy( sort( state.columns, getSortedColumn( state.columns ) ) ).value(),
       } )
 
     case CHANGE_ROW_DISPLAYED:
       return Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         filters: Object.assign( {}, state.filters,
           {
             page:         defaults.page,
@@ -209,14 +229,42 @@ const rootReducer = ( state = initialState, action ) => {
       } )
 
     case SET_LANGUAGE:
+      if ( localStorage ) localStorage.language = action.language
       return Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         language: action.language
-      })
+      } )
 
     case SET_USERNAME:
+      if ( localStorage ) localStorage.lastLogin = action.username
       return Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
         username: action.username
-      })
+      } )
+
+    case LOGIN:
+      return Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
+        isFetching: true
+      } )
+
+    case LOGIN_SUCCESS:
+      return Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
+        username: action.username,
+        isAuthenticated: true,
+        isFetching: false
+      } )
+
+    case LOGIN_FAILED:
+      return Object.assign( {}, state, {
+        lastUpdated: action.receivedAt || Date.now(),
+        isAuthenticated: false,
+        isFetching: false
+      } )
+
+    case LOGOUT:
+      return _.clone(initialState, true)
 
     default:
       return state
