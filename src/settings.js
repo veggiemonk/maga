@@ -157,6 +157,7 @@ export const defaults = {
   menuFilter:     { cat: undefined, ref: undefined },
   searchKeyword:  '',
   menuColumnView: false,
+  dateFormat:     'DD/MM/YYYY',
 }
 
 export const initialState = {

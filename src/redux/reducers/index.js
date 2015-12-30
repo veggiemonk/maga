@@ -126,7 +126,7 @@ const rootReducer = ( state = initialState, action ) => {
         filters: Object.assign( {}, state.filters, {
           page:        defaults.page,
           startPageAt: defaults.startPageAt,
-          dateBegin:   action.date !== '' ? dateB.format( 'DD/MM/YYYY' ).toString() : '',
+          dateBegin:   action.date !== '' ? dateB.format( defaults.dateFormat ).toString() : '',
         } )
       } ) )
         : state
@@ -139,7 +139,7 @@ const rootReducer = ( state = initialState, action ) => {
         filters: Object.assign( {}, state.filters, {
           page:        defaults.page,
           startPageAt: defaults.startPageAt,
-          dateEnd:     action.date !== '' ? dateB.format( 'DD/MM/YYYY' ).toString() : '',
+          dateEnd:     action.date !== '' ? dateE.format( defaults.dateFormat ).toString() : '',
         } )
       } ) )
         : state

@@ -223,19 +223,33 @@ suite( 'TABLE', function () {
       expect( true ).to.equal( false )
     } )
 
-    test( 'should filter files created after 22/05/2014', () => {
+    test( 'should filter files created after 20/09/2015', () => {
+      //filterDateBegin('20/9')
+      //check filters .datebegin
+      //reduce
+      //check number of files
       expect( true ).to.equal( false )
     } )
 
-    test( 'should filter files created after 22/05/2014 and before 01/01/2015', () => {
+    test( 'should filter files created after 20/09/2015 and before 22/09/2015', () => {
+      //filterDateBegin('20/9')
+      //filterDateEnd('22/9')
+      //check filters dateBegin dateEnd
+      //reduce
+      //check number of files === 5
       expect( true ).to.equal( false )
     } )
 
-    test( 'should filter files created before 01/01/2015', () => {
+    test( 'should filter files created before 22/09/2015', () => {
+      //filterDateBegin('22/9')
+      //check filters .datebegin
+      //reduce
+      //check number of files
       expect( true ).to.equal( false )
     } )
 
     test( 'should select a row', () => {
+      //
       expect( true ).to.equal( false )
     } )
     test( 'should deselect a row', () => {

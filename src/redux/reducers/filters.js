@@ -18,10 +18,10 @@ export const filtering = state => {
         }
       }
       if ( isValid && dateBegin ) {
-        isValid = file[ 'date' ].isAfter( dateBegin )
+        isValid = file[ 'date' ].isAfter( moment(dateBegin, defaults.dateFormat) )
       }
       if ( isValid && filters.dateEnd ) {
-        isValid = file[ 'date' ].isBefore( dateEnd )
+        isValid = file[ 'date' ].isBefore( moment(dateEnd, defaults.dateFormat) )
       }
       if ( isValid && filters.searchKeyword ) {
         const regex = new RegExp( String( searchKeyword ), 'i' )
