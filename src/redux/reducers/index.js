@@ -42,14 +42,14 @@ const rootReducer = ( state = initialState, action ) => {
 
   switch ( action.type ) {
     case LOAD_DATA:
-      return Object.assign( {}, state, {
+      return filtering( Object.assign( {}, state, {
         columns:     action.columns,
         files:       action.files,
         data:        action.data,
         category:    action.category,
         isFetching:  false,
         lastUpdated: action.receivedAt || Date.now(),
-      } )
+      } ) )
 
     case FETCH_DATA:
       return Object.assign( {}, state, {
@@ -61,7 +61,7 @@ const rootReducer = ( state = initialState, action ) => {
       return Object.assign( {}, state, {
         lastUpdated: action.receivedAt || Date.now(),
         selectedRow: _.contains( state.selectedRow, action.row )
-                       ? _.without( state.selectedRow, actions.row ) // remove selected row
+                       ? _.without( state.selectedRow, action.row ) // remove selected row
                        : [ ...state.selectedRow, action.row ]   // add selected row
       } )
 
@@ -120,26 +120,26 @@ const rootReducer = ( state = initialState, action ) => {
 
     case FILTER_DATE_BEGIN:
       const dateB = validateDate(action.date)
-      return dateB ? filtering( Object.assign( {}, state, {
+      return dateB || action.date === '' ? filtering( Object.assign( {}, state, {
         lastUpdated: action.receivedAt || Date.now(),
         columns: resetSort( state.columns ),
         filters: Object.assign( {}, state.filters, {
           page:        defaults.page,
           startPageAt: defaults.startPageAt,
-          dateBegin:   dateB.format( 'DD/MM/YYYY' ).toString(),
+          dateBegin:   action.date !== '' ? dateB.format( 'DD/MM/YYYY' ).toString() : '',
         } )
       } ) )
         : state
 
     case FILTER_DATE_END:
       const dateE = validateDate(action.date)
-      return dateE ? filtering( Object.assign( {}, state, {
+      return dateE || action.date === '' ? filtering( Object.assign( {}, state, {
         lastUpdated: action.receivedAt || Date.now(),
         columns: resetSort( state.columns ),
         filters: Object.assign( {}, state.filters, {
           page:        defaults.page,
           startPageAt: defaults.startPageAt,
-          dateEnd:     dateE.format( 'DD/MM/YYYY' ).toString(),
+          dateEnd:     action.date !== '' ? dateB.format( 'DD/MM/YYYY' ).toString() : '',
         } )
       } ) )
         : state
@@ -251,7 +251,8 @@ const rootReducer = ( state = initialState, action ) => {
     case LOGIN_SUCCESS:
       return Object.assign( {}, state, {
         lastUpdated: action.receivedAt || Date.now(),
-        username: action.username,
+        username: action.credentials.username,
+        token: action.credentials.token,
         isAuthenticated: true,
         isFetching: false
       } )

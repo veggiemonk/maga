@@ -60,7 +60,7 @@ export const validateDate = (date) => {
     day: sDay
   })
 
-  if (!dateError && (!dateMoment.isValid())) dateError = true
+  if (!dateError && !dateMoment.isValid()) dateError = true
 
   return !dateError ? dateMoment /*.format( 'DD/MM/YYYY' ).toString()*/ : null
 }

@@ -64,9 +64,9 @@ Table.view = function view( c, props ) {
         }</thead>
         <tbody>{
           _( data )
-            /*.sortByOrder( idColSorted, orderColSorted )
+            .sortByOrder( idColSorted, orderColSorted )
             .slice( filters.startPageAt )
-            .take( filters.rowDisplayed )*/
+            .take( filters.rowDisplayed )
             .map( file => (
               <Row
                 key={ file['index'] }

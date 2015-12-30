@@ -40,7 +40,7 @@ const unvisibleColumn = [
     index:   5,
     id:      'uploadUserName',
     name:    'User',
-    visible: false,
+    visible: true,
     toggle:  true,
   }, {
     index:    6,
@@ -157,7 +157,6 @@ export const defaults = {
   menuFilter:     { cat: undefined, ref: undefined },
   searchKeyword:  '',
   menuColumnView: false,
-  username:       'username'
 }
 
 export const initialState = {
@@ -177,8 +176,8 @@ export const initialState = {
   data:            [],
   selectedRow:     [],
   language:        (localStorage && localStorage.lang) || navigatorLanguage(),
-  username:        (localStorage && localStorage.lastLogin) || defaults.username,
-  isAuthenticated: false,
+  username:        (localStorage && localStorage.lastLogin) || '',
+  isAuthenticated: true,
   isFetching:      false,
   didInvalidate:   false,
   lastUpdated:     Date.now(),

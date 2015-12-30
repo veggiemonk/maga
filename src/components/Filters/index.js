@@ -64,13 +64,13 @@ Filters.view = function view( c, props, children ) {
           <Input id="dateBegin"
                  type="search"
                  config={Filters.config(c)}
-                 oninput={ m.withAttr('value', c.dateBegin ) }
+                 onchange={ m.withAttr('value', c.dateBegin ) }
                  value={ filters.dateBegin }
                  placeholder={i18n.dateBegin[language]}/>
 
           <Input id="dateEnd"
                  type="search"
-                 oninput={ m.withAttr('value', c.dateEnd ) }
+                 onchange={ m.withAttr('value', c.dateEnd ) }
                  value={ filters.dateEnd }
                  placeholder={i18n.dateEnd[language]}/>
         </div>
