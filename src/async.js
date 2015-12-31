@@ -1,8 +1,9 @@
 import 'isomorphic-fetch'
 
 import { groupMenu, sanitize } from './data'
-import { loadData, fetchData } from './redux/actions'
-import { columns, headers, fetchURLFile, fetchURLCategory} from './settings'
+import { loadData, fetchData, sendLogin, loginSuccess, loginFailed } from './redux/actions'
+import { columns, headers, fetchURLFile, fetchURLCategory, urlServer} from './settings'
+import { catchError } from './utils'
 
 /* ASYNC */
 export const fetchFileList     = ( url ) => fetch( url, headers( 'GET' ) ).then( res => res.json() )
@@ -20,12 +21,22 @@ export const fetching          = ( dispatch ) => {
           files,
           groupMenu( CategoryList, FileList ) )
       )
-    } ) //TODO: dispatch error loading data!
+    } ).catch( catchError )
 }
 
-
-export const login = ({login, password}) => {
-  dispatch( 'LOGIN ')
+export const dispatchLogin = ( {dispatch, login, password} ) => {
+  dispatch( sendLogin( login, password ) )
+  return fetch( urlServer, {
+    credentials: 'same-origin',
+    method:      'POST',
+    headers:     {
+      Accept:         'application/json',
+      'Content-Type': 'application/json',
+    },
+  } ).then( res => res.json() )
+    .then( data => {
+      dispatch( loginSuccess( { ...data } ) )
+    } ).catch( catchError )
 }
 
 /* DOWNLOAD A FILE */

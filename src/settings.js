@@ -178,7 +178,7 @@ export const initialState = {
   selectedRow:     [],
   language:        (localStorage && localStorage.lang) || navigatorLanguage(),
   username:        (localStorage && localStorage.lastLogin) || '',
-  isAuthenticated: true,
+  isAuthenticated: false,
   isFetching:      false,
   didInvalidate:   false,
   lastUpdated:     Date.now(),

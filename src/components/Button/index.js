@@ -9,7 +9,8 @@ Button.view = ( c, props, children ) => {
   return (
     <button
       class={`${styles.button} ${styles.button_primary} ${className || ''}`}
-      onclick={props.onclick}>
+      onclick={props.onclick}
+      {...props}>
       {children}
     </button>
   )

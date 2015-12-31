@@ -1,6 +1,7 @@
 import m from 'mithril'
-import { setLanguage, login, loginFailed } from '../../redux/actions'
-import { urlEchoServer } from '../../settings'
+import { setLanguage, loginFailed, sendLogin } from '../../redux/actions'
+import { dispatchLogin } from '../../async'
+import { urlServer } from '../../settings'
 
 import styles from './login.css!'
 import styleR from '../../css/radio.css!'
@@ -8,9 +9,9 @@ import styleR from '../../css/radio.css!'
 let Login = {}
 
 const parseField = ( dispatch ) => {
-  const username = String( document.querySelector( '#fieldUser' ).value )
+  const login = String( document.querySelector( '#fieldUser' ).value )
   const password = String( document.querySelector( '#fieldPassword' ).value )
-  if ( !username && username === '' ) {
+  if ( !login && login === '' ) {
     dispatch( loginFailed( 'ERROR: empty username' ) )
     return
   }
@@ -19,14 +20,15 @@ const parseField = ( dispatch ) => {
     return
   }
   return {
-    username,
+    login,
     password,
   }
 }
 //TODO: make middleware
-const submitLogin = ( dispatch ) => {
+const submitLogin = ( {dispatch, e} ) => {
+  console.log(e)
   const o = parseField( dispatch )
-  o ? dispatch( login( o ) ) : alert( 'ERROR' )
+  o ? dispatch( sendLogin( {...o, dispatch} ) ) : alert( 'ERROR' )
 }
 
 Login.view = ( c, props ) => {
@@ -42,9 +44,9 @@ Login.view = ( c, props ) => {
               </img>
             </button>
             <div class={`${styles.profile__form}`}>
-              <form class={`${styles.profile__fields}`} action={urlEchoServer} method="post">
+              <form class={`${styles.profile__fields}`} action={urlServer + '/login'} method="post">
                 <p class={`${styles.field}`}>
-                  <input type="text" name="username" id="fieldUser" class={`${styles.input}`} required/>
+                  <input type="text" name="login" id="fieldUser" class={`${styles.input}`} required/>
                   <label for="fieldUser" class={`${styles.label}`}>{i18n.login[ language ]}</label>
                 </p>
                 <p class={`${styles.field}`}>
@@ -83,7 +85,7 @@ Login.view = ( c, props ) => {
                 <div class={`${styles.profile__footer}`}>
                   <button type="submit"
                           class={`${styles.button} ${styles.btn}`}
-                          onclick={() => { submitLogin(dispatch) } }>
+                          onsubmit={(e) => { submitLogin({dispatch, e}) } }>
                     {i18n.submit[ language ]}
                   </button>
                 </div>

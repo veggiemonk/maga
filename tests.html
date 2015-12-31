@@ -20,7 +20,7 @@
       } );
     }
     Promise.resolve( readyForMainLoad ).then( function () {
-      System.import( 'test/testInit.js' ).then( function () {
+      System.import( 'test/init.js' ).then( function () {
         console.log( 'ran at ', new Date() );
       } )
     } )

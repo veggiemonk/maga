@@ -35,7 +35,7 @@ export const toggleColumnView   = id => ( { type: TOGGLE_COLUMN_VIEW, id } )
 
 /* CONNECTION */
 export const LOGIN         = 'LOGIN'
-export const login         = ( username, password ) => ( { type: LOGIN, username, password } )
+export const sendLogin         = ( username, password ) => ( { type: LOGIN, username, password } )
 export const LOGIN_FAILED  = 'LOGIN_FAILED'
 export const loginFailed   = ( msg ) => ( { type: LOGIN_FAILED, msg } )
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'

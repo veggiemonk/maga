@@ -92,6 +92,7 @@ export const sanitize = ( files, category ) => {
       };
       (options[ key ] || options[ 'default' ])()
     } )
+    //todo refactor
     //Meta-data
     row.checkbox             = '<input type="checkbox" />'
     row.remove               = '<i class="fa fa-ban fa-lg text-danger"></i>'

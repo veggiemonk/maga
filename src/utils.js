@@ -17,6 +17,23 @@ export const numberOfFilesDisplayed = ( totalFiles, rowDisplayed, startPageAt ) 
   return Math.min( rowDisplayed, (totalFiles - startPageAt) )
 }
 
+export const parseErrorResponse = status => {
+  if ( Number.isInteger( status ) ) {
+    if ( status === 401 ) return 'Error unauthorized' //TODO: replace by i18n
+    else if ( status === 403 ) return 'Error Forbidden'
+    else return 'unknown Error'
+  } else {
+    return 'Status is not a number'
+  }
+}
+
+export const catchError = error => {
+  console.error(error)
+  error.response && error.response.status
+    ? dispatch(loginFailed(parseErrorResponse( error.response.status )))
+    : dispatch(loginFailed('Error parsing status response:' + JSON.stringify(error)))
+}
+
 /**
  *
  * @param date {string}
@@ -74,25 +91,6 @@ export const invalidate = () => {
   m.endComputation()
 }
 
-/***
- *
- * @param f function to be executed inside and start/endComputation
- * @returns f()
- * @example
- *
- */
-export const compute = ( f ) => {
-
-  try {
-    inc( stackLoader )
-    m.startComputation()
-    return f()
-  } finally {
-    dec( stackLoader )
-    m.endComputation()
-  }
-}
-
 /**
  * An easier way to bind an attribute to a getter/setter
  * @param setter
@@ -121,8 +119,8 @@ export let formatSize = size => {
 export let formatExtension = ext => {
 
   if ( ext || ext !== '' ) {
-    let v         = ext.toLowerCase()
-    let extension = {
+    const v         = ext.toLowerCase()
+    const extension = {
       pdf:     () => ('<span><i class="fa fa-file-pdf-o fa-lg" title="pdf"></i></span>'),
       zip:     () => ('<span><i class="fa fa-file-archive-o fa-lg" title="zip"></i></span>'),
       xls:     () => ('<span><i class="fa fa-file-excel-o fa-lg" title="xls"></i></span>'),
