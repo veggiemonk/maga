@@ -23,12 +23,15 @@ Row.controller = function controller( props ) {
 }
 
 Row.view = function view( c, props ) {
-  const { columns, file, dispatch } = props
-  const v = k => _.result( _.find( columns, { id: k } ), 'visible' )
+  const { columns, file, dispatch, selectedRow } = props
+  const v         = k => _.result( _.find( columns, { id: k } ), 'visible' )
+  const isChecked = ( fileId ) => _.contains( selectedRow, fileId )
   return (
     <tr>
       <td class={styles.text_center}
-          onclick={() => { dispatch(toggleSelectRow(file.fileId)) }}>{ m.trust( file[ 'checkbox' ] ) }</td>
+          onclick={() => { dispatch(toggleSelectRow(file.fileId)) }}>
+        { m.trust( isChecked( file.fileId ) ? file[ 'checkbox' ].replace( '\/>', ' checked \/>' ) : file[ 'checkbox' ] ) }
+      </td>
       <td class={styles.text_center}>
         <Button onclick={()=> {c.download(file['fileId'])}}>
           <i class={ `fa fa-lg ${file['dlClass'] || ''} ${file['alreadyDL'] || ''}` }>

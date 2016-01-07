@@ -3,10 +3,16 @@ import _ from 'lodash'
 import Row from './../Row/index'
 
 import {
-  sortColumn, toggleColumnView,
-  filterDateBegin, filterDateEnd, filterMenuCat, filterMenuRef, filterSearch
+  toggleSelectAll,
+  sortColumn,
+  toggleColumnView,
+  filterDateBegin,
+  filterDateEnd,
+  filterMenuCat,
+  filterMenuRef,
+  filterSearch
 } from './../../redux/actions'
-import { sort, getSortedColumn } from './../../redux/reducers/columns'
+import { getSortedColumn } from './../../redux/reducers/columns'
 
 import { invalidate, inc, dec } from './../../utils'
 import { defaults } from './../../settings'
@@ -17,9 +23,6 @@ let Table = {}
 
 Table.controller = function controller( props ) {
   let c = {
-    /* toggleVisibility: colId => {
-     dispatch( toggleColumnView( colId ) )
-     },*/
     vm: {
       /***
        * show the 3 states of a column sortwise
@@ -42,9 +45,24 @@ Table.controller = function controller( props ) {
 }
 
 Table.view = function view( c, props ) {
-  const { dispatch, display, data, columns, filters } = props
-  const idColSorted    = getSortedColumn( columns )
-  const orderColSorted = _.result( _.find( columns, { id: idColSorted } ), 'order' ) ? 'desc' : 'asc'
+  const { dispatch, display, data, columns, filters, selectedRow } = props
+  const idColSorted       = getSortedColumn( columns )
+  const orderColSorted    = _.result( _.find( columns, { id: idColSorted } ), 'order' ) ? 'desc' : 'asc'
+  const seqParseData      = ( data ) => {
+    return _( data )
+      .sortByOrder( idColSorted, orderColSorted )
+      .slice( filters.startPageAt )
+      .take( filters.rowDisplayed )
+  }
+  const getIdColDisplayed = ( data ) => ( seqParseData( data ).pluck( 'fileId' ).value() )
+  const isAllChecked      = ( { data, main } ) => {
+    const { currentTarget } = main
+    const { firstChild } = currentTarget
+    const { checked } = firstChild
+    return selectedRow.length === filters.rowDisplayed
+      ? toggleSelectAll( [] )
+      : ( checked ? toggleSelectAll( getIdColDisplayed( data ) ) : toggleSelectAll( [] ) )
+  }
 
   return (
     <div style={`display : ${display ? 'inline-block' : 'none'};`}>
@@ -57,16 +75,17 @@ Table.view = function view( c, props ) {
               <th
                 class={` ${styles.row_width} ${col[ 'id' ]} `}
                 key={ col[ 'id' ] }
-                onclick={() => { dispatch( sortColumn( col[ 'id' ] ) ) } }>
+                onchange={ (el) => {
+                  col[ 'id' ] !== 'checkbox'
+                    ? dispatch( sortColumn( col[ 'id' ] ) )
+                    : dispatch( isAllChecked( { data, main: el } ) )
+                } }>
                 { m.trust( col[ 'name' ] ) }
                 { c.vm.cssSortToggle( col ) }
               </th> ).value()
         }</thead>
         <tbody>{
-          _( data )
-            .sortByOrder( idColSorted, orderColSorted )
-            .slice( filters.startPageAt )
-            .take( filters.rowDisplayed )
+          seqParseData( data )
             .map( file => (
               <Row
                 key={ file['index'] }

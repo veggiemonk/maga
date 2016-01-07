@@ -26,7 +26,7 @@ App.controller = props => {
 }
 
 const putTimestamp = (dispatch) => (action) => {
-  action.receivedAt = Date.now()
+  action.receivedAt = _.now()
   dispatch(action)
 }
 

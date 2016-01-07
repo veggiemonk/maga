@@ -83,7 +83,7 @@ export const toggleMenuColumnView    = () => ( { type: TOGGLE_MENU_COLUMN_VIEW }
 
 /* ROWS */
 export const TOGGLE_SELECT_ALL = 'TOGGLE_SELECT_ALL'
-export const toggleSelectAll   = () => ( { type: TOGGLE_SELECT_ALL } )
+export const toggleSelectAll   = ( fileIds ) => ( { type: TOGGLE_SELECT_ALL, fileIds } )
 export const TOGGLE_SELECT_ROW = 'TOGGLE_SELECT_ROW'
 export const toggleSelectRow   = ( row ) => ( { type: TOGGLE_SELECT_ROW, row } )
 
