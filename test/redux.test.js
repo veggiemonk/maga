@@ -49,7 +49,7 @@ suite( 'TABLE', function () {
           const files = sanitize(FileList, CategoryList)
 
           store.dispatch(
-            actions.loadData(columns,
+            actions.fetchDataSuccess(columns,
               files,
               files,
               groupMenu(CategoryList, FileList))

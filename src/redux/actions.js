@@ -3,19 +3,19 @@
  */
 
 /* HYDRATING STORE */
-export const LOAD_DATA = 'LOAD_DATA'
-export const loadData  = ( columns, files, data, category ) => (
-  {
-    type:       LOAD_DATA,
-    columns,
-    files,
-    data,
-    category,
-    receivedAt: Date.now(),
-  } )
-
 export const FETCH_DATA = 'FETCH_DATA'
 export const fetchData  = () => ( { type: FETCH_DATA } )
+
+export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS'
+export const fetchDataSuccess   = ( columns, files, data, category ) => (
+{
+  type:       FETCH_DATA_SUCCESS,
+  columns,
+  files,
+  data,
+  category,
+  receivedAt: Date.now(),
+} )
 
 export const REFRESH_DATA = 'REFRESH_DATA'
 export const refreshData  = () => ( { type: REFRESH_DATA } )

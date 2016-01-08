@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import { defaults, initialState } from '../../settings'
-import { sortColumn,
+import {
+  sortColumn,
   sort,
   resetSort,
   getSortedColumn,
@@ -20,7 +21,7 @@ import {
   CHANGE_ROW_DISPLAYED,
   TOGGLE_SELECT_ALL,
   TOGGLE_SELECT_ROW,
-  LOAD_DATA,
+  FETCH_DATA_SUCCESS,
   FETCH_DATA,
   SORT_COLUMN,
   TOGGLE_COLUMN_VIEW,
@@ -41,7 +42,7 @@ const rootReducer = ( state = initialState, action ) => {
   const sa = state.filters.startPageAt
 
   switch ( action.type ) {
-    case LOAD_DATA:
+    case FETCH_DATA_SUCCESS:
       return filtering( Object.assign( {}, state, {
         columns:     action.columns,
         files:       action.files,

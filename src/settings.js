@@ -176,10 +176,10 @@ export const initialState = {
   files:           [],
   data:            [],
   selectedRow:     [],
-  language:        (localStorage && localStorage.lang) || navigatorLanguage(),
+  language:        (localStorage && localStorage.language) || navigatorLanguage(),
   username:        (localStorage && localStorage.lastLogin) || '',
   isAuthenticated: false,
-  isFetching:      false,
+  isFetching:      true,
   didInvalidate:   false,
   lastUpdated:     Date.now(),
 }

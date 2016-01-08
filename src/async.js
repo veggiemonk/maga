@@ -1,9 +1,9 @@
 import 'isomorphic-fetch'
 
 import { groupMenu, sanitize } from './data'
-import { loadData, fetchData, sendLogin, loginSuccess, loginFailed } from './redux/actions'
+import { fetchDataSuccess, fetchData, sendLogin, loginSuccess, loginFailed } from './redux/actions'
 import { columns, headers, fetchURLFile, fetchURLCategory, urlServer} from './settings'
-import { catchError } from './utils'
+import { parseErrorResponse } from './utils'
 
 /* ASYNC */
 export const fetchFileList     = ( url ) => fetch( url, headers( 'GET' ) ).then( res => res.json() )
@@ -16,12 +16,17 @@ export const fetching          = ( dispatch ) => {
       const files = sanitize( FileList, CategoryList )
 
       dispatch(
-        loadData( columns,
+        fetchDataSuccess( columns,
           files,
           files,
           groupMenu( CategoryList, FileList ) )
       )
-    } ).catch( catchError )
+    } ).catch( ( error ) => {
+      console.error( error )
+      error.response && error.response.status
+        ? dispatch( loginFailed( parseErrorResponse( error.response.status ) ) )
+        : dispatch( loginFailed( 'Error parsing status response:' + JSON.stringify( error ) ) )
+    }  )
 }
 
 export const dispatchLogin = ( {dispatch, login, password} ) => {
@@ -36,7 +41,12 @@ export const dispatchLogin = ( {dispatch, login, password} ) => {
   } ).then( res => res.json() )
     .then( data => {
       dispatch( loginSuccess( { ...data } ) )
-    } ).catch( catchError )
+    } ).catch( ( error ) => {
+      console.error( error )
+      error.response && error.response.status
+        ? dispatch( loginFailed( parseErrorResponse( error.response.status ) ) )
+        : dispatch( loginFailed( 'Error parsing status response:' + JSON.stringify( error ) ) )
+    } )
 }
 
 /* DOWNLOAD A FILE */

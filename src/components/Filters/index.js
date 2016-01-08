@@ -15,7 +15,6 @@ import {
   filterDateEnd,
   changeRowDisplayed,
   toggleMenuColumnView,
-  refreshData,
 } from '../../redux/actions'
 
 
@@ -49,9 +48,9 @@ Filters.view = function view( c, props, children ) {
       <div class="row">
         <div class="three columns">
           <Button
-            className={'test'}
             onclick={ () => { fetching(dispatch) } }>
-            <i class="fa fa-2x fa-refresh"></i>
+            <i class="fa fa-2x fa-refresh">
+            </i>
             {i18n.reload[ language ]}
           </Button>
 

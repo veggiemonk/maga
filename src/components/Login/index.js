@@ -40,7 +40,7 @@ Login.view = ( c, props ) => {
         <div class={`${styles.container}`}>
           <div class={`${styles.profile} ${styles.profile_open}`}>
             <button class={`${styles.profile__avatar} ${styles.profile_open} ${styles.button} `}>
-              <img class={`${styles.img}`} src="../../../src/css/img/groupsLOGO.jpg" alt="Avatar">
+              <img class={`${styles.img}`} src="src/css/img/groupsLOGO.jpg" alt="Avatar">
               </img>
             </button>
             <div class={`${styles.profile__form}`}>

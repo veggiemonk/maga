@@ -27,7 +27,7 @@ export const parseErrorResponse = status => {
   }
 }
 
-export const catchError = error => {
+export const catchLoginError = error => {
   console.error(error)
   error.response && error.response.status
     ? dispatch(loginFailed(parseErrorResponse( error.response.status )))
