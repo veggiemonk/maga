@@ -69,7 +69,8 @@ App.view = (c, props) => {
         </Uploader>
         <Menu
           dispatch={dispatch}
-          i18n={i18n.menu}
+          /*i18n={i18n.menu}*/
+          i18n={c.i18n}
           {...state}>
         </Menu>
       </aside>

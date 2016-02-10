@@ -7,7 +7,7 @@
     "referenceDocument": 3,
     "labelDocFR": "Récapitulatif pour Compagnie d'Assurance",
     "labelDocNL": "Samenvattende staat voor verzekeringen",
-    "labelDocX": "Récapitulatif pour Compagnie d'Assurance"
+    "labelDocEN": "Récapitulatif pour Compagnie d'Assurance"
   },
   {
     "categoryNumber": 0,
@@ -17,7 +17,7 @@
     "referenceDocument": 4,
     "labelDocFR": "Rapport annuel - Serv.Int.Prévention/Protection",
     "labelDocNL": "Jaarverslag- Int.dienst Preventie/Bescherming",
-    "labelDocX": "Annual report - Internal service for prevention and protection at work"
+    "labelDocEN": "Annual report - Internal service for prevention and protection at work"
   },
   {
     "categoryNumber": 0,
@@ -27,7 +27,7 @@
     "referenceDocument": 7,
     "labelDocFR": "Relevé des prestations (= document unique)",
     "labelDocNL": "Prestatieopgave (= uniek document)",
-    "labelDocX": "Relevé des prestations (= document unique)"
+    "labelDocEN": "Relevé des prestations (= document unique)"
   },
   {
     "categoryNumber": 0,
@@ -37,7 +37,7 @@
     "referenceDocument": 10,
     "labelDocFR": "DECLARATION ATELIERS PROTEGES (REGION BRUXELLOISE)",
     "labelDocNL": "DECLARATION ATELIERS PROTEGES (REGION BRUXELLOISE)",
-    "labelDocX": "DECLARATION ATELIERS PROTEGES (REGION BRUXELLOISE)"
+    "labelDocEN": "DECLARATION ATELIERS PROTEGES (REGION BRUXELLOISE)"
   },
   {
     "categoryNumber": 0,
@@ -47,7 +47,7 @@
     "referenceDocument": 12,
     "labelDocFR": "Prime syndicale HORECA : Relevé préparatoire (Employeurs sans No.ONSS)",
     "labelDocNL": "Syndicale premie HORECA : Voorbereidende lijst (Werkgevers zonder RSZ-nummer)",
-    "labelDocX": "Prime syndicale HORECA : Relevé préparatoire (Employeurs sans No.ONSS)"
+    "labelDocEN": "Prime syndicale HORECA : Relevé préparatoire (Employeurs sans No.ONSS)"
   },
   {
     "categoryNumber": 0,
@@ -57,7 +57,7 @@
     "referenceDocument": 13,
     "labelDocFR": "Prime syndicale HORECA : Récapitulatif préparatoire",
     "labelDocNL": "Syndicale premie HORECA : Voorbereidende samenvatting",
-    "labelDocX": "Prime syndicale HORECA : Récapitulatif préparatoire"
+    "labelDocEN": "Prime syndicale HORECA : Récapitulatif préparatoire"
   },
   {
     "categoryNumber": 0,
@@ -67,7 +67,7 @@
     "referenceDocument": 14,
     "labelDocFR": "Prime syndicale HORECA : Remarques lors de la réception des numéros octroyés",
     "labelDocNL": "Syndicale premie HORECA : Opmerkingen bij het ontvangst van de toegekende nummers",
-    "labelDocX": "Prime syndicale HORECA : Remarques lors de la réception des numéros octroyés"
+    "labelDocEN": "Prime syndicale HORECA : Remarques lors de la réception des numéros octroyés"
   },
   {
     "categoryNumber": 0,
@@ -77,7 +77,7 @@
     "referenceDocument": 15,
     "labelDocFR": "Prime syndicale HORECA : Formulaire travailleur",
     "labelDocNL": "Syndicale premie HORECA : Formulier werknemer",
-    "labelDocX": "Prime syndicale HORECA : Formulaire travailleur"
+    "labelDocEN": "Prime syndicale HORECA : Formulaire travailleur"
   },
   {
     "categoryNumber": 0,
@@ -87,7 +87,7 @@
     "referenceDocument": 17,
     "labelDocFR": "Prime syndicale HORECA : Demande de formulaires supplémentaires",
     "labelDocNL": "Syndicale premie HORECA : Aanvraag bijkomende formulieren",
-    "labelDocX": "Prime syndicale HORECA : Demande de formulaires supplémentaires"
+    "labelDocEN": "Prime syndicale HORECA : Demande de formulaires supplémentaires"
   },
   {
     "categoryNumber": 0,
@@ -97,7 +97,7 @@
     "referenceDocument": 20,
     "labelDocFR": "DU: document unique, fichier reçu en provenance de l'affilié",
     "labelDocNL": "DU: uniek document, bestand ontvangen van aangeslotene",
-    "labelDocX": "DU: document unique, fichier reçu en provenance de l'affilié"
+    "labelDocEN": "DU: document unique, fichier reçu en provenance de l'affilié"
   },
   {
     "categoryNumber": 0,
@@ -107,7 +107,7 @@
     "referenceDocument": 21,
     "labelDocFR": "Prime syndicale HORECA : Liste témoin",
     "labelDocNL": "Syndicale premie HORECA : Getuigenlijst",
-    "labelDocX": "Prime syndicale HORECA : Liste témoin"
+    "labelDocEN": "Prime syndicale HORECA : Liste témoin"
   },
   {
     "categoryNumber": 0,
@@ -117,7 +117,7 @@
     "referenceDocument": 22,
     "labelDocFR": "Prime syndicale HORECA : Remarques lors de l'octroi des primes",
     "labelDocNL": "Syndicale premie HORECA : Opmerkingen bij het toekennen van de premies",
-    "labelDocX": "Prime syndicale HORECA : Remarques lors de l'octroi des primes"
+    "labelDocEN": "Prime syndicale HORECA : Remarques lors de l'octroi des primes"
   },
   {
     "categoryNumber": 0,
@@ -127,7 +127,7 @@
     "referenceDocument": 23,
     "labelDocFR": "affiliation info (DIMONA, site WEB)",
     "labelDocNL": "aansluiting info (DIMONA,WEB)",
-    "labelDocX": "affiliation info (DIMONA, site WEB)"
+    "labelDocEN": "affiliation info (DIMONA, site WEB)"
   },
   {
     "categoryNumber": 0,
@@ -137,7 +137,7 @@
     "referenceDocument": 26,
     "labelDocFR": "Cartes congés Carrefour 2011 et suivantes",
     "labelDocNL": "Verlofkaart  Carrefour 2011 en volg",
-    "labelDocX": "Cartes congés Carrefour 2011 et suivantes"
+    "labelDocEN": "Cartes congés Carrefour 2011 et suivantes"
   },
   {
     "categoryNumber": 0,
@@ -147,7 +147,7 @@
     "referenceDocument": 27,
     "labelDocFR": "Cartes congés GIB- sauf Carrefour",
     "labelDocNL": "Verlofkaart GIB- uitgezonderd Carrefour",
-    "labelDocX": "Cartes congés GIB- sauf Carrefour"
+    "labelDocEN": "Cartes congés GIB- sauf Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -157,7 +157,7 @@
     "referenceDocument": 28,
     "labelDocFR": "Cartes congés Carrefour",
     "labelDocNL": "Verlofkaart  Carrefour",
-    "labelDocX": "Cartes congés Carrefour"
+    "labelDocEN": "Cartes congés Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -167,7 +167,7 @@
     "referenceDocument": 29,
     "labelDocFR": "Cartes congés BRICO",
     "labelDocNL": "Verlofkaart  BRICO",
-    "labelDocX": "Cartes congés BRICO"
+    "labelDocEN": "Cartes congés BRICO"
   },
   {
     "categoryNumber": 0,
@@ -177,7 +177,7 @@
     "referenceDocument": 30,
     "labelDocFR": "PTG - Fichier des Pointages (>PreSta)",
     "labelDocNL": "PTG - Prestatiebestand (>PreSta)",
-    "labelDocX": "PTG - Fichier des Pointages (>PreSta)"
+    "labelDocEN": "PTG - Fichier des Pointages (>PreSta)"
   },
   {
     "categoryNumber": 0,
@@ -187,7 +187,7 @@
     "referenceDocument": 36,
     "labelDocFR": "BURST - Basware",
     "labelDocNL": "BURST - Basware",
-    "labelDocX": "BURST - Basware"
+    "labelDocEN": "BURST - Basware"
   },
   {
     "categoryNumber": 0,
@@ -197,7 +197,7 @@
     "referenceDocument": 37,
     "labelDocFR": "OPT-in/out - MyCertipost",
     "labelDocNL": "OPT-in/out - MyCertipost",
-    "labelDocX": "OPT-in/out - MyCertipost"
+    "labelDocEN": "OPT-in/out - MyCertipost"
   },
   {
     "categoryNumber": 0,
@@ -207,7 +207,7 @@
     "referenceDocument": 39,
     "labelDocFR": "Flux Dimona: ensembles des fichiers de communication (DISend / DIReceive) ",
     "labelDocNL": "Dimonaflux: geheel van communicatiebestanden (DISend / DIReceive)",
-    "labelDocX": "Dimona flows: all communication files (DISend / DIReceive) "
+    "labelDocEN": "Dimona flows: all communication files (DISend / DIReceive) "
   },
   {
     "categoryNumber": 0,
@@ -217,7 +217,7 @@
     "referenceDocument": 40,
     "labelDocFR": "Avis DIMONA",
     "labelDocNL": "DIMONA bericht",
-    "labelDocX": "DIMONA Notification"
+    "labelDocEN": "DIMONA Notification"
   },
   {
     "categoryNumber": 0,
@@ -227,7 +227,7 @@
     "referenceDocument": 43,
     "labelDocFR": "Demande consultation registre personnel DIMONA",
     "labelDocNL": "Aanvraag consultatie Dimona personeelsregister ",
-    "labelDocX": "Demande consultation registre personnel DIMONA"
+    "labelDocEN": "Demande consultation registre personnel DIMONA"
   },
   {
     "categoryNumber": 0,
@@ -237,7 +237,7 @@
     "referenceDocument": 45,
     "labelDocFR": "Documents clôture Carrefour (#)",
     "labelDocNL": "Documenten afsluiting Carrefour (#)",
-    "labelDocX": "Documents clôture Carrefour (#)"
+    "labelDocEN": "Documents clôture Carrefour (#)"
   },
   {
     "categoryNumber": 0,
@@ -247,7 +247,7 @@
     "referenceDocument": 48,
     "labelDocFR": "Etiquettes cartes de pointage",
     "labelDocNL": "Etiketten voor prikkaarten",
-    "labelDocX": "Etiquettes cartes de pointage"
+    "labelDocEN": "Etiquettes cartes de pointage"
   },
   {
     "categoryNumber": 0,
@@ -257,7 +257,7 @@
     "referenceDocument": 55,
     "labelDocFR": "APE Contrôle coût effectif supporté par l'employeur",
     "labelDocNL": "APE Contriole koste efefcteif gedragen door de werkgever",
-    "labelDocX": "APE Control actual costs to the employer"
+    "labelDocEN": "APE Control actual costs to the employer"
   },
   {
     "categoryNumber": 0,
@@ -267,7 +267,7 @@
     "referenceDocument": 59,
     "labelDocFR": "Formulaire Nouveau Travailleur",
     "labelDocNL": "Aangifte Nieuwe Medewerker",
-    "labelDocX": "Formulaire Nouveau Travailleur"
+    "labelDocEN": "Formulaire Nouveau Travailleur"
   },
   {
     "categoryNumber": 0,
@@ -277,7 +277,7 @@
     "referenceDocument": 61,
     "labelDocFR": "Formulaire dem.all.ann. textile / bonneterie",
     "labelDocNL": "Formulier aanvraag jaartoelage textiel / breiwerk",
-    "labelDocX": "Formulaire dem.all.ann. textile / bonneterie"
+    "labelDocEN": "Formulaire dem.all.ann. textile / bonneterie"
   },
   {
     "categoryNumber": 0,
@@ -287,7 +287,7 @@
     "referenceDocument": 63,
     "labelDocFR": "Fichier demandes primes syndicales secteur public",
     "labelDocNL": "Bestand aanvragen syndicale premies openbare sector",
-    "labelDocX": "Fichier demandes primes syndicales secteur public"
+    "labelDocEN": "Fichier demandes primes syndicales secteur public"
   },
   {
     "categoryNumber": 0,
@@ -297,7 +297,7 @@
     "referenceDocument": 64,
     "labelDocFR": "Demande de prime syndicale - secteur public",
     "labelDocNL": "Aanvraag vakbondspremie -  publieke sector",
-    "labelDocX": "Request for trade union payment - public sector"
+    "labelDocEN": "Request for trade union payment - public sector"
   },
   {
     "categoryNumber": 0,
@@ -307,7 +307,7 @@
     "referenceDocument": 67,
     "labelDocFR": "Formulaire Indemnité syndicale CP 130",
     "labelDocNL": "Syndicale toelage PC 130",
-    "labelDocX": "Formulaire Indemnité syndicale CP 130"
+    "labelDocEN": "Formulaire Indemnité syndicale CP 130"
   },
   {
     "categoryNumber": 0,
@@ -317,7 +317,7 @@
     "referenceDocument": 68,
     "labelDocFR": "Calcul effectif élections sociales",
     "labelDocNL": "Berekening personeelsbestand sociale verkiezingen",
-    "labelDocX": "Headcount of staff social elections"
+    "labelDocEN": "Headcount of staff social elections"
   },
   {
     "categoryNumber": 0,
@@ -327,7 +327,7 @@
     "referenceDocument": 69,
     "labelDocFR": "Fichier détail calcul effectif élections sociales",
     "labelDocNL": "Bestand met detail berekening efefctief soc.verkiezingen",
-    "labelDocX": "File detail headcount of staff social elections"
+    "labelDocEN": "File detail headcount of staff social elections"
   },
   {
     "categoryNumber": 0,
@@ -337,7 +337,7 @@
     "referenceDocument": 70,
     "labelDocFR": "Fonds du métal chômage temporaire FM01",
     "labelDocNL": "Fonds voor BestaansZekerheid van de Metaalverwerkende Nijverheid FM01",
-    "labelDocX": "Fonds du métal chômage temporaire FM01"
+    "labelDocEN": "Fonds du métal chômage temporaire FM01"
   },
   {
     "categoryNumber": 0,
@@ -347,7 +347,7 @@
     "referenceDocument": 71,
     "labelDocFR": "Fonds du métal chômage complet temps plein FM11",
     "labelDocNL": "Fonds voor BestaansZekerheid van de Metaalverwerkende Nijverheid FM11",
-    "labelDocX": "Fonds du métal chômage complet temps plein FM11"
+    "labelDocEN": "Fonds du métal chômage complet temps plein FM11"
   },
   {
     "categoryNumber": 0,
@@ -357,7 +357,7 @@
     "referenceDocument": 72,
     "labelDocFR": "Fonds du métal chômage complet temps partiel FM61",
     "labelDocNL": "Fonds voor BestaansZekerheid van de Metaalverwerkende Nijverheid FM61",
-    "labelDocX": "Fonds du métal chômage complet temps partiel FM61"
+    "labelDocEN": "Fonds du métal chômage complet temps partiel FM61"
   },
   {
     "categoryNumber": 0,
@@ -367,7 +367,7 @@
     "referenceDocument": 73,
     "labelDocFR": "Fonds du métal maladie FM04 et FM44",
     "labelDocNL": "Fonds voor BestaansZekerheid van de Metaalverwerkende Nijverheid FM04 et FM44",
-    "labelDocX": "Fonds du métal maladie FM04 et FM44"
+    "labelDocEN": "Fonds du métal maladie FM04 et FM44"
   },
   {
     "categoryNumber": 0,
@@ -377,7 +377,7 @@
     "referenceDocument": 74,
     "labelDocFR": "Demande de prime syndicale pour CP 319.02 (région wallonne)",
     "labelDocNL": "Aanvraag syndicale premie - CP 319.02 (Région Wallonne)",
-    "labelDocX": "Demande de prime syndicale pour CP 319.02 (région wallonne)"
+    "labelDocEN": "Demande de prime syndicale pour CP 319.02 (région wallonne)"
   },
   {
     "categoryNumber": 0,
@@ -387,7 +387,7 @@
     "referenceDocument": 75,
     "labelDocFR": "Fonds du métal chômage complet temps plein FM11 + 50ans",
     "labelDocNL": "Fonds voor BestaansZekerheid van de Metaalverwerkende Nijverheid FM11 +50 j.",
-    "labelDocX": "Fonds du métal chômage complet temps plein FM11 + 50ans"
+    "labelDocEN": "Fonds du métal chômage complet temps plein FM11 + 50ans"
   },
   {
     "categoryNumber": 0,
@@ -397,7 +397,7 @@
     "referenceDocument": 76,
     "labelDocFR": "Fonds du métal chômage complet temps partiel FM61 + 50 ans",
     "labelDocNL": "Fonds voor BestaansZekerheid van de Metaalverwerkende Nijverheid FM61 > 50 jaar",
-    "labelDocX": "Fonds du métal chômage complet temps partiel FM61 + 50 ans"
+    "labelDocEN": "Fonds du métal chômage complet temps partiel FM61 + 50 ans"
   },
   {
     "categoryNumber": 0,
@@ -407,7 +407,7 @@
     "referenceDocument": 77,
     "labelDocFR": "Demande paiement alloc. chomage tempor. Fds social du métal - CP 149.04",
     "labelDocNL": "Aanvraag aanvullende uitkeringen bij tijdelijke werkloosheid - pc 149.04",
-    "labelDocX": "Demande paiement alloc. chomage tempor. Fds social du métal - CP 149.04"
+    "labelDocEN": "Demande paiement alloc. chomage tempor. Fds social du métal - CP 149.04"
   },
   {
     "categoryNumber": 0,
@@ -417,7 +417,7 @@
     "referenceDocument": 78,
     "labelDocFR": "Demande paiement alloc. chomage tempor. Fds social du métal - CP 149.02",
     "labelDocNL": "AANVRAAG TOT AANVULLENDE UITKERINGEN VOOR TIJDELIJKE WERKLOOSHEID P.C. 149.02",
-    "labelDocX": "Demande paiement alloc. chomage tempor. Fds social du métal - CP 149.02"
+    "labelDocEN": "Demande paiement alloc. chomage tempor. Fds social du métal - CP 149.02"
   },
   {
     "categoryNumber": 0,
@@ -427,7 +427,7 @@
     "referenceDocument": 79,
     "labelDocFR": "Demande paiement alloc. chomage tempor. Fds social du métal - CP 112",
     "labelDocNL": "AANVRAAG TOT AANVULLENDE UITKERINGEN VOOR TIJDELIJKE WERKLOOSHEID P.C. 112",
-    "labelDocX": "Demande paiement alloc. chomage tempor. Fds social du métal - CP 112"
+    "labelDocEN": "Demande paiement alloc. chomage tempor. Fds social du métal - CP 112"
   },
   {
     "categoryNumber": 0,
@@ -437,7 +437,7 @@
     "referenceDocument": 80,
     "labelDocFR": "Chargement fichier SAIAU dans DU",
     "labelDocNL": "Opladen SAIAU-bestand in DU",
-    "labelDocX": "Chargement fichier SAIAU dans DU"
+    "labelDocEN": "Chargement fichier SAIAU dans DU"
   },
   {
     "categoryNumber": 0,
@@ -447,7 +447,7 @@
     "referenceDocument": 86,
     "labelDocFR": "Déclaration ONSS : Cadre comptable",
     "labelDocNL": "RSZ aangifte : Boekhoudraam",
-    "labelDocX": "Déclaration ONSS : Cadre comptable"
+    "labelDocEN": "Déclaration ONSS : Cadre comptable"
   },
   {
     "categoryNumber": 0,
@@ -457,7 +457,7 @@
     "referenceDocument": 101,
     "labelDocFR": "BURST - QiY",
     "labelDocNL": "BURST - QIY",
-    "labelDocX": "BURST - QiY"
+    "labelDocEN": "BURST - QiY"
   },
   {
     "categoryNumber": 0,
@@ -467,7 +467,7 @@
     "referenceDocument": 124,
     "labelDocFR": "Statistique générique (excel seulement)",
     "labelDocNL": "Algemene statistiek (alleen excel)",
-    "labelDocX": "Generic statistics (only Excel)"
+    "labelDocEN": "Generic statistics (only Excel)"
   },
   {
     "categoryNumber": 0,
@@ -477,7 +477,7 @@
     "referenceDocument": 146,
     "labelDocFR": "Etat des compteurs (excel seulement)",
     "labelDocNL": "Tellertoestand (alleen excel)",
-    "labelDocX": "State of the counters (only Excel)"
+    "labelDocEN": "State of the counters (only Excel)"
   },
   {
     "categoryNumber": 0,
@@ -487,7 +487,7 @@
     "referenceDocument": 147,
     "labelDocFR": "Liste nominative de paie (excel seulement)",
     "labelDocNL": "Nominatieve loonlijst (alleen excel)",
-    "labelDocX": "Payroll with names (only Excel)"
+    "labelDocEN": "Payroll with names (only Excel)"
   },
   {
     "categoryNumber": 0,
@@ -497,7 +497,7 @@
     "referenceDocument": 152,
     "labelDocFR": "Frais forfaitaires (excel seulement)",
     "labelDocNL": "Forfaitaire onkosten (alleen excel)",
-    "labelDocX": "Flat-rate expenses (only Excel)"
+    "labelDocEN": "Flat-rate expenses (only Excel)"
   },
   {
     "categoryNumber": 0,
@@ -507,7 +507,7 @@
     "referenceDocument": 156,
     "labelDocFR": "Fonds Social (Industrie du metal CP 111 ) - Déclaration",
     "labelDocNL": "Sociaal Fonds (metaalindustrie PC  111) - Aangifte",
-    "labelDocX": "Fonds Social (Industrie du metal CP 111 ) - Déclaration"
+    "labelDocEN": "Fonds Social (Industrie du metal CP 111 ) - Déclaration"
   },
   {
     "categoryNumber": 0,
@@ -517,7 +517,7 @@
     "referenceDocument": 157,
     "labelDocFR": "Fonds Social (Industrie du Beton) - Déclaration",
     "labelDocNL": "Sociaal Fonds (Betonindustrie) - Aangifte",
-    "labelDocX": "Fonds Social (Industrie du Beton) - Déclaration"
+    "labelDocEN": "Fonds Social (Industrie du Beton) - Déclaration"
   },
   {
     "categoryNumber": 0,
@@ -527,7 +527,7 @@
     "referenceDocument": 158,
     "labelDocFR": "Fiche statistique",
     "labelDocNL": "Statistische fiche",
-    "labelDocX": "Fiche statistique"
+    "labelDocEN": "Fiche statistique"
   },
   {
     "categoryNumber": 0,
@@ -537,7 +537,7 @@
     "referenceDocument": 159,
     "labelDocFR": "Fonds Social (Industrie du textile cCP 214) - Déclaration",
     "labelDocNL": "Sociaal Fonds (textielnijverheid  PC 214) - Aangifte",
-    "labelDocX": "Fonds Social (Industrie du textile cCP 214) - Déclaration"
+    "labelDocEN": "Fonds Social (Industrie du textile cCP 214) - Déclaration"
   },
   {
     "categoryNumber": 0,
@@ -547,7 +547,7 @@
     "referenceDocument": 190,
     "labelDocFR": "Bons syndicaux grands magasins (cp 202,311,312)",
     "labelDocNL": "Syndicale bons grootwarenhuizen (pc 202,311,312)",
-    "labelDocX": "Bons syndicaux grands magasins (cp 202,311,312)"
+    "labelDocEN": "Bons syndicaux grands magasins (cp 202,311,312)"
   },
   {
     "categoryNumber": 0,
@@ -557,7 +557,7 @@
     "referenceDocument": 191,
     "labelDocFR": "Bons syndicaux grands magasins-liste témoin",
     "labelDocNL": "Syndicale bons grootwarenhuizen-getuigenlijst",
-    "labelDocX": "Bons syndicaux grands magasins-liste témoin"
+    "labelDocEN": "Bons syndicaux grands magasins-liste témoin"
   },
   {
     "categoryNumber": 0,
@@ -567,7 +567,7 @@
     "referenceDocument": 219,
     "labelDocFR": "Relevé des prestations",
     "labelDocNL": "Prestatieopgave",
-    "labelDocX": "Benefit statement"
+    "labelDocEN": "Benefit statement"
   },
   {
     "categoryNumber": 0,
@@ -577,7 +577,7 @@
     "referenceDocument": 232,
     "labelDocFR": "Déclaration allocations familiales (Modèles G ou 812 si CAF02 ou 832 si Partena)",
     "labelDocNL": "Aangifte kinderbijslag (Model G of 812 voor KBF02 of 832 voor Partena)",
-    "labelDocX": "Déclaration allocations familiales (Modèles G ou 812 si CAF02 ou 832 si Partena)"
+    "labelDocEN": "Déclaration allocations familiales (Modèles G ou 812 si CAF02 ou 832 si Partena)"
   },
   {
     "categoryNumber": 0,
@@ -587,7 +587,7 @@
     "referenceDocument": 320,
     "labelDocFR": "Etats des salaires APE pour le FOREM",
     "labelDocNL": "Loonstaat APE - FOREM",
-    "labelDocX": "Etats des salaires APE pour le FOREM"
+    "labelDocEN": "Etats des salaires APE pour le FOREM"
   },
   {
     "categoryNumber": 0,
@@ -597,7 +597,7 @@
     "referenceDocument": 321,
     "labelDocFR": "Etats des salaires APE pour le FOREM (APL)",
     "labelDocNL": "Loonstaat APE - FOREM (PPO)",
-    "labelDocX": "Etats des salaires APE pour le FOREM (APL)"
+    "labelDocEN": "Etats des salaires APE pour le FOREM (APL)"
   },
   {
     "categoryNumber": 0,
@@ -607,7 +607,7 @@
     "referenceDocument": 322,
     "labelDocFR": "Etats des salaires (vlaams subsidieagentschap voor werk en sociale economie)",
     "labelDocNL": "Loonstaat (Vlaams subsidieagentschap voor werk en sociale economie)",
-    "labelDocX": "Wages summary (vlaams subsidieagentschap voor werk en sociale economie)"
+    "labelDocEN": "Wages summary (vlaams subsidieagentschap voor werk en sociale economie)"
   },
   {
     "categoryNumber": 0,
@@ -617,7 +617,7 @@
     "referenceDocument": 371,
     "labelDocFR": "Feuille de titre 325",
     "labelDocNL": "Samenvattende opgave 325",
-    "labelDocX": "Feuille de titre 325"
+    "labelDocEN": "Feuille de titre 325"
   },
   {
     "categoryNumber": 0,
@@ -627,7 +627,7 @@
     "referenceDocument": 377,
     "labelDocFR": "Déclaration ONSS : Cadre statistique (Q2)",
     "labelDocNL": "RSZ aangifte : Statistiekraam bis (Q2)",
-    "labelDocX": "Déclaration ONSS : Cadre statistique (Q2)"
+    "labelDocEN": "Déclaration ONSS : Cadre statistique (Q2)"
   },
   {
     "categoryNumber": 0,
@@ -637,7 +637,7 @@
     "referenceDocument": 395,
     "labelDocFR": "C32 calendrier",
     "labelDocNL": "C32 kalender",
-    "labelDocX": "C32 calendrier"
+    "labelDocEN": "C32 calendrier"
   },
   {
     "categoryNumber": 0,
@@ -647,7 +647,7 @@
     "referenceDocument": 396,
     "labelDocFR": "Document C 3.2 A",
     "labelDocNL": "Document C 3.2 A",
-    "labelDocX": "C 3.2 A document"
+    "labelDocEN": "C 3.2 A document"
   },
   {
     "categoryNumber": 0,
@@ -657,7 +657,7 @@
     "referenceDocument": 405,
     "labelDocFR": "Lettre d'envoi au contrôleur",
     "labelDocNL": "Brief voor verzending aan controleur",
-    "labelDocX": "Lettre d'envoi au contrôleur"
+    "labelDocEN": "Lettre d'envoi au contrôleur"
   },
   {
     "categoryNumber": 0,
@@ -667,7 +667,7 @@
     "referenceDocument": 407,
     "labelDocFR": "Annexe à la lettre d'envoi au contrôleur",
     "labelDocNL": "Bijlage bij brief verzending aan controleur",
-    "labelDocX": "Annexe à la lettre d'envoi au contrôleur"
+    "labelDocEN": "Annexe à la lettre d'envoi au contrôleur"
   },
   {
     "categoryNumber": 0,
@@ -677,7 +677,7 @@
     "referenceDocument": 420,
     "labelDocFR": "Récapitulatif des heures, des salaires et des charges",
     "labelDocNL": "Samenvatting van de uren, de lonen en de lasten",
-    "labelDocX": "Récapitulatif des heures, des salaires et des charges"
+    "labelDocEN": "Récapitulatif des heures, des salaires et des charges"
   },
   {
     "categoryNumber": 0,
@@ -687,7 +687,7 @@
     "referenceDocument": 427,
     "labelDocFR": "Récapitulatif des heures et des charges",
     "labelDocNL": "Samenvatting van de uren en de lasten",
-    "labelDocX": "Récapitulatif des heures et des charges"
+    "labelDocEN": "Récapitulatif des heures et des charges"
   },
   {
     "categoryNumber": 0,
@@ -697,7 +697,7 @@
     "referenceDocument": 466,
     "labelDocFR": "Déclaration INAMI-Pension Capital Pension (partie ONP)",
     "labelDocNL": "Aangifte RIZIV - Kapitaalpremie (ONP)",
-    "labelDocX": "Déclaration INAMI-Pension Capital Pension (partie ONP)"
+    "labelDocEN": "Déclaration INAMI-Pension Capital Pension (partie ONP)"
   },
   {
     "categoryNumber": 0,
@@ -707,7 +707,7 @@
     "referenceDocument": 467,
     "labelDocFR": "Déclaration Navigation Intérieure + 812 (fichier)",
     "labelDocNL": "Aangifte binnenscheepvaart + 806 (bestand)",
-    "labelDocX": "Déclaration Navigation Intérieure + 812 (fichier)"
+    "labelDocEN": "Déclaration Navigation Intérieure + 812 (fichier)"
   },
   {
     "categoryNumber": 0,
@@ -717,7 +717,7 @@
     "referenceDocument": 468,
     "labelDocFR": "Déclaration INAMI-Pension Capital Pension (->ONP)",
     "labelDocNL": "Aangifte RIZIV - Kapitaalpremie (->ONP)",
-    "labelDocX": "Déclaration INAMI-Pension Capital Pension (->ONP)"
+    "labelDocEN": "Déclaration INAMI-Pension Capital Pension (->ONP)"
   },
   {
     "categoryNumber": 0,
@@ -727,7 +727,7 @@
     "referenceDocument": 477,
     "labelDocFR": "Liste des firmes désaffiliées pour SMD",
     "labelDocNL": "Lijst niet meer aangesloten firmas voor MD",
-    "labelDocX": "Liste des firmes désaffiliées pour SMD"
+    "labelDocEN": "Liste des firmes désaffiliées pour SMD"
   },
   {
     "categoryNumber": 0,
@@ -737,7 +737,7 @@
     "referenceDocument": 478,
     "labelDocFR": "Liste des renseignements manquants",
     "labelDocNL": "Aanvraag bijkomende inlichtingen",
-    "labelDocX": "Liste des renseignements manquants"
+    "labelDocEN": "Liste des renseignements manquants"
   },
   {
     "categoryNumber": 0,
@@ -747,7 +747,7 @@
     "referenceDocument": 479,
     "labelDocFR": "Nouveaux travailleurs (services médicaux)",
     "labelDocNL": "Nieuwe werknemers (medische diensten)",
-    "labelDocX": "Nouveaux travailleurs (services médicaux)"
+    "labelDocEN": "Nouveaux travailleurs (services médicaux)"
   },
   {
     "categoryNumber": 0,
@@ -757,7 +757,7 @@
     "referenceDocument": 480,
     "labelDocFR": "Travailleurs sortis (services médicaux)",
     "labelDocNL": "Werknemers uit dienst (medische diensten)",
-    "labelDocX": "Travailleurs sortis (services médicaux)"
+    "labelDocEN": "Travailleurs sortis (services médicaux)"
   },
   {
     "categoryNumber": 0,
@@ -767,7 +767,7 @@
     "referenceDocument": 485,
     "labelDocFR": "Bordereau d'envoi BELCOTAX",
     "labelDocNL": "Verzendborderel BELCOTAX",
-    "labelDocX": "Bordereau d'envoi BELCOTAX"
+    "labelDocEN": "Bordereau d'envoi BELCOTAX"
   },
   {
     "categoryNumber": 0,
@@ -777,7 +777,7 @@
     "referenceDocument": 486,
     "labelDocFR": "276 Frontalier : française - belge ",
     "labelDocNL": "276 grensarbeider : Frans - Belgisch",
-    "labelDocX": "276 Frontalier : française - belge "
+    "labelDocEN": "276 Frontalier : française - belge "
   },
   {
     "categoryNumber": 0,
@@ -787,7 +787,7 @@
     "referenceDocument": 487,
     "labelDocFR": "276 Frontalier : belge - néerlandaise",
     "labelDocNL": "276 grensarbeider : Belgisch - Nederlands",
-    "labelDocX": "276 Frontalier : belge - néerlandaise"
+    "labelDocEN": "276 Frontalier : belge - néerlandaise"
   },
   {
     "categoryNumber": 0,
@@ -797,7 +797,7 @@
     "referenceDocument": 488,
     "labelDocFR": "276 Frontalier : belge (fr.) - allemande",
     "labelDocNL": "276 grensarbeider : Belgisch (fr.) - Duits",
-    "labelDocX": "276 Frontalier : belge (fr.) - allemande"
+    "labelDocEN": "276 Frontalier : belge (fr.) - allemande"
   },
   {
     "categoryNumber": 0,
@@ -807,7 +807,7 @@
     "referenceDocument": 489,
     "labelDocFR": "Témoin 276 Frontalier",
     "labelDocNL": "Getuigenlijst 276 grensarbeider",
-    "labelDocX": "Témoin 276 Frontalier"
+    "labelDocEN": "Témoin 276 Frontalier"
   },
   {
     "categoryNumber": 0,
@@ -818,7 +818,7 @@
     "labelDocFR": "Déclaration Caisse Congé du Diamant",
     "labelDocNL": "Aangifte Rijksverlofkas voor de Diamantnijverheid",
     "labelDocDE": "Déclaration Caisse Congé du Diamant",
-    "labelDocX": "Déclaration Caisse Congé du Diamant"
+    "labelDocEN": "Déclaration Caisse Congé du Diamant"
   },
   {
     "categoryNumber": 0,
@@ -829,7 +829,7 @@
     "labelDocFR": "Déclaration Caisse Congé du Diamant (relevé nominatif)",
     "labelDocNL": "Aangifte Rijksverlofkas voor de Diamantnijverheid (lijst werknemer)",
     "labelDocDE": "Déclaration Caisse Congé du Diamant (relevé nominatif)",
-    "labelDocX": "Déclaration Caisse Congé du Diamant (relevé nominatif)"
+    "labelDocEN": "Déclaration Caisse Congé du Diamant (relevé nominatif)"
   },
   {
     "categoryNumber": 0,
@@ -839,7 +839,7 @@
     "referenceDocument": 492,
     "labelDocFR": "276 Frontalier : française - belge pour  travailleurs saisonniers",
     "labelDocNL": "276 grensarbeider : Frans - Belgisch",
-    "labelDocX": "276 Frontalier : française - belge pour  travailleurs saisonniers"
+    "labelDocEN": "276 Frontalier : française - belge pour  travailleurs saisonniers"
   },
   {
     "categoryNumber": 0,
@@ -849,7 +849,7 @@
     "referenceDocument": 500,
     "labelDocFR": "Liste de préparation des primes annuelles",
     "labelDocNL": "Voorbereiding berekening jaarlijkse premie",
-    "labelDocX": "Liste de préparation des primes annuelles"
+    "labelDocEN": "Liste de préparation des primes annuelles"
   },
   {
     "categoryNumber": 0,
@@ -859,7 +859,7 @@
     "referenceDocument": 503,
     "labelDocFR": "Témoin 276 Frontalier par caisse de vacances",
     "labelDocNL": "Getuigenlijst 276 grensarbeider per vakantiekas",
-    "labelDocX": "Témoin 276 Frontalier par caisse de vacances"
+    "labelDocEN": "Témoin 276 Frontalier par caisse de vacances"
   },
   {
     "categoryNumber": 0,
@@ -869,7 +869,7 @@
     "referenceDocument": 601,
     "labelDocFR": "Fichier spécifiques",
     "labelDocNL": "Specifieke bestanden",
-    "labelDocX": "Fichier spécifiques"
+    "labelDocEN": "Fichier spécifiques"
   },
   {
     "categoryNumber": 0,
@@ -879,7 +879,7 @@
     "referenceDocument": 614,
     "labelDocFR": "Statistique 14: Compta. rémun./Etat prov./Oper.div.",
     "labelDocNL": "Statistiek 14 : diverse verrichtingen",
-    "labelDocX": "Statistique 14: Compta. rémun./Etat prov./Oper.div."
+    "labelDocEN": "Statistique 14: Compta. rémun./Etat prov./Oper.div."
   },
   {
     "categoryNumber": 0,
@@ -889,7 +889,7 @@
     "referenceDocument": 657,
     "labelDocFR": "Déclaration ONP-Prépension (et 658 cotisation spéciale)",
     "labelDocNL": "Aangifte RVP-brugpensioen (en 658 speciale bijdrage)",
-    "labelDocX": "Déclaration ONP-Prépension (et 658 cotisation spéciale)"
+    "labelDocEN": "Déclaration ONP-Prépension (et 658 cotisation spéciale)"
   },
   {
     "categoryNumber": 0,
@@ -900,7 +900,7 @@
     "labelDocFR": "Bordereau accompagnement  commande Sodexho",
     "labelDocNL": "Verzendingsborderel bestelling Sodexho",
     "labelDocDE": "Bordereau accompagnement  commande Sodexho",
-    "labelDocX": "Bordereau accompagnement  commande Sodexho"
+    "labelDocEN": "Bordereau accompagnement  commande Sodexho"
   },
   {
     "categoryNumber": 0,
@@ -911,7 +911,7 @@
     "labelDocFR": "Bordereau accompagnement  commande Ticket Restaurant",
     "labelDocNL": "Verzendingsborderel bestelling Ticket Restaurant",
     "labelDocDE": "Bordereau accompagnement  commande Ticket Restaurant",
-    "labelDocX": "Bordereau accompagnement  commande Ticket Restaurant"
+    "labelDocEN": "Bordereau accompagnement  commande Ticket Restaurant"
   },
   {
     "categoryNumber": 0,
@@ -921,7 +921,7 @@
     "referenceDocument": 724,
     "labelDocFR": "Déclaration ONSS : Relevé travailleur",
     "labelDocNL": "RSZ aangifte : Nominatieve lijst",
-    "labelDocX": "Déclaration ONSS : Relevé travailleur"
+    "labelDocEN": "Déclaration ONSS : Relevé travailleur"
   },
   {
     "categoryNumber": 0,
@@ -932,7 +932,7 @@
     "labelDocFR": "Comptabilisation Opérations Diverses",
     "labelDocNL": "Boekingsstaat diverse verrichtingen",
     "labelDocDE": "Opérations diverses",
-    "labelDocX": "Comptabilisation Opérations Diverses"
+    "labelDocEN": "Comptabilisation Opérations Diverses"
   },
   {
     "categoryNumber": 0,
@@ -942,7 +942,7 @@
     "referenceDocument": 753,
     "labelDocFR": "Statistique des heures ",
     "labelDocNL": "Statistiek van de uren ",
-    "labelDocX": "Statistics of the hours"
+    "labelDocEN": "Statistics of the hours"
   },
   {
     "categoryNumber": 0,
@@ -952,7 +952,7 @@
     "referenceDocument": 800,
     "labelDocFR": "Fichier SAIAU - PreSta",
     "labelDocNL": "Bestand SAIAU - PreSta",
-    "labelDocX": "Fichier SAIAU - PreSta"
+    "labelDocEN": "Fichier SAIAU - PreSta"
   },
   {
     "categoryNumber": 0,
@@ -962,7 +962,7 @@
     "referenceDocument": 812,
     "labelDocFR": "Déclaration SSP Navigation Intérieure",
     "labelDocNL": "Aangifte BSZ - Binnenvaart",
-    "labelDocX": "Déclaration SSP Navigation Intérieure"
+    "labelDocEN": "Déclaration SSP Navigation Intérieure"
   },
   {
     "categoryNumber": 0,
@@ -972,7 +972,7 @@
     "referenceDocument": 813,
     "labelDocFR": "Déclaration INAMI-Pension - Générale (Déclaration)",
     "labelDocNL": "Aangifte RIZIV-pensioenen (aangifte)",
-    "labelDocX": "Déclaration INAMI-Pension - Générale (Déclaration)"
+    "labelDocEN": "Déclaration INAMI-Pension - Générale (Déclaration)"
   },
   {
     "categoryNumber": 0,
@@ -982,7 +982,7 @@
     "referenceDocument": 814,
     "labelDocFR": "Déclaration INAMI-Pension - APL (Déclaration)",
     "labelDocNL": "Aangifte RIZIV-pensioenen - PPO (aangifte)",
-    "labelDocX": "Déclaration INAMI-Pension - APL (Déclaration)"
+    "labelDocEN": "Déclaration INAMI-Pension - APL (Déclaration)"
   },
   {
     "categoryNumber": 0,
@@ -992,7 +992,7 @@
     "referenceDocument": 831,
     "labelDocFR": "Déclaration INAMI-Pension - Générale (Bordereau)",
     "labelDocNL": "Aangifte RIZIV-pensioenen (Bordereel)",
-    "labelDocX": "Déclaration INAMI-Pension - Générale (Bordereau)"
+    "labelDocEN": "Déclaration INAMI-Pension - Générale (Bordereau)"
   },
   {
     "categoryNumber": 0,
@@ -1002,7 +1002,7 @@
     "referenceDocument": 832,
     "labelDocFR": "Déclaration INAMI-Pension - APL (Bordereau)",
     "labelDocNL": "Aangifte RIZIV-pensioenen - PPO (Bordereel)",
-    "labelDocX": "Déclaration INAMI-Pension - APL (Bordereau)"
+    "labelDocEN": "Déclaration INAMI-Pension - APL (Bordereau)"
   },
   {
     "categoryNumber": 0,
@@ -1012,7 +1012,7 @@
     "referenceDocument": 833,
     "labelDocFR": "Lettre demande carte premier emploi (dem.form.C63)",
     "labelDocNL": "Brief aanvraag startbaankaart (aanvraag form. C63)",
-    "labelDocX": "Lettre demande carte premier emploi (dem.form.C63)"
+    "labelDocEN": "Lettre demande carte premier emploi (dem.form.C63)"
   },
   {
     "categoryNumber": 0,
@@ -1022,7 +1022,7 @@
     "referenceDocument": 850,
     "labelDocFR": "ONP journalisme - Bordereau d'accompagnement de disquette",
     "labelDocNL": "RP journalisme - Begeleidende lijst diskettes",
-    "labelDocX": "ONP journalisme - Bordereau d'accompagnement de disquette"
+    "labelDocEN": "ONP journalisme - Bordereau d'accompagnement de disquette"
   },
   {
     "categoryNumber": 0,
@@ -1032,7 +1032,7 @@
     "referenceDocument": 851,
     "labelDocFR": "ONP navigation aérienne - Bordereau d'accompagnement de disquette",
     "labelDocNL": "RP luchtvaart - Begeleidende lijst diskettes",
-    "labelDocX": "ONP navigation aérienne - Bordereau d'accompagnement de disquette"
+    "labelDocEN": "ONP navigation aérienne - Bordereau d'accompagnement de disquette"
   },
   {
     "categoryNumber": 0,
@@ -1043,7 +1043,7 @@
     "labelDocFR": "PTG - Log file Chargement",
     "labelDocNL": "PTG - Log File Inlading",
     "labelDocDE": "PTG - Log file Chargement",
-    "labelDocX": "PTG - Log file Chargement"
+    "labelDocEN": "PTG - Log file Chargement"
   },
   {
     "categoryNumber": 0,
@@ -1053,7 +1053,7 @@
     "referenceDocument": 985,
     "labelDocFR": "Liste des ayants-droits bons promos Carrefour",
     "labelDocNL": "Lijst van de rechthebbenden promotionele actie Carrefour",
-    "labelDocX": "Liste des ayants-droits bons promos Carrefour"
+    "labelDocEN": "Liste des ayants-droits bons promos Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1063,7 +1063,7 @@
     "referenceDocument": 986,
     "labelDocFR": "Liste accusé de réception bons promos Carrefour",
     "labelDocNL": "Lijst ontvangstbewijs promotionele actie Carrefour",
-    "labelDocX": "Liste accusé de réception bons promos Carrefour"
+    "labelDocEN": "Liste accusé de réception bons promos Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1073,7 +1073,7 @@
     "referenceDocument": 987,
     "labelDocFR": "Etiquettes des ayants-droits bons promos Carrefour",
     "labelDocNL": "Etiket van de rechthebbenden promotionele actie Carrefour",
-    "labelDocX": "Etiquettes des ayants-droits bons promos Carrefour"
+    "labelDocEN": "Etiquettes des ayants-droits bons promos Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1083,7 +1083,7 @@
     "referenceDocument": 988,
     "labelDocFR": "Liste des retours bons promos Carrefour",
     "labelDocNL": "Lijst van de niet uitgedeelde bons promotionele actie Carrefour",
-    "labelDocX": "Liste des retours bons promos Carrefour"
+    "labelDocEN": "Liste des retours bons promos Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1093,7 +1093,7 @@
     "referenceDocument": 989,
     "labelDocFR": "Liste des informations bons promos Carrefour (run 1)",
     "labelDocNL": "Lijst van informaties promotionele actie Carrefour (run 1)",
-    "labelDocX": "Liste des informations bons promos Carrefour (run 1)"
+    "labelDocEN": "Liste des informations bons promos Carrefour (run 1)"
   },
   {
     "categoryNumber": 0,
@@ -1103,7 +1103,7 @@
     "referenceDocument": 990,
     "labelDocFR": "Liste des différences bons promos Carrefour",
     "labelDocNL": "Lijst van de verschillen promotionele actie Carrefour",
-    "labelDocX": "Liste des différences bons promos Carrefour"
+    "labelDocEN": "Liste des différences bons promos Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1113,7 +1113,7 @@
     "referenceDocument": 991,
     "labelDocFR": "Fichier des ayants droit bons promos Carrefour",
     "labelDocNL": "Bestand van de rechthebbenden promotionele actie Carrefour",
-    "labelDocX": "Fichier des ayants droit bons promos Carrefour"
+    "labelDocEN": "Fichier des ayants droit bons promos Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1123,7 +1123,7 @@
     "referenceDocument": 992,
     "labelDocFR": "Liste des ayants droit chèques cadeaux Carrefour",
     "labelDocNL": "Lijst van de rechthebbenden kadobons Carrefour",
-    "labelDocX": "Liste des ayants droit chèques cadeaux Carrefour"
+    "labelDocEN": "Liste des ayants droit chèques cadeaux Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1133,7 +1133,7 @@
     "referenceDocument": 993,
     "labelDocFR": "Liste des différences chèques cadeaux Carrefour",
     "labelDocNL": "Lijst van de verschillen kadobons Carrefour",
-    "labelDocX": "Liste des différences chèques cadeaux Carrefour"
+    "labelDocEN": "Liste des différences chèques cadeaux Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1143,7 +1143,7 @@
     "referenceDocument": 994,
     "labelDocFR": "Fichier des ayants droit chèques cadeaux Carrefour",
     "labelDocNL": "Bestand van de rechthebbenden kadobons Carrefour",
-    "labelDocX": "Fichier des ayants droit chèques cadeaux Carrefour"
+    "labelDocEN": "Fichier des ayants droit chèques cadeaux Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1153,7 +1153,7 @@
     "referenceDocument": 995,
     "labelDocFR": "Fichier des chèques cadeaux Carrefour format Accor",
     "labelDocNL": "Bestand kadobons Carrefour formaat Accor",
-    "labelDocX": "Fichier des chèques cadeaux Carrefour format Accor"
+    "labelDocEN": "Fichier des chèques cadeaux Carrefour format Accor"
   },
   {
     "categoryNumber": 0,
@@ -1163,7 +1163,7 @@
     "referenceDocument": 996,
     "labelDocFR": "Liste des informations bons promos Carrefour (run 2)",
     "labelDocNL": "Lijst van informaties promotionele actie Carrefour (run 2)",
-    "labelDocX": "Liste des informations bons promos Carrefour (run 2)"
+    "labelDocEN": "Liste des informations bons promos Carrefour (run 2)"
   },
   {
     "categoryNumber": 0,
@@ -1173,7 +1173,7 @@
     "referenceDocument": 997,
     "labelDocFR": "Lettre de refus bourse d'études Carrefour",
     "labelDocNL": "Brief weigering studiebeurs -  Carrefour",
-    "labelDocX": "Lettre de refus bourse d'études Carrefour"
+    "labelDocEN": "Lettre de refus bourse d'études Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1183,7 +1183,7 @@
     "referenceDocument": 998,
     "labelDocFR": "Ordres de paiement des bourses d'études pour Carrefour",
     "labelDocNL": "Betaalopdrachten studiebeurzen - Carrefour",
-    "labelDocX": "Ordres de paiement des bourses d'études pour Carrefour"
+    "labelDocEN": "Ordres de paiement des bourses d'études pour Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1193,7 +1193,7 @@
     "referenceDocument": 999,
     "labelDocFR": "Anomalies Ordres de paiement des bourses d'études Carrefour",
     "labelDocNL": "Anomalieën in betaalopdrachten studiebeurzen - Carrefour",
-    "labelDocX": "Anomalies Ordres de paiement des bourses d'études Carrefour"
+    "labelDocEN": "Anomalies Ordres de paiement des bourses d'études Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1203,7 +1203,7 @@
     "referenceDocument": 1000,
     "labelDocFR": "Fichier des ayants droit bons achat Carrefour",
     "labelDocNL": "Bestand van de rechthebbenden  Carrefour",
-    "labelDocX": "Fichier des ayants droit bons achat Carrefour"
+    "labelDocEN": "Fichier des ayants droit bons achat Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1213,7 +1213,7 @@
     "referenceDocument": 1001,
     "labelDocFR": "Fichier des bons d'achat Carrefour format Accor",
     "labelDocNL": "Bestand bons Carrefour formaat Accor",
-    "labelDocX": "Fichier des bons d'achat Carrefour format Accor"
+    "labelDocEN": "Fichier des bons d'achat Carrefour format Accor"
   },
   {
     "categoryNumber": 0,
@@ -1223,7 +1223,7 @@
     "referenceDocument": 1003,
     "labelDocFR": "Liste des paiements étrangers",
     "labelDocNL": "Lijst van buitenlandse betalingen",
-    "labelDocX": "Liste des paiements étrangers"
+    "labelDocEN": "Liste des paiements étrangers"
   },
   {
     "categoryNumber": 0,
@@ -1233,7 +1233,7 @@
     "referenceDocument": 1008,
     "labelDocFR": "Liste des informations Eco-bons 2009 Carrefour ",
     "labelDocNL": "Lijst van informaties Ecobons 2009 Carrefour ",
-    "labelDocX": "Liste des informations Eco-bons 2009 Carrefour "
+    "labelDocEN": "Liste des informations Eco-bons 2009 Carrefour "
   },
   {
     "categoryNumber": 0,
@@ -1243,7 +1243,7 @@
     "referenceDocument": 1009,
     "labelDocFR": "Liste des informations Eco-chèques Carrefour ",
     "labelDocNL": "Lijst van informaties Ecocheques Carrefour ",
-    "labelDocX": "Liste des informations Eco-chèques Carrefour "
+    "labelDocEN": "Liste des informations Eco-chèques Carrefour "
   },
   {
     "categoryNumber": 0,
@@ -1253,7 +1253,7 @@
     "referenceDocument": 1010,
     "labelDocFR": "Fichier des Eco-chèques Carrefour format Accor",
     "labelDocNL": "Bestand Ecocheques Carrefour formaat Accor",
-    "labelDocX": "Fichier des Eco-chèques Carrefour format Accor"
+    "labelDocEN": "Fichier des Eco-chèques Carrefour format Accor"
   },
   {
     "categoryNumber": 0,
@@ -1263,7 +1263,7 @@
     "referenceDocument": 1011,
     "labelDocFR": "Fichier des ayants droit bons promos électroniques Carrefour",
     "labelDocNL": "Bestand Promo Bons Carrefour ",
-    "labelDocX": "Fichier des ayants droit bons promos électroniques Carrefour"
+    "labelDocEN": "Fichier des ayants droit bons promos électroniques Carrefour"
   },
   {
     "categoryNumber": 0,
@@ -1273,7 +1273,7 @@
     "referenceDocument": 1012,
     "labelDocFR": "Fichier des ayants droit bons promos Carrefour pour SAP",
     "labelDocNL": "Bestand Promo Bons Carrefour Voor SAP",
-    "labelDocX": "Fichier des ayants droit bons promos Carrefour pour SAP"
+    "labelDocEN": "Fichier des ayants droit bons promos Carrefour pour SAP"
   },
   {
     "categoryNumber": 0,
@@ -1283,7 +1283,7 @@
     "referenceDocument": 1013,
     "labelDocFR": " situation individuelle des droits (actifs  - demis) nouveau fonds pension\r\n situation individuelle ",
     "labelDocNL": "individuele situatie nieuwpensioenfonds",
-    "labelDocX": " situation individuelle des droits (actifs  - demis) nouveau fonds pension\r\n situation individuelle "
+    "labelDocEN": " situation individuelle des droits (actifs  - demis) nouveau fonds pension\r\n situation individuelle "
   },
   {
     "categoryNumber": 0,
@@ -1293,7 +1293,7 @@
     "referenceDocument": 1014,
     "labelDocFR": "Droits acquis nouveau Fonds de pension Carrefour Begium (sortis)",
     "labelDocNL": "rechten verwotrven in het nieuw pensionefonds",
-    "labelDocX": "Droits acquis nouveau Fonds de pension Carrefour Begium (sortis)"
+    "labelDocEN": "Droits acquis nouveau Fonds de pension Carrefour Begium (sortis)"
   },
   {
     "categoryNumber": 0,
@@ -1303,7 +1303,7 @@
     "referenceDocument": 1015,
     "labelDocFR": "situation individuelle des droits fonds de solidarite",
     "labelDocNL": "individelee situatie rechten solidariteit fonds",
-    "labelDocX": "situation individuelle des droits fonds de solidarite"
+    "labelDocEN": "situation individuelle des droits fonds de solidarite"
   },
   {
     "categoryNumber": 0,
@@ -1313,7 +1313,7 @@
     "referenceDocument": 1016,
     "labelDocFR": "Droits acquis nouveau Fonds de solidarité Carrefour Belgium (sortis)",
     "labelDocNL": "rechten verwotrven in het solidariteit fonds ",
-    "labelDocX": "Droits acquis nouveau Fonds de solidarité Carrefour Belgium (sortis)"
+    "labelDocEN": "Droits acquis nouveau Fonds de solidarité Carrefour Belgium (sortis)"
   },
   {
     "categoryNumber": 0,
@@ -1324,7 +1324,7 @@
     "labelDocFR": "Comptabilisation des rémunérations (Nv Version)",
     "labelDocNL": "Boeking van de lonen (Nieuwe versie)",
     "labelDocDE": "ComptaRem",
-    "labelDocX": "Accounting of the wages (New version)"
+    "labelDocEN": "Accounting of the wages (New version)"
   },
   {
     "categoryNumber": 0,
@@ -1335,7 +1335,7 @@
     "labelDocFR": "Comptabilisation Opérations Diverses (multi-périodes) (Nv Version)",
     "labelDocNL": "Boekingsstaat diverse verrichtingen (per periode) (Nieuwe versie)",
     "labelDocDE": "Opérations diverses",
-    "labelDocX": "Accounting of various operations (multiperiod)(New version)"
+    "labelDocEN": "Accounting of various operations (multiperiod)(New version)"
   },
   {
     "categoryNumber": 0,
@@ -1345,7 +1345,7 @@
     "referenceDocument": 2001,
     "labelDocFR": "Cadre comptable DMFA / dossier GS",
     "labelDocNL": "Boekhoudraam DMFA / dossier GS",
-    "labelDocX": "DMFA accounting framework / GS file"
+    "labelDocEN": "DMFA accounting framework / GS file"
   },
   {
     "categoryNumber": 0,
@@ -1355,7 +1355,7 @@
     "referenceDocument": 2002,
     "labelDocFR": "Cadre comptable DMFA / matricule ONSS",
     "labelDocNL": "Boekhoudraam DMFA / RSZ-nummer",
-    "labelDocX": "DMFA accounting framework / NSSO identification number"
+    "labelDocEN": "DMFA accounting framework / NSSO identification number"
   },
   {
     "categoryNumber": 0,
@@ -1365,7 +1365,7 @@
     "referenceDocument": 2003,
     "labelDocFR": "Relevé nominatif DMFA / dossier GS",
     "labelDocNL": "Naamlijst  DMFA / dossier GS",
-    "labelDocX": "DMFA list of names / GS file"
+    "labelDocEN": "DMFA list of names / GS file"
   },
   {
     "categoryNumber": 0,
@@ -1375,7 +1375,7 @@
     "referenceDocument": 2004,
     "labelDocFR": "Relevé nominatif DMFA / matricule ONSS",
     "labelDocNL": "Naamlijst DMFA / RSZ-nummer",
-    "labelDocX": "DMFA list of names / NSSO identification number"
+    "labelDocEN": "DMFA list of names / NSSO identification number"
   },
   {
     "categoryNumber": 0,
@@ -1385,7 +1385,7 @@
     "referenceDocument": 2007,
     "labelDocFR": "Relevé ETA8 -  Région wallonne",
     "labelDocNL": "Staat ETA8 - Waals gewest",
-    "labelDocX": "Relevé ETA8 -  Région wallonne"
+    "labelDocEN": "Relevé ETA8 -  Région wallonne"
   },
   {
     "categoryNumber": 0,
@@ -1395,7 +1395,7 @@
     "referenceDocument": 2008,
     "labelDocFR": "Bordereau ETA7 - Région wallonne",
     "labelDocNL": "Borderel ETA7 - Waals gewest",
-    "labelDocX": "Bordereau ETA7 - Région wallonne"
+    "labelDocEN": "Bordereau ETA7 - Région wallonne"
   },
   {
     "categoryNumber": 0,
@@ -1405,7 +1405,7 @@
     "referenceDocument": 2009,
     "labelDocFR": "Relevé ETA - Bruxelles",
     "labelDocNL": "Staat Ond.Aangep.Werk - Brussel",
-    "labelDocX": "ETA Statement - Brussels"
+    "labelDocEN": "ETA Statement - Brussels"
   },
   {
     "categoryNumber": 0,
@@ -1415,7 +1415,7 @@
     "referenceDocument": 2011,
     "labelDocFR": "Calcul intervention AWIPH",
     "labelDocNL": "Berekening subsidie \"AWIPH\"",
-    "labelDocX": "Calcul intervention AWIPH"
+    "labelDocEN": "Calcul intervention AWIPH"
   },
   {
     "categoryNumber": 0,
@@ -1425,7 +1425,7 @@
     "referenceDocument": 2013,
     "labelDocFR": "Notification de calcul APL",
     "labelDocNL": "Notificatie berekening PPO",
-    "labelDocX": "Notification of APL calculation"
+    "labelDocEN": "Notification of APL calculation"
   },
   {
     "categoryNumber": 0,
@@ -1435,7 +1435,7 @@
     "referenceDocument": 2101,
     "labelDocFR": "DMFA Relevé nominatif (copie bureau)",
     "labelDocNL": "DMFA Naamlijst (kopie bureau)",
-    "labelDocX": "DMFA Relevé nominatif (copie bureau)"
+    "labelDocEN": "DMFA Relevé nominatif (copie bureau)"
   },
   {
     "categoryNumber": 0,
@@ -1445,7 +1445,7 @@
     "referenceDocument": 2102,
     "labelDocFR": "DMFA Mise à jour Relevé Nominatif (copie bureau)",
     "labelDocNL": "DMFA Bijwerking Naamlijst (kopie bureau)",
-    "labelDocX": "DMFA Update list of names (copy office)"
+    "labelDocEN": "DMFA Update list of names (copy office)"
   },
   {
     "categoryNumber": 0,
@@ -1455,7 +1455,7 @@
     "referenceDocument": 2103,
     "labelDocFR": "DMFA Relevé Nominatif (corr. ONSS)",
     "labelDocNL": "DMFA Naamlijst (verbetering RSZ)",
-    "labelDocX": "DMFA Relevé Nominatif (corr. ONSS)"
+    "labelDocEN": "DMFA Relevé Nominatif (corr. ONSS)"
   },
   {
     "categoryNumber": 0,
@@ -1465,7 +1465,7 @@
     "referenceDocument": 2108,
     "labelDocFR": "Relevé SBW -  Région flamande",
     "labelDocNL": "Staat SBW - Vlaams gewest",
-    "labelDocX": "SBW statement - Flemish Region"
+    "labelDocEN": "SBW statement - Flemish Region"
   },
   {
     "categoryNumber": 0,
@@ -1475,7 +1475,7 @@
     "referenceDocument": 2109,
     "labelDocFR": "demande étiquette ONSS",
     "labelDocNL": "Aanvraag RSZ-etiket",
-    "labelDocX": "demande étiquette ONSS"
+    "labelDocEN": "demande étiquette ONSS"
   },
   {
     "categoryNumber": 0,
@@ -1485,7 +1485,7 @@
     "referenceDocument": 2111,
     "labelDocFR": "Demande de recherche d'unité d'établissement par le BCE",
     "labelDocNL": "Aanvraag tot ophalen van de vestigingseenheden via de KBO",
-    "labelDocX": "Demande de recherche d'unité d'établissement par le BCE"
+    "labelDocEN": "Demande de recherche d'unité d'établissement par le BCE"
   },
   {
     "categoryNumber": 0,
@@ -1495,7 +1495,7 @@
     "referenceDocument": 2112,
     "labelDocFR": "Calcule automatique des paie des adminstrateurs",
     "labelDocNL": "Automatische berekening van de lonen van de bedrijfsleiders",
-    "labelDocX": "Calcule automatique des paie des adminstrateurs"
+    "labelDocEN": "Calcule automatique des paie des adminstrateurs"
   },
   {
     "categoryNumber": 0,
@@ -1505,7 +1505,7 @@
     "referenceDocument": 2113,
     "labelDocFR": "Synchronisation automatique des voitures",
     "labelDocNL": "Automatische synchronisatie van de wagens",
-    "labelDocX": "Synchronisation automatique des voitures"
+    "labelDocEN": "Synchronisation automatique des voitures"
   },
   {
     "categoryNumber": 0,
@@ -1516,7 +1516,7 @@
     "labelDocFR": "Document étiquettes code barres Carrefour - Casi",
     "labelDocNL": "Document etiketten barcode Carrefour - CASI ",
     "labelDocDE": "Document étiquette d'expédition avec modalités (cardocre)",
-    "labelDocX": "Document étiquettes code barres Carrefour - Casi"
+    "labelDocEN": "Document étiquettes code barres Carrefour - Casi"
   },
   {
     "categoryNumber": 0,
@@ -1527,7 +1527,7 @@
     "labelDocFR": "Document PDF C78.3",
     "labelDocNL": "Document PDF C78.3",
     "labelDocDE": "Document PDF C78.3",
-    "labelDocX": "Document PDF C78.3"
+    "labelDocEN": "Document PDF C78.3"
   },
   {
     "categoryNumber": 0,
@@ -1538,7 +1538,7 @@
     "labelDocFR": "Document PDF ACTIVA normal  ",
     "labelDocNL": "Document PDF ACTIVA algemeen",
     "labelDocDE": "Document PDF ACTIVA normal  ",
-    "labelDocX": "Document PDF ACTIVA normal  "
+    "labelDocEN": "Document PDF ACTIVA normal  "
   },
   {
     "categoryNumber": 0,
@@ -1549,7 +1549,7 @@
     "labelDocFR": "Document PDF ACTIVA SINE",
     "labelDocNL": "Document PDF ACTIVA  SINE",
     "labelDocDE": "Document PDF ACTIVA  SINE",
-    "labelDocX": "Document PDF ACTIVA SINE"
+    "labelDocEN": "Document PDF ACTIVA SINE"
   },
   {
     "categoryNumber": 0,
@@ -1560,7 +1560,7 @@
     "labelDocFR": "Document PDF ACTIVA  courte durée",
     "labelDocNL": "Document PDF ACTIVA normaal korte duur",
     "labelDocDE": "Document PDF ACTIVA  courte durée",
-    "labelDocX": "Document PDF ACTIVA  courte durée"
+    "labelDocEN": "Document PDF ACTIVA  courte durée"
   },
   {
     "categoryNumber": 0,
@@ -1571,7 +1571,7 @@
     "labelDocFR": "Document PDF ACTIVA APS",
     "labelDocNL": "Document PDF ACTIVA veiligheids en preventiepersonneel",
     "labelDocDE": "Document PDF ACTIVA  APS ",
-    "labelDocX": "Document PDF ACTIVA APS"
+    "labelDocEN": "Document PDF ACTIVA APS"
   },
   {
     "categoryNumber": 0,
@@ -1581,7 +1581,7 @@
     "referenceDocument": 5003,
     "labelDocFR": "Déclaration mensuelle cotis. OSSOM",
     "labelDocNL": "Maandelijkse aangifte DOSZ",
-    "labelDocX": "Déclaration mensuelle cotis. OSSOM"
+    "labelDocEN": "Déclaration mensuelle cotis. OSSOM"
   },
   {
     "categoryNumber": 0,
@@ -1591,7 +1591,7 @@
     "referenceDocument": 5004,
     "labelDocFR": "Fichier CBMT médecine du travail",
     "labelDocNL": "CBMT-bestand arbeidsgeneeskunde",
-    "labelDocX": "CBMT file occupational medicine"
+    "labelDocEN": "CBMT file occupational medicine"
   },
   {
     "categoryNumber": 0,
@@ -1601,7 +1601,7 @@
     "referenceDocument": 5005,
     "labelDocFR": "Fichier datawarehouse BRICO",
     "labelDocNL": "Datawarehouse-bestand BRICO",
-    "labelDocX": "Fichier datawarehouse BRICO"
+    "labelDocEN": "Fichier datawarehouse BRICO"
   },
   {
     "categoryNumber": 0,
@@ -1611,7 +1611,7 @@
     "referenceDocument": 5006,
     "labelDocFR": "Fichier Inno vers Metro AG",
     "labelDocNL": "Inno /  Metro AG-bestand",
-    "labelDocX": "Fichier Inno vers Metro AG"
+    "labelDocEN": "Fichier Inno vers Metro AG"
   },
   {
     "categoryNumber": 0,
@@ -1621,7 +1621,7 @@
     "referenceDocument": 5009,
     "labelDocFR": "Liste travailleurs en longue maladie",
     "labelDocNL": "Lijst langdurig zieke werknemers",
-    "labelDocX": "List of workers on long-term sick leave"
+    "labelDocEN": "List of workers on long-term sick leave"
   },
   {
     "categoryNumber": 0,
@@ -1631,7 +1631,7 @@
     "referenceDocument": 5011,
     "labelDocFR": "Fichier Inno vers KAUFHOF",
     "labelDocNL": "Inno /  KAUFHOF-bestand",
-    "labelDocX": "Fichier Inno vers KAUFHOF"
+    "labelDocEN": "Fichier Inno vers KAUFHOF"
   },
   {
     "categoryNumber": 0,
@@ -1641,7 +1641,7 @@
     "referenceDocument": 5012,
     "labelDocFR": "Fichier Budget INNO",
     "labelDocNL": "Bestand Budget INNO",
-    "labelDocX": "Fichier Budget INNO"
+    "labelDocEN": "Fichier Budget INNO"
   },
   {
     "categoryNumber": 0,
@@ -1651,7 +1651,7 @@
     "referenceDocument": 5013,
     "labelDocFR": "Fichier PREVEMED-BEWEL",
     "labelDocNL": "Bestand PREVEMED-BEWEL",
-    "labelDocX": "Fichier PREVEMED-BEWEL"
+    "labelDocEN": "Fichier PREVEMED-BEWEL"
   },
   {
     "categoryNumber": 0,
@@ -1661,7 +1661,7 @@
     "referenceDocument": 5014,
     "labelDocFR": "Fichier ENCARE",
     "labelDocNL": "Bestand ENCARE",
-    "labelDocX": "Fichier ENCARE"
+    "labelDocEN": "Fichier ENCARE"
   },
   {
     "categoryNumber": 0,
@@ -1671,7 +1671,7 @@
     "referenceDocument": 5015,
     "labelDocFR": "Fichier demandes primes RW",
     "labelDocNL": "Bestand aanvragen premies Waals gewest",
-    "labelDocX": "Fichier demandes primes RW"
+    "labelDocEN": "Fichier demandes primes RW"
   },
   {
     "categoryNumber": 0,
@@ -1681,7 +1681,7 @@
     "referenceDocument": 5016,
     "labelDocFR": "Fichier Export Medex ",
     "labelDocNL": "Bestand Export Medex ",
-    "labelDocX": "Fichier Export Medex "
+    "labelDocEN": "Fichier Export Medex "
   },
   {
     "categoryNumber": 0,
@@ -1691,7 +1691,7 @@
     "referenceDocument": 5017,
     "labelDocFR": "Fichier demandes primes RW structure xml version 2008",
     "labelDocNL": "Bestand aanvragen premies Waals gewest structuur XML versie 2008",
-    "labelDocX": "Fichier demandes primes RW structure xml version 2008"
+    "labelDocEN": "Fichier demandes primes RW structure xml version 2008"
   },
   {
     "categoryNumber": 0,
@@ -1701,7 +1701,7 @@
     "referenceDocument": 5018,
     "labelDocFR": "Fichier DU (document unique)",
     "labelDocNL": "DU-bestand (uniek dokument)",
-    "labelDocX": "Fichier DU (document unique)"
+    "labelDocEN": "Fichier DU (document unique)"
   },
   {
     "categoryNumber": 0,
@@ -1712,7 +1712,7 @@
     "labelDocFR": "Fichier RFT",
     "labelDocNL": "Fichier RFT",
     "labelDocDE": "Fichier RFT",
-    "labelDocX": "Fichier RFT"
+    "labelDocEN": "Fichier RFT"
   },
   {
     "categoryNumber": 1,
@@ -1723,7 +1723,7 @@
     "labelDocFR": "Document étiquette d'expédition avec modalités (cardocre)",
     "labelDocNL": "Document verzendingsetiket met modaliteiten (cardocre)",
     "labelDocDE": "Document étiquette d'expédition avec modalités (cardocre)",
-    "labelDocX": "Document étiquette d'expédition avec modalités (cardocre)"
+    "labelDocEN": "Document étiquette d'expédition avec modalités (cardocre)"
   },
   {
     "categoryNumber": 1,
@@ -1733,7 +1733,7 @@
     "referenceDocument": 31,
     "labelDocFR": "Bulletin de paie",
     "labelDocNL": "Loonbrief",
-    "labelDocX": "Pay slip"
+    "labelDocEN": "Pay slip"
   },
   {
     "categoryNumber": 1,
@@ -1743,7 +1743,7 @@
     "referenceDocument": 32,
     "labelDocFR": "Bulletin de paie Préparatoire (valorisations préparées en journée)",
     "labelDocNL": "Voorbereidend Loonbrief (overdag berekende)",
-    "labelDocX": "Bulletin de paie Préparatoire (valorisations préparées en journée)"
+    "labelDocEN": "Bulletin de paie Préparatoire (valorisations préparées en journée)"
   },
   {
     "categoryNumber": 1,
@@ -1753,7 +1753,7 @@
     "referenceDocument": 33,
     "labelDocFR": "Fichier de contrôle des nets calculés en journée",
     "labelDocNL": "Controlebestand van overdag berekende netto's",
-    "labelDocX": "Control file of netto amounts calculated during the day"
+    "labelDocEN": "Control file of netto amounts calculated during the day"
   },
   {
     "categoryNumber": 1,
@@ -1763,7 +1763,7 @@
     "referenceDocument": 34,
     "labelDocFR": "Fichier de contrôle des valorisations",
     "labelDocNL": "Controlebestand van de valorisatie",
-    "labelDocX": "Control file valuations"
+    "labelDocEN": "Control file valuations"
   },
   {
     "categoryNumber": 1,
@@ -1773,7 +1773,7 @@
     "referenceDocument": 35,
     "labelDocFR": "liste de contrôle des envois electroniques aux travailleurs",
     "labelDocNL": "Controlelijst van electronish verzendingen aan werknemers",
-    "labelDocX": "liste de contrôle des envois electroniques aux travailleurs"
+    "labelDocEN": "liste de contrôle des envois electroniques aux travailleurs"
   },
   {
     "categoryNumber": 1,
@@ -1783,7 +1783,7 @@
     "referenceDocument": 44,
     "labelDocFR": "Relevé des frais de déplacement CP 121",
     "labelDocNL": "Staat van de mobiliteit kosten PC 121",
-    "labelDocX": "Transport costs summary Joint Committee 121"
+    "labelDocEN": "Transport costs summary Joint Committee 121"
   },
   {
     "categoryNumber": 1,
@@ -1793,7 +1793,7 @@
     "referenceDocument": 100,
     "labelDocFR": "Frais de mobilité pour C.P. 124",
     "labelDocNL": "Mobiliteitskosten P.C. 124",
-    "labelDocX": "Mobility costs for Joint Committee 124"
+    "labelDocEN": "Mobility costs for Joint Committee 124"
   },
   {
     "categoryNumber": 1,
@@ -1803,7 +1803,7 @@
     "referenceDocument": 102,
     "labelDocFR": " QIY - annexe diffusion électronique  bulletin de paie",
     "labelDocNL": " QIY - bijlage électronische diffusie loonbrief",
-    "labelDocX": "QIY - annex electronic diffusion pay slip"
+    "labelDocEN": "QIY - annex electronic diffusion pay slip"
   },
   {
     "categoryNumber": 1,
@@ -1813,7 +1813,7 @@
     "referenceDocument": 131,
     "labelDocFR": "Relevé périodique des primes individuelles",
     "labelDocNL": "Periodiek overzicht van de afzonderlijke premies",
-    "labelDocX": "Relevé périodique des primes individuelles"
+    "labelDocEN": "Relevé périodique des primes individuelles"
   },
   {
     "categoryNumber": 1,
@@ -1823,7 +1823,7 @@
     "referenceDocument": 242,
     "labelDocFR": "Quittance de paiement",
     "labelDocNL": "Kwitantie",
-    "labelDocX": "Payment confirmation"
+    "labelDocEN": "Payment confirmation"
   },
   {
     "categoryNumber": 1,
@@ -1833,7 +1833,7 @@
     "referenceDocument": 261,
     "labelDocFR": "Récapitulatif des rémunérations",
     "labelDocNL": "Samenvattende loonstaat",
-    "labelDocX": "Summary table of compensation"
+    "labelDocEN": "Summary table of compensation"
   },
   {
     "categoryNumber": 1,
@@ -1843,7 +1843,7 @@
     "referenceDocument": 316,
     "labelDocFR": "Relevé des valorisations préparées en journée",
     "labelDocNL": "Staat van overdag berekende prestaties",
-    "labelDocX": "Statement of valuations prepared during the day"
+    "labelDocEN": "Statement of valuations prepared during the day"
   },
   {
     "categoryNumber": 1,
@@ -1853,7 +1853,7 @@
     "referenceDocument": 317,
     "labelDocFR": "Relevé de rémunérations",
     "labelDocNL": "Loonstaat",
-    "labelDocX": "Statement of compensation"
+    "labelDocEN": "Statement of compensation"
   },
   {
     "categoryNumber": 1,
@@ -1863,7 +1863,7 @@
     "referenceDocument": 318,
     "labelDocFR": "Relevé de rémunérations (version bilingue)",
     "labelDocNL": "Loonstaat (tweetalig versie)",
-    "labelDocX": "Statement of compensation (bilingual version)"
+    "labelDocEN": "Statement of compensation (bilingual version)"
   },
   {
     "categoryNumber": 1,
@@ -1873,7 +1873,7 @@
     "referenceDocument": 331,
     "labelDocFR": "Bulletin de paie multi-periodes",
     "labelDocNL": "Loonbrief (multi-periodes)",
-    "labelDocX": "Pay slip"
+    "labelDocEN": "Pay slip"
   },
   {
     "categoryNumber": 1,
@@ -1883,7 +1883,7 @@
     "referenceDocument": 332,
     "labelDocFR": "Bulletin de paie multi-periodes préparatoire (valorisations préparées en journée)",
     "labelDocNL": "Voorbereidend Loonbrief (multi-periodes)",
-    "labelDocX": "Bulletin de paie Préparatoire"
+    "labelDocEN": "Bulletin de paie Préparatoire"
   },
   {
     "categoryNumber": 1,
@@ -1893,7 +1893,7 @@
     "referenceDocument": 342,
     "labelDocFR": "Quittance de paiement multi-periodes",
     "labelDocNL": "Kwitantie (multi-periodes)",
-    "labelDocX": "Payment confirmation"
+    "labelDocEN": "Payment confirmation"
   },
   {
     "categoryNumber": 1,
@@ -1904,7 +1904,7 @@
     "labelDocFR": "Lettre JT moins de 26 ans (réductions ONSS)",
     "labelDocNL": "Brief JW minder dan 26 jaar (RSZ-vermindering)",
     "labelDocDE": "Lettre JT < 26 ans (réductions ONSS)",
-    "labelDocX": "Letter young worker under the age of 26 (NSSO reduction)"
+    "labelDocEN": "Letter young worker under the age of 26 (NSSO reduction)"
   },
   {
     "categoryNumber": 1,
@@ -1914,7 +1914,7 @@
     "referenceDocument": 730,
     "labelDocFR": "Décompte monnaie",
     "labelDocNL": "Muntverdeling van het loon",
-    "labelDocX": "Décompte monnaie"
+    "labelDocEN": "Décompte monnaie"
   },
   {
     "categoryNumber": 1,
@@ -1925,7 +1925,7 @@
     "labelDocFR": "Lettre 'bonus stage'",
     "labelDocNL": "Brief  'stage bonus'",
     "labelDocDE": "Lettre 'bonus stage'",
-    "labelDocX": "Letter 'internship bonus'"
+    "labelDocEN": "Letter 'internship bonus'"
   },
   {
     "categoryNumber": 1,
@@ -1935,7 +1935,7 @@
     "referenceDocument": 773,
     "labelDocFR": "Relevé des saisies/cessions/pensions alim.",
     "labelDocNL": "Staat van beslag/overdracht/onderhoudsgeld",
-    "labelDocX": "Statement of wage withholding/ wage assignments/child support"
+    "labelDocEN": "Statement of wage withholding/ wage assignments/child support"
   },
   {
     "categoryNumber": 2,
@@ -1945,7 +1945,7 @@
     "referenceDocument": 106,
     "labelDocFR": "Factures par niveau",
     "labelDocNL": "Facturen per niveau",
-    "labelDocX": "Invoices by level"
+    "labelDocEN": "Invoices by level"
   },
   {
     "categoryNumber": 2,
@@ -1955,7 +1955,7 @@
     "referenceDocument": 112,
     "labelDocFR": "Factures Lois Sociales",
     "labelDocNL": "Facturen sociale wetten ",
-    "labelDocX": "Invoices for social laws "
+    "labelDocEN": "Invoices for social laws "
   },
   {
     "categoryNumber": 2,
@@ -1965,7 +1965,7 @@
     "referenceDocument": 113,
     "labelDocFR": "Factures Service d'Assistance Juridique",
     "labelDocNL": "Facturen Juridische bijstand",
-    "labelDocX": "Invoices for legal assistance service"
+    "labelDocEN": "Invoices for legal assistance service"
   },
   {
     "categoryNumber": 2,
@@ -1975,7 +1975,7 @@
     "referenceDocument": 115,
     "labelDocFR": "Liste des factures produites dans la journalière",
     "labelDocNL": "Lijst van facturen van dagloonberekening ",
-    "labelDocX": "List of invoices edited during the day "
+    "labelDocEN": "List of invoices edited during the day "
   },
   {
     "categoryNumber": 2,
@@ -1985,7 +1985,7 @@
     "referenceDocument": 117,
     "labelDocFR": "Factures DIMONA",
     "labelDocNL": "Facturen DIMONA",
-    "labelDocX": "DIMONA Invoices"
+    "labelDocEN": "DIMONA Invoices"
   },
   {
     "categoryNumber": 2,
@@ -1995,7 +1995,7 @@
     "referenceDocument": 118,
     "labelDocFR": "Factures DMFA Accident Travail",
     "labelDocNL": "Facturen DMFA Arb.Ongevallenverzekering",
-    "labelDocX": "DMFA Invoices Accident at work "
+    "labelDocEN": "DMFA Invoices Accident at work "
   },
   {
     "categoryNumber": 2,
@@ -2005,7 +2005,7 @@
     "referenceDocument": 119,
     "labelDocFR": "Facture prime à l'emploi Région Wallonne (trimestriel)",
     "labelDocNL": "Factuur premies Waals gewest (trimestrieel)",
-    "labelDocX": "Invoice employment bonus Walloon Region (quartely)"
+    "labelDocEN": "Invoice employment bonus Walloon Region (quartely)"
   },
   {
     "categoryNumber": 2,
@@ -2015,7 +2015,7 @@
     "referenceDocument": 120,
     "labelDocFR": "Factures de FRAIS divers (mensuel)",
     "labelDocNL": "Facturen diverse ONKOSTEN (maandelijks)",
-    "labelDocX": "Invoices for miscellaneous costs (monthly)"
+    "labelDocEN": "Invoices for miscellaneous costs (monthly)"
   },
   {
     "categoryNumber": 2,
@@ -2025,7 +2025,7 @@
     "referenceDocument": 464,
     "labelDocFR": "Fichier de communication factures à GCA",
     "labelDocNL": "Bestand overdracht facturen > BRA",
-    "labelDocX": "Communication file invoices to GCA"
+    "labelDocEN": "Communication file invoices to GCA"
   },
   {
     "categoryNumber": 2,
@@ -2035,7 +2035,7 @@
     "referenceDocument": 731,
     "labelDocFR": "Factures Chômage Economique non construction",
     "labelDocNL": "Facturen Economische werkloosheid  niet bouw",
-    "labelDocX": "Invoices unemployment for economic reasons non-construction"
+    "labelDocEN": "Invoices unemployment for economic reasons non-construction"
   },
   {
     "categoryNumber": 2,
@@ -2045,7 +2045,7 @@
     "referenceDocument": 732,
     "labelDocFR": "facture: frais de declaration tiers saisi",
     "labelDocNL": "Faktuur : Afrekening voor verklaringen van derde beslagene",
-    "labelDocX": "Invoice: costs of declaration of the seized third party"
+    "labelDocEN": "Invoice: costs of declaration of the seized third party"
   },
   {
     "categoryNumber": 2,
@@ -2055,7 +2055,7 @@
     "referenceDocument": 735,
     "labelDocFR": "Factures Vacances annuelles (Ouvriers)",
     "labelDocNL": "Facturen Jaarlijkse vakantie (Arbeiders)",
-    "labelDocX": "Invoices Annual vacation (Blue collar workers)"
+    "labelDocEN": "Invoices Annual vacation (Blue collar workers)"
   },
   {
     "categoryNumber": 2,
@@ -2065,7 +2065,7 @@
     "referenceDocument": 737,
     "labelDocFR": "Factures Redistribution-PME",
     "labelDocNL": "Facturen herverdeling- KMO",
-    "labelDocX": "Invoices Redistribution -  SMEs"
+    "labelDocEN": "Invoices Redistribution -  SMEs"
   },
   {
     "categoryNumber": 2,
@@ -2075,7 +2075,7 @@
     "referenceDocument": 738,
     "labelDocFR": "Factures Chômage Economique Construction",
     "labelDocNL": "Facturen Economische werkloosheid (Bouw)",
-    "labelDocX": "Invoices unemployment for economic reasons construction"
+    "labelDocEN": "Invoices unemployment for economic reasons construction"
   },
   {
     "categoryNumber": 2,
@@ -2085,7 +2085,7 @@
     "referenceDocument": 739,
     "labelDocFR": "Factures : lois sociales congé-education",
     "labelDocNL": "Facturen : educatief verlof",
-    "labelDocX": "Invoices: social laws educational leave"
+    "labelDocEN": "Invoices: social laws educational leave"
   },
   {
     "categoryNumber": 2,
@@ -2104,7 +2104,7 @@
     "referenceDocument": 802,
     "labelDocFR": "Factures Lois Sociales (PreSta)",
     "labelDocNL": "Facturen Sociale wetten (PreSta)",
-    "labelDocX": "Invoices social laws (PreSta)"
+    "labelDocEN": "Invoices social laws (PreSta)"
   },
   {
     "categoryNumber": 2,
@@ -2114,7 +2114,7 @@
     "referenceDocument": 803,
     "labelDocFR": "Factures Régularisation (Trim/Mensuelle)",
     "labelDocNL": "Facturen (trim./maand.) aanpassingen",
-    "labelDocX": "Invoices regularization (quarterly/monthly)"
+    "labelDocEN": "Invoices regularization (quarterly/monthly)"
   },
   {
     "categoryNumber": 2,
@@ -2124,7 +2124,7 @@
     "referenceDocument": 804,
     "labelDocFR": "Relevé créances  'suspens' ONSS, Fds Soc, OPOC",
     "labelDocNL": "Brief RSZ, Soc F, PDOK - schuld in afwachting",
-    "labelDocX": "Statement of 'pending' claims NSSO, Fds Soc, OPOC"
+    "labelDocEN": "Statement of 'pending' claims NSSO, Fds Soc, OPOC"
   },
   {
     "categoryNumber": 2,
@@ -2134,7 +2134,7 @@
     "referenceDocument": 806,
     "labelDocFR": "Relevé créances 'pour information' ",
     "labelDocNL": "Brief  vorderingen 'ter informatie'",
-    "labelDocX": "Statement of claims 'for information'"
+    "labelDocEN": "Statement of claims 'for information'"
   },
   {
     "categoryNumber": 2,
@@ -2144,7 +2144,7 @@
     "referenceDocument": 808,
     "labelDocFR": "Factures Frais de gestion prime HORECA",
     "labelDocNL": "Facturen beheersbijdragen HORECA-premies",
-    "labelDocX": "Invoices management costs HORECA allowance"
+    "labelDocEN": "Invoices management costs HORECA allowance"
   },
   {
     "categoryNumber": 2,
@@ -2154,7 +2154,7 @@
     "referenceDocument": 40112,
     "labelDocFR": "Factures PAIES  Globalis",
     "labelDocNL": "Facturen loon berek. Globalis",
-    "labelDocX": "Invoices WAGES Globalis"
+    "labelDocEN": "Invoices WAGES Globalis"
   },
   {
     "categoryNumber": 2,
@@ -2164,7 +2164,7 @@
     "referenceDocument": 40803,
     "labelDocFR": "Factures DUCS  Globalis",
     "labelDocNL": "Facturen DUCS Globalis",
-    "labelDocX": "Factures DUCS  Globalis"
+    "labelDocEN": "Factures DUCS  Globalis"
   },
   {
     "categoryNumber": 3,
@@ -2175,7 +2175,7 @@
     "labelDocFR": "Attestation d'occupation",
     "labelDocNL": "Tewerkstellingsattest",
     "labelDocDE": "Att. occ.",
-    "labelDocX": "Employment certificate"
+    "labelDocEN": "Employment certificate"
   },
   {
     "categoryNumber": 3,
@@ -2186,7 +2186,7 @@
     "labelDocFR": "Attestation de vacances",
     "labelDocNL": "Vakantieattest",
     "labelDocDE": "Att. vac.",
-    "labelDocX": "Holiday certificate"
+    "labelDocEN": "Holiday certificate"
   },
   {
     "categoryNumber": 3,
@@ -2197,7 +2197,7 @@
     "labelDocFR": "Attestation de vacances annuelle pour travailleurs intérimaires",
     "labelDocNL": "Vakantieattest voor uitzendpersoneel",
     "labelDocDE": "Att. vac.",
-    "labelDocX": "Annual holiday certificate for temporary workers"
+    "labelDocEN": "Annual holiday certificate for temporary workers"
   },
   {
     "categoryNumber": 3,
@@ -2208,7 +2208,7 @@
     "labelDocFR": "Attestation de vacances annuelle pour 'HOTESSES'",
     "labelDocNL": "Vakantieattest  voor  'HOSTESS'",
     "labelDocDE": "Att. vac.",
-    "labelDocX": "annual holiday certificate for 'HOSTESSES'"
+    "labelDocEN": "annual holiday certificate for 'HOSTESSES'"
   },
   {
     "categoryNumber": 3,
@@ -2219,7 +2219,7 @@
     "labelDocFR": "Attestation de vacances supplémentaires CP 330.01.20",
     "labelDocNL": "Vakantieattest PC 330.01.20",
     "labelDocDE": "x",
-    "labelDocX": "x"
+    "labelDocEN": "x"
   },
   {
     "categoryNumber": 3,
@@ -2230,7 +2230,7 @@
     "labelDocFR": "Lettre OUTPLACEMENT (travailleur > 45 ans)",
     "labelDocNL": "Brief OUTPLACEMENT (werknemer > 45 ans)",
     "labelDocDE": "Schreiben OUTPLACEMENT (Mitarbeiter > 45 J)",
-    "labelDocX": "Letter OUTPLACEMENT (worker > 45 years old)"
+    "labelDocEN": "Letter OUTPLACEMENT (worker > 45 years old)"
   },
   {
     "categoryNumber": 4,
@@ -2240,7 +2240,7 @@
     "referenceDocument": 25,
     "labelDocFR": "Fichier signalétiques BRICO",
     "labelDocNL": "Signaletiekenbestand BRICO",
-    "labelDocX": "Fichier signalétiques BRICO"
+    "labelDocEN": "Fichier signalétiques BRICO"
   },
   {
     "categoryNumber": 4,
@@ -2250,7 +2250,7 @@
     "referenceDocument": 65,
     "labelDocFR": "Fichier CoKoPas Brico",
     "labelDocNL": "Bestand CoKoPas Brico",
-    "labelDocX": "Fichier CoKoPas Brico"
+    "labelDocEN": "Fichier CoKoPas Brico"
   },
   {
     "categoryNumber": 4,
@@ -2260,7 +2260,7 @@
     "referenceDocument": 66,
     "labelDocFR": "Fichier Forem vers calendra",
     "labelDocNL": "Bestand  Forem voor calendra",
-    "labelDocX": "Fichier Forem vers calendra"
+    "labelDocEN": "Fichier Forem vers calendra"
   },
   {
     "categoryNumber": 4,
@@ -2270,7 +2270,7 @@
     "referenceDocument": 192,
     "labelDocFR": "ALTRAN : fichier absences de HR-Self",
     "labelDocNL": "ALTRAN : bestand afwezigheden van HR-Self",
-    "labelDocX": "ALTRAN : fichier absences de HR-Self"
+    "labelDocEN": "ALTRAN : fichier absences de HR-Self"
   },
   {
     "categoryNumber": 4,
@@ -2280,7 +2280,7 @@
     "referenceDocument": 600,
     "labelDocFR": "Fichiers signalétiques",
     "labelDocNL": "Signaletiekbestanden",
-    "labelDocX": "Identification files"
+    "labelDocEN": "Identification files"
   },
   {
     "categoryNumber": 4,
@@ -2290,7 +2290,7 @@
     "referenceDocument": 602,
     "labelDocFR": "ONP :  journalisme - déclaration",
     "labelDocNL": "RP journalisme - Aangifte",
-    "labelDocX": "ONP :  journalisme - déclaration"
+    "labelDocEN": "ONP :  journalisme - déclaration"
   },
   {
     "categoryNumber": 4,
@@ -2300,7 +2300,7 @@
     "referenceDocument": 603,
     "labelDocFR": "ONP navigation aérienne - Déclaration",
     "labelDocNL": "RP luchtvaart - Aangifte",
-    "labelDocX": "ONP navigation aérienne - Déclaration"
+    "labelDocEN": "ONP navigation aérienne - Déclaration"
   },
   {
     "categoryNumber": 4,
@@ -2310,7 +2310,7 @@
     "referenceDocument": 605,
     "labelDocFR": "OSSOM - Déclaration",
     "labelDocNL": "DOSZ - Aangifte",
-    "labelDocX": "OSSOM - Déclaration"
+    "labelDocEN": "OSSOM - Déclaration"
   },
   {
     "categoryNumber": 4,
@@ -2320,7 +2320,7 @@
     "referenceDocument": 651,
     "labelDocFR": "retour numéro DIMONA (affiliés et AFAS)",
     "labelDocNL": "Bevestiging DIMONA nummer",
-    "labelDocX": "Feedback DIMONA number (affiliated and AFAS)"
+    "labelDocEN": "Feedback DIMONA number (affiliated and AFAS)"
   },
   {
     "categoryNumber": 4,
@@ -2330,7 +2330,7 @@
     "referenceDocument": 652,
     "labelDocFR": "relevé journalier déclaration DIMONA (CSV)",
     "labelDocNL": "Dagelijks overzicht DIMONA aangiftes (CSV)",
-    "labelDocX": "Daily statement DIMONA déclaration (CSV)"
+    "labelDocEN": "Daily statement DIMONA déclaration (CSV)"
   },
   {
     "categoryNumber": 4,
@@ -2341,7 +2341,7 @@
     "labelDocFR": "Récapitulatif  charges salariales format CSV(à la demande)",
     "labelDocNL": "Overzicht van de loonlast CSV format (op annvraag)",
     "labelDocDE": "Récapitulatif  charges salariales format CSV(à la demande)",
-    "labelDocX": "Summary compensation costs CSV format (on request)"
+    "labelDocEN": "Summary compensation costs CSV format (on request)"
   },
   {
     "categoryNumber": 4,
@@ -2351,7 +2351,7 @@
     "referenceDocument": 805,
     "labelDocFR": "Fichier RLT",
     "labelDocNL": "Bestand RLT",
-    "labelDocX": "RLT file"
+    "labelDocEN": "RLT file"
   },
   {
     "categoryNumber": 4,
@@ -2361,7 +2361,7 @@
     "referenceDocument": 807,
     "labelDocFR": "Fichier RLT- Paie préparée en jourmée",
     "labelDocNL": "RLT - van overdag berekende prestaties",
-    "labelDocX": "RLT file - Wage prepared during the day"
+    "labelDocEN": "RLT file - Wage prepared during the day"
   },
   {
     "categoryNumber": 4,
@@ -2372,7 +2372,7 @@
     "labelDocFR": "Fichier CIRI (BDK si 820/ex)  BEL",
     "labelDocNL": "Bestand CIRI (BDK als 820/ex)  BEL",
     "labelDocDE": "Fichier (BDK si 820/ex)  BEL",
-    "labelDocX": "Fichier CIRI (BDK si 820/ex)  BEL"
+    "labelDocEN": "Fichier CIRI (BDK si 820/ex)  BEL"
   },
   {
     "categoryNumber": 4,
@@ -2382,7 +2382,7 @@
     "referenceDocument": 824,
     "labelDocFR": "Ordres de paiement BQE (Fichier Groupe S sur demande)",
     "labelDocNL": "Betalingsopdracht BQE (Bestand Groep S op aanvraag)",
-    "labelDocX": "BQE payment orders (Group S file on request)"
+    "labelDocEN": "BQE payment orders (Group S file on request)"
   },
   {
     "categoryNumber": 4,
@@ -2393,7 +2393,7 @@
     "labelDocFR": "Fichier CIRI (BDK si 820/ex)  IBAN",
     "labelDocNL": "Bestand CIRI (BDK als 820/ex)  IBAN",
     "labelDocDE": "Fichier (BDK si 820/ex)  IBAN",
-    "labelDocX": "Fichier CIRI (BDK si 820/ex)  IBAN"
+    "labelDocEN": "Fichier CIRI (BDK si 820/ex)  IBAN"
   },
   {
     "categoryNumber": 4,
@@ -2404,7 +2404,7 @@
     "labelDocFR": "OCO: Fichier Opérations COmptables ",
     "labelDocNL": "OCO: Bestand boekhoudkundige verrichtingen ",
     "labelDocDE": "OCO",
-    "labelDocX": "OCO: Fichier Opérations COmptables "
+    "labelDocEN": "OCO: Fichier Opérations COmptables "
   },
   {
     "categoryNumber": 4,
@@ -2415,7 +2415,7 @@
     "labelDocFR": "ICO: Fichier Imputations Comptables ",
     "labelDocNL": "ICO: Bestand boekhoudkundige inschrijvingen",
     "labelDocDE": "ICO",
-    "labelDocX": "ICO: Fichier Imputations Comptables "
+    "labelDocEN": "ICO: Fichier Imputations Comptables "
   },
   {
     "categoryNumber": 4,
@@ -2426,7 +2426,7 @@
     "labelDocFR": "Fichier Paiements Sepa TRAVAILLEURS (banque)",
     "labelDocNL": "Betalingsbestand Sepa WERKNEMERS (bank)",
     "labelDocDE": "Fichier paiement SEPA",
-    "labelDocX": "Sepa payments file WORKERS (bank)"
+    "labelDocEN": "Sepa payments file WORKERS (bank)"
   },
   {
     "categoryNumber": 4,
@@ -2436,7 +2436,7 @@
     "referenceDocument": 881,
     "labelDocFR": "Fichier Paiements Sepa TRAVAILLEURS (affilié)",
     "labelDocNL": "Betalingsbestand Sepa WERKNEMERS (werkgever)",
-    "labelDocX": "Sepa payments file WORKERS (affiliated)"
+    "labelDocEN": "Sepa payments file WORKERS (affiliated)"
   },
   {
     "categoryNumber": 4,
@@ -2446,7 +2446,7 @@
     "referenceDocument": 882,
     "labelDocFR": "Fichier Paiements Sepa  TIERS (banque)",
     "labelDocNL": "Betalingsbestand Sepa  DERDEN (bank)",
-    "labelDocX": "Sepa payments file THIRD (bank)"
+    "labelDocEN": "Sepa payments file THIRD (bank)"
   },
   {
     "categoryNumber": 4,
@@ -2456,7 +2456,7 @@
     "referenceDocument": 883,
     "labelDocFR": "Fichier Paiements Sepa  TIERS (affilié)",
     "labelDocNL": "Betalingsbestand Sepa  DERDEN (werkgever)",
-    "labelDocX": "Sepa payments file THIRD (affiliated)"
+    "labelDocEN": "Sepa payments file THIRD (affiliated)"
   },
   {
     "categoryNumber": 4,
@@ -2466,7 +2466,7 @@
     "referenceDocument": 884,
     "labelDocFR": "Fichier Paiements Hors-Sepa TRAVAILLEURS (banque)",
     "labelDocNL": "Betalingsbestand Buiten-Sepa WERKNEMERS (bank)",
-    "labelDocX": "Non-Sepa payments file WORKERS (bank)"
+    "labelDocEN": "Non-Sepa payments file WORKERS (bank)"
   },
   {
     "categoryNumber": 4,
@@ -2476,7 +2476,7 @@
     "referenceDocument": 885,
     "labelDocFR": "Fichier Paiements Hors-Sepa TRAVAILLEURS (affilié)",
     "labelDocNL": "Betalingsbestand Buiten-Sepa WERKNEMERS (werkgever)",
-    "labelDocX": "Non-sepa payments file WORKERS (affiliated)"
+    "labelDocEN": "Non-sepa payments file WORKERS (affiliated)"
   },
   {
     "categoryNumber": 4,
@@ -2486,7 +2486,7 @@
     "referenceDocument": 886,
     "labelDocFR": "Fichier Paiements Hors-Sepa TIERS (banque)",
     "labelDocNL": "Betalingsbestand Buiten-Sepa DERDEN (bank)",
-    "labelDocX": "Non-sepa payments file THIRD (bank)"
+    "labelDocEN": "Non-sepa payments file THIRD (bank)"
   },
   {
     "categoryNumber": 4,
@@ -2496,7 +2496,7 @@
     "referenceDocument": 887,
     "labelDocFR": "Fichier Paiements Hors-Sepa TIERS (affilié)",
     "labelDocNL": "Betalingsbestand Buiten-Sepa DERDEN (werkgever)",
-    "labelDocX": "Non-sepa payments file THIRD (affiliated)"
+    "labelDocEN": "Non-sepa payments file THIRD (affiliated)"
   },
   {
     "categoryNumber": 4,
@@ -2507,7 +2507,7 @@
     "labelDocFR": "Fichier Paiements cheques circulaires (banque)",
     "labelDocNL": "Betalingsbestand circulaire cheque (bank)",
     "labelDocDE": "Fichier paiement cheque",
-    "labelDocX": "Cashier's check payments file (bank)"
+    "labelDocEN": "Cashier's check payments file (bank)"
   },
   {
     "categoryNumber": 4,
@@ -2518,7 +2518,7 @@
     "labelDocFR": "Fichier Paiements cheques circulaires (affilie)",
     "labelDocNL": "Betalingsbestand circulaire cheque (werkgever)",
     "labelDocDE": "Fichier paiement cheque",
-    "labelDocX": "Cashier's check payments file (affiliated)"
+    "labelDocEN": "Cashier's check payments file (affiliated)"
   },
   {
     "categoryNumber": 4,
@@ -2528,7 +2528,7 @@
     "referenceDocument": 892,
     "labelDocFR": "Fichier Paiements Cheque TIERS (banque)",
     "labelDocNL": "Betalingsbestand cheque  DERDEN (bank)",
-    "labelDocX": "Check payments file THIRD (bank)"
+    "labelDocEN": "Check payments file THIRD (bank)"
   },
   {
     "categoryNumber": 4,
@@ -2538,7 +2538,7 @@
     "referenceDocument": 893,
     "labelDocFR": "Fichier Paiements Cheque TIERS (affilie)",
     "labelDocNL": "Betalingsbestand cheque  DERDEN (werkgever)",
-    "labelDocX": "Check payments file THIRD (affiliated)"
+    "labelDocEN": "Check payments file THIRD (affiliated)"
   },
   {
     "categoryNumber": 4,
@@ -2549,7 +2549,7 @@
     "labelDocFR": "AFAS: HISTORIQUE-SITES",
     "labelDocNL": "AFAS: HISTORIEK-SITES",
     "labelDocDE": "AFAS",
-    "labelDocX": "AFAS: HISTORIQUE-SITES"
+    "labelDocEN": "AFAS: HISTORIQUE-SITES"
   },
   {
     "categoryNumber": 4,
@@ -2560,7 +2560,7 @@
     "labelDocFR": "AFAS: HISTORIQUE-SERVICES",
     "labelDocNL": "AFAS: HISTORIEK-DIENSTEN",
     "labelDocDE": "AFAS",
-    "labelDocX": "AFAS: HISTORIQUE-SERVICES"
+    "labelDocEN": "AFAS: HISTORIQUE-SERVICES"
   },
   {
     "categoryNumber": 4,
@@ -2571,7 +2571,7 @@
     "labelDocFR": "AFAS: HISTORIQUE-FONCTIONS",
     "labelDocNL": "AFAS: HISTORIIEK-FUNCTIES",
     "labelDocDE": "AFAS",
-    "labelDocX": "AFAS: HISTORIQUE-FONCTIONS"
+    "labelDocEN": "AFAS: HISTORIQUE-FONCTIONS"
   },
   {
     "categoryNumber": 4,
@@ -2582,7 +2582,7 @@
     "labelDocFR": "Préparation décomptes AQUILA (congés éducation - cotisations pour formation insuffissante)\r\nPréparat",
     "labelDocNL": "Préparation décomptes AQUILA (congés éducation - cotisations pour formation insuffissante)\r\nPréparat",
     "labelDocDE": "Préparation décomptes AQUILA (congés éducation - cotisations pour formation insuffissante)",
-    "labelDocX": "Préparation décomptes AQUILA (congés éducation - cotisations pour formation insuffissante)\r\nPréparat"
+    "labelDocEN": "Préparation décomptes AQUILA (congés éducation - cotisations pour formation insuffissante)\r\nPréparat"
   },
   {
     "categoryNumber": 4,
@@ -2593,7 +2593,7 @@
     "labelDocFR": "liste des anomalies préparation décomptes chomage économique hors construction\r\n",
     "labelDocNL": "Préparation décomptes AQUILA (congés éducation - cotisations pour formation insuffissante)\r\nPréparat",
     "labelDocDE": "Préparation décomptes AQUILA (congés éducation - cotisations pour formation insuffissante)",
-    "labelDocX": "liste des anomalies préparation décomptes chomage économique hors construction\r\n"
+    "labelDocEN": "liste des anomalies préparation décomptes chomage économique hors construction\r\n"
   },
   {
     "categoryNumber": 4,
@@ -2604,7 +2604,7 @@
     "labelDocFR": "AFAS: extraction IAM - Forem",
     "labelDocNL": "AFAS: extraction IAM - Forem",
     "labelDocDE": "AFAS: extraction IAM - Forem",
-    "labelDocX": "AFAS: extraction IAM - Forem"
+    "labelDocEN": "AFAS: extraction IAM - Forem"
   },
   {
     "categoryNumber": 4,
@@ -2614,7 +2614,7 @@
     "referenceDocument": 2015,
     "labelDocFR": "F.S.E. pour entrepr. travail adapté subsidiées par la RW - Intervention en  cas de chômage temporair",
     "labelDocNL": "F.B.Z. voor beschuttende werkpl. Waals gewest - Tussenkomst bij tijdelijke werkloosheid",
-    "labelDocX": "F.S.E. pour entrepr. travail adapté subsidiées par la RW - Intervention en  cas de chômage temporair"
+    "labelDocEN": "F.S.E. pour entrepr. travail adapté subsidiées par la RW - Intervention en  cas de chômage temporair"
   },
   {
     "categoryNumber": 4,
@@ -2624,7 +2624,7 @@
     "referenceDocument": 2016,
     "labelDocFR": "F.S.E. pour entrepr. travail adapté subsidiées par la RW - Intervention en  cas de chômage temporair",
     "labelDocNL": "F.B.Z. voor beschuttende werkpl. Waals gewest - Tussenkomst bij tijdelijke werkloosheid",
-    "labelDocX": "F.S.E. pour entrepr. travail adapté subsidiées par la RW - Intervention en  cas de chômage temporair"
+    "labelDocEN": "F.S.E. pour entrepr. travail adapté subsidiées par la RW - Intervention en  cas de chômage temporair"
   },
   {
     "categoryNumber": 4,
@@ -2634,7 +2634,7 @@
     "referenceDocument": 5007,
     "labelDocFR": "Fichier déclaration DMFA pour GCA",
     "labelDocNL": "DMFA-bestand voor BRA",
-    "labelDocX": "Fichier déclaration DMFA pour GCA"
+    "labelDocEN": "Fichier déclaration DMFA pour GCA"
   },
   {
     "categoryNumber": 4,
@@ -2644,7 +2644,7 @@
     "referenceDocument": 5008,
     "labelDocFR": "Fichier OCO (format .csv) pour DAOUST",
     "labelDocNL": "OCO-bestand (type .csv) voor DAOUST",
-    "labelDocX": "Fichier OCO (format .csv) pour DAOUST"
+    "labelDocEN": "Fichier OCO (format .csv) pour DAOUST"
   },
   {
     "categoryNumber": 4,
@@ -2654,7 +2654,7 @@
     "referenceDocument": 5010,
     "labelDocFR": "UPEA - Statistique de l'Emploi (cp 306)",
     "labelDocNL": "BVVO - Tewerkstellingsstatistiek (pc 306)",
-    "labelDocX": "UPEA - Statistique de l'Emploi (cp 306)"
+    "labelDocEN": "UPEA - Statistique de l'Emploi (cp 306)"
   },
   {
     "categoryNumber": 4,
@@ -2664,7 +2664,7 @@
     "referenceDocument": 5019,
     "labelDocFR": "Fichier Forem vers calendra version DB AFAS",
     "labelDocNL": "Bestand  Forem voor calendra AFAS versie",
-    "labelDocX": "Fichier Forem vers calendra version DB AFAS"
+    "labelDocEN": "Fichier Forem vers calendra version DB AFAS"
   },
   {
     "categoryNumber": 4,
@@ -2674,7 +2674,7 @@
     "referenceDocument": 5020,
     "labelDocFR": "Fichier Liste DRS chomage",
     "labelDocNL": "Bestand  lijst ASR Werkloosheid",
-    "labelDocX": "File DRS list unemployment"
+    "labelDocEN": "File DRS list unemployment"
   },
   {
     "categoryNumber": 4,
@@ -2684,7 +2684,7 @@
     "referenceDocument": 5021,
     "labelDocFR": "Extraction automatique de données",
     "labelDocNL": "Automatische extractie van gegevens",
-    "labelDocX": "Extraction automatique de données"
+    "labelDocEN": "Extraction automatique de données"
   },
   {
     "categoryNumber": 5,
@@ -2695,7 +2695,7 @@
     "labelDocFR": "Liste témoin des paiements bancaires",
     "labelDocNL": "Getuigenlijst van de bank betalingen",
     "labelDocDE": "Liste témoin Isabel BEL",
-    "labelDocX": "Checklist of bank payments"
+    "labelDocEN": "Checklist of bank payments"
   },
   {
     "categoryNumber": 5,
@@ -2706,7 +2706,7 @@
     "labelDocFR": "Liste témoin des paiements bancaires (IBAN)",
     "labelDocNL": "Getuigenlijst van de bank betalingen  (IBAN)",
     "labelDocDE": "Liste témoin Isabel IBAN",
-    "labelDocX": "Checklist of bank payments (IBAN)"
+    "labelDocEN": "Checklist of bank payments (IBAN)"
   },
   {
     "categoryNumber": 5,
@@ -2717,7 +2717,7 @@
     "labelDocFR": "Pmts nationaux  (tém BDK)",
     "labelDocNL": "Binnenlandse betalingen (getuig.BDK)",
     "labelDocDE": "Paiements nationaux bancaires (témoin BDK)",
-    "labelDocX": "National payments  (tém BDK)"
+    "labelDocEN": "National payments  (tém BDK)"
   },
   {
     "categoryNumber": 5,
@@ -2728,7 +2728,7 @@
     "labelDocFR": "Bordereau BDK",
     "labelDocNL": "Borderel BDK",
     "labelDocDE": "Bordereau accomp. BDK",
-    "labelDocX": "Bordereau BDK"
+    "labelDocEN": "Bordereau BDK"
   },
   {
     "categoryNumber": 5,
@@ -2739,7 +2739,7 @@
     "labelDocFR": "Pmts internationaux Iban (tém BDK)",
     "labelDocNL": "Internationale betalingen - IBAN (getuig.BDK)",
     "labelDocDE": "Paiements internationaux Iban (témoin BDK)",
-    "labelDocX": "International payments  (tém BDK)"
+    "labelDocEN": "International payments  (tém BDK)"
   },
   {
     "categoryNumber": 5,
@@ -2750,7 +2750,7 @@
     "labelDocFR": "Liste Paiements négatifs",
     "labelDocNL": "Lijst negatieve betalingen",
     "labelDocDE": "Liste Paiements négatifs",
-    "labelDocX": "List of negative payments"
+    "labelDocEN": "List of negative payments"
   },
   {
     "categoryNumber": 5,
@@ -2761,7 +2761,7 @@
     "labelDocFR": "Liste Paiements en espèces",
     "labelDocNL": "Lijst van betaling in speciën",
     "labelDocDE": "Liste Paiements à exécuter en espèces",
-    "labelDocX": "List of cash payments"
+    "labelDocEN": "List of cash payments"
   },
   {
     "categoryNumber": 5,
@@ -2771,7 +2771,7 @@
     "referenceDocument": 774,
     "labelDocFR": "Paiement des créanciers saisies/cessions/pens.alim.",
     "labelDocNL": "Betaling schuldeisers beslag/overdracht/onderhoudsgeld",
-    "labelDocX": "Payments to creditors wage withholding/ wage assignments/child support"
+    "labelDocEN": "Payments to creditors wage withholding/ wage assignments/child support"
   },
   {
     "categoryNumber": 5,
@@ -2782,7 +2782,7 @@
     "labelDocFR": "Recup. automatiques sur le Net",
     "labelDocNL": "Automatische recuperatie op netto",
     "labelDocDE": "Recupérations automatiques sur les nets",
-    "labelDocX": "Automatic recovery on Netto"
+    "labelDocEN": "Automatic recovery on Netto"
   },
   {
     "categoryNumber": 5,
@@ -2793,7 +2793,7 @@
     "labelDocFR": "Liste Pmts nég. pour recup.auto.",
     "labelDocNL": "Betalingslijst negatieven voor automatische recuperatie.",
     "labelDocDE": "Liste paiements négatifs pour recupération automatique,",
-    "labelDocX": "List neg. payments for automatic recovery"
+    "labelDocEN": "List neg. payments for automatic recovery"
   },
   {
     "categoryNumber": 5,
@@ -2803,7 +2803,7 @@
     "referenceDocument": 820,
     "labelDocFR": "Ordres de paiement TRAV / document générique",
     "labelDocNL": "Betalingsopdrachten  Werknemer / basisdocument",
-    "labelDocX": "Payment instructions WORKER / generic document"
+    "labelDocEN": "Payment instructions WORKER / generic document"
   },
   {
     "categoryNumber": 5,
@@ -2813,7 +2813,7 @@
     "referenceDocument": 821,
     "labelDocFR": "Ordres de paiement TIERS/Créanciers (Isabel/BDK/...) document générique",
     "labelDocNL": "Betalingsopdrachten  Schuldeiser (Isabel/BDK/...) basisdocument",
-    "labelDocX": "Ordres de paiement TIERS/Créanciers (Isabel/BDK/...) document générique"
+    "labelDocEN": "Ordres de paiement TIERS/Créanciers (Isabel/BDK/...) document générique"
   },
   {
     "categoryNumber": 5,
@@ -2824,7 +2824,7 @@
     "labelDocFR": "Liste paiements SEPA générique 'banque'",
     "labelDocNL": "Liste paiements SEPA générique banque",
     "labelDocDE": "Liste paiements SEPA générique banque",
-    "labelDocX": "List generic SEPA payments 'bank'"
+    "labelDocEN": "List generic SEPA payments 'bank'"
   },
   {
     "categoryNumber": 5,
@@ -2835,7 +2835,7 @@
     "labelDocFR": "Liste paiements SEPA générique 'affilié' (BDK)",
     "labelDocNL": "Liste paiements SEPA générique 'affilié' (BDK)",
     "labelDocDE": "Liste paiements SEPA générique 'affilié' (BDK)",
-    "labelDocX": "List generic SEPA payments 'affiliated' (BDK)"
+    "labelDocEN": "List generic SEPA payments 'affiliated' (BDK)"
   },
   {
     "categoryNumber": 5,
@@ -2846,7 +2846,7 @@
     "labelDocFR": "Liste paiements cheques circulaires 'banque'",
     "labelDocNL": "Liste paiements cheques circulaires 'banque'",
     "labelDocDE": "Liste paiements cheques circulaires 'banque'",
-    "labelDocX": "List cashier's check payments 'bank'"
+    "labelDocEN": "List cashier's check payments 'bank'"
   },
   {
     "categoryNumber": 5,
@@ -2857,7 +2857,7 @@
     "labelDocFR": "Liste paiements cheques circulaires 'affilié'",
     "labelDocNL": "Liste paiements cheques circulaires 'affilié'",
     "labelDocDE": "Liste paiements cheques circulaires 'affilié'",
-    "labelDocX": "List cashier's check payments 'affiliated'"
+    "labelDocEN": "List cashier's check payments 'affiliated'"
   },
   {
     "categoryNumber": 5,
@@ -2867,7 +2867,7 @@
     "referenceDocument": 1004,
     "labelDocFR": "Paiements créanciers saisie/cession/pens.alim. en attente",
     "labelDocNL": "Betalingen schuldeisers beslag/overdracht/onderhoudsgeld in afwachting",
-    "labelDocX": "Pending payments to creditors wage withholding/ wage assignments/child support"
+    "labelDocEN": "Pending payments to creditors wage withholding/ wage assignments/child support"
   },
   {
     "categoryNumber": 6,
@@ -2877,7 +2877,7 @@
     "referenceDocument": 643,
     "labelDocFR": "Rappels de prestations DPV",
     "labelDocNL": "Herinnering dubbel vakantiegeld",
-    "labelDocX": "Reminders of benefits DPV"
+    "labelDocEN": "Reminders of benefits DPV"
   },
   {
     "categoryNumber": 6,
@@ -2887,7 +2887,7 @@
     "referenceDocument": 645,
     "labelDocFR": "Rappels mensuels de prestations ",
     "labelDocNL": "Maandelijkse herinnering",
-    "labelDocX": "Montly reminders of benefits"
+    "labelDocEN": "Montly reminders of benefits"
   },
   {
     "categoryNumber": 6,
@@ -2897,7 +2897,7 @@
     "referenceDocument": 647,
     "labelDocFR": "Rappels de prestations PFA",
     "labelDocNL": "Herinnering eindejaarspremie",
-    "labelDocX": "Reminders of benefits PFA"
+    "labelDocEN": "Reminders of benefits PFA"
   },
   {
     "categoryNumber": 6,
@@ -2907,7 +2907,7 @@
     "referenceDocument": 648,
     "labelDocFR": "Rappels Trimestriels (de complétude)",
     "labelDocNL": "Trimestriële rappels (volledigheid)",
-    "labelDocX": "Quarterly reminders (of completeness)"
+    "labelDocEN": "Quarterly reminders (of completeness)"
   },
   {
     "categoryNumber": 6,
@@ -2917,7 +2917,7 @@
     "referenceDocument": 649,
     "labelDocFR": "Rappels Trimestriels (silencieux)",
     "labelDocNL": "Trimestriële rappels (stilzwijgers)",
-    "labelDocX": "Quarterly reminders (silent)"
+    "labelDocEN": "Quarterly reminders (silent)"
   },
   {
     "categoryNumber": 6,
@@ -2927,7 +2927,7 @@
     "referenceDocument": 650,
     "labelDocFR": "Rappels Discordances Dimona",
     "labelDocNL": "Herinnering (onregelmatigheid) Dimona",
-    "labelDocX": "Reminders Discrepancies Dimona"
+    "labelDocEN": "Reminders Discrepancies Dimona"
   },
   {
     "categoryNumber": 6,
@@ -2937,7 +2937,7 @@
     "referenceDocument": 653,
     "labelDocFR": "relevé déclaration DIMONA (PDF)",
     "labelDocNL": "Overzicht aangifte DIMONA (PDF))",
-    "labelDocX": "relevé déclaration DIMONA (PDF)"
+    "labelDocEN": "relevé déclaration DIMONA (PDF)"
   },
   {
     "categoryNumber": 6,
@@ -2947,7 +2947,7 @@
     "referenceDocument": 721,
     "labelDocFR": "Rappels Trimestriels (ultimes)",
     "labelDocNL": "Trimestriële herinnering (definitief) ",
-    "labelDocX": "Quarterly reminders (last)"
+    "labelDocEN": "Quarterly reminders (last)"
   },
   {
     "categoryNumber": 7,
@@ -2958,7 +2958,7 @@
     "labelDocFR": "Commande de Titres repas: LISTE / FICHIER",
     "labelDocNL": "Bestelling maaltijdcheques (Sodexho-TR): LIJST / BESTAND",
     "labelDocDE": "Commande de Titres repas: LISTE / FICHIER",
-    "labelDocX": "Meal vouchers order: LIST/FILE"
+    "labelDocEN": "Meal vouchers order: LIST/FILE"
   },
   {
     "categoryNumber": 7,
@@ -2969,7 +2969,7 @@
     "labelDocFR": "Titres Repas: Liste des commandes inexécutables(nég.)",
     "labelDocNL": "Maaltijdcheques : Lijst van de niet uitvoerbare bestellingen (neg.)",
     "labelDocDE": "Chèques Repas : Liste des commandes inexécutables (nég.)",
-    "labelDocX": "Meal vouchers: List of unexecutable commands (neg.)"
+    "labelDocEN": "Meal vouchers: List of unexecutable commands (neg.)"
   },
   {
     "categoryNumber": 7,
@@ -2980,7 +2980,7 @@
     "labelDocFR": "Fichier commande TR (Sodexho)",
     "labelDocNL": "Bestand bestelling maaltijdcheques(Sodexho)",
     "labelDocDE": "Fichier Commande \"Sodexho\"",
-    "labelDocX": "Meal vouchers order file (Sodexho)"
+    "labelDocEN": "Meal vouchers order file (Sodexho)"
   },
   {
     "categoryNumber": 7,
@@ -2991,7 +2991,7 @@
     "labelDocFR": "Fichier de commande TR (Accor)",
     "labelDocNL": "Bestand bestelling maaltijdcheques (Accor)",
     "labelDocDE": "Fichier de commande \"Ticket Restaurant\"",
-    "labelDocX": "Meal vouchers order file (Accor)"
+    "labelDocEN": "Meal vouchers order file (Accor)"
   },
   {
     "categoryNumber": 7,
@@ -3002,7 +3002,7 @@
     "labelDocFR": "Fichier de commande ECO chèques (Sodexho)",
     "labelDocNL": "Bestand bestelling ECOcheques(Sodexho)",
     "labelDocDE": "Fichier Commande \"Sodexho\" ECO chèques",
-    "labelDocX": "Eco vouchers order file (Sodexho)"
+    "labelDocEN": "Eco vouchers order file (Sodexho)"
   },
   {
     "categoryNumber": 7,
@@ -3013,7 +3013,7 @@
     "labelDocFR": "Commande de Eco chèques  LISTE / FICHIER",
     "labelDocNL": "Bestelling Ecocheques: LIJST / BESTAND",
     "labelDocDE": "Commande de Eco chèques  LISTE / FICHIER",
-    "labelDocX": "Eco vouchers order: LIST/FILE"
+    "labelDocEN": "Eco vouchers order: LIST/FILE"
   },
   {
     "categoryNumber": 7,
@@ -3024,7 +3024,7 @@
     "labelDocFR": "ECO chèques: Liste des commandes inexécutables(nég.)",
     "labelDocNL": "Ecocheques : Lijst van de niet uitvoerbare bestellingen (neg.)",
     "labelDocDE": "ECO chèques: Liste des commandes inexécutables(nég.)",
-    "labelDocX": "Eco vouchers: List of unexecutable commands (neg.)"
+    "labelDocEN": "Eco vouchers: List of unexecutable commands (neg.)"
   },
   {
     "categoryNumber": 7,
@@ -3035,7 +3035,7 @@
     "labelDocFR": "Fichier de commande ECO chèques (Accor)",
     "labelDocNL": "Bestand bestelling ECOcheques (Accor)",
     "labelDocDE": "Fichier de commande \"ACCOR\" ECO chèques",
-    "labelDocX": "Eco vouchers order file (Accor)"
+    "labelDocEN": "Eco vouchers order file (Accor)"
   },
   {
     "categoryNumber": 7,
@@ -3046,7 +3046,7 @@
     "labelDocFR": "Fichier de commande standard (xml/data) titre rest/eco chèques",
     "labelDocNL": "Bestand standard (xml/data)  bestelling  maaltijdcheques/ecocheques",
     "labelDocDE": "Fichier de commande standard (xml/data) titre rest/eco chèques",
-    "labelDocX": "Standard order file (xml/data) Meal vouchers/eco vouchers"
+    "labelDocEN": "Standard order file (xml/data) Meal vouchers/eco vouchers"
   },
   {
     "categoryNumber": 7,
@@ -3056,7 +3056,7 @@
     "referenceDocument": 874,
     "labelDocFR": "Liste témoin cheques repas carrefour",
     "labelDocNL": "Lijst   maaltijdcheques carrefour",
-    "labelDocX": "Liste témoin cheques repas carrefour"
+    "labelDocEN": "Liste témoin cheques repas carrefour"
   },
   {
     "categoryNumber": 8,
@@ -3067,7 +3067,7 @@
     "labelDocFR": "Compte individuel du travailleur",
     "labelDocNL": "Individuele rekening van de werknemer",
     "labelDocDE": "CI",
-    "labelDocX": "Worker's  individual account"
+    "labelDocEN": "Worker's  individual account"
   },
   {
     "categoryNumber": 8,
@@ -3078,7 +3078,7 @@
     "labelDocFR": "Compte individuel annuel fiscal",
     "labelDocNL": "Individuele rekening (jaarlijkse afsluiting)",
     "labelDocDE": "CI",
-    "labelDocX": "Annual tax individual account"
+    "labelDocEN": "Annual tax individual account"
   },
   {
     "categoryNumber": 8,
@@ -3088,7 +3088,7 @@
     "referenceDocument": 207,
     "labelDocFR": "Fiche fiscale 281.30",
     "labelDocNL": "Fiscale fiche 281.30",
-    "labelDocX": "Fiche fiscale 281.30"
+    "labelDocEN": "Fiche fiscale 281.30"
   },
   {
     "categoryNumber": 8,
@@ -3098,7 +3098,7 @@
     "referenceDocument": 329,
     "labelDocFR": "Relevé 325.10",
     "labelDocNL": "Opgave 325.10",
-    "labelDocX": "Relevé 325.10"
+    "labelDocEN": "Relevé 325.10"
   },
   {
     "categoryNumber": 8,
@@ -3108,7 +3108,7 @@
     "referenceDocument": 347,
     "labelDocFR": "Relevé 325.13",
     "labelDocNL": "Opgave 325.13",
-    "labelDocX": "Relevé 325.13"
+    "labelDocEN": "Relevé 325.13"
   },
   {
     "categoryNumber": 8,
@@ -3118,7 +3118,7 @@
     "referenceDocument": 355,
     "labelDocFR": "Relevé 325.20",
     "labelDocNL": "Opgave 325.20",
-    "labelDocX": "Relevé 325.20"
+    "labelDocEN": "Relevé 325.20"
   },
   {
     "categoryNumber": 8,
@@ -3128,7 +3128,7 @@
     "referenceDocument": 364,
     "labelDocFR": "Relevé 325.30",
     "labelDocNL": "Opgave 325.30",
-    "labelDocX": "Relevé 325.30"
+    "labelDocEN": "Relevé 325.30"
   },
   {
     "categoryNumber": 8,
@@ -3139,7 +3139,7 @@
     "labelDocFR": "Balance de salaires (à la demande)",
     "labelDocNL": "Loonbalans (op aanvraag)",
     "labelDocDE": "Balance salaires",
-    "labelDocX": "Balance of wages (on request)"
+    "labelDocEN": "Balance of wages (on request)"
   },
   {
     "categoryNumber": 8,
@@ -3150,7 +3150,7 @@
     "labelDocFR": "Récapitulatif  charges salariales (Version annuelle fiscale new 2007)",
     "labelDocNL": "Overzicht van de loonlast (fiscaal jaar - new 2007)",
     "labelDocDE": "Récapitulatif  charges salariales (Bal Sal annuelle fiscale new 2007)",
-    "labelDocX": "Summary statement of compensation costs (annual tax version new 2007)"
+    "labelDocEN": "Summary statement of compensation costs (annual tax version new 2007)"
   },
   {
     "categoryNumber": 8,
@@ -3161,7 +3161,7 @@
     "labelDocFR": "Récapitulatif  charges salariales (version annuelle fiscale new 2007/à la demande)",
     "labelDocNL": "Overzicht van de loonlast (fiscaal jaar - new 2007 - op aanvraag)",
     "labelDocDE": "Overzicht van de loonlast (fiscaal jaar - new 2007 - op aanvraag)",
-    "labelDocX": "Summary statement of compensation costs (annual tax version new 2007/on request)"
+    "labelDocEN": "Summary statement of compensation costs (annual tax version new 2007/on request)"
   },
   {
     "categoryNumber": 8,
@@ -3172,7 +3172,7 @@
     "labelDocFR": "Récapitulatif  charges salariales (new 2007/à la demande)",
     "labelDocNL": "Overzicht van de loonlast (new 2007 - op aanvraag)",
     "labelDocDE": "Overzicht van de loonlast (new 2007 - op aanvraag)",
-    "labelDocX": "Summary statement of compensation costs (new 2007/on request)"
+    "labelDocEN": "Summary statement of compensation costs (new 2007/on request)"
   },
   {
     "categoryNumber": 8,
@@ -3182,7 +3182,7 @@
     "referenceDocument": 755,
     "labelDocFR": "Bilan Social (définitif)",
     "labelDocNL": "Sociale balans (definitief)",
-    "labelDocX": "Social audit (definitive)"
+    "labelDocEN": "Social audit (definitive)"
   },
   {
     "categoryNumber": 8,
@@ -3193,7 +3193,7 @@
     "labelDocFR": "Bilan Social (préparatoire)",
     "labelDocNL": "Sociale balans (voorlopig)",
     "labelDocDE": "Bilan Social (préparatoire)",
-    "labelDocX": "Social audit (preparatory)"
+    "labelDocEN": "Social audit (preparatory)"
   },
   {
     "categoryNumber": 8,
@@ -3203,7 +3203,7 @@
     "referenceDocument": 759,
     "labelDocFR": "Relevé 325.11",
     "labelDocNL": "Opgave 325.11",
-    "labelDocX": "Relevé 325.11"
+    "labelDocEN": "Relevé 325.11"
   },
   {
     "categoryNumber": 8,
@@ -3213,7 +3213,7 @@
     "referenceDocument": 825,
     "labelDocFR": "Fichier Bilan Social",
     "labelDocNL": "Sociale balans (bestand)",
-    "labelDocX": "Social audit file"
+    "labelDocEN": "Social audit file"
   },
   {
     "categoryNumber": 8,
@@ -3223,7 +3223,7 @@
     "referenceDocument": 950,
     "labelDocFR": "Fiche fiscale 281.10",
     "labelDocNL": "Fiscale fiche 281.10",
-    "labelDocX": "281.10 tax form"
+    "labelDocEN": "281.10 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3233,7 +3233,7 @@
     "referenceDocument": 951,
     "labelDocFR": "Fiche fiscale 281.11",
     "labelDocNL": "Fiscale fiche 281.11",
-    "labelDocX": "281.11 tax form"
+    "labelDocEN": "281.11 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3243,7 +3243,7 @@
     "referenceDocument": 952,
     "labelDocFR": "Fiche fiscale 281.13",
     "labelDocNL": "Fiscale fiche 281.13",
-    "labelDocX": "281.13 tax form"
+    "labelDocEN": "281.13 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3253,7 +3253,7 @@
     "referenceDocument": 953,
     "labelDocFR": "Fiche fiscale 281.20",
     "labelDocNL": "Fiscale fiche 281.20",
-    "labelDocX": "281.20 tax form"
+    "labelDocEN": "281.20 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3263,7 +3263,7 @@
     "referenceDocument": 954,
     "labelDocFR": "Fiche fiscale 281.30",
     "labelDocNL": "Fiscale fiche 281.30",
-    "labelDocX": "281.30 tax form"
+    "labelDocEN": "281.30 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3273,7 +3273,7 @@
     "referenceDocument": 955,
     "labelDocFR": "Fiche fiscale 281.17",
     "labelDocNL": "Fiscale fiche 281.17",
-    "labelDocX": "281.17 tax form"
+    "labelDocEN": "281.17 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3283,7 +3283,7 @@
     "referenceDocument": 956,
     "labelDocFR": "Fiche fiscale 281.12",
     "labelDocNL": "Fiscale fiche 281.12",
-    "labelDocX": "281.12 tax form"
+    "labelDocEN": "281.12 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3293,7 +3293,7 @@
     "referenceDocument": 957,
     "labelDocFR": "Fiche fiscale 281.18",
     "labelDocNL": "Fiscale fiche 281.18",
-    "labelDocX": "281.18 tax form"
+    "labelDocEN": "281.18 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3303,7 +3303,7 @@
     "referenceDocument": 958,
     "labelDocFR": "Fiche fiscale 281.50",
     "labelDocNL": "Fiscale fiche 281.50",
-    "labelDocX": "281.50 tax form"
+    "labelDocEN": "281.50 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3313,7 +3313,7 @@
     "referenceDocument": 959,
     "labelDocFR": "Attestation 281.25",
     "labelDocNL": "Attest 281.25",
-    "labelDocX": "281.25 certificate"
+    "labelDocEN": "281.25 certificate"
   },
   {
     "categoryNumber": 8,
@@ -3323,7 +3323,7 @@
     "referenceDocument": 960,
     "labelDocFR": "Relevé 325.10",
     "labelDocNL": "Aangifte 325.10",
-    "labelDocX": "325.10 summary statement"
+    "labelDocEN": "325.10 summary statement"
   },
   {
     "categoryNumber": 8,
@@ -3333,7 +3333,7 @@
     "referenceDocument": 961,
     "labelDocFR": "Relevé 325.11",
     "labelDocNL": "Aangifte 325.11",
-    "labelDocX": "325.11 summary statement"
+    "labelDocEN": "325.11 summary statement"
   },
   {
     "categoryNumber": 8,
@@ -3343,7 +3343,7 @@
     "referenceDocument": 962,
     "labelDocFR": "Relevé 325.13",
     "labelDocNL": "Aangifte 325.13",
-    "labelDocX": "325.13 summary statement"
+    "labelDocEN": "325.13 summary statement"
   },
   {
     "categoryNumber": 8,
@@ -3353,7 +3353,7 @@
     "referenceDocument": 963,
     "labelDocFR": "Relevé 325.20",
     "labelDocNL": "Aangifte 325.20",
-    "labelDocX": "325.20 summary statement"
+    "labelDocEN": "325.20 summary statement"
   },
   {
     "categoryNumber": 8,
@@ -3363,7 +3363,7 @@
     "referenceDocument": 964,
     "labelDocFR": "Relevé 325.30",
     "labelDocNL": "Aangifte 325.30",
-    "labelDocX": "325.30 summary statement"
+    "labelDocEN": "325.30 summary statement"
   },
   {
     "categoryNumber": 8,
@@ -3373,7 +3373,7 @@
     "referenceDocument": 965,
     "labelDocFR": "Relevé 325.17",
     "labelDocNL": "Aangifte 325.17",
-    "labelDocX": "325.17 summary statement"
+    "labelDocEN": "325.17 summary statement"
   },
   {
     "categoryNumber": 8,
@@ -3383,7 +3383,7 @@
     "referenceDocument": 966,
     "labelDocFR": "Relevé 325.12",
     "labelDocNL": "Aangifte 325.12",
-    "labelDocX": "325.12 summary statement"
+    "labelDocEN": "325.12 summary statement"
   },
   {
     "categoryNumber": 8,
@@ -3393,7 +3393,7 @@
     "referenceDocument": 967,
     "labelDocFR": "Relevé 325.18",
     "labelDocNL": "Aangifte 325.18",
-    "labelDocX": "325.18 summary statement"
+    "labelDocEN": "325.18 summary statement"
   },
   {
     "categoryNumber": 8,
@@ -3403,7 +3403,7 @@
     "referenceDocument": 968,
     "labelDocFR": "Relevé 325.50",
     "labelDocNL": "Aangifte 325.50",
-    "labelDocX": "325.50 summary statement"
+    "labelDocEN": "325.50 summary statement"
   },
   {
     "categoryNumber": 8,
@@ -3413,7 +3413,7 @@
     "referenceDocument": 969,
     "labelDocFR": "Fiche fiscale 281.45",
     "labelDocNL": "Fiscale fiche 281.45",
-    "labelDocX": "281.45 tax form"
+    "labelDocEN": "281.45 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3423,7 +3423,7 @@
     "referenceDocument": 970,
     "labelDocFR": "Titre 325",
     "labelDocNL": "325 Titel",
-    "labelDocX": "Titre 325"
+    "labelDocEN": "Titre 325"
   },
   {
     "categoryNumber": 8,
@@ -3433,7 +3433,7 @@
     "referenceDocument": 972,
     "labelDocFR": "Lettre envoi au contrôleur",
     "labelDocNL": "Brief verzending aan controleur",
-    "labelDocX": "Lettre envoi au contrôleur"
+    "labelDocEN": "Lettre envoi au contrôleur"
   },
   {
     "categoryNumber": 8,
@@ -3443,7 +3443,7 @@
     "referenceDocument": 973,
     "labelDocFR": "Différences entre clôture fiscale et annexes 325 GCA",
     "labelDocNL": "Verschil tussen fiscale afsluiting en bijvoegsel 325 BRA",
-    "labelDocX": "Différences entre clôture fiscale et annexes 325 GCA"
+    "labelDocEN": "Différences entre clôture fiscale et annexes 325 GCA"
   },
   {
     "categoryNumber": 8,
@@ -3453,7 +3453,7 @@
     "referenceDocument": 976,
     "labelDocFR": "Attestation emploi fonds social grands magasins",
     "labelDocNL": "Tewerk.attest sociaal fonds warenhuizen",
-    "labelDocX": "Attestation emploi fonds social grands magasins"
+    "labelDocEN": "Attestation emploi fonds social grands magasins"
   },
   {
     "categoryNumber": 8,
@@ -3463,7 +3463,7 @@
     "referenceDocument": 978,
     "labelDocFR": "Fiche fiscale 281.10 consolidée",
     "labelDocNL": "Fiscale fiche 281.10 consolidée",
-    "labelDocX": "Consolidated 281.10 tax form"
+    "labelDocEN": "Consolidated 281.10 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3473,7 +3473,7 @@
     "referenceDocument": 979,
     "labelDocFR": "Fiche fiscale 281.18 consolidée",
     "labelDocNL": "Fiscale fiche 281.18 consolidée",
-    "labelDocX": "Consolidated 281.18 tax form"
+    "labelDocEN": "Consolidated 281.18 tax form"
   },
   {
     "categoryNumber": 8,
@@ -3483,7 +3483,7 @@
     "referenceDocument": 980,
     "labelDocFR": "Liste des nouveaux travailleurs frontaliers Français",
     "labelDocNL": "Lijst nieuwe Franse grensarbeiders",
-    "labelDocX": "Liste des nouveaux travailleurs frontaliers Français"
+    "labelDocEN": "Liste des nouveaux travailleurs frontaliers Français"
   },
   {
     "categoryNumber": 8,
@@ -3493,7 +3493,7 @@
     "referenceDocument": 981,
     "labelDocFR": "Liste témoin déclaration CVO",
     "labelDocNL": "Getuigenlijst K.W.W. aangiften",
-    "labelDocX": "Liste témoin déclaration CVO"
+    "labelDocEN": "Liste témoin déclaration CVO"
   },
   {
     "categoryNumber": 8,
@@ -3503,7 +3503,7 @@
     "referenceDocument": 982,
     "labelDocFR": "276T à la demande",
     "labelDocNL": "276T-KMO op aanvraag",
-    "labelDocX": "276T à la demande"
+    "labelDocEN": "276T à la demande"
   },
   {
     "categoryNumber": 8,
@@ -3513,7 +3513,7 @@
     "referenceDocument": 983,
     "labelDocFR": "Attestation travail frontalier - Pas d'activité en dehors zone frontalière",
     "labelDocNL": "Attest ingeval van grensarbeid - geen activiteiten buiten grensstreek",
-    "labelDocX": "Attestation travail frontalier - Pas d'activité en dehors zone frontalière"
+    "labelDocEN": "Attestation travail frontalier - Pas d'activité en dehors zone frontalière"
   },
   {
     "categoryNumber": 8,
@@ -3523,7 +3523,7 @@
     "referenceDocument": 984,
     "labelDocFR": "Attestation travail frontalier - Sortie de zone frontalière exceptionnelle",
     "labelDocNL": "Attest ingeval van grensarbeid - Uitzonderlijke verplaatsingen buiten grensstreek",
-    "labelDocX": "Attestation travail frontalier - Sortie de zone frontalière exceptionnelle"
+    "labelDocEN": "Attestation travail frontalier - Sortie de zone frontalière exceptionnelle"
   },
   {
     "categoryNumber": 9,
@@ -3533,7 +3533,7 @@
     "referenceDocument": 24,
     "labelDocFR": "Statistique générique",
     "labelDocNL": "Algemene statistiek",
-    "labelDocX": "Generic statistics"
+    "labelDocEN": "Generic statistics"
   },
   {
     "categoryNumber": 9,
@@ -3543,7 +3543,7 @@
     "referenceDocument": 46,
     "labelDocFR": "Etat des compteurs",
     "labelDocNL": "Tellertoestand",
-    "labelDocX": "State of the counters"
+    "labelDocEN": "State of the counters"
   },
   {
     "categoryNumber": 9,
@@ -3553,7 +3553,7 @@
     "referenceDocument": 47,
     "labelDocFR": "Liste nominative de paie",
     "labelDocNL": "Nominatieve loonlijst",
-    "labelDocX": "Payroll with names"
+    "labelDocEN": "Payroll with names"
   },
   {
     "categoryNumber": 9,
@@ -3563,7 +3563,7 @@
     "referenceDocument": 49,
     "labelDocFR": "Statistiques FT/PT",
     "labelDocNL": "Statistieken FT/PT",
-    "labelDocX": "FT/PT statistics"
+    "labelDocEN": "FT/PT statistics"
   },
   {
     "categoryNumber": 9,
@@ -3573,7 +3573,7 @@
     "referenceDocument": 50,
     "labelDocFR": "Relevé hrs compl. et décalées avec sursalaire (#)",
     "labelDocNL": "Staat v. bijkomende en verplaatste uren met overloon (#)",
-    "labelDocX": "Statement overtime and staggered hours with extra pay (#)"
+    "labelDocEN": "Statement overtime and staggered hours with extra pay (#)"
   },
   {
     "categoryNumber": 9,
@@ -3583,7 +3583,7 @@
     "referenceDocument": 51,
     "labelDocFR": "Liste entrées / sorties",
     "labelDocNL": "Lijst in- en uitdienst",
-    "labelDocX": "List of entrances/exits"
+    "labelDocEN": "List of entrances/exits"
   },
   {
     "categoryNumber": 9,
@@ -3593,7 +3593,7 @@
     "referenceDocument": 52,
     "labelDocFR": "Frais forfaitaires",
     "labelDocNL": "Forfaitaire onkosten",
-    "labelDocX": "Flat-rate expenses"
+    "labelDocEN": "Flat-rate expenses"
   },
   {
     "categoryNumber": 9,
@@ -3603,7 +3603,7 @@
     "referenceDocument": 53,
     "labelDocFR": "Liste du personnel",
     "labelDocNL": "Lijst van het personeel",
-    "labelDocX": "Staff list"
+    "labelDocEN": "Staff list"
   },
   {
     "categoryNumber": 9,
@@ -3613,7 +3613,7 @@
     "referenceDocument": 149,
     "labelDocFR": "Statistiques FT/PT",
     "labelDocNL": "Statistieken FT/PT",
-    "labelDocX": "FT/PT statistics"
+    "labelDocEN": "FT/PT statistics"
   },
   {
     "categoryNumber": 9,
@@ -3623,7 +3623,7 @@
     "referenceDocument": 530,
     "labelDocFR": "Statistique des jours d'absences ",
     "labelDocNL": "Statistiek van de afwezigheidsdagen",
-    "labelDocX": "Statistics of the days of absence"
+    "labelDocEN": "Statistics of the days of absence"
   },
   {
     "categoryNumber": 9,
@@ -3633,7 +3633,7 @@
     "referenceDocument": 531,
     "labelDocFR": "Statistique des jours d'absences  sous format CSV",
     "labelDocNL": "Statistiek van de afwezigheidsdagen",
-    "labelDocX": "Statistique des jours d'absences  sous format CSV"
+    "labelDocEN": "Statistique des jours d'absences  sous format CSV"
   },
   {
     "categoryNumber": 9,
@@ -3643,7 +3643,7 @@
     "referenceDocument": 532,
     "labelDocFR": "Fiche prestations collaborateurs",
     "labelDocNL": "Fiches prestaties medewerker",
-    "labelDocX": "Fiche prestations collaborateurs"
+    "labelDocEN": "Fiche prestations collaborateurs"
   },
   {
     "categoryNumber": 9,
@@ -3653,7 +3653,7 @@
     "referenceDocument": 575,
     "labelDocFR": "Décompte Heures supplémentaires",
     "labelDocNL": "Staat van overuren",
-    "labelDocX": "Counting of overtime hours"
+    "labelDocEN": "Counting of overtime hours"
   },
   {
     "categoryNumber": 9,
@@ -3663,7 +3663,7 @@
     "referenceDocument": 576,
     "labelDocFR": "Décompte solde report RTT",
     "labelDocNL": "Décompte solde report RTT",
-    "labelDocX": "Décompte solde report RTT"
+    "labelDocEN": "Décompte solde report RTT"
   },
   {
     "categoryNumber": 9,
@@ -3673,7 +3673,7 @@
     "referenceDocument": 750,
     "labelDocFR": "Récapitulatif des salaires,  charges et provisions",
     "labelDocNL": "Samenvatting van lonen, lasten en provisies ",
-    "labelDocX": "Summary of wages, costs and provisions"
+    "labelDocEN": "Summary of wages, costs and provisions"
   },
   {
     "categoryNumber": 9,
@@ -3683,7 +3683,7 @@
     "referenceDocument": 2005,
     "labelDocFR": "Fiche statistique conseil entreprise / dossier GS",
     "labelDocNL": "Statistische fiche OR / dossier GS",
-    "labelDocX": "Statement statistics works council / GS file"
+    "labelDocEN": "Statement statistics works council / GS file"
   },
   {
     "categoryNumber": 9,
@@ -3693,7 +3693,7 @@
     "referenceDocument": 2006,
     "labelDocFR": "Fiche statistique conseil entreprise / matricule ONSS",
     "labelDocNL": "Statistische fiche OR / RSZ-nummer",
-    "labelDocX": "Statement statistics works council / NSSO identification number"
+    "labelDocEN": "Statement statistics works council / NSSO identification number"
   },
   {
     "categoryNumber": 9,
@@ -3703,7 +3703,7 @@
     "referenceDocument": 5002,
     "labelDocFR": "Fichier  Excel \"situation de l' emploi\" pour CE",
     "labelDocNL": "Excelbestand \"toestand van de tewerkstelling\" voor OR ",
-    "labelDocX": "Excel file \"employment situation\" for EC"
+    "labelDocEN": "Excel file \"employment situation\" for EC"
   },
   {
     "categoryNumber": 9,
@@ -3713,7 +3713,7 @@
     "referenceDocument": 6000,
     "labelDocFR": "DWG , REPORTING (en test)",
     "labelDocNL": "DWG . REPORTING (test)",
-    "labelDocX": "DWG , REPORTING (en test)"
+    "labelDocEN": "DWG , REPORTING (en test)"
   },
   {
     "categoryNumber": 9,
@@ -3723,7 +3723,7 @@
     "referenceDocument": 6100,
     "labelDocFR": "HR - Self Service",
     "labelDocNL": "HR - Self Service",
-    "labelDocX": "HR - Self Service"
+    "labelDocEN": "HR - Self Service"
   },
   {
     "categoryNumber": 10,
@@ -3734,7 +3734,7 @@
     "labelDocFR": "Comptabilisation des rémunérations",
     "labelDocNL": "Boeking van de lonen",
     "labelDocDE": "ComptaRem",
-    "labelDocX": "Accounting of wages"
+    "labelDocEN": "Accounting of wages"
   },
   {
     "categoryNumber": 10,
@@ -3745,7 +3745,7 @@
     "labelDocFR": "Comptabilisation provisions",
     "labelDocNL": "Boekingsstaat provisies",
     "labelDocDE": "Provision",
-    "labelDocX": "Booking of provisions "
+    "labelDocEN": "Booking of provisions "
   },
   {
     "categoryNumber": 10,
@@ -3756,7 +3756,7 @@
     "labelDocFR": "Comptabilisation Opérations Diverses (multi-périodes)",
     "labelDocNL": "Boekingsstaat diverse verrichtingen (per periode)",
     "labelDocDE": "Opérations diverses",
-    "labelDocX": "Accounting of various operations (multiperiod)"
+    "labelDocEN": "Accounting of various operations (multiperiod)"
   },
   {
     "categoryNumber": 11,
@@ -3766,7 +3766,7 @@
     "referenceDocument": 82,
     "labelDocFR": "Document C103",
     "labelDocNL": "Document C103",
-    "labelDocX": "Document C103"
+    "labelDocEN": "Document C103"
   },
   {
     "categoryNumber": 11,
@@ -3776,7 +3776,7 @@
     "referenceDocument": 83,
     "labelDocFR": "Document C103 Vacances jeunes",
     "labelDocNL": "Document C103 Jeugdvakantie",
-    "labelDocX": "Document C103 Vacances jeunes"
+    "labelDocEN": "Document C103 Vacances jeunes"
   },
   {
     "categoryNumber": 11,
@@ -3786,7 +3786,7 @@
     "referenceDocument": 84,
     "labelDocFR": "Document C131 (demande)",
     "labelDocNL": "Document C131 (op aanvraag)",
-    "labelDocX": " C131 document(request)"
+    "labelDocEN": " C131 document(request)"
   },
   {
     "categoryNumber": 11,
@@ -3796,7 +3796,7 @@
     "referenceDocument": 85,
     "labelDocFR": "Document C131 (prod.journ.)",
     "labelDocNL": "Document C131 (dagel.prod.)",
-    "labelDocX": "C131 document (daily production)"
+    "labelDocEN": "C131 document (daily production)"
   },
   {
     "categoryNumber": 11,
@@ -3806,7 +3806,7 @@
     "referenceDocument": 87,
     "labelDocFR": "Document C103 Vacances seniors",
     "labelDocNL": "Document C103 Seniorvakantie",
-    "labelDocX": "Document C103 Vacances seniors"
+    "labelDocEN": "Document C103 Vacances seniors"
   },
   {
     "categoryNumber": 11,
@@ -3816,7 +3816,7 @@
     "referenceDocument": 135,
     "labelDocFR": "Document C4 (demande)",
     "labelDocNL": "Document C4 (op aanvraag)",
-    "labelDocX": "C4 document (request)"
+    "labelDocEN": "C4 document (request)"
   },
   {
     "categoryNumber": 11,
@@ -3826,7 +3826,7 @@
     "referenceDocument": 136,
     "labelDocFR": "Document C4 (Product. autom.)",
     "labelDocNL": "Document C4 (Autom. prod.)",
-    "labelDocX": "C4 document (autom. product.)"
+    "labelDocEN": "C4 document (autom. product.)"
   },
   {
     "categoryNumber": 11,
@@ -3836,7 +3836,7 @@
     "referenceDocument": 140,
     "labelDocFR": "Document C4 Prépension à la demande",
     "labelDocNL": "Document C4 Brugpensioen op aanvraag",
-    "labelDocX": "Document C4 Prépension à la demande"
+    "labelDocEN": "Document C4 Prépension à la demande"
   },
   {
     "categoryNumber": 11,
@@ -3846,7 +3846,7 @@
     "referenceDocument": 141,
     "labelDocFR": "Document C4 Prépens. (prod.journ.)",
     "labelDocNL": "Document C4 Brugpensioen (dagel.prod.)",
-    "labelDocX": "C4 early retirement document (daily production)"
+    "labelDocEN": "C4 early retirement document (daily production)"
   },
   {
     "categoryNumber": 11,
@@ -3856,7 +3856,7 @@
     "referenceDocument": 384,
     "labelDocFR": "Liste de validation C32",
     "labelDocNL": "Validatielijst C32",
-    "labelDocX": "Liste de validation C32"
+    "labelDocEN": "Liste de validation C32"
   },
   {
     "categoryNumber": 11,
@@ -3866,7 +3866,7 @@
     "referenceDocument": 397,
     "labelDocFR": "C78 Activa/courte durée/SINE/APS/Start",
     "labelDocNL": "C78  Activa/korte duur/SINE/PVP/Start",
-    "labelDocX": "C78 Activa/short term/SINE/APS/Start"
+    "labelDocEN": "C78 Activa/short term/SINE/APS/Start"
   },
   {
     "categoryNumber": 11,
@@ -3876,7 +3876,7 @@
     "referenceDocument": 717,
     "labelDocFR": "C 3.2 Employeur demande d'allocations",
     "labelDocNL": "C 3.2 Werkgever uitkeringsaanvraag",
-    "labelDocX": "C 3.2 Employer - Applications for allowances"
+    "labelDocEN": "C 3.2 Employer - Applications for allowances"
   },
   {
     "categoryNumber": 11,
@@ -3886,7 +3886,7 @@
     "referenceDocument": 718,
     "labelDocFR": "C 3.2 Employeur certificat de chômage temporaire",
     "labelDocNL": "C 3.2 Werkgever bewijs uren tijdelijke werkloosheid",
-    "labelDocX": "C 3.2 Employer - Temporary unemployment certificate"
+    "labelDocEN": "C 3.2 Employer - Temporary unemployment certificate"
   },
   {
     "categoryNumber": 11,
@@ -3896,7 +3896,7 @@
     "referenceDocument": 719,
     "labelDocFR": "Document C32B (Construction)",
     "labelDocNL": "Document C32B (Bouw)",
-    "labelDocX": "Document C32B (Construction)"
+    "labelDocEN": "Document C32B (Construction)"
   },
   {
     "categoryNumber": 11,
@@ -3906,7 +3906,7 @@
     "referenceDocument": 787,
     "labelDocFR": "C 3.2 Employeur demande d'allocations - crise-suspension-employés",
     "labelDocNL": "C 3.2 Werkgever uitkeringsaanvraag - crisis-schorsing-bedienden",
-    "labelDocX": "C 3.2 Employer - Applications for allowances - crisis-suspension-white collar workers"
+    "labelDocEN": "C 3.2 Employer - Applications for allowances - crisis-suspension-white collar workers"
   },
   {
     "categoryNumber": 11,
@@ -3916,7 +3916,7 @@
     "referenceDocument": 788,
     "labelDocFR": "C 3.2 Employeur certificat des heures de crise-suspension employés ",
     "labelDocNL": "C 3.2 Werkgever bewijs uren crsis-schorsing bedienden",
-    "labelDocX": "C 3.2 Employer- certificate of crisis hours-suspension-white collar workers"
+    "labelDocEN": "C 3.2 Employer- certificate of crisis hours-suspension-white collar workers"
   },
   {
     "categoryNumber": 11,
@@ -3926,7 +3926,7 @@
     "referenceDocument": 789,
     "labelDocFR": "Document C32 Crise-suspension employés",
     "labelDocNL": "Document C32 Crisis-schorsing bedienden",
-    "labelDocX": "C32 Document - Crisis-suspension-white collar workers"
+    "labelDocEN": "C32 Document - Crisis-suspension-white collar workers"
   },
   {
     "categoryNumber": 11,
@@ -3936,7 +3936,7 @@
     "referenceDocument": 3840,
     "labelDocFR": "Liste de validation C32 (Excel)",
     "labelDocNL": "Validatielijst C32 (Excel)",
-    "labelDocX": "Liste de validation C32 (Excel)"
+    "labelDocEN": "Liste de validation C32 (Excel)"
   },
   {
     "categoryNumber": 11,
@@ -3946,7 +3946,7 @@
     "referenceDocument": 3971,
     "labelDocFR": "C78 Activa",
     "labelDocNL": "C78  Activa",
-    "labelDocX": "C78 Activa"
+    "labelDocEN": "C78 Activa"
   },
   {
     "categoryNumber": 11,
@@ -3956,7 +3956,7 @@
     "referenceDocument": 3972,
     "labelDocFR": "C78 Activa courte duree",
     "labelDocNL": "C78  Activa korte duur",
-    "labelDocX": "C78 Activa short term"
+    "labelDocEN": "C78 Activa short term"
   },
   {
     "categoryNumber": 11,
@@ -3966,7 +3966,7 @@
     "referenceDocument": 3974,
     "labelDocFR": "C78 Activa sine",
     "labelDocNL": "C78  Activa sine",
-    "labelDocX": "C78 Activa sine"
+    "labelDocEN": "C78 Activa sine"
   },
   {
     "categoryNumber": 11,
@@ -3976,7 +3976,7 @@
     "referenceDocument": 3975,
     "labelDocFR": "C78 Activa start",
     "labelDocNL": "C78  Activa start",
-    "labelDocX": "C78 Activa start"
+    "labelDocEN": "C78 Activa start"
   },
   {
     "categoryNumber": 11,
@@ -3986,7 +3986,7 @@
     "referenceDocument": 3976,
     "labelDocFR": "C78.3 Certificat d'allocation d'intégration",
     "labelDocNL": "C78.3 Integratievergoedingsbewijs",
-    "labelDocX": "C78.3 Certificate of integration allowance"
+    "labelDocEN": "C78.3 Certificate of integration allowance"
   },
   {
     "categoryNumber": 11,
@@ -3996,7 +3996,7 @@
     "referenceDocument": 8002,
     "labelDocFR": "DRS scénario 2 C32",
     "labelDocNL": "ASR scénario 2 C32",
-    "labelDocX": "DRS scenario 2 C32"
+    "labelDocEN": "DRS scenario 2 C32"
   },
   {
     "categoryNumber": 11,
@@ -4006,7 +4006,7 @@
     "referenceDocument": 8003,
     "labelDocFR": "DRS scénario 3 C131A",
     "labelDocNL": "ASR scénario 3 C131A",
-    "labelDocX": "DRS scenario 3 C131A"
+    "labelDocEN": "DRS scenario 3 C131A"
   },
   {
     "categoryNumber": 11,
@@ -4016,7 +4016,7 @@
     "referenceDocument": 8005,
     "labelDocFR": "DRS scénario 5 C32",
     "labelDocNL": "ASR scénario 5 C32",
-    "labelDocX": "DRS scenario 5 C32"
+    "labelDocEN": "DRS scenario 5 C32"
   },
   {
     "categoryNumber": 11,
@@ -4026,7 +4026,7 @@
     "referenceDocument": 8006,
     "labelDocFR": "DRS scénario 6 C131B",
     "labelDocNL": "ASR scenario 6 C131B",
-    "labelDocX": "DRS scenario 6 C131B"
+    "labelDocEN": "DRS scenario 6 C131B"
   },
   {
     "categoryNumber": 11,
@@ -4036,7 +4036,7 @@
     "referenceDocument": 8008,
     "labelDocFR": "C78 (DRS) Activa/courte durée/SINE/APS/Start",
     "labelDocNL": "C78 (ASR)  Activa/korte duur/SINE/PVP/Start",
-    "labelDocX": "C78 (DRS) Activa/short term/SINE/APS/Start"
+    "labelDocEN": "C78 (DRS) Activa/short term/SINE/APS/Start"
   },
   {
     "categoryNumber": 11,
@@ -4046,7 +4046,7 @@
     "referenceDocument": 8009,
     "labelDocFR": "DRS scénario 9 C103",
     "labelDocNL": "ASR scénario 9 C103",
-    "labelDocX": "DRS scenario 9 C103"
+    "labelDocEN": "DRS scenario 9 C103"
   },
   {
     "categoryNumber": 11,
@@ -4056,7 +4056,7 @@
     "referenceDocument": 8010,
     "labelDocFR": "DRS scénario 10 C103",
     "labelDocNL": "ASR scénario 10 C103",
-    "labelDocX": "DRS scenario 10 C103"
+    "labelDocEN": "DRS scenario 10 C103"
   },
   {
     "categoryNumber": 12,
@@ -4066,7 +4066,7 @@
     "referenceDocument": 2010,
     "labelDocFR": "Demande consultation DMFA",
     "labelDocNL": "Aanvraag consultatie DMFA ",
-    "labelDocX": "Demande consultation DMFA"
+    "labelDocEN": "Demande consultation DMFA"
   },
   {
     "categoryNumber": 12,
@@ -4076,7 +4076,7 @@
     "referenceDocument": 2012,
     "labelDocFR": "Relevé Trav. ETA8 pour AWIPH (format fichier)",
     "labelDocNL": "Opgave Werkn. OAW8 voor \"AWIPH\"(bestand)",
-    "labelDocX": "Relevé Trav. ETA8 pour AWIPH (format fichier)"
+    "labelDocEN": "Relevé Trav. ETA8 pour AWIPH (format fichier)"
   },
   {
     "categoryNumber": 12,
@@ -4086,7 +4086,7 @@
     "referenceDocument": 2014,
     "labelDocFR": "Copie fichier DMFA originale",
     "labelDocNL": "Kopie bestand DMFA origineel",
-    "labelDocX": "Copy of the original DMFA file"
+    "labelDocEN": "Copy of the original DMFA file"
   },
   {
     "categoryNumber": 12,
@@ -4096,7 +4096,7 @@
     "referenceDocument": 2104,
     "labelDocFR": "DMFA - accusé réception ",
     "labelDocNL": "DMFA - Ontvangstbewijs",
-    "labelDocX": "DMFA - accusé réception "
+    "labelDocEN": "DMFA - accusé réception "
   },
   {
     "categoryNumber": 12,
@@ -4106,7 +4106,7 @@
     "referenceDocument": 2105,
     "labelDocFR": "DMFA - Notification ",
     "labelDocNL": "DMFA - Notificatie",
-    "labelDocX": "DMFA - Notification"
+    "labelDocEN": "DMFA - Notification"
   },
   {
     "categoryNumber": 12,
@@ -4116,7 +4116,7 @@
     "referenceDocument": 2106,
     "labelDocFR": "DMFA - Notification de modification",
     "labelDocNL": "DMFA - Notificatie van wijziging",
-    "labelDocX": "DMFA - Notification de modification"
+    "labelDocEN": "DMFA - Notification de modification"
   },
   {
     "categoryNumber": 12,
@@ -4126,7 +4126,7 @@
     "referenceDocument": 2107,
     "labelDocFR": "DMFA - Données identification permanente",
     "labelDocNL": "DMFA - PID permante identificatiegegevers",
-    "labelDocX": "DMFA - Données identification permanente"
+    "labelDocEN": "DMFA - Données identification permanente"
   },
   {
     "categoryNumber": 12,
@@ -4136,7 +4136,7 @@
     "referenceDocument": 2110,
     "labelDocFR": "Decl cp 327.03 Indemnité compl.",
     "labelDocNL": "Aangifte pc 327.03 aanv. vergoeding",
-    "labelDocX": "Decl cp 327.03 Indemnité compl."
+    "labelDocEN": "Decl cp 327.03 Indemnité compl."
   },
   {
     "categoryNumber": 12,
@@ -4146,7 +4146,7 @@
     "referenceDocument": 2114,
     "labelDocFR": "Résultat consultation DMFA",
     "labelDocNL": "Resultaat consultatie DMFA",
-    "labelDocX": "Résultat consultation DMFA"
+    "labelDocEN": "Résultat consultation DMFA"
   },
   {
     "categoryNumber": 13,
@@ -4157,7 +4157,7 @@
     "labelDocFR": "Fichier retour anomalies PTG",
     "labelDocNL": "Bestand  PTG-anomalieën ",
     "labelDocDE": "Fichier retour anomalies PTG ",
-    "labelDocX": "Feedback file PTG anomalies"
+    "labelDocEN": "Feedback file PTG anomalies"
   },
   {
     "categoryNumber": 13,
@@ -4168,7 +4168,7 @@
     "labelDocFR": "AFAS: Fichier retour Prestations Valorisées",
     "labelDocNL": "AFAS: Bestand gevaloriseerde prestaties",
     "labelDocDE": "AFAS: Fichier retour Prestations Valorisées",
-    "labelDocX": "AFAS: Fichier retour Prestations Valorisées"
+    "labelDocEN": "AFAS: Fichier retour Prestations Valorisées"
   },
   {
     "categoryNumber": 13,
@@ -4179,7 +4179,7 @@
     "labelDocFR": "AFAS: Fichier retour Prestations Interprétées",
     "labelDocNL": "AFAS: Bestand geïnterpreteerde prestaties",
     "labelDocDE": "AFAS : Bestand geïnterpreteerde prestaties",
-    "labelDocX": "AFAS: Fichier retour Prestations Interprétées"
+    "labelDocEN": "AFAS: Fichier retour Prestations Interprétées"
   },
   {
     "categoryNumber": 13,
@@ -4190,7 +4190,7 @@
     "labelDocFR": "AFAS: Retour DIMONA",
     "labelDocNL": "AFAS: Bestand DIMONA antwoordgegevens",
     "labelDocDE": "AFAS",
-    "labelDocX": "AFAS: Retour DIMONA"
+    "labelDocEN": "AFAS: Retour DIMONA"
   },
   {
     "categoryNumber": 13,
@@ -4201,7 +4201,7 @@
     "labelDocFR": "AFAS: Affectations",
     "labelDocNL": "AFAS: Toewijzingen",
     "labelDocDE": "AFAS",
-    "labelDocX": "AFAS: Affectations"
+    "labelDocEN": "AFAS: Affectations"
   },
   {
     "categoryNumber": 13,
@@ -4212,7 +4212,7 @@
     "labelDocFR": "AFAS: Titularisations",
     "labelDocNL": "AFAS: Titularisaties",
     "labelDocDE": "AFAS",
-    "labelDocX": "AFAS: Titularisations"
+    "labelDocEN": "AFAS: Titularisations"
   },
   {
     "categoryNumber": 13,
@@ -4223,7 +4223,7 @@
     "labelDocFR": "AFAS: Anciennetes",
     "labelDocNL": "AFAS: Anciënniteiten",
     "labelDocDE": "AFAS",
-    "labelDocX": "AFAS: Anciennetes"
+    "labelDocEN": "AFAS: Anciennetes"
   },
   {
     "categoryNumber": 14,
@@ -4233,7 +4233,7 @@
     "referenceDocument": 10000,
     "labelDocFR": "Documents Scannés HR Carrefour",
     "labelDocNL": "Scan Documenten  HR Carrefour",
-    "labelDocX": "Documents Scannés HR Carrefour"
+    "labelDocEN": "Documents Scannés HR Carrefour"
   },
   {
     "categoryNumber": 14,
@@ -4243,7 +4243,7 @@
     "referenceDocument": 10001,
     "labelDocFR": "Contrat",
     "labelDocNL": "Contract",
-    "labelDocX": "Contrat"
+    "labelDocEN": "Contrat"
   },
   {
     "categoryNumber": 14,
@@ -4253,7 +4253,7 @@
     "referenceDocument": 10002,
     "labelDocFR": "Déclaration sur l'honneur",
     "labelDocNL": "Verklaring op erewoord",
-    "labelDocX": "Déclaration sur l'honneur"
+    "labelDocEN": "Déclaration sur l'honneur"
   },
   {
     "categoryNumber": 14,
@@ -4263,7 +4263,7 @@
     "referenceDocument": 10003,
     "labelDocFR": "Evolution de carrière",
     "labelDocNL": "Loopbaanevolutie",
-    "labelDocX": "Evolution de carrière"
+    "labelDocEN": "Evolution de carrière"
   },
   {
     "categoryNumber": 14,
@@ -4273,7 +4273,7 @@
     "referenceDocument": 10004,
     "labelDocFR": "Augmentation de salaire",
     "labelDocNL": "Loonsverhoging",
-    "labelDocX": "Augmentation de salaire"
+    "labelDocEN": "Augmentation de salaire"
   },
   {
     "categoryNumber": 14,
@@ -4283,7 +4283,7 @@
     "referenceDocument": 10005,
     "labelDocFR": "Evaluations",
     "labelDocNL": "Evaluaties",
-    "labelDocX": "Evaluations"
+    "labelDocEN": "Evaluations"
   },
   {
     "categoryNumber": 14,
@@ -4293,7 +4293,7 @@
     "referenceDocument": 10006,
     "labelDocFR": "Sanctions",
     "labelDocNL": "Sancties",
-    "labelDocX": "Sanctions"
+    "labelDocEN": "Sanctions"
   },
   {
     "categoryNumber": 14,
@@ -4303,7 +4303,7 @@
     "referenceDocument": 10007,
     "labelDocFR": "Service anti-fraude",
     "labelDocNL": "Antifraudedienst",
-    "labelDocX": "Service anti-fraude"
+    "labelDocEN": "Service anti-fraude"
   },
   {
     "categoryNumber": 14,
@@ -4313,7 +4313,7 @@
     "referenceDocument": 10008,
     "labelDocFR": "Correspondance collaborateur vers employeur",
     "labelDocNL": "Briefwisseling werknemer naar werkgever",
-    "labelDocX": "Correspondance collaborateur vers employeur"
+    "labelDocEN": "Correspondance collaborateur vers employeur"
   },
   {
     "categoryNumber": 14,
@@ -4323,7 +4323,7 @@
     "referenceDocument": 10009,
     "labelDocFR": "Correspondance employeur vers collaborateur",
     "labelDocNL": "Briefwisseling werkgever naar werknemer",
-    "labelDocX": "Correspondance employeur vers collaborateur"
+    "labelDocEN": "Correspondance employeur vers collaborateur"
   },
   {
     "categoryNumber": 14,
@@ -4333,7 +4333,7 @@
     "referenceDocument": 10010,
     "labelDocFR": "Certificats",
     "labelDocNL": "Certificaten",
-    "labelDocX": "Certificats"
+    "labelDocEN": "Certificats"
   },
   {
     "categoryNumber": 14,
@@ -4343,7 +4343,7 @@
     "referenceDocument": 10011,
     "labelDocFR": "Documents sociaux",
     "labelDocNL": "Sociale documenten",
-    "labelDocX": "Documents sociaux"
+    "labelDocEN": "Documents sociaux"
   },
   {
     "categoryNumber": 14,
@@ -4353,7 +4353,7 @@
     "referenceDocument": 10012,
     "labelDocFR": "Crédit temps",
     "labelDocNL": "Tijdskrediet",
-    "labelDocX": "Crédit temps"
+    "labelDocEN": "Crédit temps"
   },
   {
     "categoryNumber": 14,
@@ -4363,7 +4363,7 @@
     "referenceDocument": 10013,
     "labelDocFR": "Avenants",
     "labelDocNL": "Aanhangsels",
-    "labelDocX": "Avenants"
+    "labelDocEN": "Avenants"
   },
   {
     "categoryNumber": 14,
@@ -4373,7 +4373,7 @@
     "referenceDocument": 10014,
     "labelDocFR": "Voiture de société",
     "labelDocNL": "Bedrijfswagen",
-    "labelDocX": "Voiture de société"
+    "labelDocEN": "Voiture de société"
   },
   {
     "categoryNumber": 14,
@@ -4383,7 +4383,7 @@
     "referenceDocument": 10015,
     "labelDocFR": "Prépension",
     "labelDocNL": "Brugpensioen",
-    "labelDocX": "Prépension"
+    "labelDocEN": "Prépension"
   },
   {
     "categoryNumber": 14,
@@ -4393,7 +4393,7 @@
     "referenceDocument": 10016,
     "labelDocFR": "Fin de contrat",
     "labelDocNL": "Einde contract",
-    "labelDocX": "Fin de contrat"
+    "labelDocEN": "Fin de contrat"
   },
   {
     "categoryNumber": 14,
@@ -4403,7 +4403,7 @@
     "referenceDocument": 10017,
     "labelDocFR": "Fonds solidarité / pension",
     "labelDocNL": "Solidariteits- / pensioenfonds",
-    "labelDocX": "Fonds solidarité / pension"
+    "labelDocEN": "Fonds solidarité / pension"
   },
   {
     "categoryNumber": 14,
@@ -4413,7 +4413,7 @@
     "referenceDocument": 10018,
     "labelDocFR": "Reconnaissance de dette",
     "labelDocNL": "Schulderkenning",
-    "labelDocX": "Reconnaissance de dette"
+    "labelDocEN": "Reconnaissance de dette"
   },
   {
     "categoryNumber": 14,
@@ -4423,7 +4423,7 @@
     "referenceDocument": 10019,
     "labelDocFR": "Avance sur salaire",
     "labelDocNL": "Voorschot op loon",
-    "labelDocX": "Avance sur salaire"
+    "labelDocEN": "Avance sur salaire"
   },
   {
     "categoryNumber": 14,
@@ -4433,7 +4433,7 @@
     "referenceDocument": 10020,
     "labelDocFR": "Mutation",
     "labelDocNL": "Mutatie",
-    "labelDocX": "Mutation"
+    "labelDocEN": "Mutation"
   },
   {
     "categoryNumber": 14,
@@ -4443,7 +4443,7 @@
     "referenceDocument": 10021,
     "labelDocFR": "Prime de remplacement",
     "labelDocNL": "Vervangingspremie",
-    "labelDocX": "Prime de remplacement"
+    "labelDocEN": "Prime de remplacement"
   },
   {
     "categoryNumber": 14,
@@ -4453,7 +4453,7 @@
     "referenceDocument": 10022,
     "labelDocFR": "Nouveau Fonds de Pension ",
     "labelDocNL": "Nieuw Pensioenfonds",
-    "labelDocX": "Nouveau Fonds de Pension "
+    "labelDocEN": "Nouveau Fonds de Pension "
   },
   {
     "categoryNumber": 14,
@@ -4463,7 +4463,7 @@
     "referenceDocument": 10023,
     "labelDocFR": "Bourse d'étude",
     "labelDocNL": "Studiebeurs",
-    "labelDocX": "Bourse d'étude"
+    "labelDocEN": "Bourse d'étude"
   },
   {
     "categoryNumber": 14,
@@ -4473,7 +4473,7 @@
     "referenceDocument": 10024,
     "labelDocFR": "Saisie sur salaire",
     "labelDocNL": "Loonbeslag",
-    "labelDocX": "Saisie sur salaire"
+    "labelDocEN": "Saisie sur salaire"
   },
   {
     "categoryNumber": 14,
@@ -4483,7 +4483,7 @@
     "referenceDocument": 10025,
     "labelDocFR": "Collaborateurs sortis (anciens dossiers)",
     "labelDocNL": "Medewerkers uitdienst (oude dossiers)",
-    "labelDocX": "Collaborateurs sortis (anciens dossiers)"
+    "labelDocEN": "Collaborateurs sortis (anciens dossiers)"
   },
   {
     "categoryNumber": 14,
@@ -4493,7 +4493,7 @@
     "referenceDocument": 10026,
     "labelDocFR": "Force majeure temporaire",
     "labelDocNL": "Tijdelijke medische overmacht",
-    "labelDocX": "Force majeure temporaire"
+    "labelDocEN": "Force majeure temporaire"
   },
   {
     "categoryNumber": 14,
@@ -4503,7 +4503,7 @@
     "referenceDocument": 10027,
     "labelDocFR": "Entretien de sortie",
     "labelDocNL": "Uitdienst Interview",
-    "labelDocX": "Entretien de sortie"
+    "labelDocEN": "Entretien de sortie"
   },
   {
     "categoryNumber": 14,
@@ -4513,7 +4513,7 @@
     "referenceDocument": 10028,
     "labelDocFR": "Correspondance autres instances (syndicat, ONEM, impôts,¿)",
     "labelDocNL": "Briefwisseling andere instanties (vakbond, RVA, belastingen,¿)",
-    "labelDocX": "Correspondance autres instances (syndicat, ONEM, impôts,¿)"
+    "labelDocEN": "Correspondance autres instances (syndicat, ONEM, impôts,¿)"
   },
   {
     "categoryNumber": 14,
@@ -4523,7 +4523,7 @@
     "referenceDocument": 10029,
     "labelDocFR": "Courrier recommandé non retiré/n habite plus à l adresse indiquée",
     "labelDocNL": "Briefwisseling niet afgehaald/woont niet meer op adres",
-    "labelDocX": "Courrier recommandé non retiré/n habite plus à l adresse indiquée"
+    "labelDocEN": "Courrier recommandé non retiré/n habite plus à l adresse indiquée"
   },
   {
     "categoryNumber": 14,
@@ -4533,7 +4533,7 @@
     "referenceDocument": 10030,
     "labelDocFR": "Formulaire de choix - Quart d'heure - Pause midi",
     "labelDocNL": "Keuzeformulier - ¼ u - Middagpauze",
-    "labelDocX": "Formulaire de choix - Quart d'heure - Pause midi"
+    "labelDocEN": "Formulaire de choix - Quart d'heure - Pause midi"
   },
   {
     "categoryNumber": 14,
@@ -4543,7 +4543,7 @@
     "referenceDocument": 10031,
     "labelDocFR": "Accord d'embauche - CV ",
     "labelDocNL": "Aanwervingsakkoord - CV ",
-    "labelDocX": "Accord d'embauche - CV "
+    "labelDocEN": "Accord d'embauche - CV "
   },
   {
     "categoryNumber": 14,
@@ -4553,7 +4553,7 @@
     "referenceDocument": 10032,
     "labelDocFR": "Volontariat fiscal",
     "labelDocNL": "Fiscaal voluntariaat",
-    "labelDocX": "Volontariat fiscal"
+    "labelDocEN": "Volontariat fiscal"
   },
   {
     "categoryNumber": 14,
@@ -4563,7 +4563,7 @@
     "referenceDocument": 10033,
     "labelDocFR": "Remise tardive/pas de remise certificat médical",
     "labelDocNL": "Medisch attest te laat of niet afgegeven",
-    "labelDocX": "Remise tardive/pas de remise certificat médical"
+    "labelDocEN": "Remise tardive/pas de remise certificat médical"
   },
   {
     "categoryNumber": 14,
@@ -4573,7 +4573,7 @@
     "referenceDocument": 10034,
     "labelDocFR": "Attestations/déclarations divers",
     "labelDocNL": "Diverse attesten/verklaringen",
-    "labelDocX": "Attestations/déclarations divers"
+    "labelDocEN": "Attestations/déclarations divers"
   },
   {
     "categoryNumber": 14,
@@ -4583,7 +4583,7 @@
     "referenceDocument": 10035,
     "labelDocFR": "Télégramme",
     "labelDocNL": "Telegram",
-    "labelDocX": "Télégramme"
+    "labelDocEN": "Télégramme"
   },
   {
     "categoryNumber": 14,
@@ -4593,7 +4593,7 @@
     "referenceDocument": 10036,
     "labelDocFR": "Reprise partielle /maladie",
     "labelDocNL": "Deeltijdse werkhervatting ",
-    "labelDocX": "Reprise partielle /maladie"
+    "labelDocEN": "Reprise partielle /maladie"
   },
   {
     "categoryNumber": 14,
@@ -4603,7 +4603,7 @@
     "referenceDocument": 10037,
     "labelDocFR": "Paie rouge (non visible par l'employeur)",
     "labelDocNL": "Rood loon (niet zichtbaar door de werkgever)",
-    "labelDocX": "Paie rouge (non visible par l'employeur)"
+    "labelDocEN": "Paie rouge (non visible par l'employeur)"
   },
   {
     "categoryNumber": 14,
@@ -4613,7 +4613,7 @@
     "referenceDocument": 10038,
     "labelDocFR": "Entretien d évolutions",
     "labelDocNL": "Evolutiegesprekken",
-    "labelDocX": "Entretien d évolutions"
+    "labelDocEN": "Entretien d évolutions"
   },
   {
     "categoryNumber": 14,
@@ -4623,7 +4623,7 @@
     "referenceDocument": 10039,
     "labelDocFR": "Contrôle médical",
     "labelDocNL": "Medische controle",
-    "labelDocX": "Contrôle médical"
+    "labelDocEN": "Contrôle médical"
   },
   {
     "categoryNumber": 14,
@@ -4633,7 +4633,7 @@
     "referenceDocument": 10040,
     "labelDocFR": "Congé impérieux",
     "labelDocNL": "Social verlof",
-    "labelDocX": "Congé impérieux"
+    "labelDocEN": "Congé impérieux"
   },
   {
     "categoryNumber": 14,
@@ -4643,7 +4643,7 @@
     "referenceDocument": 10041,
     "labelDocFR": "Assurance de groupe",
     "labelDocNL": "Groepsverzekering ",
-    "labelDocX": "Assurance de groupe"
+    "labelDocEN": "Assurance de groupe"
   },
   {
     "categoryNumber": 14,
@@ -4653,7 +4653,7 @@
     "referenceDocument": 10042,
     "labelDocFR": "Dossier papiers",
     "labelDocNL": "Papieren dossier",
-    "labelDocX": "Dossier papiers"
+    "labelDocEN": "Dossier papiers"
   },
   {
     "categoryNumber": 14,
@@ -4663,7 +4663,7 @@
     "referenceDocument": 10043,
     "labelDocFR": "Validation paie Time",
     "labelDocNL": "Loonvalidatie Time",
-    "labelDocX": "Validation paie Time"
+    "labelDocEN": "Validation paie Time"
   },
   {
     "categoryNumber": 14,
@@ -4673,7 +4673,7 @@
     "referenceDocument": 10044,
     "labelDocFR": "Prime garde d’enfants",
     "labelDocNL": "Premie kinderopvang",
-    "labelDocX": "Prime garde d’enfants"
+    "labelDocEN": "Prime garde d’enfants"
   },
   {
     "categoryNumber": 14,
@@ -4683,7 +4683,7 @@
     "referenceDocument": 10045,
     "labelDocFR": "Calcul indemnités de licenciement - Out",
     "labelDocNL": "Berekening van de ontslagvergoeding - Out",
-    "labelDocX": "Calcul indemnités de licenciement - Out"
+    "labelDocEN": "Calcul indemnités de licenciement - Out"
   },
   {
     "categoryNumber": 14,
@@ -4693,7 +4693,7 @@
     "referenceDocument": 10046,
     "labelDocFR": "Dossier travailleur actif",
     "labelDocNL": "Actief medewerkersdossier ",
-    "labelDocX": "Dossier travailleur actif"
+    "labelDocEN": "Dossier travailleur actif"
   },
   {
     "categoryNumber": 14,
@@ -4703,7 +4703,7 @@
     "referenceDocument": 10047,
     "labelDocFR": "Déclaration nouveau collaborateur",
     "labelDocNL": "Aangifte nieuwe medewerker",
-    "labelDocX": "Déclaration nouveau collaborateur"
+    "labelDocEN": "Déclaration nouveau collaborateur"
   },
   {
     "categoryNumber": 14,
@@ -4713,7 +4713,7 @@
     "referenceDocument": 10048,
     "labelDocFR": "Document unique",
     "labelDocNL": "Uniek document",
-    "labelDocX": "Document unique"
+    "labelDocEN": "Document unique"
   },
   {
     "categoryNumber": 14,
@@ -4723,7 +4723,7 @@
     "referenceDocument": 10049,
     "labelDocFR": "Visite médicale périodique",
     "labelDocNL": "Periodieke medische onderzoek",
-    "labelDocX": "Visite médicale périodique"
+    "labelDocEN": "Visite médicale périodique"
   },
   {
     "categoryNumber": 14,
@@ -4733,7 +4733,7 @@
     "referenceDocument": 10050,
     "labelDocFR": "Fiche de paie électronique",
     "labelDocNL": "Elektronische loonbrief",
-    "labelDocX": "Fiche de paie électronique"
+    "labelDocEN": "Fiche de paie électronique"
   },
   {
     "categoryNumber": 14,
@@ -4743,7 +4743,7 @@
     "referenceDocument": 10051,
     "labelDocFR": "Copie DRS employeur",
     "labelDocNL": "Kopij ASR werkgever ",
-    "labelDocX": "Copie DRS employeur"
+    "labelDocEN": "Copie DRS employeur"
   },
   {
     "categoryNumber": 14,
@@ -4753,7 +4753,7 @@
     "referenceDocument": 10099,
     "labelDocFR": "Autres",
     "labelDocNL": "Anderen",
-    "labelDocX": "Autres"
+    "labelDocEN": "Autres"
   },
   {
     "categoryNumber": 14,
@@ -4763,7 +4763,7 @@
     "referenceDocument": 10101,
     "labelDocFR": "Contrat - Cadre",
     "labelDocNL": "Contract - Kader",
-    "labelDocX": "Contrat - Cadre"
+    "labelDocEN": "Contrat - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4773,7 +4773,7 @@
     "referenceDocument": 10102,
     "labelDocFR": "Déclaration sur l'honneur - Cadre",
     "labelDocNL": "Verklaring op erewoord - Kader",
-    "labelDocX": "Déclaration sur l'honneur - Cadre"
+    "labelDocEN": "Déclaration sur l'honneur - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4783,7 +4783,7 @@
     "referenceDocument": 10103,
     "labelDocFR": "Evolution de Carrière - Cadre",
     "labelDocNL": "Loopbaanevolutie - Kader",
-    "labelDocX": "Evolution de Carrière - Cadre"
+    "labelDocEN": "Evolution de Carrière - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4793,7 +4793,7 @@
     "referenceDocument": 10104,
     "labelDocFR": "Augmentation de salaire - Cadre",
     "labelDocNL": "Loonsverhoging - Kader",
-    "labelDocX": "Augmentation de salaire - Cadre"
+    "labelDocEN": "Augmentation de salaire - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4803,7 +4803,7 @@
     "referenceDocument": 10105,
     "labelDocFR": "Evaluations - Cadre",
     "labelDocNL": "Evaluaties - Kader",
-    "labelDocX": "Evaluations - Cadre"
+    "labelDocEN": "Evaluations - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4813,7 +4813,7 @@
     "referenceDocument": 10106,
     "labelDocFR": "Sanctions - Cadre",
     "labelDocNL": "Sancties - Kader",
-    "labelDocX": "Sanctions - Cadre"
+    "labelDocEN": "Sanctions - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4823,7 +4823,7 @@
     "referenceDocument": 10107,
     "labelDocFR": "Service anti-fraude - Cadre",
     "labelDocNL": "Antifraudedienst - Kader",
-    "labelDocX": "Service anti-fraude - Cadre"
+    "labelDocEN": "Service anti-fraude - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4833,7 +4833,7 @@
     "referenceDocument": 10108,
     "labelDocFR": "Correspondance collaborateur vers employeur - Cadre",
     "labelDocNL": "Briefwisseling werknemer naar werkgever - Kader",
-    "labelDocX": "Correspondance collaborateur vers employeur - Cadre"
+    "labelDocEN": "Correspondance collaborateur vers employeur - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4843,7 +4843,7 @@
     "referenceDocument": 10109,
     "labelDocFR": "Correspondance employeur vers collaborateur - Cadre",
     "labelDocNL": "Briefwisseling werkgever naar werknemer - Kader",
-    "labelDocX": "Correspondance employeur vers collaborateur - Cadre"
+    "labelDocEN": "Correspondance employeur vers collaborateur - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4853,7 +4853,7 @@
     "referenceDocument": 10110,
     "labelDocFR": "Certificats - Cadre",
     "labelDocNL": "Certificaten - Kader",
-    "labelDocX": "Certificats - Cadre"
+    "labelDocEN": "Certificats - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4863,7 +4863,7 @@
     "referenceDocument": 10111,
     "labelDocFR": "Documents sociaux - Cadre",
     "labelDocNL": "Sociale documenten - Kader",
-    "labelDocX": "Documents sociaux - Cadre"
+    "labelDocEN": "Documents sociaux - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4873,7 +4873,7 @@
     "referenceDocument": 10112,
     "labelDocFR": "Crédit temps - Cadre",
     "labelDocNL": "Tijdskrediet - Kader",
-    "labelDocX": "Crédit temps - Cadre"
+    "labelDocEN": "Crédit temps - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4883,7 +4883,7 @@
     "referenceDocument": 10113,
     "labelDocFR": "Avenants - Cadre",
     "labelDocNL": "Aanhangsels - Kader",
-    "labelDocX": "Avenants - Cadre"
+    "labelDocEN": "Avenants - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4893,7 +4893,7 @@
     "referenceDocument": 10114,
     "labelDocFR": "Voiture de société - Cadre",
     "labelDocNL": "Bedrijfswagen - Kader",
-    "labelDocX": "Voiture de société - Cadre"
+    "labelDocEN": "Voiture de société - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4903,7 +4903,7 @@
     "referenceDocument": 10115,
     "labelDocFR": "Prépension - Cadre",
     "labelDocNL": "Brugpensioen - Kader",
-    "labelDocX": "Prépension - Cadre"
+    "labelDocEN": "Prépension - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4913,7 +4913,7 @@
     "referenceDocument": 10116,
     "labelDocFR": "Fin de contrat - Cadre",
     "labelDocNL": "Einde contract - Kader",
-    "labelDocX": "Fin de contrat - Cadre"
+    "labelDocEN": "Fin de contrat - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4923,7 +4923,7 @@
     "referenceDocument": 10117,
     "labelDocFR": "Fonds solidarité / pension - Cadre",
     "labelDocNL": "Solidariteits- / pensioenfonds - Kader",
-    "labelDocX": "Fonds solidarité / pension - Cadre"
+    "labelDocEN": "Fonds solidarité / pension - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4933,7 +4933,7 @@
     "referenceDocument": 10118,
     "labelDocFR": "Reconnaissance de dette - Cadre",
     "labelDocNL": "Schulderkenning - Kader",
-    "labelDocX": "Reconnaissance de dette - Cadre"
+    "labelDocEN": "Reconnaissance de dette - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4943,7 +4943,7 @@
     "referenceDocument": 10119,
     "labelDocFR": "Avance sur salaire - Cadre",
     "labelDocNL": "Voorschot op loon - Kader",
-    "labelDocX": "Avance sur salaire - Cadre"
+    "labelDocEN": "Avance sur salaire - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4953,7 +4953,7 @@
     "referenceDocument": 10120,
     "labelDocFR": "Mutation - Cadre",
     "labelDocNL": "Mutatie - Kader",
-    "labelDocX": "Mutation - Cadre"
+    "labelDocEN": "Mutation - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4963,7 +4963,7 @@
     "referenceDocument": 10121,
     "labelDocFR": "Prime de remplacement - Cadre",
     "labelDocNL": "Vervangingspremie - Kader",
-    "labelDocX": "Prime de remplacement - Cadre"
+    "labelDocEN": "Prime de remplacement - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4973,7 +4973,7 @@
     "referenceDocument": 10122,
     "labelDocFR": "Nouveau Fonds de Pension - Cadre",
     "labelDocNL": "Nieuw Pensioenfonds - Kader",
-    "labelDocX": "Nouveau Fonds de Pension - Cadre"
+    "labelDocEN": "Nouveau Fonds de Pension - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4983,7 +4983,7 @@
     "referenceDocument": 10123,
     "labelDocFR": "Bourse d'étude - Cadre",
     "labelDocNL": "Studiebeurs - Kader",
-    "labelDocX": "Bourse d'étude - Cadre"
+    "labelDocEN": "Bourse d'étude - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -4993,7 +4993,7 @@
     "referenceDocument": 10124,
     "labelDocFR": "Saisie sur salaire - Cadre",
     "labelDocNL": "Loonbeslag - Kader",
-    "labelDocX": "Saisie sur salaire - Cadre"
+    "labelDocEN": "Saisie sur salaire - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5003,7 +5003,7 @@
     "referenceDocument": 10125,
     "labelDocFR": "Collaborateurs sortis (anciens dossiers) - Cadre",
     "labelDocNL": "Medewerkers uitdienst (oude dossiers) - Kader",
-    "labelDocX": "Collaborateurs sortis (anciens dossiers) - Cadre"
+    "labelDocEN": "Collaborateurs sortis (anciens dossiers) - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5013,7 +5013,7 @@
     "referenceDocument": 10126,
     "labelDocFR": "Force majeure temporaire - Cadre",
     "labelDocNL": "Tijdelijke medische overmacht - Kader",
-    "labelDocX": "Force majeure temporaire - Cadre"
+    "labelDocEN": "Force majeure temporaire - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5023,7 +5023,7 @@
     "referenceDocument": 10127,
     "labelDocFR": "Entretien de sortie - Cadre",
     "labelDocNL": "Uitdienst Interview - Kader",
-    "labelDocX": "Entretien de sortie - Cadre"
+    "labelDocEN": "Entretien de sortie - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5033,7 +5033,7 @@
     "referenceDocument": 10128,
     "labelDocFR": "Correspondance autres instances (syndicat, ONEM, impôts,) - Cadre",
     "labelDocNL": "Briefwisseling andere instanties (vakbond, RVA, belastingen,) - Kader",
-    "labelDocX": "Correspondance autres instances (syndicat, ONEM, impôts,) - Cadre"
+    "labelDocEN": "Correspondance autres instances (syndicat, ONEM, impôts,) - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5043,7 +5043,7 @@
     "referenceDocument": 10129,
     "labelDocFR": "Courrier recommandé non retiré/n'habite plus à l'adresse indiquée  - Cadre",
     "labelDocNL": " Briefwisseling niet afgehaald/woont niet meer op adres - Kader",
-    "labelDocX": "Courrier recommandé non retiré/n'habite plus à l'adresse indiquée  - Cadre"
+    "labelDocEN": "Courrier recommandé non retiré/n'habite plus à l'adresse indiquée  - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5053,7 +5053,7 @@
     "referenceDocument": 10130,
     "labelDocFR": "Formulaire de choix - Quart d heure - Pause midi - Cadre",
     "labelDocNL": "Keuzeformulier - ¼ u - Middagpauze - Kader",
-    "labelDocX": "Formulaire de choix - Quart d heure - Pause midi - Cadre"
+    "labelDocEN": "Formulaire de choix - Quart d heure - Pause midi - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5063,7 +5063,7 @@
     "referenceDocument": 10131,
     "labelDocFR": "Accord d embauche  - CV  - Cadre",
     "labelDocNL": "Aanwervingsakkoord - CV  - Kader",
-    "labelDocX": "Accord d embauche  - CV  - Cadre"
+    "labelDocEN": "Accord d embauche  - CV  - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5073,7 +5073,7 @@
     "referenceDocument": 10132,
     "labelDocFR": "Volontariat fiscal - Cadre",
     "labelDocNL": "Fiscaal voluntariaat - Kader",
-    "labelDocX": "Volontariat fiscal - Cadre"
+    "labelDocEN": "Volontariat fiscal - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5083,7 +5083,7 @@
     "referenceDocument": 10133,
     "labelDocFR": "Remise tardive/pas de remise certificat médical - Cadre",
     "labelDocNL": "Medisch attest te laat of niet afgegeven - Kader",
-    "labelDocX": "Remise tardive/pas de remise certificat médical - Cadre"
+    "labelDocEN": "Remise tardive/pas de remise certificat médical - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5093,7 +5093,7 @@
     "referenceDocument": 10134,
     "labelDocFR": "Attestations/déclarations divers - Cadre",
     "labelDocNL": "Diverse attesten/verklaringen - Kader",
-    "labelDocX": "Attestations/déclarations divers - Cadre"
+    "labelDocEN": "Attestations/déclarations divers - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5103,7 +5103,7 @@
     "referenceDocument": 10135,
     "labelDocFR": "Télégramme - Cadre",
     "labelDocNL": "Telegram - Kader",
-    "labelDocX": "Télégramme - Cadre"
+    "labelDocEN": "Télégramme - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5113,7 +5113,7 @@
     "referenceDocument": 10136,
     "labelDocFR": "Reprise partielle /maladie - Cadre",
     "labelDocNL": "Deeltijdse werkhervatting (kader)",
-    "labelDocX": "Reprise partielle /maladie - Cadre"
+    "labelDocEN": "Reprise partielle /maladie - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5123,7 +5123,7 @@
     "referenceDocument": 10137,
     "labelDocFR": "Paie rouge (non visible par l'employeur) - Cadre",
     "labelDocNL": "Rood loon (niet zichtbaar door de werkgever) - Kader",
-    "labelDocX": "Paie rouge (non visible par l'employeur) - Cadre"
+    "labelDocEN": "Paie rouge (non visible par l'employeur) - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5133,7 +5133,7 @@
     "referenceDocument": 10138,
     "labelDocFR": "Entretien d évolutions - Cadre",
     "labelDocNL": "Evolutiegesprekken - Kader",
-    "labelDocX": "Entretien d évolutions - Cadre"
+    "labelDocEN": "Entretien d évolutions - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5143,7 +5143,7 @@
     "referenceDocument": 10139,
     "labelDocFR": "Contrôle médical - Cadre",
     "labelDocNL": "Medische controle - Kader",
-    "labelDocX": "Contrôle médical - Cadre"
+    "labelDocEN": "Contrôle médical - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5153,7 +5153,7 @@
     "referenceDocument": 10140,
     "labelDocFR": "Congé impérieux - Cadre",
     "labelDocNL": "Sociaal verlof - Kader",
-    "labelDocX": "Congé impérieux - Cadre"
+    "labelDocEN": "Congé impérieux - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5163,7 +5163,7 @@
     "referenceDocument": 10141,
     "labelDocFR": "Assurance de groupe - Cadre",
     "labelDocNL": "Groepsverzekering - Kader",
-    "labelDocX": "Assurance de groupe - Cadre"
+    "labelDocEN": "Assurance de groupe - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5173,7 +5173,7 @@
     "referenceDocument": 10142,
     "labelDocFR": "Dossier papiers - Cadre",
     "labelDocNL": "Papieren dossier - Kader",
-    "labelDocX": "Dossier papiers - Cadre"
+    "labelDocEN": "Dossier papiers - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5183,7 +5183,7 @@
     "referenceDocument": 10144,
     "labelDocFR": "Prime garde d’enfants - Cadre",
     "labelDocNL": "Premie kinderopvang- Kader",
-    "labelDocX": "Prime garde d’enfants - Cadre"
+    "labelDocEN": "Prime garde d’enfants - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5193,7 +5193,7 @@
     "referenceDocument": 10145,
     "labelDocFR": "Calcul indemnités de licenciement - Out - Kader",
     "labelDocNL": "Berekening van de ontslagvergoeding - Out - Kader",
-    "labelDocX": "Calcul indemnités de licenciement - Out - Kader"
+    "labelDocEN": "Calcul indemnités de licenciement - Out - Kader"
   },
   {
     "categoryNumber": 14,
@@ -5203,7 +5203,7 @@
     "referenceDocument": 10146,
     "labelDocFR": "Dossier travailleur actif - Cadre",
     "labelDocNL": "Actief Medewerkersdossier  - Kader",
-    "labelDocX": "Dossier travailleur actif - Cadre"
+    "labelDocEN": "Dossier travailleur actif - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5213,7 +5213,7 @@
     "referenceDocument": 10148,
     "labelDocFR": "Document unique - Cadre",
     "labelDocNL": "Uniek document - Kader",
-    "labelDocX": "Document unique - Cadre"
+    "labelDocEN": "Document unique - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5223,7 +5223,7 @@
     "referenceDocument": 10149,
     "labelDocFR": "Visite médicale périodique - Cadre",
     "labelDocNL": "Periodieke medische onderzoek - Kader",
-    "labelDocX": "Visite médicale périodique - Cadre"
+    "labelDocEN": "Visite médicale périodique - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5233,7 +5233,7 @@
     "referenceDocument": 10150,
     "labelDocFR": "Fiche de paie électronique - Cadre",
     "labelDocNL": "Elektronische loonbrief - Kader",
-    "labelDocX": "Fiche de paie électronique - Cadre"
+    "labelDocEN": "Fiche de paie électronique - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5243,7 +5243,7 @@
     "referenceDocument": 10199,
     "labelDocFR": "Autres - Cadre",
     "labelDocNL": "Anderen - Kader",
-    "labelDocX": "Autres - Cadre"
+    "labelDocEN": "Autres - Cadre"
   },
   {
     "categoryNumber": 14,
@@ -5253,7 +5253,7 @@
     "referenceDocument": 11000,
     "labelDocFR": "Documents Scannés CASI",
     "labelDocNL": "Scan Documenten  CASI",
-    "labelDocX": "Documents Scannés CASI"
+    "labelDocEN": "Documents Scannés CASI"
   },
   {
     "categoryNumber": 15,
@@ -5264,7 +5264,7 @@
     "labelDocFR": "Factures électroniques format BASWARE  ",
     "labelDocNL": "Elektronishe factuur BASWARE formaat",
     "labelDocDE": "Factures électroniques format BASWARE  ",
-    "labelDocX": "Electronic invoices in  BASWARE  format"
+    "labelDocEN": "Electronic invoices in  BASWARE  format"
   },
   {
     "categoryNumber": 15,
@@ -5275,7 +5275,7 @@
     "labelDocFR": "Factures électroniques format OB10",
     "labelDocNL": "Elektronishe factuur OB10 formaat",
     "labelDocDE": "Factures électroniques format OB10",
-    "labelDocX": "Electronic invoices in  OB10 format"
+    "labelDocEN": "Electronic invoices in  OB10 format"
   },
   {
     "categoryNumber": 17,
@@ -5285,6 +5285,6 @@
     "referenceDocument": 8101,
     "labelDocFR": "Feuille de renseignements - Mutuelle",
     "labelDocNL": "Inlichtingenblad - Mutualiteit",
-    "labelDocX": "Feuille de renseignements - Mutuelle"
+    "labelDocEN": "Feuille de renseignements - Mutuelle"
   }
 ]

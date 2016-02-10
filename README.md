@@ -24,7 +24,7 @@ The tests are written with `mocha`.
 * Translation `i18next`
   - [ ] compress translation (see merge request from @oli)
   - [ ] load translation
-  - [ ] change language on the fly (runtime)
+  - [x] change language on the fly (runtime)
 * Tests
   - [ ] `mocha` + `node`
   - [x] `mocha` + `jspm`

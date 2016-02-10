@@ -4,7 +4,6 @@ import styles from './menu.css!';
 import {filterMenuRef, filterMenuCat, showAllDocument } from './../../redux/actions';
 
 let Menu   = {};
-const lang = 'fr'; //TODO : i18n
 
 /***
  *
@@ -13,7 +12,6 @@ const lang = 'fr'; //TODO : i18n
  * @returns {*}
  */
 export let labelCati18n = ( item, lang ) => {
-
   let cat = {
     en:      () => item[ 'labelCategoryX' ],
     fr:      () => item[ 'labelCategoryFR' ],
@@ -24,6 +22,9 @@ export let labelCati18n = ( item, lang ) => {
   return (cat[ lang ] || cat[ 'default' ])();
 };
 
+/**
+ * @returns an array containing all the document's reference in a category
+ * */
 const listRefDoc = ( listCat, cat ) =>
   _( listCat )
     .filter( x => x[ 'categoryNumber' ] === cat )
@@ -33,18 +34,20 @@ const listRefDoc = ( listCat, cat ) =>
     }, [] );
 
 Menu.view = function view( c, props ) {
-  const { category, files, dispatch, i18n } = props;
+  const { category, files, dispatch, i18n, language } = props;
+  const i = k => i18n.t( k, { lng: language } );
+
   const root   = (
     <li class={styles.menuRoot}
         onclick={() => {dispatch(showAllDocument());}}>
-      {i18n.all[ lang ]} <span class={styles.badge}>{ files.length }</span>
+      {i( 'listAll' )} <span class={styles.badge}>{ files.length }</span>
     </li>
   );
   const others = (
     <li
       class={styles.catLi}
       onclick={() => { dispatch(filterMenuRef(''));} }>
-      {i18n.others[ lang ]} <span
+      {i( 'tree.other' )} <span
       class={styles.badge}>{files.filter( x => x[ 'referenceDocument' ] === '' ).length}</span>
     </li>
   );
@@ -60,7 +63,7 @@ Menu.view = function view( c, props ) {
                         );
                       }
                 }>
-                  { _( cat ).get( [ 0, 'categoryNumber' ] ) + '-' + labelCati18n( cat[ 0 ], lang ) }
+                  { _( cat ).get( [ 0, 'categoryNumber' ] ) + '-' + labelCati18n( cat[ 0 ], language ) }
                 </span>
         <span class={styles.badge}>{ _( cat ).get( [ 0, 'filesPerCat' ] ) }</span>
         <ul class={styles.refDoc}>
@@ -68,7 +71,7 @@ Menu.view = function view( c, props ) {
             <li class={styles.docLi} key={doc['referenceDocument']}
                 onclick={() => {dispatch( filterMenuRef(doc['referenceDocument'] ) ); } }>
                   <span class={styles.docSpan}>
-                    { doc[ 'referenceDocument' ] + ' - ' + doc[ 'labelDoc' + lang.toUpperCase() ]}
+                    { doc[ 'referenceDocument' ] + ' - ' + doc[ 'labelDoc' + language.toUpperCase() ]}
                   </span>
               <span></span>
               <span class={styles.badge}>{ doc[ 'filesPerRef' ] }</span>

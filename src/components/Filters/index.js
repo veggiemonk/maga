@@ -2,9 +2,14 @@ import m from 'mithril';
 import _ from 'lodash';
 //import rome from 'rome'
 import { fetching } from '../../async';
+
 import Button from '../Button/index';
 import Input from '../Input/index';
+
 import styleCB from '../../css/checkbox.css!';
+import styleR from '../../css/radio.css!';
+import styles from './filters.css!';
+
 import {
   pageFirst,
   pageLast,
@@ -15,6 +20,7 @@ import {
   filterDateEnd,
   changeRowDisplayed,
   toggleMenuColumnView,
+  setLanguage,
 } from '../../redux/actions';
 
 
@@ -101,6 +107,37 @@ Filters.view = function view( c, props, children ) {
           <Button onclick={ () => { dispatch( pageLast() ); } }>
             <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i>
           </Button>
+          {/**************************** LANGUAGE ****************************/}
+          <div class={`${styles.grid}`}>
+            <div class={`${styles.col_1_3} `}>
+              <input class={`${styleR.input}`} type="radio" id="radio1" name="en"
+                     checked={language.toLowerCase() === 'en'}/>
+              <label class={`${styleR.label}`} for="radio1"
+                     onclick={() => {dispatch(setLanguage('en'));}}>
+                <span></span>
+                EN
+              </label>
+            </div>
+            <div class={`${styles.col_1_3}`}>
+              <input class={`${styleR.input}`} type="radio" id="radio2" name="fr"
+                     checked={language.toLowerCase() === 'fr'}/>
+              <label class={`${styleR.label}`} for="radio2"
+                     onclick={() => {dispatch(setLanguage('fr'));}}>
+                <span></span>
+                FR
+              </label>
+            </div>
+            <div class={`${styles.col_1_3}`}>
+              <input class={`${styleR.input}`} type="radio" id="radio3" name="nl"
+                     checked={language.toLowerCase() === 'nl'}/>
+              <label class={`${styleR.label}`} for="radio3"
+                     onclick={() => {dispatch(setLanguage('nl'));}}>
+                <span></span>
+                NL
+              </label>
+            </div>
+          </div>
+
         </div>
         {children}
         <div class="three columns">

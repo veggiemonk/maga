@@ -14,7 +14,6 @@ export const fetching          = ( dispatch ) => {
   return Promise.all( [ fetchFileList( fetchURLFile ), fetchCategoryList( fetchURLCategory ) ] )
     .then( ( [FileList, CategoryList] ) => {
       const files = sanitize( FileList, CategoryList );
-
       dispatch(
         fetchDataSuccess( columns,
           files,
