@@ -1,11 +1,11 @@
-import { compose, createStore, applyMiddleware } from 'redux'
+import { compose, createStore, applyMiddleware } from 'redux';
 
 const thunkMiddleware = ( { dispatch, getState } ) => {
   return next => action =>
     typeof action === 'function' ?
       action( dispatch, getState ) :
-      next( action )
-}
+      next( action );
+};
 
 /*const putTimestamp = ( { dispatch } ) => {
   return (action) => {
@@ -17,6 +17,6 @@ const thunkMiddleware = ( { dispatch, getState } ) => {
 const finalCreateStore = compose(
   applyMiddleware( thunkMiddleware ),
   typeof window !== 'undefined' && window.devToolsExtension ? window.devToolsExtension() : f => f
-)( createStore )
+)( createStore );
 
-export default finalCreateStore
+export default finalCreateStore;

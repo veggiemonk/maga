@@ -1,10 +1,10 @@
-import m from 'mithril'
-import _ from 'lodash'
+import m from 'mithril';
+import _ from 'lodash';
 //import rome from 'rome'
-import { fetching } from '../../async'
-import Button from '../Button/index'
-import Input from '../Input/index'
-import styleCB from '../../css/checkbox.css!'
+import { fetching } from '../../async';
+import Button from '../Button/index';
+import Input from '../Input/index';
+import styleCB from '../../css/checkbox.css!';
 import {
   pageFirst,
   pageLast,
@@ -15,21 +15,21 @@ import {
   filterDateEnd,
   changeRowDisplayed,
   toggleMenuColumnView,
-} from '../../redux/actions'
+} from '../../redux/actions';
 
 
-let Filters = {}
+let Filters = {};
 
 Filters.controller = function controller( props ) {
-  const { dispatch } = props
+  const { dispatch } = props;
   return {
-    select:               val => {dispatch( changeRowDisplayed( Number( val ) ) ) },
-    search:               val => {dispatch( filterSearch( val ) ) },
-    dateBegin:            val => {dispatch( filterDateBegin( val ) ) },
-    dateEnd:              val => {dispatch( filterDateEnd( val ) ) },
-    toggleMenuColumnView: () => {dispatch( toggleMenuColumnView() ) }
-  }
-}
+    select:               val => {dispatch( changeRowDisplayed( Number( val ) ) ); },
+    search:               val => {dispatch( filterSearch( val ) ); },
+    dateBegin:            val => {dispatch( filterDateBegin( val ) ); },
+    dateEnd:              val => {dispatch( filterDateEnd( val ) ); },
+    toggleMenuColumnView: () => {dispatch( toggleMenuColumnView() ); }
+  };
+};
 
 Filters.config = ctrl => ( element, isInitialized, context ) => {
   /*if ( !isInitialized ) {
@@ -38,17 +38,17 @@ Filters.config = ctrl => ( element, isInitialized, context ) => {
       inputFormat:    'DD/MM/YYYY',
     } )
   }*/
-}
+};
 //todo breadcrumbs
 Filters.view = function view( c, props, children ) {
-  const { dispatch, i18n, language, filters, data, files } = props
-  const count = data.length
+  const { dispatch, i18n, language, filters, data, files } = props;
+  const count = data.length;
   return (
     <div class="container">
       <div class="row">
         <div class="three columns">
           <Button
-            onclick={ () => { fetching(dispatch) } }>
+            onclick={ () => { fetching(dispatch); } }>
             <i class="fa fa-2x fa-refresh">
             </i>
             {i18n.reload[ language ]}
@@ -76,7 +76,7 @@ Filters.view = function view( c, props, children ) {
         <div class={`${styleCB.squaredFour}`}>
           <input type="checkbox"
                  name="squaredFour"
-                 onclick={ (e) => {console.log(e)} /*m.withAttr('checked', c.toggleMenuColumnView )*/ }
+                 onclick={ (e) => {console.log(e);} /*m.withAttr('checked', c.toggleMenuColumnView )*/ }
                  checked={filters.menuColumnView}/>
           <label
             for="squaredFour"
@@ -86,19 +86,19 @@ Filters.view = function view( c, props, children ) {
         </div>
 
         <div class="six columns">
-          <Button onclick={ () => { dispatch( pageFirst() )} }>
+          <Button onclick={ () => { dispatch( pageFirst() );} }>
             <i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>
           </Button>
 
-          <Button onclick={ () => { dispatch( pagePrev() )  } }>
+          <Button onclick={ () => { dispatch( pagePrev() );  } }>
             <i class="fa fa-chevron-left"></i>
           </Button>
 
-          <Button onclick={ () => { dispatch( pageNext( count ) ) } }>
+          <Button onclick={ () => { dispatch( pageNext( count ) ); } }>
             <i class="fa fa-chevron-right"></i>
           </Button>
 
-          <Button onclick={ () => { dispatch( pageLast() ) } }>
+          <Button onclick={ () => { dispatch( pageLast() ); } }>
             <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i>
           </Button>
         </div>
@@ -138,7 +138,7 @@ Filters.view = function view( c, props, children ) {
       </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default Filters
+export default Filters;

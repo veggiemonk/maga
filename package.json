@@ -34,6 +34,7 @@
       "capaj/jspm-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.1",
       "chai": "npm:chai@^3.4.1",
       "font-awesome": "npm:font-awesome@^4.4.0",
+      "i18next": "github:i18next/i18next@^2.1.0",
       "isomorphic-fetch": "npm:isomorphic-fetch@^2.2.0",
       "jspm-loader-css": "npm:jspm-loader-css@^1.0.1-beta1",
       "lodash": "npm:lodash@^3.10.1",

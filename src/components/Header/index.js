@@ -1,16 +1,16 @@
-import m from 'mithril'
-import styles from './style.css!'
-let Header = {}
+import m from 'mithril';
+import styles from './style.css!';
+let Header = {};
 
 Header.controller = ( props, children ) => {
   let c = {
     init: () => {
       //console.log(styles);
     }
-  }
-  c.init()
-  return c
-}
+  };
+  c.init();
+  return c;
+};
 
 Header.view = ( c, props, children ) => {
   return (
@@ -97,8 +97,8 @@ Header.view = ( c, props, children ) => {
       </li>
     </ul>
 
-  )
-}
+  );
+};
 
 
-export default Header
+export default Header;

@@ -1,11 +1,11 @@
-import m from 'mithril'
+import m from 'mithril';
 
-import styles from '../../css/buttons.css!'
+import styles from '../../css/buttons.css!';
 
-let Button = {}
+let Button = {};
 
 Button.view = ( c, props, children ) => {
-  const { className } = props
+  const { className } = props;
   return (
     <button
       class={`${styles.button} ${styles.button_primary} ${className || ''}`}
@@ -13,7 +13,7 @@ Button.view = ( c, props, children ) => {
       {...props}>
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

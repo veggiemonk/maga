@@ -1,39 +1,39 @@
-import m from 'mithril'
-import _ from 'lodash'
+import m from 'mithril';
+import _ from 'lodash';
 
-import { toggleSelectRow } from '../../redux/actions'
-import Button from '../Button/index'
+import { toggleSelectRow } from '../../redux/actions';
+import Button from '../Button/index';
 
 //import css from 'font-awesome/css/font-awesome.css!'
 //import styles from './row.css!'
-import styles from '../../css/text.css!'
+import styles from '../../css/text.css!';
 
-let Row = {}
+let Row = {};
 
 Row.controller = function controller( props ) {
-  const {dispatch} = props
+  const {dispatch} = props;
   return {
     download: fileId => {
-      alert( 'DOWNLOAD: ' + fileId )
+      alert( 'DOWNLOAD: ' + fileId );
     },
     remove:   fileId => {
-      alert( 'REMOVE: ' + fileId )
+      alert( 'REMOVE: ' + fileId );
     },
-  }
-}
+  };
+};
 
 Row.view = function view( c, props ) {
-  const { columns, file, dispatch, selectedRow } = props
-  const v         = k => _.result( _.find( columns, { id: k } ), 'visible' )
-  const isChecked = ( fileId ) => _.contains( selectedRow, fileId )
+  const { columns, file, dispatch, selectedRow } = props;
+  const v         = k => _.result( _.find( columns, { id: k } ), 'visible' );
+  const isChecked = (fileId) => _.contains( selectedRow, fileId );
   return (
     <tr>
       <td class={styles.text_center}
-          onclick={() => { dispatch(toggleSelectRow(file.fileId)) }}>
+          onclick={() => { dispatch(toggleSelectRow(file.fileId)); }}>
         { m.trust( isChecked( file.fileId ) ? file[ 'checkbox' ].replace( '\/>', ' checked \/>' ) : file[ 'checkbox' ] ) }
       </td>
       <td class={styles.text_center}>
-        <Button onclick={()=> {c.download(file['fileId'])}}>
+        <Button onclick={()=> {c.download(file['fileId']);}}>
           <i class={ `fa fa-lg ${file['dlClass'] || ''} ${file['alreadyDL'] || ''}` }>
           </i>
           <small class={styles.text_muted}> { file[ 'downloadCount' ] }</small>
@@ -59,12 +59,12 @@ Row.view = function view( c, props ) {
       <td class={styles.text_center}>
         <a class={styles.text_danger}
            title='Remove'
-           onclick={() => { c.remove( file[ 'fileId' ] ) } }>
+           onclick={() => { c.remove( file[ 'fileId' ] ); } }>
           { m.trust( file[ 'remove' ] )}
         </a></td>
     </tr>
-  )
-}
+  );
+};
 
-export default Row
+export default Row;
 

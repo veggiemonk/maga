@@ -1,8 +1,8 @@
-import m from 'mithril'
+import m from 'mithril';
 
-import styles from './input.css!'
+import styles from './input.css!';
 
-let Button = {}
+let Button = {};
 
 Button.view = ( c, props, children ) => {
   //TODO: jspm install classnames or no need?
@@ -13,7 +13,7 @@ Button.view = ( c, props, children ) => {
       {...props}>
       {children}
     </input>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

@@ -1,52 +1,52 @@
-import m from 'mithril'
-import 'isomorphic-fetch'
-import _ from 'lodash'
-import { headers, urlEchoServer} from '../../settings'
-import styleB from '../../css/buttons.css!'
-import styles from './index.css!'
+import m from 'mithril';
+import 'isomorphic-fetch';
+import _ from 'lodash';
+import { headers, urlEchoServer} from '../../settings';
+import styleB from '../../css/buttons.css!';
+import styles from './index.css!';
 
-const lang   = 'fr'
-let Uploader = {}
+const lang   = 'fr';
+let Uploader = {};
 
 //TODO: extract to client side execution when doing server side rendering
 //drag and drop micro-library
 const dragdrop = ( element, options ) => {
-  options = options || {}
+  options = options || {};
 
-  element.addEventListener( 'dragover', activate )
-  element.addEventListener( 'dragleave', deactivate )
-  element.addEventListener( 'dragend', deactivate )
-  element.addEventListener( 'drop', deactivate )
-  element.addEventListener( 'drop', update )
-  window.addEventListener( 'blur', deactivate )
+  element.addEventListener( 'dragover', activate );
+  element.addEventListener( 'dragleave', deactivate );
+  element.addEventListener( 'dragend', deactivate );
+  element.addEventListener( 'drop', deactivate );
+  element.addEventListener( 'drop', update );
+  window.addEventListener( 'blur', deactivate );
 
   function activate( e ) {
-    e.preventDefault()
+    e.preventDefault();
   }
 
   function deactivate() {}
 
   function update( e ) {
-    e.preventDefault()
+    e.preventDefault();
     if ( typeof options.onchange == 'function' ) {
-      options.onchange( (e.dataTransfer || e.target).files )
+      options.onchange( (e.dataTransfer || e.target).files );
     }
   }
-}
+};
 
 const upload = files => {
-  let formData = new FormData
+  let formData = new FormData;
   for ( let i = 0; i < files.length; i++ ) {
-    formData.append( files[ i ].name, files[ i ] )
+    formData.append( files[ i ].name, files[ i ] );
   }
-  return fetch( urlEchoServer, { method: 'POST', body: formData } )
-}
+  return fetch( urlEchoServer, { method: 'POST', body: formData } );
+};
 
 Uploader.config = ctrl => ( element, isInitialized, context ) => {
   if ( !isInitialized ) {
-    dragdrop( element, { onchange: ctrl.onchange } )
+    dragdrop( element, { onchange: ctrl.onchange } );
   }
-}
+};
 
 Uploader.controller = props => {
   let c = {
@@ -54,23 +54,23 @@ Uploader.controller = props => {
     visible:      false,
     onchange:     props.onchange || ( files => {
       //list files in a ul
-      c.files = files
+      c.files = files;
       //TODO: handle error
       upload( files )
-        .then( () => { m.redraw() } )
+        .then( () => { m.redraw(); } )
         .catch( e => {
-          console.error( e )
-          alert( 'File upload Failed' )
-          throw new Error( 'File upload Failed', e )
-        } )
+          console.error( e );
+          alert( 'File upload Failed' );
+          throw new Error( 'File upload Failed', e );
+        } );
     } ),
     toggleUpload: () => {
-      m.redraw.strategy( 'diff' )
-      c.visible = !c.visible
+      m.redraw.strategy( 'diff' );
+      c.visible = !c.visible;
     },
-  }
-  return c
-}
+  };
+  return c;
+};
 //TODO: progress bar
 
 Uploader.view = ( c, props ) => {
@@ -93,7 +93,7 @@ Uploader.view = ( c, props ) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Uploader
+export default Uploader;

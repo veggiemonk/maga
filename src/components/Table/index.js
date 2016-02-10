@@ -1,6 +1,6 @@
-import m from 'mithril'
-import _ from 'lodash'
-import Row from './../Row/index'
+import m from 'mithril';
+import _ from 'lodash';
+import Row from './../Row/index';
 
 import {
   toggleSelectAll,
@@ -11,15 +11,15 @@ import {
   filterMenuCat,
   filterMenuRef,
   filterSearch
-} from './../../redux/actions'
-import { getSortedColumn } from './../../redux/reducers/columns'
+} from './../../redux/actions';
+import { getSortedColumn } from './../../redux/reducers/columns';
 
-import { invalidate, inc, dec } from './../../utils'
-import { defaults } from './../../settings'
+import { invalidate, inc, dec } from './../../utils';
+import { defaults } from './../../settings';
 
-import styles from './table.css!'
+import styles from './table.css!';
 
-let Table = {}
+let Table = {};
 
 Table.controller = function controller( props ) {
   let c = {
@@ -36,33 +36,33 @@ Table.controller = function controller( props ) {
             ? ( <i class='fa fa-sort right'></i> )
             : ( col.order
             ? ( <i class='fa fa-sort-desc right'></i> )
-            : ( <i class='fa fa-sort-asc right'></i>  ) )
+            : ( <i class='fa fa-sort-asc right'></i>  ) );
         }
       }
     },
-  }
-  return c
-}
+  };
+  return c;
+};
 
 Table.view = function view( c, props ) {
-  const { dispatch, display, data, columns, filters, selectedRow } = props
-  const idColSorted       = getSortedColumn( columns )
-  const orderColSorted    = _.result( _.find( columns, { id: idColSorted } ), 'order' ) ? 'desc' : 'asc'
+  const { dispatch, display, data, columns, filters, selectedRow } = props;
+  const idColSorted       = getSortedColumn( columns );
+  const orderColSorted    = _.result( _.find( columns, { id: idColSorted } ), 'order' ) ? 'desc' : 'asc';
   const seqParseData      = ( data ) => {
     return _( data )
       .sortByOrder( idColSorted, orderColSorted )
       .slice( filters.startPageAt )
-      .take( filters.rowDisplayed )
-  }
-  const getIdColDisplayed = ( data ) => ( seqParseData( data ).pluck( 'fileId' ).value() )
+      .take( filters.rowDisplayed );
+  };
+  const getIdColDisplayed = (data) => ( seqParseData( data ).pluck( 'fileId' ).value() );
   const isAllChecked      = ( { data, main } ) => {
-    const { currentTarget } = main
-    const { firstChild } = currentTarget
-    const { checked } = firstChild
+    const { currentTarget } = main;
+    const { firstChild } = currentTarget;
+    const { checked } = firstChild;
     return selectedRow.length === filters.rowDisplayed
       ? toggleSelectAll( [] )
-      : ( checked ? toggleSelectAll( getIdColDisplayed( data ) ) : toggleSelectAll( [] ) )
-  }
+      : ( checked ? toggleSelectAll( getIdColDisplayed( data ) ) : toggleSelectAll( [] ) );
+  };
 
   return (
     <div style={`display : ${display ? 'inline-block' : 'none'};`}>
@@ -78,7 +78,7 @@ Table.view = function view( c, props ) {
                 onchange={ (el) => {
                   col[ 'id' ] !== 'checkbox'
                     ? dispatch( sortColumn( col[ 'id' ] ) )
-                    : dispatch( isAllChecked( { data, main: el } ) )
+                    : dispatch( isAllChecked( { data, main: el } ) );
                 } }>
                 { m.trust( col[ 'name' ] ) }
                 { c.vm.cssSortToggle( col ) }
@@ -96,7 +96,7 @@ Table.view = function view( c, props ) {
         }</tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default Table
+export default Table;

@@ -1,10 +1,10 @@
-import _ from 'lodash'
-import styles from './menu.css!'
+import _ from 'lodash';
+import styles from './menu.css!';
 
-import {filterMenuRef, filterMenuCat, showAllDocument } from './../../redux/actions'
+import {filterMenuRef, filterMenuCat, showAllDocument } from './../../redux/actions';
 
-let Menu   = {}
-const lang = 'fr' //TODO : i18n
+let Menu   = {};
+const lang = 'fr'; //TODO : i18n
 
 /***
  *
@@ -20,34 +20,34 @@ export let labelCati18n = ( item, lang ) => {
     nl:      () => item[ 'labelCategoryNL' ],
     de:      () => item[ 'labelCategoryDE' ],
     default: () => item[ 'labelCategoryX' ],
-  }
-  return (cat[ lang ] || cat[ 'default' ])()
-}
+  };
+  return (cat[ lang ] || cat[ 'default' ])();
+};
 
 const listRefDoc = ( listCat, cat ) =>
   _( listCat )
     .filter( x => x[ 'categoryNumber' ] === cat )
     .reduce( ( acc, next ) => {
-      acc.push( next[ 'referenceDocument' ] )
-      return acc
-    }, [] )
+      acc.push( next[ 'referenceDocument' ] );
+      return acc;
+    }, [] );
 
 Menu.view = function view( c, props ) {
-  const { category, files, dispatch, i18n } = props
+  const { category, files, dispatch, i18n } = props;
   const root   = (
     <li class={styles.menuRoot}
-        onclick={() => {dispatch(showAllDocument())}}>
+        onclick={() => {dispatch(showAllDocument());}}>
       {i18n.all[ lang ]} <span class={styles.badge}>{ files.length }</span>
     </li>
-  )
+  );
   const others = (
     <li
       class={styles.catLi}
-      onclick={() => { dispatch(filterMenuRef(''))} }>
+      onclick={() => { dispatch(filterMenuRef(''));} }>
       {i18n.others[ lang ]} <span
       class={styles.badge}>{files.filter( x => x[ 'referenceDocument' ] === '' ).length}</span>
     </li>
-  )
+  );
   const catego = (
     _( category ).map( cat => (
       <li class={styles.catLi} key={_(cat).get( [0 , 'categoryNumber'] )}>
@@ -57,7 +57,7 @@ Menu.view = function view( c, props ) {
                           filterMenuCat(
                             listRefDoc( cat, _(cat).get( [0 , 'categoryNumber'] ) )
                           )
-                        )
+                        );
                       }
                 }>
                   { _( cat ).get( [ 0, 'categoryNumber' ] ) + '-' + labelCati18n( cat[ 0 ], lang ) }
@@ -66,7 +66,7 @@ Menu.view = function view( c, props ) {
         <ul class={styles.refDoc}>
           { _( cat ).map( doc => (
             <li class={styles.docLi} key={doc['referenceDocument']}
-                onclick={() => {dispatch( filterMenuRef(doc['referenceDocument'] ) ) } }>
+                onclick={() => {dispatch( filterMenuRef(doc['referenceDocument'] ) ); } }>
                   <span class={styles.docSpan}>
                     { doc[ 'referenceDocument' ] + ' - ' + doc[ 'labelDoc' + lang.toUpperCase() ]}
                   </span>
@@ -78,7 +78,7 @@ Menu.view = function view( c, props ) {
         </ul>
       </li>
     ) ).value()
-  )
+  );
 
   return (
     <div class={styles.main_div}>
@@ -88,7 +88,7 @@ Menu.view = function view( c, props ) {
         {others}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
