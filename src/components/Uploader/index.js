@@ -5,7 +5,6 @@ import { headers, urlEchoServer} from '../../settings';
 import styleB from '../../css/buttons.css!';
 import styles from './index.css!';
 
-const lang   = 'fr';
 let Uploader = {};
 
 //TODO: extract to client side execution when doing server side rendering
@@ -74,11 +73,13 @@ Uploader.controller = props => {
 //TODO: progress bar
 
 Uploader.view = ( c, props ) => {
+  const {i18n, language} = props;
+  const i = k => i18n.t( k, { lng: language } );
   return (
     <div>
       <a href="#box"
          class={`${styleB.button} ${styles.upload}`}
-         onclick={c.toggleUpload}><i class="fa fa-2x fa-cloud-upload"></i>{props.i18n.uploadBtn[ lang ]}</a>
+         onclick={c.toggleUpload}><i class="fa fa-2x fa-cloud-upload"></i>{i( 'upload' )}</a>
       <div id="box" class={styles.box}>
         <div class={styles.lightbox} config={Uploader.config(c)}>
           <a href="#">X</a>

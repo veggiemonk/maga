@@ -1,7 +1,7 @@
 import _ from 'lodash';
-import {i18n, navigatorLanguage} from './i18n.js';
+import {navigatorLanguage} from './i18n.js';
 
-const permanentColumn = [
+export const permanentColumn = [
   {
     index:      1,
     id:         'checkbox',
@@ -38,9 +38,9 @@ const unvisibleColumn = [
     dataType: 'date',
   }, {
     index:   5,
-    id:      'uploadUserName',
-    name:    'User',
-    visible: true,
+    id:      'fileName',
+    name:    'Name',
+    visible: false,
     toggle:  true,
   }, {
     index:    6,
@@ -51,9 +51,9 @@ const unvisibleColumn = [
     dataType: 'number',
   }, {
     index:   7,
-    id:      'fileName',
-    name:    'Name',
-    visible: false,
+    id:      'uploadUserName',
+    name:    'User',
+    visible: true,
     toggle:  true,
   }, {
     index:    8,
@@ -186,7 +186,8 @@ export const initialState = {
 
 
 //sort then merge with default config
-export const columns = _( [ ...permanentColumn, ...unvisibleColumn ] )
+/*export const columns = _( [ ...permanentColumn, ...unvisibleColumn ] )*/
+export const columns = _( unvisibleColumn )
   .sortBy( x => x.index )
   .map( x => Object.assign( {}, defaults.col, x ) )
   .value();

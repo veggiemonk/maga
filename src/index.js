@@ -11,14 +11,14 @@ import Filters from './components/Filters/index';
 import Table from './components/Table/index';
 import ColumnVisibility from './components/ColumnVisibility/index';
 
-import {i18n, oldI18n} from './i18n';
+import {i18n} from './i18n';
 import i18next from 'i18next';
 
 import styles from './css/global.css!';
 
 i18next.init( {
   whitelist:         [ 'en', 'fr', 'nl' ],
-  resources:         oldI18n,
+  resources:         i18n,
   saveMissing:       true,
   missingKeyHandler: (lng, ns, key, fallbackValue) => {
     console.log( ` MISSING:
@@ -57,19 +57,17 @@ App.view = (c, props) => {
       <Login
         display={!isAuthenticated}
         dispatch={putTimestamp(dispatch)}
-        /*i18n={i18n.login}*/
         i18n={c.i18n}
         language={language}/>
       <Loader display={isFetching}/>
       <aside class={styles.Aside}>
         <Uploader
           dispatch={putTimestamp(dispatch)}
-          i18n={i18n.uploader}
+          i18n={c.i18n}
           {...state}>
         </Uploader>
         <Menu
           dispatch={dispatch}
-          /*i18n={i18n.menu}*/
           i18n={c.i18n}
           {...state}>
         </Menu>
@@ -78,18 +76,18 @@ App.view = (c, props) => {
         <ColumnVisibility
           display={filters.menuColumnView}
           dispatch={putTimestamp(dispatch)}
-          i18n={i18n.columnVisibility}
+          i18n={c.i18n}
           {...state}>
         </ColumnVisibility>
         <Filters
           dispatch={putTimestamp(dispatch)}
-          i18n={i18n.filters}
+          i18n={c.i18n}
           {...state}>
         </Filters>
         <Table
           display={files.length > 0}
           dispatch={putTimestamp(dispatch)}
-          i18n={i18n.table}
+          i18n={c.i18n}
           {...state}>
         </Table>
       </main>

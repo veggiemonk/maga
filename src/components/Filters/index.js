@@ -48,6 +48,7 @@ Filters.config = ctrl => ( element, isInitialized, context ) => {
 //todo breadcrumbs
 Filters.view = function view( c, props, children ) {
   const { dispatch, i18n, language, filters, data, files } = props;
+  const i     = k => i18n.t( k, { lng: language } );
   const count = data.length;
   return (
     <div class="container">
@@ -57,38 +58,38 @@ Filters.view = function view( c, props, children ) {
             onclick={ () => { fetching(dispatch); } }>
             <i class="fa fa-2x fa-refresh">
             </i>
-            {i18n.reload[ language ]}
+            {i( 'button.reload' )}
           </Button>
 
           <Input type="search"
                  incremental
                  oninput={ m.withAttr('value', c.search ) }
                  value={ filters.searchKeyword }
-                 placeholder={i18n.search[language]}/>
+                 placeholder={i('button.search')}/>
 
           <Input id="dateBegin"
                  type="search"
                  config={Filters.config(c)}
                  onchange={ m.withAttr('value', c.dateBegin ) }
                  value={ filters.dateBegin }
-                 placeholder={i18n.dateBegin[language]}/>
+                 placeholder={i('datepicker.start')}/>
 
           <Input id="dateEnd"
                  type="search"
                  onchange={ m.withAttr('value', c.dateEnd ) }
                  value={ filters.dateEnd }
-                 placeholder={i18n.dateEnd[language]}/>
+                 placeholder={i('datepicker.end')}/>
         </div>
         <div class={`${styleCB.squaredFour}`}>
           <input type="checkbox"
                  name="squaredFour"
-                 onclick={ (e) => {console.log(e);} /*m.withAttr('checked', c.toggleMenuColumnView )*/ }
+                 onclick={ (e) => {console.log(e);/*TODO: FIX or REMOVE*/} /*m.withAttr('checked', c.toggleMenuColumnView )*/ }
                  checked={filters.menuColumnView}/>
           <label
             for="squaredFour"
             onclick={ m.withAttr('checked', c.toggleMenuColumnView ) /*(e) => {console.log(e)}*/ }>
           </label>
-          <p>{i18n.colVisible[ language ]}</p>
+          <p>{i( 'button.colVisible' )}</p>
         </div>
 
         <div class="six columns">

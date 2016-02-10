@@ -12,78 +12,78 @@ export function navigatorLanguage() {
   return locale;
 }
 
-export const i18n = {
-  filters:  {
-    reload:     {
-      fr: 'Rafraîchir',
-      nl: 'Opnieuw laden',
-      en: 'Reload',
-    },
-    search:     {
-      fr: 'Recherche...',
-      nl: 'Zoeken...',
-      en: 'Search...',
-    },
-    dateTo:     {
-      fr: 'à',
-      nl: 'tot',
-      en: 'to',
-    },
-    dateBegin:  {
-      fr: 'Date début',
-      nl: 'Begindatum',
-      en: 'Start Date',
-    },
-    dateEnd:    {
-      fr: 'Date fin',
-      nl: 'Einddatum',
-      en: 'End Date',
-    },
-    colVisible: {
-      fr: 'Afficher Colonnes',
-      nl: 'Tonen',
-      en: 'Show Column',
-    }
-  },
-  login:    {
-    login:    {
-      fr: 'Nom d\'utilisateur',
-      nl: 'Gebruikernaam',
-      en: 'Username',
-    },
-    password: {
-      fr: 'Mot de passe',
-      nl: 'Password',
-      en: 'Password',
-    },
-    submit:   {
-      fr: 's\'Authentifier',
-      nl: 'Verzenden',
-      en: 'Submit',
-    },
-  },
-  menu:     {
-    all:    {
-      fr: 'Tous',
-      nl: 'Alle',
-      en: 'all',
-    },
-    others: {
-      fr: 'Autres',
-      nl: 'Anders',
-      en: 'Others'
-    }
-  },
-  uploader: {
-    uploadBtn: {
-      fr: 'Déposer des fichiers',
-      nl: 'Bestanden uploaden naar Group S',
-      en: 'Upload files on the server',
-    }
-  }
-};
+/*export const i18n = {
+ filters:  {
+ reload:     {
+ fr: 'Rafraîchir',
+ nl: 'Opnieuw laden',
+ en: 'Reload',
+ },
+ search:     {
+ fr: 'Recherche...',
+ nl: 'Zoeken...',
+ en: 'Search...',
+ },
+ dateTo:     {
+ fr: 'à',
+ nl: 'tot',
+ en: 'to',
+ },
+ dateBegin:  {
+ fr: 'Date début',
+ nl: 'Begindatum',
+ en: 'Start Date',
+ },
+ dateEnd:    {
+ fr: 'Date fin',
+ nl: 'Einddatum',
+ en: 'End Date',
+ },
+ colVisible: {
+ fr: 'Afficher Colonnes',
+ nl: 'Tonen',
+ en: 'Show Column',
+ }
+ },
+ login:    {
+ login:    {
+ fr: 'Nom d\'utilisateur',
+ nl: 'Gebruikernaam',
+ en: 'Username',
+ },
+ password: {
+ fr: 'Mot de passe',
+ nl: 'Password',
+ en: 'Password',
+ },
+ submit:   {
+ fr: 's\'Authentifier',
+ nl: 'Verzenden',
+ en: 'Submit',
+ },
+ },
+ menu:     {
+ all:    {
+ fr: 'Tous',
+ nl: 'Alle',
+ en: 'all',
+ },
+ others: {
+ fr: 'Autres',
+ nl: 'Anders',
+ en: 'Others'
+ }
+ },
+ uploader: {
+ uploadBtn: {
+ fr: 'Déposer des fichiers',
+ nl: 'Bestanden uploaden naar Group S',
+ en: 'Upload files on the server',
+ }
+ }
+ };*/
 
-export const oldI18n = {
+export const i18n = {
   fr: {
     translation: {
       login:           {
@@ -124,22 +124,22 @@ export const oldI18n = {
         GAD: 'Gestion administative'
       },
       col:             {
-        new:         'Nouveau',
-        date:        'Date',
-        name:        'Nom',
-        user:        'Utilisateur',
-        empl:        'Employeur',
-        label:       'Libell&eacute;',
-        refdoc:      'N° Doc',
-        size:        'Taille',
-        ext:         'Type',
-        path:        'Chemin',
-        refCl:       'Ref Client',
-        count:       'Compteur',
-        refGS:       'Ref',
-        uploadStamp: 'Heure Dépôt',
-        del:         'Effacer',
-        comment:     'Commentaires'
+        new:               'Nouveau',
+        date:              'Date',
+        fileName:          'Nom',
+        uploadUserName:    'Utilisateur',
+        employerNumber:    'Employeur',
+        label:             'Libell&eacute;',
+        referenceDocument: 'N° Doc',
+        size:              'Taille',
+        extension:         'Type',
+        path:              'Chemin',
+        referenceClient:   'Ref Client',
+        counter:           'Compteur',
+        referenceGroupS:   'Ref',
+        uploadStamp:       'Heure Dépôt',
+        del:               'Effacer',
+        uploaderComment:   'Commentaires'
       },
       tree:            {
         root:   'Boîte de réception',
@@ -160,8 +160,8 @@ export const oldI18n = {
       },
       datepicker:      {
         to:    'à',
-        start: 'date début',
-        end:   'date fin'
+        start: 'Date Début',
+        end:   'Date Fin'
       },
       dialog:          {
         delAction:      'Suppression de fichier',
@@ -253,22 +253,22 @@ export const oldI18n = {
         datepicker: '../cdn/bootstrap/locale/bootstrap-datepicker.nl.js'
       },
       col:             {
-        new:         'Nieuw',
-        date:        'Datum',
-        name:        'Naam',
-        user:        'Gebruiker',
-        empl:        'Werkgever',
-        label:       'Label',
-        refdoc:      'N° Doc',
-        size:        'Grootte',
-        ext:         'Type',
-        path:        'Locatie',
-        refCl:       'Ref. Klant',
-        count:       'Teller',
-        refGS:       'Ref. Group S',
-        uploadStamp: 'Upload tijd',
-        del:         'Verwijderen',
-        comment:     'Opmerking'
+        new:               'Nieuw',
+        date:              'Datum',
+        fileName:          'Naam',
+        uploadUserName:    'Gebruiker',
+        employerNumber:    'Werkgever',
+        label:             'Label',
+        referenceDocument: 'N° Doc',
+        size:              'Grootte',
+        extension:         'Type',
+        path:              'Locatie',
+        referenceClient:   'Ref. Klant',
+        counter:           'Teller',
+        referenceGroupS:   'Ref. Group S',
+        uploadStamp:       'Upload tijd',
+        del:               'Verwijderen',
+        uploaderComment:   'Opmerking'
       },
       tree:            {
         root:   'Inbox ',
@@ -378,22 +378,22 @@ export const oldI18n = {
         table: '../cdn/DataTables/1.10.4/resources/language/en.json'
       },
       col:             {
-        new:         'New',
-        date:        'Date',
-        name:        'Name',
-        user:        'User',
-        empl:        'Employer',
-        label:       'Label',
-        refdoc:      'N° Doc',
-        size:        'Size',
-        ext:         'Type',
-        path:        'Path',
-        refCl:       'Ref Client',
-        count:       'Counter',
-        refGS:       'Ref Group S',
-        uploadStamp: 'Upload Time',
-        del:         'Delete',
-        comment:     'Comments'
+        new:               'New',
+        date:              'Date',
+        fileName:          'Name',
+        uploadUserName:    'User',
+        employerNumber:    'Employer',
+        label:             'Label',
+        referenceDocument: 'N° Doc',
+        size:              'Size',
+        extension:         'Type',
+        path:              'Path',
+        referenceClient:   'Ref Client',
+        counter:           'Counter',
+        referenceGroupS:   'Ref Group S',
+        uploadStamp:       'Upload Time',
+        del:               'Delete',
+        uploaderComment:   'Comments'
       },
       tree:            {
         root:   'Inbox',
