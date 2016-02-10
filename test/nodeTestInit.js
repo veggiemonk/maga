@@ -4,7 +4,7 @@ const Mocha = require('mocha')
 const glob = require('glob')
 const mocha = new Mocha()
 
-glob('test/**/*.spec.js', function (err, files) {
+glob('test/**/*.test.js', function (err, files) {
 
   if (err) {
     throw err

@@ -8,3 +8,4 @@ npm-debug.log
 cdn
 *.css.map
 
+test/login_timeline.json

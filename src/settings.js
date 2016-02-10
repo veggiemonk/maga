@@ -5,7 +5,7 @@ const permanentColumn = [
   {
     index:      1,
     id:         'checkbox',
-    name:       '<input type="checkbox" />',
+    name:       '<input type="checkbox" value="false" />',
     visible:    true,
     toggle:     false,
     sortable:   false,
@@ -19,7 +19,7 @@ const permanentColumn = [
     dataType:   'number',
     searchable: false,
   }, {
-    index:      20,
+    index:      30,
     id:         'delete',
     name:       '<i class="fa fa-ban"></i>',
     visible:    true,
