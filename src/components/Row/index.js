@@ -8,9 +8,11 @@ import Button from '../Button/index';
 //import styles from './row.css!'
 import styles from '../../css/text.css!';
 
+import { extractLabel } from '../../data';
+
 let Row = {};
 
-Row.controller = function controller( props ) {
+Row.controller = function controller(props) {
   const {dispatch} = props;
   return {
     download: fileId => {
@@ -22,8 +24,8 @@ Row.controller = function controller( props ) {
   };
 };
 
-Row.view = function view( c, props ) {
-  const { columns, file, dispatch, selectedRow } = props;
+Row.view = function view(c, props) {
+  const { columns, file, dispatch, selectedRow, language } = props;
   const v         = k => _.result( _.find( columns, { id: k } ), 'visible' );
   const isChecked = (fileId) => _.contains( selectedRow, fileId );
   return (
@@ -43,7 +45,12 @@ Row.view = function view( c, props ) {
       {v( 'fileName' ) ? <td><a class='dlfileLabel'>{ file[ 'fileName' ]}</a></td> : '' }
       {v( 'uploadUserName' ) ? <td>{ file[ 'uploadUserName' ]}</td> : '' }
       {v( 'employerNumber' ) ? <td>{ file[ 'employerNumber' ]}</td> : '' }
-      {v( 'label' ) ? <td class={styles.text_overflow}><a class='dlfileLabel'>{ file[ 'label' ]}</a></td> : '' }
+      {v( 'label' ) ?
+        <td class={styles.text_overflow}
+            data-toggle='tooltip' data-placement='left' data-container='body' data-html='true'
+            title={ extractLabel(file[ 'label' ], language) }>
+          <a class='dlfileLabel'>{extractLabel( file[ 'label' ], language )}</a>
+        </td> : '' }
       {v( 'referenceDocument' ) ? <td>{ file[ 'referenceDocument' ]}</td> : '' }
       {v( 'size' ) ? <td class={styles.text_right}>{ file[ 'sizeFormatted' ] }</td> : '' }
       {v( 'extension' ) ? <td class={styles.text_center}>{ m.trust( file[ 'extensionFormatted' ] ) }</td> : '' }

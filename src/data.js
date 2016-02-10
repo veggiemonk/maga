@@ -3,18 +3,10 @@ import { formatExtension, formatSize } from './utils';
 import moment from 'moment';
 import _ from 'lodash';
 
-const LANG = 'fr';
-
-/***
- *
- * @param item
- * @param lang
- * @returns {*}
- */
-export const labelDocI18n = ( item, lang ) => {
-
+const labelDocI18n = (item, lang) => {
   let doc = {
     fr:      () => item.labelDocFR,
+    en:      () => item.labelDocX,
     nl:      () => item.labelDocNL,
     de:      () => item.labelDocDE,
     default: () => item.labelDocX,
@@ -22,11 +14,50 @@ export const labelDocI18n = ( item, lang ) => {
   return (doc[ lang ] || doc[ 'default' ])();
 };
 
-export const groupMenu = ( category, files ) => {
+export const extractLabel = (label, lang) => {
+  if ( typeof label === 'string' ) {
+    return label;
+  } else if ( typeof label === 'object' ) {
+    return labelDocI18n( label, lang );
+  } else {
+    return 'Error';
+  }
+};
+
+/***
+ *
+ * @param item Object containing the `lang` key (language)
+ * @param lang language
+ * @returns {*}
+ */
+export const labelCati18n = (item, lang) => {
+  let cat = {
+    en:      () => item[ 'labelCategoryX' ],
+    fr:      () => item[ 'labelCategoryFR' ],
+    nl:      () => item[ 'labelCategoryNL' ],
+    de:      () => item[ 'labelCategoryDE' ],
+    default: () => item[ 'labelCategoryX' ],
+  };
+  return (cat[ lang ] || cat[ 'default' ])();
+};
+
+/**
+ * @returns an array containing all the document's reference in a category
+ * */
+export const listRefDoc = (listCat, cat) =>
+  _( listCat )
+    .filter( x => x[ 'categoryNumber' ] === cat )
+    .reduce( (acc, next) => {
+      acc.push( next[ 'referenceDocument' ] );
+      return acc;
+    }, [] );
+
+
+export const groupMenu = (category, files) => {
   const refDocUsed   = _.sortBy( _.uniq( _.pluck( files, 'referenceDocument' ) ) );
   const categoryUsed = _.filter( category, cat => _.contains( refDocUsed, cat.referenceDocument ) );
   const filesPerRef  = _.countBy( files, 'referenceDocument' );
-  const filesPerCat  = _.reduce( categoryUsed, ( acc, curr ) => {
+  const filesPerCat  = _.reduce( categoryUsed, (acc, curr) => {
     acc[ curr.categoryNumber ]
       ? acc[ curr.categoryNumber ] += filesPerRef[ curr.referenceDocument ]
       : acc[ curr.categoryNumber ] = filesPerRef[ curr.referenceDocument ];
@@ -43,7 +74,7 @@ export const groupMenu = ( category, files ) => {
     .value();
 };
 
-export const sanitize = ( files, category ) => {
+export const sanitize = (files, category) => {
   let username = sessionStorage.username || '';
   return files.map( row => {
     Object.keys( row ).map( key => {
@@ -70,11 +101,7 @@ export const sanitize = ( files, category ) => {
         label:             () => {
           const ref = Number( row.referenceDocument );
           ref
-            ? row[ key ] = labelDocI18n(
-            _.find( category, {
-              referenceDocument: ref
-            } ), LANG /* TODO: I18N */
-          )
+            ? row[ key ] = _.find( category, { referenceDocument: ref } )
             : row[ key ] = row.fileName;
         },
         referenceDocument: () => { row[ key ] ? row[ key ] = Number( row[ key ] ) : '_'; },
