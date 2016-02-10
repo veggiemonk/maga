@@ -13,5 +13,14 @@ The tests are written with `mocha` and `chai`.
 - [x] test bundle and deployment
 - [x] automate test (`mocha` and `chai`)
 - [ ] login
+  - [x] css
+  - [ ] connection
 - [ ] i18n
 - [ ] style
+  - [x] compile sass to css
+  - [ ] convert all to PostCSS
+  - [ ] load fonts, icons (no idea, to research)
+  - [ ] images ?
+- [ ] error message standardize
+- [ ] Docker image
+- [ ] GitLab CI

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "jspm install",
-    "test": "./node_modules/mocha/bin/mocha --compilers js:babel-core/register --ui tdd -R tap ./test/redux.spec.js",
+    "test": "mocha --compilers js:babel-core/register --ui tdd -R tap ./test/redux.spec.js",
     "test:watch": "npm test -- --watch",
     "start": "node server",
     "echo": "node _echoServer.js",
@@ -71,7 +71,6 @@
     "connect": "^3.4.0",
     "express": "^4.13.3",
     "http-server": "^0.8.5",
-    "immutable": "^3.7.5",
     "isomorphic-fetch": "^2.2.0",
     "lodash": "^3.10.1",
     "mithril": "^0.2.0",

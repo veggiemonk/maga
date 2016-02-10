@@ -1,5 +1,5 @@
 import m from 'mithril'
-
+import _ from 'lodash'
 import { fetching } from './async'
 
 // Components
