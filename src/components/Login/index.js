@@ -11,14 +11,7 @@ let Login = {};
 const parseField = (dispatch) => {
   const login    = String( document.querySelector( '#fieldUser' ).value );
   const password = String( document.querySelector( '#fieldPassword' ).value );
-  if ( !login && login === '' ) {
-    dispatch( loginFailed( 'ERROR: empty username' ) );
-    return;
-  }
-  if ( password === '' ) {
-    dispatch( loginFailed( 'ERROR: empty password ' ) );
-    return;
-  }
+
   return {
     login,
     password,
@@ -33,6 +26,7 @@ const submitLogin = ({dispatch, e}) => {
 
 Login.view = (c, props) => {
   const { i18n, language, display, dispatch } = props;
+  const i = k => i18n.t( k, { lng: language } );
   //console.log('redraw');
   return (
     <div class={`${styles.overlay}`}
@@ -48,12 +42,12 @@ Login.view = (c, props) => {
               <form class={`${styles.profile__fields}`} action={urlServer + '/login'} method="post">
                 <p class={`${styles.field}`}>
                   <input type="text" name="login" id="fieldUser" class={`${styles.input}`} required/>
-                  <label for="fieldUser" class={`${styles.label}`}>{i18n.t( 'login.login', { lng: language } )}</label>
+                  <label for="fieldUser" class={`${styles.label}`}>{i( 'login.login' )}</label>
                 </p>
                 <p class={`${styles.field}`}>
                   <input type="password" name="password" id="fieldPassword" class={`${styles.input}`} required/>
                   <label for="fieldPassword"
-                         class={`${styles.label}`}>{i18n.t( 'login.password', { lng: language } )}</label>
+                         class={`${styles.label}`}>{i( 'login.password' )}</label>
                 </p>
                 <div class={`${styles.grid}`}>
                   <div class={`${styles.col_1_3} `}>
@@ -88,7 +82,7 @@ Login.view = (c, props) => {
                   <button type="submit"
                           class={`${styles.button} ${styles.btn}`}
                           onsubmit={(e) => { submitLogin({dispatch, e}); } }>
-                    {i18n.t( 'login.submit', { lng: language } ).toUpperCase()}
+                    {i( 'login.submit' ).toUpperCase()}
                   </button>
                 </div>
               </form>
