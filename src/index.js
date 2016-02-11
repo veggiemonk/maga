@@ -21,14 +21,9 @@ i18next.init( {
   resources:         i18n,
   saveMissing:       true,
   missingKeyHandler: (lng, ns, key, fallbackValue) => {
-    console.log( ` MISSING:
-         ${lng},
-         ${ns},
-         ${key},
-         ${fallbackValue}` );
+    console.log( ` MISSING: ${lng}, ${ns}, ${key}, ${fallbackValue}` );
   }
 } );
-
 
 let App        = {};
 App.controller = props => {
