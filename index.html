@@ -22,7 +22,7 @@
     if ( location.origin.match( /localhost/ ) && hot ) {
       System.trace     = true;
       readyForMainLoad = System.import( 'capaj/jspm-hot-reloader' ).then( function (HotReloader) {
-        hr = new HotReloader.default( 'http://localhost:3000' )  // chokidar-socket-emitter port
+        hr = new HotReloader.default( 'http://localhost:4000' )  // chokidar-socket-emitter port
       } );
     }
     Promise.resolve( readyForMainLoad ).then( function () {

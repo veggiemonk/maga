@@ -1,31 +1,35 @@
-import 'isomorphic-fetch'
+import 'isomorphic-fetch';
 
-import { groupMenu, sanitize } from './data'
-import { loadData, fetchData, sendLogin, loginSuccess, loginFailed } from './redux/actions'
-import { columns, headers, fetchURLFile, fetchURLCategory, urlServer} from './settings'
-import { catchError } from './utils'
+import { groupMenu, sanitize } from './data';
+import { fetchDataSuccess, fetchData, sendLogin, loginSuccess, loginFailed } from './redux/actions';
+import { columns, headers, fetchURLFile, fetchURLCategory, urlServer} from './settings';
+import { parseErrorResponse } from './utils';
 
 /* ASYNC */
-export const fetchFileList     = ( url ) => fetch( url, headers( 'GET' ) ).then( res => res.json() )
-export const fetchCategoryList = ( url ) => fetch( url, headers( 'GET' ) ).then( res => res.json() )
+export const fetchFileList     = (url) => fetch( url, headers( 'GET' ) ).then( res => res.json() );
+export const fetchCategoryList = (url) => fetch( url, headers( 'GET' ) ).then( res => res.json() );
 export const fetching          = ( dispatch ) => {
 
-  dispatch( fetchData() )
+  dispatch( fetchData() );
   return Promise.all( [ fetchFileList( fetchURLFile ), fetchCategoryList( fetchURLCategory ) ] )
     .then( ( [FileList, CategoryList] ) => {
-      const files = sanitize( FileList, CategoryList )
-
+      const files = sanitize( FileList, CategoryList );
       dispatch(
-        loadData( columns,
+        fetchDataSuccess( columns,
           files,
           files,
           groupMenu( CategoryList, FileList ) )
-      )
-    } ).catch( catchError )
-}
+      );
+    } ).catch( ( error ) => {
+      console.error( error );
+      error.response && error.response.status
+        ? dispatch( loginFailed( parseErrorResponse( error.response.status ) ) )
+        : dispatch( loginFailed( 'Error parsing status response:' + JSON.stringify( error ) ) );
+    } );
+};
 
 export const dispatchLogin = ( {dispatch, login, password} ) => {
-  dispatch( sendLogin( login, password ) )
+  dispatch( sendLogin( login, password ) );
   return fetch( urlServer, {
     credentials: 'same-origin',
     method:      'POST',
@@ -35,9 +39,14 @@ export const dispatchLogin = ( {dispatch, login, password} ) => {
     },
   } ).then( res => res.json() )
     .then( data => {
-      dispatch( loginSuccess( { ...data } ) )
-    } ).catch( catchError )
-}
+      dispatch( loginSuccess( { ...data } ) );
+    } ).catch( ( error ) => {
+      console.error( error );
+      error.response && error.response.status
+        ? dispatch( loginFailed( parseErrorResponse( error.response.status ) ) )
+        : dispatch( loginFailed( 'Error parsing status response:' + JSON.stringify( error ) ) );
+    } );
+};
 
 /* DOWNLOAD A FILE */
 /*

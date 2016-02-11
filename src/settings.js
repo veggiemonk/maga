@@ -1,7 +1,7 @@
-import _ from 'lodash'
-import {i18n, navigatorLanguage} from './i18n.js'
+import _ from 'lodash';
+import {navigatorLanguage} from './i18n.js';
 
-const permanentColumn = [
+export const permanentColumn = [
   {
     index:      1,
     id:         'checkbox',
@@ -26,7 +26,7 @@ const permanentColumn = [
     toggle:     false,
     sortable:   false,
     searchable: false,
-  }, ]
+  }, ];
 
 const unvisibleColumn = [
   {
@@ -38,9 +38,9 @@ const unvisibleColumn = [
     dataType: 'date',
   }, {
     index:   5,
-    id:      'uploadUserName',
-    name:    'User',
-    visible: true,
+    id:      'fileName',
+    name:    'Name',
+    visible: false,
     toggle:  true,
   }, {
     index:    6,
@@ -51,9 +51,9 @@ const unvisibleColumn = [
     dataType: 'number',
   }, {
     index:   7,
-    id:      'fileName',
-    name:    'Name',
-    visible: false,
+    id:      'uploadUserName',
+    name:    'User',
+    visible: true,
     toggle:  true,
   }, {
     index:    8,
@@ -132,7 +132,7 @@ const unvisibleColumn = [
     visible:    false,
     toggle:     false,
     dataType:   'number',
-  } ]
+  } ];
 
 export const defaults = {
   col:            {
@@ -158,7 +158,7 @@ export const defaults = {
   searchKeyword:  '',
   menuColumnView: false,
   dateFormat:     'DD/MM/YYYY',
-}
+};
 
 export const initialState = {
   columns:         [],
@@ -176,28 +176,29 @@ export const initialState = {
   files:           [],
   data:            [],
   selectedRow:     [],
-  language:        (localStorage && localStorage.lang) || navigatorLanguage(),
+  language:        (localStorage && localStorage.language) || navigatorLanguage(),
   username:        (localStorage && localStorage.lastLogin) || '',
   isAuthenticated: true,
   isFetching:      true,
   didInvalidate:   false,
   lastUpdated:     Date.now(),
-}
+};
 
 
 //sort then merge with default config
-export const columns = _( [ ...permanentColumn, ...unvisibleColumn ] )
+/*export const columns = _( [ ...permanentColumn, ...unvisibleColumn ] )*/
+export const columns = _( unvisibleColumn )
   .sortBy( x => x.index )
   .map( x => Object.assign( {}, defaults.col, x ) )
-  .value()
+  .value();
 
 //TODO: URL FOR TEST, DEV, QA and PROD???
-export const urlServer     = 'http://localhost:8019'
-export const urlEchoServer = 'http://localhost:3246/echo/json'
-export const fetchURL      = urlServer + '/file/list'
+export const urlServer     = 'http://localhost:8019';
+export const urlEchoServer = 'http://localhost:3246/echo/json';
+export const fetchURL      = urlServer + '/file/list';
 //export const fetchURLFile     = '/test/fileListF01.json'
-export const fetchURLFile     = 'test/fileList.json'
-export const fetchURLCategory = 'test/category.json'
+export const fetchURLFile     = 'test/fileList.json';
+export const fetchURLCategory = 'test/category.json';
 export const headers          = method => {
   return {
     credentials: 'same-origin',
@@ -207,5 +208,5 @@ export const headers          = method => {
       'Content-Type': 'application/json',
       Credentials:    'GroupsFTP username=F00000001 password=P@$$w0rd',
     },
-  }
-}
+  };
+};

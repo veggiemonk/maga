@@ -1,6 +1,6 @@
 import m from 'mithril'
 import App from 'src/index'
-//import Root from 'src/components/Root/index'
+
 import finalCreateStore from 'src/redux/createStore'
 import reducer from 'src/redux/reducers/index'
 import Header from './src/components/Header/index'

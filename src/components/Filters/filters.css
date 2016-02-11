@@ -1,0 +1,14 @@
+.grid {
+  width: auto;
+  margin-bottom: 20px;
+  text-align: center; }
+  .grid:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.col_1_3 {
+  float: left;
+  width: 33.33%; }
+
+/*# sourceMappingURL=filters.css.map */

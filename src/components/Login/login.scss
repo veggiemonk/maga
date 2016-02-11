@@ -76,11 +76,12 @@
 }
 
 .profile_open .profile__form {
-  visibility:  visible;
-  height:      auto;
-  opacity:     1;
-  transform:   translateY(-6em);
-  padding-top: 12em;
+  visibility:    visible;
+  height:        auto;
+  opacity:       1;
+  transform:     translateY(-6em);
+  padding-top:   12em;
+  border-radius: 20px;
 }
 
 .profile_open .profile__fields {

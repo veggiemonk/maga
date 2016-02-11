@@ -1,7 +1,7 @@
-import m from 'mithril'
-import styles from './style.css!'
+import m from 'mithril';
+import styles from './style.css!';
 
-let Loader = {}
+let Loader = {};
 
 Loader.view = ( c, props, children ) => {
   return (
@@ -13,8 +13,8 @@ Loader.view = ( c, props, children ) => {
         ] )
       }</div>
     </div>
-  )
-}
+  );
+};
 
 
-export default Loader
+export default Loader;

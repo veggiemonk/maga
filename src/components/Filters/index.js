@@ -1,10 +1,15 @@
-import m from 'mithril'
-import _ from 'lodash'
+import m from 'mithril';
+import _ from 'lodash';
 //import rome from 'rome'
-import { fetching } from '../../async'
-import Button from '../Button/index'
-import Input from '../Input/index'
-import styleCB from '../../css/checkbox.css!'
+import { fetching } from '../../async';
+
+import Button from '../Button/index';
+import Input from '../Input/index';
+
+import styleCB from '../../css/checkbox.css!';
+import styleR from '../../css/radio.css!';
+import styles from './filters.css!';
+
 import {
   pageFirst,
   pageLast,
@@ -15,22 +20,22 @@ import {
   filterDateEnd,
   changeRowDisplayed,
   toggleMenuColumnView,
-  refreshData,
-} from '../../redux/actions'
+  setLanguage,
+} from '../../redux/actions';
 
 
-let Filters = {}
+let Filters = {};
 
 Filters.controller = function controller( props ) {
-  const { dispatch } = props
+  const { dispatch } = props;
   return {
-    select:               val => {dispatch( changeRowDisplayed( Number( val ) ) ) },
-    search:               val => {dispatch( filterSearch( val ) ) },
-    dateBegin:            val => {dispatch( filterDateBegin( val ) ) },
-    dateEnd:              val => {dispatch( filterDateEnd( val ) ) },
-    toggleMenuColumnView: () => {dispatch( toggleMenuColumnView() ) }
-  }
-}
+    select:               val => {dispatch( changeRowDisplayed( Number( val ) ) ); },
+    search:               val => {dispatch( filterSearch( val ) ); },
+    dateBegin:            val => {dispatch( filterDateBegin( val ) ); },
+    dateEnd:              val => {dispatch( filterDateEnd( val ) ); },
+    toggleMenuColumnView: () => {dispatch( toggleMenuColumnView() ); }
+  };
+};
 
 Filters.config = ctrl => ( element, isInitialized, context ) => {
   /*if ( !isInitialized ) {
@@ -39,69 +44,101 @@ Filters.config = ctrl => ( element, isInitialized, context ) => {
       inputFormat:    'DD/MM/YYYY',
     } )
   }*/
-}
+};
 //todo breadcrumbs
 Filters.view = function view( c, props, children ) {
-  const { dispatch, i18n, language, filters, data, files } = props
-  const count = data.length
+  const { dispatch, i18n, language, filters, data, files } = props;
+  const i     = k => i18n.t( k, { lng: language } );
+  const count = data.length;
   return (
     <div class="container">
       <div class="row">
         <div class="three columns">
           <Button
-            className={'test'}
-            onclick={ () => { fetching(dispatch) } }>
-            <i class="fa fa-2x fa-refresh"></i>
-            {i18n.reload[ language ]}
+            onclick={ () => { fetching(dispatch); } }>
+            <i class="fa fa-2x fa-refresh">
+            </i>
+            {i( 'button.reload' )}
           </Button>
 
           <Input type="search"
                  incremental
                  oninput={ m.withAttr('value', c.search ) }
                  value={ filters.searchKeyword }
-                 placeholder={i18n.search[language]}/>
+                 placeholder={i('button.search')}/>
 
           <Input id="dateBegin"
                  type="search"
                  config={Filters.config(c)}
                  onchange={ m.withAttr('value', c.dateBegin ) }
                  value={ filters.dateBegin }
-                 placeholder={i18n.dateBegin[language]}/>
+                 placeholder={i('datepicker.start')}/>
 
           <Input id="dateEnd"
                  type="search"
                  onchange={ m.withAttr('value', c.dateEnd ) }
                  value={ filters.dateEnd }
-                 placeholder={i18n.dateEnd[language]}/>
+                 placeholder={i('datepicker.end')}/>
         </div>
         <div class={`${styleCB.squaredFour}`}>
           <input type="checkbox"
                  name="squaredFour"
-                 onclick={ (e) => {console.log(e)} /*m.withAttr('checked', c.toggleMenuColumnView )*/ }
+                 onclick={ (e) => {console.log(e);/*TODO: FIX or REMOVE*/} /*m.withAttr('checked', c.toggleMenuColumnView )*/ }
                  checked={filters.menuColumnView}/>
           <label
             for="squaredFour"
             onclick={ m.withAttr('checked', c.toggleMenuColumnView ) /*(e) => {console.log(e)}*/ }>
           </label>
-          <p>{i18n.colVisible[ language ]}</p>
+          <p>{i( 'button.colVisible' )}</p>
         </div>
 
         <div class="six columns">
-          <Button onclick={ () => { dispatch( pageFirst() )} }>
+          <Button onclick={ () => { dispatch( pageFirst() );} }>
             <i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i>
           </Button>
 
-          <Button onclick={ () => { dispatch( pagePrev() )  } }>
+          <Button onclick={ () => { dispatch( pagePrev() );  } }>
             <i class="fa fa-chevron-left"></i>
           </Button>
 
-          <Button onclick={ () => { dispatch( pageNext( count ) ) } }>
+          <Button onclick={ () => { dispatch( pageNext( count ) ); } }>
             <i class="fa fa-chevron-right"></i>
           </Button>
 
-          <Button onclick={ () => { dispatch( pageLast() ) } }>
+          <Button onclick={ () => { dispatch( pageLast() ); } }>
             <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i>
           </Button>
+          {/**************************** LANGUAGE ****************************/}
+          <div class={`${styles.grid}`}>
+            <div class={`${styles.col_1_3} `}>
+              <input class={`${styleR.input}`} type="radio" id="radio1" name="en"
+                     checked={language.toLowerCase() === 'en'}/>
+              <label class={`${styleR.label}`} for="radio1"
+                     onclick={() => {dispatch(setLanguage('en'));}}>
+                <span></span>
+                EN
+              </label>
+            </div>
+            <div class={`${styles.col_1_3}`}>
+              <input class={`${styleR.input}`} type="radio" id="radio2" name="fr"
+                     checked={language.toLowerCase() === 'fr'}/>
+              <label class={`${styleR.label}`} for="radio2"
+                     onclick={() => {dispatch(setLanguage('fr'));}}>
+                <span></span>
+                FR
+              </label>
+            </div>
+            <div class={`${styles.col_1_3}`}>
+              <input class={`${styleR.input}`} type="radio" id="radio3" name="nl"
+                     checked={language.toLowerCase() === 'nl'}/>
+              <label class={`${styleR.label}`} for="radio3"
+                     onclick={() => {dispatch(setLanguage('nl'));}}>
+                <span></span>
+                NL
+              </label>
+            </div>
+          </div>
+
         </div>
         {children}
         <div class="three columns">
@@ -139,7 +176,7 @@ Filters.view = function view( c, props, children ) {
       </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default Filters
+export default Filters;

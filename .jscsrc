@@ -2,9 +2,8 @@
   "esnext": true,
 
   "excludeFiles": ["jspm_packages/**"],
-
-  "disallowSemicolons": true,
-  "requireSemicolons": false,
+  "disallowSemicolons": false,
+  "requireSemicolons": true,
   "disallowVar": true,
   "requireArrayDestructuring": true,
   "requireObjectDestructuring": true,
